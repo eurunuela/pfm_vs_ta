@@ -33,7 +33,7 @@ def cons_filter(root):
     return fil
 
 
-def hrf_filters(tr, condition='spike', condition2='bold'):
+def hrf_filters(tr, condition='spike', condition2='spmhrf'):
 
     if condition2 == 'bold':
         eps = 0.54
@@ -63,7 +63,7 @@ def hrf_filters(tr, condition='spike', condition2='bold'):
         a2 = -0.27
         a3 = complex(-0.4347, -0.3497)
         a4 = complex(-0.4347, 0.3497)
-        psi = -0.1336
+        psi = np.float64(-0.1336)
 
     else:
         raise ValueError('Unknown filter')
