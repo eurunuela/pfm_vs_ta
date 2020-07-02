@@ -90,16 +90,16 @@ class HRFMatrix:
         else:
             p = [6,16,1,1,6,0,32]
             hrf_SPM = hrf_linear(self.TR, p)
-  
+
         self.L_hrf = len(hrf_SPM) # Length
         max_hrf = max(abs(hrf_SPM)) # Max value
         filler = np.zeros(self.nscans-hrf_SPM.shape[0], dtype=np.int)
         hrf_SPM = np.append(hrf_SPM, filler) # Fill up array with zeros until nscans
-    
+
         temp = hrf_SPM
-        
+
         for i in range(self.nscans-1):
-            foo = np.append(np.zeros(i+1), hrf_SPM[0:(len(hrf_SPM)-i-1)])      
+            foo = np.append(np.zeros(i+1), hrf_SPM[0:(len(hrf_SPM)-i-1)])
             temp = np.column_stack((temp, foo))
 
         if len(self.TE) > 1:
@@ -108,7 +108,7 @@ class HRFMatrix:
                 tempTE = np.vstack((tempTE, -self.TE[teidx+1]*temp))
         else:
             tempTE = temp
-        
+
         if self.r2only:
             self.X_hrf = tempTE
 

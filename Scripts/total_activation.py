@@ -150,4 +150,4 @@ def total_activation(data, params, lambd=None, update_lambda=False):
 
     params['cost_temp'] = costtemp
 
-    return tc_out
+    return tc_out, params['lambda_temp_fin']
