@@ -125,7 +125,8 @@ def total_activation(data, params, lambd=None, update_lambda=False):
 
     # Creates filter with zeros and poles
     params['f_analyze'], params['f_recons'], params['maxeig'] = hrf_filters(params['tr'], condition=params['model'])
-    params['NitTemp'] = 200
+    if 'NitTemp' not in params:
+        params['NitTemp'] = 200
     maxeig = params['maxeig']
     # print(f'Maxeig = {maxeig}')
 
