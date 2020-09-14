@@ -122,8 +122,5 @@ def temporal_ta(y, params):
     x[abs(x) < 1e-6] = 0
 
     u = filter_boundary(n, d, x, 'normal', N)
-    if params['model'] == 'block':
-        u[0] = 0
-        u[1:] = np.diff(u)
 
     return u, nv[-1], Lambd[-1], cost
