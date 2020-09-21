@@ -362,12 +362,7 @@ def debiasing(x, y, beta):
         beta_out[:, index_voxels[voxidx]] = beta2save.reshape(len(beta2save))
         fitts_out[:, index_voxels[voxidx]] = np.dot(X_events, coef_LSfitdebias)
 
-        # print(f'Voxel {voxidx + 1} of {len(index_voxels)} debiased...')
-
-    # Output dictionary
-    debiasing_out = {'beta': beta_out, 'betafitts': fitts_out}
-
-    return(debiasing_out)
+    return(beta_out, fitts_out)
 
 
 def main(argv):
