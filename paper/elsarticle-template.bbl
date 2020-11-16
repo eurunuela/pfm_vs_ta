@@ -1,0 +1,45 @@
+\begin{thebibliography}{3}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Shine et~al.(2015)Shine, Koyejo, Bell, Gorgolewski, Gilat, and
+  Poldrack}]{shine2015estimation}
+\bibinfo{author}{J.~M. Shine}, \bibinfo{author}{O.~Koyejo},
+  \bibinfo{author}{P.~T. Bell}, \bibinfo{author}{K.~J. Gorgolewski},
+  \bibinfo{author}{M.~Gilat}, \bibinfo{author}{R.~A. Poldrack},
+\newblock \bibinfo{title}{Estimation of dynamic functional connectivity using
+  multiplication of temporal derivatives},
+\newblock \bibinfo{journal}{NeuroImage} \bibinfo{volume}{122}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{399--407}.
+%Type = Article
+\bibitem[{Shine et~al.(2016)Shine, Bissett, Bell, Koyejo, Balsters,
+  Gorgolewski, Moodie, and Poldrack}]{shine2016dynamics}
+\bibinfo{author}{J.~M. Shine}, \bibinfo{author}{P.~G. Bissett},
+  \bibinfo{author}{P.~T. Bell}, \bibinfo{author}{O.~Koyejo},
+  \bibinfo{author}{J.~H. Balsters}, \bibinfo{author}{K.~J. Gorgolewski},
+  \bibinfo{author}{C.~A. Moodie}, \bibinfo{author}{R.~A. Poldrack},
+\newblock \bibinfo{title}{The dynamics of functional brain networks: integrated
+  network states during cognitive task performance},
+\newblock \bibinfo{journal}{Neuron} \bibinfo{volume}{92} (\bibinfo{year}{2016})
+  \bibinfo{pages}{544--554}.
+%Type = Article
+\bibitem[{Gitelman et~al.(2003)Gitelman, Penny, Ashburner, and
+  Friston}]{gitelman2003modeling}
+\bibinfo{author}{D.~R. Gitelman}, \bibinfo{author}{W.~D. Penny},
+  \bibinfo{author}{J.~Ashburner}, \bibinfo{author}{K.~J. Friston},
+\newblock \bibinfo{title}{Modeling regional and psychophysiologic interactions
+  in fmri: the importance of hemodynamic deconvolution},
+\newblock \bibinfo{journal}{Neuroimage} \bibinfo{volume}{19}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{200--207}.
+
+\end{thebibliography}
