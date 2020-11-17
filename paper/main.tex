@@ -1,0 +1,83 @@
+\documentclass[5p]{elsarticle}
+
+\usepackage{lineno,hyperref}
+\modulolinenumbers[5]
+
+\usepackage{amsmath}
+
+\journal{Neuroimage Technical Note}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+% \bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Paradigm Free Mapping vs Total Activation}
+
+%% Group authors per affiliation:
+\author[bcbl,upv]{Eneko Uru\~nuela}
+\author[bcbl]{C\'{e}sar Caballero-Gaudes}
+
+\address[bcbl]{Basque Center on Cognition, Brain and Language, Spain}
+\address[upv]{University of the Basque Country, Spain}
+
+\begin{abstract}
+Here's where the fantastic abstract will go.
+\end{abstract}
+
+\begin{keyword}
+deconvolution, paradigm free mapping, total activation
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+% Introduction
+\input{introduction.tex}
+
+% Theory
+\input{theory.tex}
+
+% Results
+\input{results.tex}
+
+% Discussion
+\input{discussion.tex}
+
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}

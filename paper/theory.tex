@@ -1,0 +1,19 @@
+\section{Theory}
+
+\begin{itemize}
+    \item What is deconvolution and different formulations presented as a review.
+    \item Analysis vs synthesis
+    \begin{itemize}
+        \item TA paper but without the spatial regularization
+        \item PFM paper
+        \item In gitelman it's an $\mathbf{H}$ multiplied by a fourier term.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Paradigm Free Mapping}
+
+\begin{equation}
+    \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \| \mathbf{y} - \mathbf{Hs} \|_2^2 \quad \text{subject to} \quad \| \mathbf{s} \|_p \leq \alpha
+\end{equation}
+
+\subsection{Total Activation}
