@@ -21,25 +21,34 @@ Functional MRI data analyses are often directed to disentangling and understandi
 
 \subsection{Paradigm Free Mapping}
 
-Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the neuronal-related signal by solving the following regularization problem:
+Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularization problem:
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \Omega(\mathbf{s})
 \end{equation}
 where \(\Omega(\mathbf{s})\) is the regularization term.
 
-Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the neuronal-related signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(L_0\)-norm and solving the optimization problem~\cite{bruckstein2009sparse}. However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(L_1\)-norm, or LASSO~\cite{tibshirani1996regression}, which is a convex function and therefore provides fast convergence to the optimal solution.
-
+Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(L_0\)-norm and solving the optimization problem~\cite{bruckstein2009sparse}. However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(L_1\)-norm, or LASSO~\cite{tibshirani1996regression}, which is a convex function and therefore provides fast convergence to the optimal solution.
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \lambda \| \mathbf{s} \|_1
 \end{equation}
-where \(\lambda\) 
+where \(\lambda\) regulates how sparse the optimal solution is.
 The PFM formulation provides enough flexibility to 
 
 \subsection{Total Activation}
+Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{khalidov2011activelets}:
+\begin{equation}
+    L_h\{x\}(t) = s(t)
+\end{equation}
+where \(x\) is the neuronal-related signal; i.e., the activity inducing signal \(s\) convolved with the HRF.
+
+\begin{equation}
+    L_h\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1}
+\end{equation}
+where \(D\) is the derivative operator, \(\alpha_i (i=1, \hdots, M_1)\) define the zeros of the filter, \(\gamma_j (j=1, \hdots, M_2)\) represent the poles, \(I\) is the identity matrix and \(M_1 > M_2\).
 
 \begin{equation}
     \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_F^2 + \mathcal{R}(\mathbf{x})
 \end{equation}
-where \(\mathbf{y}\) is the fMRI data.
+where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the regularization term.
