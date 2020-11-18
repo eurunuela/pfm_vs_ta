@@ -1,0 +1,45 @@
+\section{Theory}
+
+\begin{itemize}
+    \item What is deconvolution and different formulations presented as a review.
+    \item Analysis vs synthesis
+    \begin{itemize}
+        \item TA paper but without the spatial regularization
+        \item PFM paper
+        \item In Gitelman it's an \(\mathbf{H}\) multiplied by a Fourier term.
+    \end{itemize}
+\end{itemize}
+
+The hemodynamic response to neuronal activity at time \(t\) can be modeled as the convolution with a finite impulse response function of the neuronal signal \(s_{t-\tau}\) at time \(t-\tau\) with the hemodynamic response function \(h_{\tau}\):
+\begin{equation}
+    \label{eq:gitelman}
+    y_t = \Sigma_t h_{\tau} s_{t-\tau},
+\end{equation}
+where \(y_t\) is the measured BOLD signal on a given voxel. This equation can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs}\) where \(\mathbf{H} \in \mathbb{R}^{NxN}\) is the HRF in Toeplitz matrix form, and \(N\) is the number of frames of the fMRI acquisition.
+
+Functional MRI data analyses are often directed to disentangling and understanding the neural processes that occur among brain regions. However, interactions in the brain are expressed, not at the level of hemodynamic responses, but at the neural level. Thus, an intermediate step that estimates the underlying neuronal activity is necessary for such analyses. Given the nature of the fMRI BOLD signal, the appropriate approximation of the neuronal activity can be obtained by means of deconvolution with an assumed hemodynamic response~\cite{gitelman2003modeling}. Hence, the maximum likelihood estimate of the hemodynamic response to the underlying neural activity can be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{Hs}\)) and measured (\(\mathbf{y}\)) signals. Yet, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity of the design matrix \(\mathbf{H}\).
+
+\subsection{Paradigm Free Mapping}
+
+Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the neuronal-related signal by solving the following regularization problem:
+\begin{equation}
+    \label{eq:pfm}
+    \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \Omega(\mathbf{s})
+\end{equation}
+where \(\Omega(\mathbf{s})\) is the regularization term.
+
+Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the neuronal-related signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(L_0\)-norm and solving the optimization problem~\cite{bruckstein2009sparse}. However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(L_1\)-norm, or LASSO~\cite{tibshirani1996regression}, which is a convex function and therefore provides fast convergence to the optimal solution.
+
+\begin{equation}
+    \label{eq:pfm}
+    \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \lambda \| \mathbf{s} \|_1
+\end{equation}
+where \(\lambda\) 
+The PFM formulation provides enough flexibility to 
+
+\subsection{Total Activation}
+
+\begin{equation}
+    \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_F^2 + \mathcal{R}(\mathbf{x})
+\end{equation}
+where \(\mathbf{y}\) is the fMRI data.
