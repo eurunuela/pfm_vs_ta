@@ -8,12 +8,13 @@
         \item PFM paper
         \item In Gitelman it's an \(\mathbf{H}\) multiplied by a Fourier term.
     \end{itemize}
+    \item Spikes and block models
 \end{itemize}
 
 The hemodynamic response to neuronal activity at time \(t\) can be modeled as the convolution with a finite impulse response function of the neuronal signal \(s_{t-\tau}\) at time \(t-\tau\) with the hemodynamic response function \(h_{\tau}\):
 \begin{equation}
     \label{eq:gitelman}
-    y_t = \Sigma_t h_{\tau} s_{t-\tau},
+    y_t = \sum_t h_{\tau} s_{t-\tau},
 \end{equation}
 where \(y_t\) is the measured BOLD signal on a given voxel. This equation can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs}\) where \(\mathbf{H} \in \mathbb{R}^{NxN}\) is the HRF in Toeplitz matrix form, and \(N\) is the number of frames of the fMRI acquisition.
 
@@ -24,17 +25,22 @@ Functional MRI data analyses are often directed to disentangling and understandi
 Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularization problem~\cite{gaudes2011detection,gaudes2013paradigm,urunuela2020stability}:
 \begin{equation}
     \label{eq:pfm}
-    \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \Omega(\mathbf{s})
+    \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \Omega(\mathbf{s})
 \end{equation}
 where \(\Omega(\mathbf{s})\) is the regularization term.
 
-Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(L_0\)-norm and solving the optimization problem~\cite{bruckstein2009sparse}. However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(L_1\)-norm, or LASSO~\cite{tibshirani1996regression}, which is a convex function and therefore provides fast convergence to the optimal solution.
+Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm_spike} with an \(l_0\)-norm and solving the optimization problem~\cite{bruckstein2009sparse}. However, due to the convolution model defined in~\eqref{eq:pfm_spike}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(l_1\)-norm, or LASSO~\cite{tibshirani1996regression}, which is a convex function and therefore provides fast convergence to the optimal solution.
 \begin{equation}
-    \label{eq:pfm}
-    \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \lambda \| \mathbf{s} \|_1
+    \label{eq:pfm_spike}
+    \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \lambda \| \mathbf{s} \|_1
 \end{equation}
 where \(\lambda\) regulates how sparse the optimal solution is.
-The PFM formulation provides enough flexibility to 
+
+Such formulation provides flexibility to expand the capabilities of PFM. For instance, incorporating the integration operator \(\mathbf{L}\) into the design matrix \(\mathbf{H}\) allows the recovery of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem:
+\begin{equation}
+    \label{eq:pfm_block}
+    \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_F^2 + \lambda \| \mathbf{u} \|_1
+\end{equation}
 
 \subsection{Total Activation}
 Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{khalidov2011activelets,karahanouglu2013total}:
@@ -47,7 +53,12 @@ where \(x\) is the neuronal-related signal; i.e., the activity inducing signal \
 \end{equation}
 where \(D\) is the derivative operator, \(\alpha_i (i=1, \hdots, M_1)\) define the zeros of the filter, \(\gamma_j (j=1, \hdots, M_2)\) represent the poles, \(I\) is the identity matrix and \(M_1 > M_2\).
 
+Therefore, for a given voxel, the neuronal-related signal could be estimated by solving the following regularized least-squares problem:
 \begin{equation}
     \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_F^2 + \mathcal{R}(\mathbf{x})
 \end{equation}
-where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the regularization term.
+where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the following \(l_1\)-norm regularization term:
+\begin{equation}
+    \mathcal{R}(\mathbf{x}) = \lambda \sum_{t=1}^N \| \Delta_L \{\mathbf{x}\} \|
+\end{equation}
+where \(\lambda\) is the regularization parameter.
