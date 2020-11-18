@@ -21,7 +21,7 @@ Functional MRI data analyses are often directed to disentangling and understandi
 
 \subsection{Paradigm Free Mapping}
 
-Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularization problem:
+Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularization problem~\cite{gaudes2011detection,gaudes2013paradigm,urunuela2020stability}:
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{y}} = \arg \min_{\mathbf{y}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_F^2 + \Omega(\mathbf{s})
@@ -37,12 +37,11 @@ where \(\lambda\) regulates how sparse the optimal solution is.
 The PFM formulation provides enough flexibility to 
 
 \subsection{Total Activation}
-Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{khalidov2011activelets}:
+Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{khalidov2011activelets,karahanouglu2013total}:
 \begin{equation}
     L_h\{x\}(t) = s(t)
 \end{equation}
-where \(x\) is the neuronal-related signal; i.e., the activity inducing signal \(s\) convolved with the HRF.
-
+where \(x\) is the neuronal-related signal; i.e., the activity inducing signal \(\mathbf{s}\) convolved with the HRF, and \(L_h\) is defined as
 \begin{equation}
     L_h\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1}
 \end{equation}
