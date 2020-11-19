@@ -20,6 +20,10 @@ where \(y_t\) is the measured BOLD signal on a given voxel. This equation can be
 
 Functional MRI data analyses are often directed to disentangling and understanding the neural processes that occur among brain regions. However, interactions in the brain are expressed, not at the level of hemodynamic responses, but at the neural level. Thus, an intermediate step that estimates the underlying neuronal activity is necessary for such analyses. Given the nature of the fMRI BOLD signal, the appropriate approximation of the neuronal activity can be obtained by means of deconvolution with an assumed hemodynamic response~\cite{gitelman2003modeling}. Hence, the maximum likelihood estimate of the hemodynamic response to the underlying neural activity can be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{Hs}\)) and measured (\(\mathbf{y}\)) signals. Yet, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity of the design matrix \(\mathbf{H}\).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paradigm Free Mapping
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Paradigm Free Mapping}
 
 Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularization problem~\cite{gaudes2011detection,gaudes2013paradigm,urunuela2020stability}:
@@ -36,13 +40,18 @@ Assuming that single-trial BOLD responses are the result of brief bursts of neur
 \end{equation}
 where \(\lambda\) regulates how sparse the optimal solution is.
 
-Such formulation provides flexibility to expand the capabilities of PFM. For instance, incorporating the integration operator \(\mathbf{L}\) into the design matrix \(\mathbf{H}\) allows the recovery of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem:
+Such formulation provides flexibility to expand the capabilities of PFM. For instance, incorporating the integration operator \(\mathbf{L}\) into the design matrix \(\mathbf{H}\) allows the recovery of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem~\cite{urunuela2020stability,cherkaoui2019sparsity}:
 \begin{equation}
     \label{eq:pfm_block}
     \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_F^2 + \lambda \| \mathbf{u} \|_1
 \end{equation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Total Activation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Total Activation}
+
 Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{khalidov2011activelets,karahanouglu2013total}:
 \begin{equation}
     L_h\{x\}(t) = s(t)
@@ -51,7 +60,11 @@ where \(x\) is the neuronal-related signal; i.e., the activity inducing signal \
 \begin{equation}
     L_h\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1}
 \end{equation}
-where \(D\) is the derivative operator, \(\alpha_i (i=1, \hdots, M_1)\) define the zeros of the filter, \(\gamma_j (j=1, \hdots, M_2)\) represent the poles, \(I\) is the identity matrix and \(M_1 > M_2\).
+where \(D\) is the derivative operator, \(\alpha_i (i=1, \hdots, M_1)\) define the zeros of the filter, \(\gamma_j (j=1, \hdots, M_2)\) represent the poles, \(I\) is the identity matrix and \(M_1 > M_2\). Given the relationship between the activity-inducing and the innovation signal, the latter can be recovered as:
+\begin{equation}
+    L\{x\}(t) = D\{s\}(t) = u(t)
+\end{equation}
+where \(L = DL_h\) and \(D\) is the derivative.
 
 Therefore, for a given voxel, the neuronal-related signal could be estimated by solving the following regularized least-squares problem:
 \begin{equation}
@@ -62,5 +75,3 @@ where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the fol
     \mathcal{R}(\mathbf{x}) = \lambda \sum_{t=1}^N \| \Delta_L \{\mathbf{x}\} \|
 \end{equation}
 where \(\lambda\) is the regularization parameter.
-
-\hl{Add how to obtain s and u with TA.}
