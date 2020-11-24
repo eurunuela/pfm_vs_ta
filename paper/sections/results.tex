@@ -15,6 +15,22 @@
     \end{itemize}
 \end{itemize}
 
+\subsection{Data}
+
+\subsubsection{Simulated data}
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=\columnwidth]{figures/sim.pdf}
+    \end{center}
+    \caption{Simulated signal with different SNRs (20dB, 10dB and 3dB).}
+\label{fig:simulations}
+\end{figure}
+
+\subsubsection{Experimental data}
+
+\subsection{Selection of the hemodynamic response function}
+
 With the aim of making a fair comparison of the two methods, we first compared their hemodynamic response functions. Figure~\ref{fig:hrf_diff} shows the difference in the hemodynamic response function that PFM and TA use by default; the SPMG1 and the HRF resulting from the linear differential operator respectively. A clear difference is observable in that the PFM hemodynamic response function begins at zero while the TA HRF starts at 1. Hence, the Total Activation HRF starts close to its peak, which is advanced around 2.5 frames with respect to PFM. Another difference worth mentioning is that PFM normalizes its HRF to a peak amplitude of 1, whereas the TA HRF is not normalized.
 
 \begin{figure}[h]
@@ -27,12 +43,21 @@ While Paradigm Free Mapping allows for the use of any hemodynamic response funct
 
 \subsection{Selection of the regularization parameter based on the estimation of the noise}
 
-\subsubsection{Simulated data}
-
-\subsubsection{Experimental data}
-
 \subsection{Selection of the regularization parameter by solving the regularization path}
 
-\subsubsection{Simulated data}
+\begin{figure*}[t!]
+    \begin{center}
+        \includegraphics[]{figures/regpath_spike.pdf}
+    \end{center}
+    \caption{Regularization path with the spike model.}
+\label{fig:path_spike}
+\end{figure*}
 
-\subsubsection{Experimental data}
+\begin{figure*}[t!]
+    \begin{center}
+        \includegraphics[]{figures/regpath_block.pdf}
+    \end{center}
+    \caption{Regularization path with the block model.}
+\label{fig:path_block}
+\end{figure*}
+
