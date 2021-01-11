@@ -37,3 +37,5 @@
 %     \end{tabularx}
 %     \caption{Pros and cons of Paradigm Free Mapping and Total Activation.}
 % \end{table}
+
+Paradigm Free Mapping and Total Activation yield practically identical performance when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance are due to usage options. Future work should focus on investigating the appropriate formulation depending on data acquisition (e.g. single-echo vs multi-echo), accounting for HRF variability, robust methods to select the regularization parameter, and other potential \(\ell_{p,q}\)-norm regularization terms (e.g. \(p < 1\)) or debiasing approaches.
