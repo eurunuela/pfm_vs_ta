@@ -1,5 +1,9 @@
 \section{Discussion}
 
+% New command for table
+\newcommand\pro{\item[$+$]}
+\newcommand\con{\item[$-$]}
+
 \begin{itemize}
     \item Pros and cons of each formulation: analysis vs synthesis
     \item Link with other approaches
@@ -13,29 +17,22 @@
     \end{itemize}
 \end{itemize}
 
-% \begin{table}
-%     \begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
-%     \toprule
-%     \hfil\bfseries Pros
-%     &
-%     \hfil\bfseries Cons
-%     \\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
-    
-%     %% PROS, seperated by empty line or \par
-%     It's nice\par
-%     \lipsum[1]
-%     It's very nice\par
-    
-%     &
-    
-%     %% CONS, seperated by empty line or \par
-%     It's ugly\par
-%     It's really ugly\par
-%     \lipsum[4]
-    
-%     \\\bottomrule
-%     \end{tabularx}
-%     \caption{Pros and cons of Paradigm Free Mapping and Total Activation.}
-% \end{table}
+\begin{table}
+    \centering
+    \begin{tabular}{ m{4cm} m{4cm} }
+        Synthesis (PFM) & Analysis (TA)\\
+        \toprule
+        \begin{itemize}
+            \pro 
+        \end{itemize} &
+        \begin{itemize}
+            \pro Both the spike and block models solve the regularization problem with the same HRF.
+            \con 
+        \end{itemize} \\
+    \end{tabular}
+    \caption{Pros and cons of Paradigm Free Mapping and Total Activation.}
+\end{table}
 
-Paradigm Free Mapping and Total Activation yield practically identical performance when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance are due to usage options. Future work should focus on investigating the appropriate formulation depending on data acquisition (e.g. single-echo vs multi-echo), accounting for HRF variability, robust methods to select the regularization parameter, and other potential \(\ell_{p,q}\)-norm regularization terms (e.g. \(p < 1\)) or debiasing approaches.
+This work demonstrates that Paradigm Free Mapping and Total Activation yield practically identical results when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance must be due to differences in usage options. With the equivalence in the temporal deconvolution demonstrated, it can be assumed that additional regularization terms in the spatial or temporal domains would not modify this equivalence when convex operators are employed; e.g.\ when the regularization problem can be solved by means of the Fast Iterative Shrinkage-Thresholding Algorithm (FISTA)~\cite{beck2009FastIterativeShrinkagethresholding} or the Generalized Forward-Backward Splitting~\cite{raguet2013GeneralizedForwardBackwardSplittinga} techniques.
+
+Future work should focus on investigating the appropriate formulation depending on data acquisition (e.g.\ single-echo vs multi-echo), accounting for HRF variability, robust methods to select the regularization parameter, and other potential \(\ell_{p,q}\)-norm regularization terms (e.g. \(p < 1\)) or debiasing approaches.
