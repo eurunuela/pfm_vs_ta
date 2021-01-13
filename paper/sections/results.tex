@@ -1,19 +1,19 @@
 \section{Results}
 
-\begin{itemize}
-    \item Methods on how we're doing simulations and results (with simulations and experimental data)
-    \begin{itemize}
-        \item Different SNRs and maybe even use CAPs
-        \item Selection of HRF explained if both use the same but it's different from what's used for simulating.
-        \begin{itemize}
-            \item What happens? For example with gamma for simulating.
-        \end{itemize}
-        \item Selection of regularization parameter
-        \begin{itemize}
-            \item Present with real data on a voxel
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
+% \begin{itemize}
+%     \item Methods on how we're doing simulations and results (with simulations and experimental data)
+%     \begin{itemize}
+%         \item Different SNRs and maybe even use CAPs
+%         \item Selection of HRF explained if both use the same but it's different from what's used for simulating.
+%         \begin{itemize}
+%             \item What happens? For example with gamma for simulating.
+%         \end{itemize}
+%         \item Selection of regularization parameter
+%         \begin{itemize}
+%             \item Present with real data on a voxel
+%         \end{itemize}
+%     \end{itemize}
+% \end{itemize}
 
 A critical decision with deconvolution methods is the selection of the regularization parameter \(\lambda\), for which many techniques have been proposed in the literature but an optimal is yet to be discovered. In fact, Paradigm Free Mapping and Total Activation base their selection of the regularization parameter on different criteria: the Bayesian Information Criterion (BIC)~\cite{schwarz1978estimating} and Akaike Information Criterion (AIC)~\cite{akaike1998information}, and a selection based on the convergence of the residuals to a pre-estimated level of the noise respectively. Hence, we compare the performance of the two algorithms with both selection criteria. Furthermore, we explore the differences between the techniques in terms of the estimation of the activity-inducing signal \(\mathbf{s}\) using the \textit{spike model} in~\eqref{eq:pfm_spike} and the innovation signal \(\mathbf{u}\) using the \textit{block model} in~\eqref{eq:pfm_block}.
 

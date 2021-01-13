@@ -1,27 +1,25 @@
 \section{Introduction}
 
-\begin{itemize}
+% \begin{itemize}
 
-    \item Talk about our motivation for this paper.
+%     \item Talk about our motivation for this paper.
 
-    \item We could mention iCAPs Neuron, and papers with applications like PFM, TA, clinical patient papers with iCAPs.
+%     \item We could mention iCAPs Neuron, and papers with applications like PFM, TA, clinical patient papers with iCAPs.
 
-    \item Apart from [[Richard F. Betzel]]'s work~\cite{betzel2020temporal,esfahlani2020high,faskowitz2020edge}, we could mention the connection with the
-    [[Multiplication of Temporal Derivatives]] method~\cite{shine2015estimation,shine2016dynamics}.
+%     \item Apart from [[Richard F. Betzel]]'s work~\cite{betzel2020temporal,esfahlani2020high,faskowitz2020edge}, we could mention the connection with the
+%     [[Multiplication of Temporal Derivatives]] method~\cite{shine2015estimation,shine2016dynamics}.
 
-    \begin{itemize}
-        \item These are basically calculating the derivative, which is the same as applying a high-pass filter and calculating the correlation.
-    \end{itemize}
+%     \begin{itemize}
+%         \item These are basically calculating the derivative, which is the same as applying a high-pass filter and calculating the correlation.
+%     \end{itemize}
 
-\end{itemize}
+% \end{itemize}
 
 % Footnote example
 % \fntext[myfootnote]{Since 1880.}
 
-Functional magnetic resonance imaging (fMRI) data analyses are often directed to disentangling and understanding the neural processes that occur among brain regions. However, interactions in the brain are expressed, not at the level of hemodynamic responses, but at the neural level. Thus, an intermediate step that estimates the underlying neuronal activity is necessary for such analyses. Given the nature of the fMRI blood oxygenation level-dependent (BOLD) signal, the appropriate approximation of the neuronal activity can be obtained by means of deconvolution with an assumed hemodynamic response~\cite{gitelman2003ModelingRegionalPsychophysiologic}. Simply put, deconvolution methods are capable of blindly estimating neuronal activity with no prior information of the timing of the BOLD events.
+Functional magnetic resonance imaging (fMRI) data analyses are often directed to disentangling and understanding the neural processes that occur among brain regions. However, interactions in the brain are expressed, not at the level of hemodynamic responses, but at the neural level. Thus, an intermediate step that estimates the underlying neuronal activity is necessary for such analyses. Given the nature of the fMRI blood oxygenation level-dependent (BOLD) signal, the appropriate approximation of the neuronal activity can be obtained by means of deconvolution with an assumed hemodynamic response~\cite{gitelman2003ModelingRegionalPsychophysiologic}. Simply put, deconvolution methods are capable of blindly estimating neuronal activity with no prior information on the timing of the BOLD events.
 
-which makes them especially attractive for exploring time-varying activity of resting-state fluctuations~\cite{petridou2013periods,karahanouglu2015transient,karahanouglu2017dynamics,kinany2020dynamic,gonzalez2019imaging}, naturalistic paradigms~\cite{betzel2020temporal}, or clinical conditions such as the study of interictal events in epilepsy.
+Deconvolution and methods alike are gaining popularity for exploring time-varying activity in fMRI data within a number of neuroimaging studies, especially when the information about the timing of the BOLD events is unknown, inaccurate, or insufficient. One such cases is the study of resting-state fluctuations~\cite{petridou2013periods,karahanouglu2015transient,karahanouglu2017dynamics,kinany2020dynamic,gonzalez2019imaging}, naturalistic paradigms~\cite{betzel2020temporal}, or clinical conditions such as the study of interictal events in epilepsy.
 
-Paradigm Free Mapping (PFM)~\cite{gaudes2013paradigm} --- which is available as \textit{3dPFM} in AFNI --- and Total Activation (TA)~\cite{karahanouglu2013total} are two of such deconvolution algorithms.
-
-This note comprises three sections. In the first, we present the theory behind the Paradigm Free Mapping and Total Activation deconvolution algorithms. We then assess their performance using the same hemodynamic response function with different criteria for the selection of the regularization parameter: a) a selection based on the Bayesian (BIC)~\cite{schwarz1978estimating} and Akaike Information Criterion (AIC)~\cite{akaike1998information}, and b) a selection based on the estimated median absolute deviation (MAD) of the noise in the data. We report that both methods produce identical results when estimating the underlying activity-inducing and innovation signals in different signal-to-noise ratio (SNR) settings. In the final section, we discuss the pros and cons of each of the described techniques and conclude with future steps.
+This note comprises three sections. In the first, we present the theory behind two state-of-the-art deconvolution approaches based on L1-norm regularized estimators: Paradigm Free Mapping (PFM)~\cite{gaudes2013paradigm} --- which is available as \textit{3dPFM} and \textit{3dMEPFM} in AFNI --- and Total Activation (TA)~\cite{karahanouglu2013total}. We then assess their performance using the same hemodynamic response function with different criteria for the selection of the regularization parameter: a) a selection based on the Bayesian (BIC)~\cite{schwarz1978estimating} and Akaike Information Criterion (AIC)~\cite{akaike1998information}, and b) a selection based on the estimated median absolute deviation (MAD) of the noise in the data. We report that both methods produce identical results when estimating the underlying activity-inducing and innovation signals in different signal-to-noise ratio (SNR) settings. In the final section, we discuss the pros and cons of each of the described techniques and conclude with future steps.
