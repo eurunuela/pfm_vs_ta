@@ -42,13 +42,13 @@ Furthermore, we compared the two techniques on a finger-tapping task where the g
 
 \subsection{Selection of the hemodynamic response function}
 
+With the aim of making a fair comparison of the two methods, we first compared their hemodynamic response functions. Figure~\ref{fig:hrf_diff}A shows the difference in the hemodynamic response function that PFM and TA use by default for TR = 0.1 s and TR = 1 s adjusted to a peak amplitude of one; i.e. the SPMG1 and the HRF resulting from the linear differential operator. The most observable difference between the two HRF is the time to peak: the HRF used by Total Activation does not begin at zero while the one used by PFM does.
+
 \begin{figure}[h]
     \includegraphics[width=\columnwidth]{figures/pfm_ta_hrf.pdf}
     \caption{A) Canonical HRF models typically used by PFM (green) and TA (black) at TR = 0.1 s (dashed lines) and TR = 1 s (solid lines). Without loss of generality, the waveforms are scaled to unit amplitude for visualization. B) Representation of three shifted HRFs at TR=1 s (onsets=0, 1, and 15 s) that build the design matrix for PFM when the HRF model has been matched to that in TA.}
 \label{fig:hrf_diff}
 \end{figure}
-
-With the aim of making a fair comparison of the two methods, we first compared their hemodynamic response functions. Figure~\ref{fig:hrf_diff}A shows the difference in the hemodynamic response function that PFM and TA use by default for TR = 0.1 s and TR = 1 s adjusted to a peak amplitude of one; i.e. the SPMG1 and the HRF resulting from the linear differential operator. The most observable difference between the two HRF is the time to peak: the HRF used by Total Activation does not begin at zero while the one used by PFM does.
 
 While Paradigm Free Mapping allows for the use of any hemodynamic response function --- the columns of the design matrix \(\mathbf{H}\) are composed by shifted versions of the HRF--- the linear differential operator in TA is tailored for a fixed HRF. Hence, for practical reasons, we reproduced the HRF in the Total Activation filter and incorporated it into the PFM formulation (Figure~\ref{fig:hrf_diff}B).
 
