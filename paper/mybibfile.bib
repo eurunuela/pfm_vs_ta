@@ -28,14 +28,16 @@ Papers that talk about deconvolution:
   publisher={Elsevier}
 }
 
-@article{karahanouglu2013total,
-  title={Total activation: fMRI deconvolution through spatio-temporal regularization},
-  author={Karahano{\u{g}}lu, Fikret I{\c{s}}{\i}k and Caballero-Gaudes, C{\'e}sar and Lazeyras, Fran{\c{c}}ois and Van De Ville, Dimitri},
-  journal={Neuroimage},
-  volume={73},
-  pages={121--134},
-  year={2013},
-  publisher={Elsevier}
+@article{karahanoglu2013TotalActivationFMRI,
+  title = {Total Activation: {{FMRI}} Deconvolution through Spatio-Temporal Regularization},
+  author = {Karahano{\v g}lu, Fikret I{\c s}ik and {Caballero-Gaudes}, C{\'e}sar and Lazeyras, Fran{\c c}ois and Van De Ville, Dimitri},
+  year = {2013},
+  issn = {1095-9572 (Electronic)\textbackslash n1053-8119 (Linking)},
+  doi = {10.1016/j.neuroimage.2013.01.067},
+  abstract = {Confirmatory approaches to fMRI data analysis look for evidence for the presence of pre-defined regressors modeling contributions to the voxel time series, including the BOLD response following neuronal activation. As more complicated questions arise about brain function, such as spontaneous and resting-state activity, new methodologies are required. We propose total activation (TA) as a novel fMRI data analysis method to explore the underlying activity-inducing signal of the BOLD signal without any timing information that is based on sparse spatio-temporal priors and characterization of the hemodynamic system. Within a variational framework, we formulate a convex cost function-including spatial and temporal regularization terms-that is solved by fast iterative shrinkage algorithms. The temporal regularization expresses that the activity-inducing signal is block-type without restrictions on the timing nor duration. The spatial regularization favors coherent activation patterns in anatomically-defined brain regions. TA is evaluated using a software phantom and an event-related fMRI experiment with prolonged resting state periods disturbed by visual stimuli. The results illustrate that both block-type and spike-type activities can be recovered successfully without prior knowledge of the experimental paradigm. Further processing using hierarchical clustering shows that the activity-inducing signals revealed by TA contain information about meaningful task-related and resting-state networks, demonstrating good abilities for the study of non-stationary dynamics of brain activity. \textcopyright{} 2013 Elsevier Inc.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Karahanoǧlu et al/Karahanoǧlu et al. - 2013 - Total activation FMRI deconvolution through spati.pdf},
+  journal = {NeuroImage},
+  keywords = {BOLD,Deconvolution,FMRI,Paradigm-free mapping,Resting state,Sparsity,Spatio-temporal regularization,Total variation}
 }
 
 @article{hernandez2011neuronal,
@@ -49,44 +51,58 @@ Papers that talk about deconvolution:
   publisher={Elsevier}
 }
 
-@article{gaudes2011detection,
-  title={Detection and characterization of single-trial fMRI bold responses: Paradigm free mapping},
-  author={Gaudes, Cesar Caballero and Petridou, Natalia and Dryden, Ian L and Bai, Li and Francis, Susan T and Gowland, Penny A},
-  journal={Human brain mapping},
-  volume={32},
-  number={9},
-  pages={1400--1418},
-  year={2011},
-  publisher={Wiley Online Library}
+@article{gaudes2011DetectionCharacterizationSingletrial,
+  title = {Detection and Characterization of Single-Trial {{fMRI}} Bold Responses: {{Paradigm}} Free Mapping},
+  author = {Gaudes, C{\'e}sar Caballero and Petridou, Natalia and Dryden, Ian L. and Bai, Li and Francis, Susan T. and Gowland, Penny A.},
+  year = {2011},
+  issn = {1065-9471},
+  doi = {10.1002/hbm.21116},
+  abstract = {This work presents a novel method of mapping the brain's response to single stimuli in space and time without prior knowledge of the paradigm timing: paradigm free mapping (PFM). This method is based on deconvolution of the hemodynamic response from the voxel time series assuming a linear response and using a ridge-regression algorithm. Statistical inference is performed by defining a spatio-temporal t-statistic and by controlling for multiple comparisons using the false discovery rate procedure. The methodology was validated on five subjects who performed self-paced and visually cued finger tapping at 7 Tesla, with moderate (TR = 2 s) and high (TR = 0.4 s) temporal resolution. The results demonstrate that detection of single-trial BOLD events is feasible without a priori information on the stimulus paradigm. The proposed method opens up the possibility of designing temporally unconstrained paradigms to study the cortical response to unpredictable mental events. Hum Brain Mapp, 2010. \textcopyright{} 2010 Wiley-Liss, Inc.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Gaudes et al/Gaudes et al. - 2011 - Detection and characterization of single-trial fMR.pdf},
+  journal = {Human Brain Mapping},
+  keywords = {Brain mapping,Deconvolution,Event-related,Motor cortex,MRI,Single-trial analysis}
 }
 
-@article{gaudes2013paradigm,
-  title={Paradigm free mapping with sparse regression automatically detects single-trial functional magnetic resonance imaging blood oxygenation level dependent responses},
-  author={Gaudes, Cesar Caballero and Petridou, Natalia and Francis, Susan T and Dryden, Ian L and Gowland, Penny A},
-  journal={Human brain mapping},
-  volume={34},
-  number={3},
-  pages={501--518},
-  year={2013},
-  publisher={Wiley-Blackwell}
+@article{caballerogaudes2013ParadigmFreeMapping,
+  title = {Paradigm Free Mapping with Sparse Regression Automatically Detects Single-Trial Functional Magnetic Resonance Imaging Blood Oxygenation Level Dependent Responses},
+  author = {Caballero Gaudes, C{\'e}sar and Petridou, Natalia and Francis, Susan T. and Dryden, Ian L. and Gowland, Penny A.},
+  year = {2013},
+  issn = {1097-0193 (Electronic)\textbackslash r1065-9471 (Linking)},
+  doi = {10.1002/hbm.21452},
+  abstract = {The ability to detect single trial responses in functional magnetic resonance imaging (fMRI) studies is essential, particularly if investigating learning or adaptation processes or unpredictable events. We recently introduced paradigm free mapping (PFM), an analysis method that detects single trial blood oxygenation level dependent (BOLD) responses without specifying prior information on the timing of the events. PFM is based on the deconvolution of the fMRI signal using a linear hemodynamic convolution model. Our previous PFM method (Caballero-Gaudes et al., 2011: Hum Brain Mapp) used the ridge regression estimator for signal deconvolution and required a baseline signal period for statistical inference. In this work, we investigate the application of sparse regression techniques in PFM. In particular, a novel PFM approach is developed using the Dantzig selector estimator, solved via an efficient homotopy procedure, along with statistical model selection criteria. Simulation results demonstrated that, using the Bayesian information criterion to select the regularization parameter, this method obtains high detection rates of the BOLD responses, comparable with a model-based analysis, but requiring no information on the timing of the events and being robust against hemodynamic response function variability. The practical operation of this sparse PFM method was assessed with single-trial fMRI data acquired at 7T, where it automatically detected all task-related events, and was an improvement on our previous PFM method, as it does not require the definition of a baseline state and amplitude thresholding and does not compromise on specificity and sensitivity.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Caballero Gaudes et al/Caballero Gaudes et al. - 2013 - Paradigm free mapping with sparse regression autom.pdf},
+  journal = {Human Brain Mapping},
+  keywords = {Brain mapping,FMRI,Paradigm free mapping,Single-trial analysis,Sparse regression}
 }
 
-@inproceedings{cherkaoui2019sparsity,
-  title={Sparsity-based blind deconvolution of neural activation signal in fMRI},
-  author={Cherkaoui, Hamza and Moreau, Thomas and Halimi, Abderrahim and Ciuciu, Philippe},
-  booktitle={ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  pages={1323--1327},
-  year={2019},
-  organization={IEEE}
+@inproceedings{cherkaoui2019SparsitybasedBlindDeconvolution,
+  ids = {cherkaouiSparsitybasedBlindDeconvolution2019},
+  title = {Sparsity-Based {{Blind Deconvolution}} of {{Neural Activation Signal}} in {{FMRI}}},
+  booktitle = {{{ICASSP}} 2019 - 2019 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal Processing}} ({{ICASSP}})},
+  author = {Cherkaoui, H. and Moreau, T. and Halimi, A. and Ciuciu, P.},
+  year = {2019},
+  month = may,
+  pages = {1323--1327},
+  issn = {2379-190X},
+  doi = {10.1109/ICASSP.2019.8683358},
+  abstract = {The estimation of the hemodynamic response function (HRF) in functional magnetic resonance imaging (fMRI) is critical to deconvolve a time-resolved neural activity and get insights on the underlying cognitive processes. Existing methods propose to estimate the HRF using the experimental paradigm (EP) in task fMRI as a surrogate of neural activity. These approaches induce a bias as they do not account for latencies in the cognitive responses compared to EP and cannot be applied to resting-state data as no EP is available. In this work, we formulate the joint estimation of the HRF and neural activation signal as a semi blind deconvolution problem. Its solution can be approximated using an efficient alternate minimization algorithm. The proposed approach is applied to task fMRI data for validation purpose and compared to a state-of-the-art HRF estimation technique. Numerical experiments suggest that our approach is competitive with others while not requiring EP information.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Cherkaoui et al/Cherkaoui et al. - 2019 - Sparsity-based Blind Deconvolution of Neural Activ.pdf;/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Cherkaoui et al/Cherkaoui et al. - 2019 - Sparsity-based Blind Deconvolution of Neural Activ2.pdf;/Users/enekourunuela/Zotero/storage/ISRV5L5S/8683358.html},
+  keywords = {biomedical MRI,BOLD signal,brain,cognition,cognitive responses,deconvolution,EP information,fMRI,functional magnetic resonance imaging,haemodynamics,hemodynamic response function,Hemodynamic response function (HRF),HRF estimation technique,joint estimation,medical image processing,neural activation signal,neurophysiology,non-convex optimization,resting-state data,semiblind deconvolution problem,sparsity-based blind deconvolution,time-resolved neural activity}
 }
 
-@inproceedings{urunuela2020stability,
-  title={Stability-Based Sparse Paradigm Free Mapping Algorithm for Deconvolution of Functional MRI Data},
-  author={Uru{\~n}uela, Eneko and Jones, Stephen and Crawford, Anna and Shin, Wanyong and Oh, Sehong and Lowe, Mark and Caballero-Gaudes, C{\'e}sar},
-  booktitle={2020 42nd Annual International Conference of the IEEE Engineering in Medicine \& Biology Society (EMBC)},
-  pages={1092--1095},
-  year={2020},
-  organization={IEEE}
+@article{urunuela2020StabilityBasedSparseParadigm,
+  title = {Stability-{{Based Sparse Paradigm Free Mapping Algorithm}} for {{Deconvolution}} of {{Functional MRI Data}}},
+  author = {Uruñuela, Eneko and Jones, Stephen and Crawford, Anna and Shin, Wanyong and Oh, Sehong and Lowe, Mark and {Caballero-Gaudes}, Cesar},
+  year = {2020},
+  volume = {2020-July},
+  pages = {1092--1095},
+  issn = {9781728119908},
+  doi = {10.1109/EMBC44109.2020.9176137},
+  abstract = {Neuronal-related activity can be estimated from functional magnetic resonance imaging (fMRI) data with no knowledge of the timings of blood oxygenation level-dependent (BOLD) events by means of deconvolution with regularized least-squares. This work proposes two improvements on the deconvolution algorithm of sparse paradigm free mapping (SPFM): a new formulation that enables the estimation of neuronal events with long, sustained activity; and the implementation of a subsampling approach based on stability selection that avoids the choice of any regularization parameter. The proposed method is evaluated on real fMRI data and compared with both the original SPFM algorithm and conventional analysis with a general linear model (GLM) that is aware of the temporal model of the neuronal-related activity. We demonstrate that the novel stability-based SPFM algorithm yields activation maps with higher resemblance to the maps obtained with GLM analyses and offers improved detection of neuronal-related events over SPFM, particularly in scenarios with low contrast-to-noise ratio.},
+  copyright = {All rights reserved},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/9781728119908203100_2020_ieee1092.pdf},
+  journal = {Proceedings of the Annual International Conference of the IEEE Engineering in Medicine and Biology Society, EMBS},
+  keywords = {deconvolution,functional MRI,paradigm free mapping,stability selection}
 }
 
 @article{caballero2019deconvolution,
@@ -165,23 +181,36 @@ Papers that talk about the post processing step:
   publisher={Cold Spring Harbor Laboratory}
 }
 
-@article{betzel2020temporal,
-  title={Temporal fluctuations in the brain's modular architecture during movie-watching},
-  author={Betzel, Richard F and Byrge, Lisa and Esfahlani, Farnaz Zamani and Kennedy, Daniel P},
-  journal={NeuroImage},
-  pages={116687},
-  year={2020},
-  publisher={Elsevier}
+@article{betzel2020TemporalFluctuationsBrain,
+  title = {Temporal Fluctuations in the Brain's Modular Architecture during Movie-Watching},
+  author = {Betzel, Richard F. and Byrge, Lisa and Esfahlani, Farnaz Zamani and Kennedy, Daniel P.},
+  year = {2020},
+  month = jun,
+  volume = {213},
+  pages = {116687},
+  issn = {1053-8119},
+  doi = {10.1016/j.neuroimage.2020.116687},
+  abstract = {Brain networks are flexible and reconfigure over time to support ongoing cognitive processes. However, tracking statistically meaningful reconfigurations across time has proven difficult. This has to do largely with issues related to sampling variability, making instantaneous estimation of network organization difficult, along with increased reliance on task-free (cognitively unconstrained) experimental paradigms, limiting the ability to interpret the origin of changes in network structure over time. Here, we address these challenges using time-varying network analysis in conjunction with a naturalistic viewing paradigm. Specifically, we developed a measure of inter-subject network similarity and used this measure as a coincidence filter to identify synchronous fluctuations in network organization across individuals. Applied to movie-watching data, we found that periods of high inter-subject similarity coincided with reductions in network modularity and increased connectivity between cognitive systems. In contrast, low inter-subject similarity was associated with increased system segregation and more rest-like architectures. We then used a data-driven approach to uncover clusters of functional connections that follow similar trajectories over time and are more strongly correlated during movie-watching than at rest. Finally, we show that synchronous fluctuations in network architecture over time can be linked to a subset of features in the movie. Our findings link dynamic fluctuations in network integration and segregation to patterns of inter-subject similarity, and suggest that moment-to-moment fluctuations in functional connectivity reflect shared cognitive processing across individuals.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Betzel et al/Betzel et al. - 2020 - Temporal fluctuations in the brain’s modular archi.pdf;/Users/enekourunuela/Zotero/storage/3GCVJNMT/S1053811920301749.html},
+  journal = {NeuroImage},
+  language = {en}
 }
 
-@article{gonzalez2019imaging,
-  title={Imaging the spontaneous flow of thought: Distinct periods of cognition contribute to dynamic functional connectivity during rest},
-  author={Gonzalez-Castillo, Javier and Caballero-Gaudes, C{\'e}sar and Topolski, Natasha and Handwerker, Daniel A and Pereira, Francisco and Bandettini, Peter A},
-  journal={NeuroImage},
-  volume={202},
-  pages={116129},
-  year={2019},
-  publisher={Elsevier}
+@article{gonzalez-castillo2019ImagingSpontaneousFlow,
+  ids = {gonzalez-castilloImagingSpontaneousFlow2019},
+  title = {Imaging the Spontaneous Flow of Thought: {{Distinct}} Periods of Cognition Contribute to Dynamic Functional Connectivity during Rest},
+  shorttitle = {Imaging the Spontaneous Flow of Thought},
+  author = {{Gonzalez-Castillo}, Javier and {Caballero-Gaudes}, C{\'e}sar and Topolski, Natasha and Handwerker, Daniel A. and Pereira, Francisco and Bandettini, Peter A.},
+  year = {2019},
+  month = nov,
+  volume = {202},
+  pages = {116129},
+  issn = {1053-8119},
+  doi = {10.1016/j.neuroimage.2019.116129},
+  abstract = {Brain functional connectivity (FC) changes have been measured across seconds using fMRI. This is true for both rest and task scenarios. Moreover, it is well accepted that task engagement alters FC, and that dynamic estimates of FC during and before task events can help predict their nature and performance. Yet, when it comes to dynamic FC (dFC) during rest, there is no consensus about its origin or significance. Some argue that rest dFC reflects fluctuations in on-going cognition, or is a manifestation of intrinsic brain maintenance mechanisms, which could have predictive clinical value. Conversely, others have concluded that rest dFC is mostly the result of sampling variability, head motion or fluctuating sleep states. Here, we present novel analyses suggesting that rest dFC is influenced by short periods of spontaneous cognitive-task-like processes, and that the cognitive nature of such mental processes can be inferred blindly from the data. As such, several different behaviorally relevant whole-brain FC configurations may occur during a single rest scan even when subjects were continuously awake and displayed minimal motion. In addition, using low dimensional embeddings as visualization aids, we show how FC states\textemdash commonly used to summarize and interpret resting dFC\textemdash can accurately and robustly reveal periods of externally imposed tasks; however, they may be less effective in capturing periods of distinct cognition during rest.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Gonzalez-Castillo et al/Gonzalez-Castillo et al. - 2019 - Imaging the spontaneous flow of thought Distinct .pdf;/Users/enekourunuela/Zotero/storage/4Y653UV5/S1053811919307207.html;/Users/enekourunuela/Zotero/storage/UXWNW4EQ/S1053811919307207.html},
+  journal = {NeuroImage},
+  language = {en}
 }
 
 @techreport{faskowitz2021EdgecentricModelHarmonizing,
@@ -201,33 +230,57 @@ Papers that talk about the post processing step:
 iCAPs
 ###########################################################################
 
-@article{kinany2020dynamic,
-  title={Dynamic functional connectivity of resting-state spinal cord fMRI reveals fine-grained intrinsic architecture},
-  author={Kinany, Nawal and Pirondini, Elvira and Micera, Silvestro and Van De Ville, Dimitri},
-  journal={Neuron},
-  year={2020},
-  publisher={Elsevier}
+@article{kinany2020DynamicFunctionalConnectivity,
+  title = {Dynamic {{Functional Connectivity}} of {{Resting}}-{{State Spinal Cord fMRI Reveals Fine}}-{{Grained Intrinsic Architecture}}},
+  author = {Kinany, Nawal and Pirondini, Elvira and Micera, Silvestro and Van De Ville, Dimitri},
+  year = {2020},
+  month = nov,
+  volume = {108},
+  pages = {424-435.e4},
+  issn = {0896-6273},
+  doi = {10.1016/j.neuron.2020.07.024},
+  abstract = {The neuroimaging community has shown tremendous interest in exploring the brain's spontaneous activity using functional magnetic resonance imaging (fMRI). On the contrary, the spinal cord has been largely overlooked despite its pivotal role in processing sensorimotor signals. Only a handful of studies have probed the organization of spinal resting-state fluctuations, always using static measures of connectivity. Many innovative approaches have emerged for analyzing dynamics of brain fMRI, but they have not yet been applied to the spinal cord, although they could help disentangle its functional architecture. Here, we leverage a dynamic connectivity method based on the clustering of hemodynamic-informed transients to unravel the rich dynamic organization of spinal resting-state signals. We test this approach in 19 healthy subjects, uncovering fine-grained spinal components and highlighting their neuroanatomical and physiological nature. We provide a versatile tool, the spinal innovation-driven co-activation patterns (SpiCiCAP) framework, to characterize spinal circuits during rest and task, as well as their disruption in neurological disorders.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Kinany et al/Kinany et al. - 2020 - Dynamic Functional Connectivity of Resting-State S.pdf;/Users/enekourunuela/Zotero/storage/BJRZG3ZG/S0896627320305687.html},
+  journal = {Neuron},
+  keywords = {dynamic functional connectivity,fMRI,networks,resting-state,spinal cord},
+  language = {en},
+  number = {3}
 }
 
-@article{karahanouglu2015transient,
-  title={Transient brain activity disentangles fMRI resting-state dynamics in terms of spatially and temporally overlapping networks},
-  author={Karahano{\u{g}}lu, Fikret I{\c{s}}ik and Van De Ville, Dimitri},
-  journal={Nature communications},
-  volume={6},
-  number={1},
-  pages={1--10},
-  year={2015},
-  publisher={Nature Publishing Group}
+@article{karahanoglu2015TransientBrainActivity,
+  title = {Transient Brain Activity Disentangles {{fMRI}} Resting-State Dynamics in Terms of Spatially and Temporally Overlapping Networks},
+  author = {Karahano{\u g}lu, Fikret I{\c s}ik and Van De Ville, Dimitri},
+  year = {2015},
+  month = jul,
+  volume = {6},
+  pages = {7751},
+  publisher = {{Nature Publishing Group}},
+  issn = {2041-1723},
+  doi = {10.1038/ncomms8751},
+  abstract = {Dynamics of resting-state functional magnetic resonance imaging (fMRI) provide a new window onto the organizational principles of brain function. Using state-of-the-art signal processing techniques, we extract innovation-driven co-activation patterns (iCAPs) from resting-state fMRI. The iCAPs' maps are spatially overlapping and their sustained-activity signals temporally overlapping. Decomposing resting-state fMRI using iCAPs reveals the rich spatiotemporal structure of functional components that dynamically assemble known resting-state networks. The temporal overlap between iCAPs is substantial; typically, three to four iCAPs occur simultaneously in combinations that are consistent with their behaviour profiles. In contrast to conventional connectivity analysis, which suggests a negative correlation between fluctuations in the default-mode network (DMN) and task-positive networks, we instead find evidence for two DMN-related iCAPs consisting the posterior cingulate cortex that differentially interact with the attention network. These findings demonstrate how the fMRI resting state can be functionally decomposed into spatially and temporally overlapping building blocks using iCAPs.},
+  copyright = {2015 The Author(s)},
+  file = {/Users/enekourunuela/Zotero/storage/KQKMV2RN/Karahanoğlu and Van De Ville - 2015 - Transient brain activity disentangles fMRI resting.pdf},
+  journal = {Nature Communications},
+  language = {en},
+  number = {1}
 }
 
-@article{karahanouglu2017dynamics,
-  title={Dynamics of large-scale fMRI networks: Deconstruct brain activity to build better models of brain function},
-  author={Karahano{\u{g}}lu, Fikret I{\c{s}}{\i}k and Van De Ville, Dimitri},
-  journal={Current Opinion in Biomedical Engineering},
-  volume={3},
-  pages={28--36},
-  year={2017},
-  publisher={Elsevier}
+@article{karahanoglu2017DynamicsLargescaleFMRI,
+  title = {Dynamics of Large-Scale {{fMRI}} Networks: {{Deconstruct}} Brain Activity to Build Better Models of Brain Function},
+  shorttitle = {Dynamics of Large-Scale {{fMRI}} Networks},
+  author = {Karahano{\u g}lu, Fikret I{\c s}{\i}k and Van De Ville, Dimitri},
+  year = {2017},
+  month = sep,
+  volume = {3},
+  pages = {28--36},
+  issn = {2468-4511},
+  doi = {10.1016/j.cobme.2017.09.008},
+  abstract = {Ongoing fluctuations of brain activity measured by functional magnetic resonance imaging (fMRI) provide a novel window onto the organizational principles of brain function. Advances in data analysis have focussed on extracting the constituting elements of temporal dynamics in terms of activity or connectivity patterns. Subsequently, brain states can be defined and then be analyzed using temporal features and computational models as to capture subtle interactions between functional networks. These new methodological advances allow to deconstruct the rich spatiotemporal structure of functional components that dynamically assemble into resting-state networks long been observed using conventional measures of functional connectivity. Applications of these emerging methods demonstrate that changes in functional connectivity are indeed driven by complex reorganization of network interactions, and thus provide valuable observations to build better models of brain function and dysfunction. Here, we give an overview of the recent developments in this exciting field, together with main findings and perspectives on future research.},
+  file = {/Users/enekourunuela/Zotero/storage/IC9RPRPV/Karahanoğlu and Van De Ville - 2017 - Dynamics of large-scale fMRI networks Deconstruct.pdf},
+  journal = {Current Opinion in Biomedical Engineering},
+  keywords = {Biomarkers,Brain function,Dynamic systems,Network science,Neuroimaging,Temporal models},
+  language = {en},
+  series = {New {{Developments}} in {{Biomedical Imaging}}}
 }
 
 ###########################################################################
@@ -245,26 +298,37 @@ Other methods
   publisher={Wiley Online Library}
 }
 
-@article{bruckstein2009sparse,
-  title={From sparse solutions of systems of equations to sparse modeling of signals and images},
-  author={Bruckstein, Alfred M and Donoho, David L and Elad, Michael},
-  journal={SIAM review},
-  volume={51},
-  number={1},
-  pages={34--81},
-  year={2009},
-  publisher={SIAM}
+@article{bruckstein2009SparseSolutionsSystems,
+  title = {From {{Sparse Solutions}} of {{Systems}} of {{Equations}} to {{Sparse Modeling}} of {{Signals}} and {{Images}}},
+  author = {Bruckstein, Alfred M. and Donoho, David L. and Elad, Michael},
+  year = {2009},
+  month = feb,
+  volume = {51},
+  pages = {34--81},
+  publisher = {{Society for Industrial and Applied Mathematics}},
+  issn = {0036-1445},
+  doi = {10.1137/060657704},
+  abstract = {A full-rank matrix \$\{\textbackslash bf A\}\textbackslash in \textbackslash mathbb\{R\}\^\{n\textbackslash times m\}\$ with \$n},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Bruckstein et al/Bruckstein et al. - 2009 - From Sparse Solutions of Systems of Equations to S.pdf},
+  journal = {SIAM Review},
+  number = {1}
 }
 
-@article{tibshirani1996regression,
-  title={Regression shrinkage and selection via the lasso},
-  author={Tibshirani, Robert},
-  journal={Journal of the Royal Statistical Society: Series B (Methodological)},
-  volume={58},
-  number={1},
-  pages={267--288},
-  year={1996},
-  publisher={Wiley Online Library}
+@article{tibshirani1996RegressionShrinkageSelection,
+  title = {Regression {{Shrinkage}} and {{Selection Via}} the {{Lasso}}},
+  author = {Tibshirani, Robert},
+  year = {1996},
+  volume = {58},
+  pages = {267--288},
+  issn = {2517-6161},
+  doi = {10.1111/j.2517-6161.1996.tb02080.x},
+  abstract = {We propose a new method for estimation in linear models. The `lasso' minimizes the residual sum of squares subject to the sum of the absolute value of the coefficients being less than a constant. Because of the nature of this constraint it tends to produce some coefficients that are exactly 0 and hence gives interpretable models. Our simulation studies suggest that the lasso enjoys some of the favourable properties of both subset selection and ridge regression. It produces interpretable models like subset selection and exhibits the stability of ridge regression. There is also an interesting relationship with recent work in adaptive function estimation by Donoho and Johnstone. The lasso idea is quite general and can be applied in a variety of statistical models: extensions to generalized regression models and tree-based models are briefly described.},
+  annotation = {\_eprint: https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.2517-6161.1996.tb02080.x},
+  copyright = {\textcopyright{} 1996 Royal Statistical Society},
+  journal = {Journal of the Royal Statistical Society: Series B (Methodological)},
+  keywords = {quadratic programming,regression,shrinkage,subset selection},
+  language = {en},
+  number = {1}
 }
 
 @article{badillo2013group,
@@ -277,46 +341,74 @@ Other methods
   publisher={Elsevier}
 }
 
-@article{petridou2013periods,
-  title={Periods of rest in fMRI contain individual spontaneous events which are related to slowly fluctuating spontaneous activity},
-  author={Petridou, Natalia and Gaudes, Cesar Caballero and Dryden, Ian L and Francis, Susan T and Gowland, Penny A},
-  journal={Human brain mapping},
-  volume={34},
-  number={6},
-  pages={1319--1329},
-  year={2013},
-  publisher={Wiley Online Library}
+@article{petridou2013PeriodsRestFMRI,
+  title = {Periods of Rest in {{fMRI}} Contain Individual Spontaneous Events Which Are Related to Slowly Fluctuating Spontaneous Activity},
+  author = {Petridou, Natalia and Gaudes, C{\'e}sar Caballero and Dryden, Ian L. and Francis, Susan T. and Gowland, Penny A.},
+  year = {2013},
+  volume = {34},
+  pages = {1319--1329},
+  issn = {1097-0193},
+  doi = {10.1002/hbm.21513},
+  abstract = {fMRI studies of brain activity at rest study slow ({$<$}0.1 Hz) intrinsic fluctuations in the blood-oxygenation-level-dependent (BOLD) signal that are observed in a temporal scale of several minutes. The origin of these fluctuations is not clear but has previously been associated with slow changes in rhythmic neuronal activity resulting from changes in cortical excitability or neuronal synchronization. In this work, we show that individual spontaneous BOLD events occur during rest, in addition to slow fluctuations. Individual spontaneous BOLD events were identified by deconvolving the hemodynamic impulse response function for each time point in the fMRI time series, thus requiring no information on timing or a-priori spatial information of events. The patterns of activation detected were related to the motor, visual, default-mode, and dorsal attention networks. The correspondence between spontaneous events and slow fluctuations in these networks was assessed using a sliding window, seed-correlation analysis, where seed regions were selected based on the individual spontaneous event BOLD activity maps. We showed that the correlation varied considerably over time, peaking at the time of spontaneous events in these networks. By regressing spontaneous events out of the fMRI signal, we showed that both the correlation strength and the power in spectral frequencies {$<$}0.1 Hz decreased, indicating that spontaneous activation events contribute to low-frequency fluctuations observed in resting state networks with fMRI. This work provides new insights into the origin of signals detected in fMRI studies of functional connectivity. Hum Brain Mapp, 2013. \textcopyright{} 2012 Wiley Periodicals, Inc.},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/hbm.21513},
+  copyright = {Copyright \textcopyright{} 2011 Wiley Periodicals, Inc.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Petridou et al/Petridou et al. - 2013 - Periods of rest in fMRI contain individual spontan.pdf;/Users/enekourunuela/Zotero/storage/3LJNEU5A/hbm.html},
+  journal = {Human Brain Mapping},
+  keywords = {BOLD,brain mapping,fluctuations,nonstationary spontaneous activity,resting-state},
+  language = {en},
+  number = {6}
 }
 
-@article{schwarz1978estimating,
-  title={Estimating the dimension of a model},
-  author={Schwarz, Gideon and others},
-  journal={The annals of statistics},
-  volume={6},
-  number={2},
-  pages={461--464},
-  year={1978},
-  publisher={Institute of Mathematical Statistics}
+@article{schwarz1978EstimatingDimensionModel,
+  title = {Estimating the {{Dimension}} of a {{Model}}},
+  author = {Schwarz, Gideon},
+  year = {1978},
+  month = mar,
+  volume = {6},
+  pages = {461--464},
+  publisher = {{Institute of Mathematical Statistics}},
+  issn = {0090-5364, 2168-8966},
+  doi = {10.1214/aos/1176344136},
+  abstract = {The problem of selecting one of a number of models of different dimensions is treated by finding its Bayes solution, and evaluating the leading terms of its asymptotic expansion. These terms are a valid large-sample criterion beyond the Bayesian context, since they do not depend on the a priori distribution.},
+  file = {/Users/enekourunuela/Zotero/storage/7DL6SMJF/Schwarz - 1978 - Estimating the Dimension of a Model.pdf},
+  journal = {Annals of Statistics},
+  keywords = {Akaike information criterion,asymptotics,Dimension},
+  language = {EN},
+  mrnumber = {MR468014},
+  number = {2},
+  zmnumber = {0379.62005}
 }
 
-@incollection{akaike1998information,
-  title={Information theory and an extension of the maximum likelihood principle},
-  author={Akaike, Hirotogu},
-  booktitle={Selected papers of hirotugu akaike},
-  pages={199--213},
-  year={1998},
-  publisher={Springer}
+@incollection{akaike1998InformationTheoryExtension,
+  title = {Information {{Theory}} and an {{Extension}} of the {{Maximum Likelihood Principle}}},
+  booktitle = {Selected {{Papers}} of {{Hirotugu Akaike}}},
+  author = {Akaike, Hirotogu},
+  editor = {Parzen, Emanuel and Tanabe, Kunio and Kitagawa, Genshiro},
+  year = {1998},
+  pages = {199--213},
+  publisher = {{Springer}},
+  address = {{New York, NY}},
+  doi = {10.1007/978-1-4612-1694-0_15},
+  abstract = {In this paper it is shown that the classical maximum likelihood principle can be considered to be a method of asymptotic realization of an optimum estimate with respect to a very general information theoretic criterion. This observation shows an extension of the principle to provide answers to many practical problems of statistical model fitting.},
+  isbn = {978-1-4612-1694-0},
+  keywords = {Autoregressive Model,Final Prediction Error,Maximum Likelihood Principle,Statistical Decision Function,Statistical Model Identification},
+  language = {en},
+  series = {Springer {{Series}} in {{Statistics}}}
 }
 
-@article{efron2004least,
-  title={Least angle regression},
-  author={Efron, Bradley and Hastie, Trevor and Johnstone, Iain and Tibshirani, Robert and others},
-  journal={The Annals of statistics},
-  volume={32},
-  number={2},
-  pages={407--499},
-  year={2004},
-  publisher={Institute of Mathematical Statistics}
+@article{efron2004LeastAngleRegression,
+  ids = {efronLeastAngle20022003},
+  title = {Least {{Angle Regression}}},
+  author = {Efron, Bradley; and Hastie, Trevor; and Johnstone, Iain; and Tibshirani, Robert},
+  year = {2004},
+  volume = {32},
+  pages = {407--499},
+  doi = {10.1214/009053604000000067},
+  abstract = {The purpose of model selection algorithms such as All Subsets, Forward Selection and Backward Elimination is to choose a linear model on the basis of the same set of data to which the model will be applied. Typically we have available a large collection of possible covariates from which we hope to select a parsimonious set for the efficient prediction of a response variable. Least Angle Regression (LARS), a new model selection algorithm, is a useful and less greedy version of traditional forward selection methods. Three main properties are derived: (1) A simple modification of the LARS algorithm implements the Lasso, an attractive version of ordinary least squares that constrains the sum of the absolute regression coefficients; the LARS modification calculates all possible Lasso estimates for a given problem, using an order of magnitude less computer time than previous methods. (2) A different LARS modification efficiently implements Forward Stagewise linear regression, another promising new model selection method; this connection explains the similar numerical results previously observed for the Lasso and Stagewise, and helps us understand the properties of both methods, which are seen as constrained versions of the simpler LARS algorithm. (3) A simple approximation for the degrees of freedom of a LARS estimate is available, from which we derive a Cp estimate of prediction error; this allows a principled choice among the range of possible LARS estimates. LARS and its variants are computationally efficient: the paper describes a publicly available algorithm that requires only the same order of magnitude of computational effort as ordinary least squares applied to the full set of covariates.},
+  file = {/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Efron et al/Efron et al. - 2004 - Least Angle Regression.pdf;/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Efron et al/Efron et al. - 2004 - Least Angle Regression2.pdf},
+  journal = {The Annals of Statistics},
+  keywords = {and phrases,boosting,coefficient paths,lasso,linear regression,variable selection},
+  number = {2}
 }
 
 @article{beck2009FastIterativeShrinkagethresholding,

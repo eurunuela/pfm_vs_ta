@@ -16,7 +16,7 @@ The hemodynamic response to neuronal activity at time \(t\) can be modeled as th
     \label{eq:gitelman}
     y_t = \sum_t h_{\tau} s_{t-\tau},
 \end{equation}
-where \(y_t\) is the measured BOLD signal on a given voxel. This equation can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs} + \mathbf{\epsilon}\), where \(\mathbf{y, s} \in \mathbb{R}^N\), \(\mathbf{H} \in \mathbb{R}^{NxN}\) is the HRF in Toeplitz matrix form, \(N\) is the number of frames of the fMRI acquisition, and \(\mathbf{\epsilon}\) represents additional white Guassian noise. The signal model in~\eqref{eq:gitelman} can be extended to represent the neuronal signal \(\mathbf{s}\) in terms of its innovation signal \(\mathbf{u}\), i.e.\ its derivative, and can be described as \(\mathbf{s} = \mathbf{Lu}\) where \(\mathbf{L} \in \mathbb{R}^{N \times N}\) is an integration operator.
+where \(y_t\) is the measured BOLD signal on a given voxel. This equation can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs} + \mathbf{\epsilon}\), where \(\mathbf{y, s} \in \mathbb{R}^N\), \(\mathbf{H} \in \mathbb{R}^{NxN}\) is the HRF in Toeplitz matrix form, \(N\) is the number of frames of the fMRI acquisition, and \(\mathbf{\epsilon}\) represents additional white Guassian noise. The signal model in~\eqref{eq:gitelman} can be extended to represent the neuronal signal \(\mathbf{s}\) in terms of its innovation signal \(\mathbf{u}\), i.e.\ its derivative, and can be described as \(\mathbf{s} = \mathbf{Lu}\) where \(\mathbf{L} \in \mathbb{R}^{N \times N}\) is an integration operator~\cite{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}.
 
 Functional MRI data analyses are often directed to disentangling and understanding the neural processes that occur among brain regions. However, interactions in the brain are expressed, not at the level of hemodynamic responses, but at the neural level. Thus, an intermediate step that estimates the underlying neuronal activity is necessary for such analyses. Given the nature of the fMRI BOLD signal, the appropriate approximation of the neuronal activity can be obtained by means of deconvolution with an assumed hemodynamic response~\cite{gitelman2003ModelingRegionalPsychophysiologic}. Hence, the maximum likelihood estimate of the hemodynamic response to the underlying neural activity can be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{Hs}\)) and measured (\(\mathbf{y}\)) signals. Yet, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity and high variability of the design matrix \(\mathbf{H}\).
 
@@ -26,21 +26,21 @@ Functional MRI data analyses are often directed to disentangling and understandi
 
 \subsection{Paradigm Free Mapping}
 
-Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularized least-squares problem~\cite{gaudes2013paradigm,gaudes2011detection,urunuela2020stability}:
+Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularized least-squares problem~\cite{caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm,gaudes2011DetectionCharacterizationSingletrial}:
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \Omega(\mathbf{s})
 \end{equation}
 where \(\Omega(\mathbf{s})\) is the regularization term.
 
-Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm_spike} with an \(l_0\)-norm and solving the optimization problem~\cite{bruckstein2009sparse}. However, due to the convolution model defined in~\eqref{eq:pfm_spike}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(l_1\)-norm, or LASSO~\cite{tibshirani1996regression}, which is a convex function and therefore provides fast convergence to the optimal solution.
+Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm_spike} with an \(l_0\)-norm and solving the optimization problem~\cite{bruckstein2009SparseSolutionsSystems}. However, due to the convolution model defined in~\eqref{eq:pfm_spike}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(l_1\)-norm, or LASSO~\cite{tibshirani1996RegressionShrinkageSelection}, which is a convex function and therefore provides fast convergence to the optimal solution.
 \begin{equation}
     \label{eq:pfm_spike}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \lambda \| \mathbf{s} \|_1
 \end{equation}
 where \(\lambda\) regulates how sparse the optimal solution is.
 
-Such formulation provides flexibility to expand the capabilities of PFM. For instance, incorporating the integration operator \(\mathbf{L}\) into the design matrix \(\mathbf{H}\) allows the recovery of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem~\cite{urunuela2020stability,cherkaoui2019sparsity}:
+Such formulation provides flexibility to expand the capabilities of PFM. For instance, incorporating the integration operator \(\mathbf{L}\) into the design matrix \(\mathbf{H}\) allows the recovery of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem~\cite{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}:
 \begin{equation}
     \label{eq:pfm_block}
     \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1
@@ -52,7 +52,7 @@ Such formulation provides flexibility to expand the capabilities of PFM. For ins
 
 \subsection{Total Activation}
 
-Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{karahanouglu2013total,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}:
+Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\)~\cite{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}:
 \begin{equation}
     L_h\{x\}(t) = s(t)
 \end{equation}
