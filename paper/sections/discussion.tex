@@ -23,7 +23,6 @@
         Paradigm Free Mapping & Total Activation \\
         \toprule
         \begin{itemize}
-            \pro Can be extended to other constraints.
             \pro Can be extended to a multivariate problem.
             \pro Can be extended for multi-echo fMRI.
             \pro Can be used with any HRF.
@@ -34,9 +33,10 @@
             \con 
         \end{itemize} \\
     \end{tabular}
-    \caption{Pros (+) and cons (-) of Paradigm Free Mapping and Total Activation.}
+    \caption{Advantages (+) and disadvantages (-) of Paradigm Free Mapping and Total Activation with respect to each other.}
+    \label{tab:proscons}
 \end{table}
 
-This work demonstrates that Paradigm Free Mapping and Total Activation yield practically identical results when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance must be due to differences in usage options. With the equivalence in the temporal deconvolution demonstrated, it can be assumed that additional regularization terms in the spatial or temporal domains would not modify this equivalence when convex operators are employed; e.g.\ when the regularization problem can be solved by means of the Fast Iterative Shrinkage-Thresholding Algorithm (FISTA)~\cite{beck2009FastIterativeShrinkagethresholding} or the Generalized Forward-Backward Splitting~\cite{raguet2013GeneralizedForwardBackwardSplittinga} techniques.
+This work demonstrates that Paradigm Free Mapping and Total Activation yield practically identical results when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance must be due to differences in usage options. With the equivalence in the temporal deconvolution demonstrated, it is reasonable to assumed that additional regularization terms in the spatial or temporal domains would not modify this equivalence when convex operators are employed; e.g.\ when the regularization problem can be solved by means of the Fast Iterative Shrinkage-Thresholding Algorithm (FISTA)~\cite{beck2009FastIterativeShrinkagethresholding} or the Generalized Forward-Backward Splitting~\cite{raguet2013GeneralizedForwardBackwardSplittinga} techniques.
 
-Future work should focus on investigating the appropriate formulation depending on data acquisition (e.g.\ single-echo vs multi-echo), accounting for HRF variability, robust methods to select the regularization parameter, and other potential \(\ell_{p,q}\)-norm regularization terms (e.g. \(p < 1\)) or debiasing approaches.
+Taking into account the advantages and disatvantages of the presented techniques shown in Table~\ref{tab:proscons}, future work will improve and extend deconvolution methods for fMRI. For instance, the appropriate formulation depending on data acquisition (i.e.\ single-echo vs multi-echo) could be studied and compared with existing methods~\cite{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}, or formulations that account for HRF variability could be investigated too~\cite{badillo2013GrouplevelImpactsBetweensubject,gaudes2012StructuredSparseDeconvolution,farouj2019BoldSignalDeconvolution}. Furthermore, robust methods to select the regularization parameter~\cite{meinshausen2009StabilitySelection} and other potential \(\ell_{p,q}\)-norm regularization terms (e.g. \(p < 1\)) or debiasing approaches could be explored.
