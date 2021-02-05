@@ -81,11 +81,9 @@ Total Activation proposes to solve the inverse problem by updating the regulariz
 \label{eq:std}
 \end{equation}
 
-\todo[inline,color=red]{Eneko: Comment new figure}
-
 Thus, we calculated the regularization path with PFM (as described in \ref{sec:regpath}) and selected the \(\lambda\) corresponding to the residuals that were closest to the estimated noise level of the data. We applied Total Activation with temporal regularization in its original form. Figure~\ref{fig:std} depicts the estimated activity-inducing, innovation and activity-related signals when updating \(\lambda\) as in~\eqref{eq:std} in the three simulated SNR settings using the spike model (left) and the block model (right). Figure~\ref{fig:std} (left) shows nearly identical results between PFM (left) and TA (right). The minimal differences are the result of slight dissimilarities in the convergence of the residuals to the estimated noise level of the data. Likewise, the use of the block model with a selection of \(\lambda\) based on the convergence of the residuals to have the same variances as the MAD estimate of the noise yields results that are identical in practice as shown in Figure~\ref{fig:std} (right).
 
-In addition, we performed the same comparison on experimental data as introduced in~\ref{sec:data}. Figure~\ref{fig:exp} (row 3) illustrates that the estimated activity-inducing, innovation and activity-related signals with PFM and TA are practically identical both for the spike model (left) and the block model (right).
+In addition, we performed the same comparison on experimental data as introduced in~\ref{sec:data}. Figure~\ref{fig:exp} (row 3) illustrates that the estimated activity-inducing, innovation, and activity-related signals with PFM and TA are practically identical both for the spike model (left) and the block model (right).
 
 \subsection{Selection of the regularization parameter by solving the regularization path}
 \label{sec:regpath}
@@ -128,4 +126,11 @@ Figure~\ref{fig:path_spike} (left) shows the regularization path of PFM and TA s
 
 The regularization path to estimate innovation signals; i.e., solving the optimization problem using the block model in~\eqref{eq:pfm_block}, yields mainly undistinguishable results for both PFM and TA methods as shown in Figure~\ref{fig:path_block} (left). Again, the BIC-based selection of \(\lambda\) is identical for both PFM and TA and the estimation of the innovation signal \(\mathbf{u}\) shows no distinguishable differences between the algorithms (see Figure~\ref{fig:path_block} right). Figure~\ref{fig:lambdas} (right) demonstrates that the  Therefore, both Paradigm Free Mapping and Total Activation yield nearly-identical regularization paths and estimates of the innovation signal regardless of the simulated SNR condition when applying the same HRF and regularization parameters with the block model.
 
-Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC and AIC selection of \(\lambda\) in row 4, row 2 
+Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC and AIC selection of \(\lambda\) in row 4, row 2 proves that the results are practically identical and differences can be disregarded.
+
+Additionally, in order to describe the extent of the discrepancies between the techniques, we calculated the residual sum of squares (RSS); i.e., the sum of squares of the differences betweeen the estimated activity-inducing or innovation signals of PFM and TA as:
+\begin{equation}
+    RSS = \frac{\sum{(\mathbf{\hat{s}_{PFM}} - \mathbf{\hat{s}_{TA}})^2}}{N}.
+\end{equation}
+
+Figure~\ref{fig:rss} depicts the RSS of the spike and block models for the three experimental datasets introduced: i.e., motor, monoband and multiband. It can be clearly seen that RSS values are lower than those of the activity-inducing and innovation signals, suggesting that the differences betweeen Paradigm Free Mapping and Total Activation are negligible.
