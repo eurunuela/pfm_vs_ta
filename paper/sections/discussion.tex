@@ -23,13 +23,12 @@
         Paradigm Free Mapping & Total Activation \\
         \toprule
         \begin{itemize}
-            \pro Can be extended to a multivariate problem.
-            \pro Can be extended for multi-echo fMRI.
-            \pro Can be used with any HRF.
+            \pro Its formulation can be extended straightforwardly for deconvolution of multiple signals with a common neuronal-related signal, e.g., for multi-echo formulations \cite{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}.
+            \pro The model can implement any HRF shape very easily since it only requires the coefficients at the required temporal resolution.
             \con 
         \end{itemize} &
         \begin{itemize}
-            \pro Both the spike and block models solve the regularization problem with the same HRF.
+            \pro Both the spike and block deconvolution models are solved using the same formulation.
             \con 
         \end{itemize} \\
     \end{tabular}
