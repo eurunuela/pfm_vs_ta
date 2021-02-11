@@ -10,8 +10,8 @@
 %     \item Finish with conclusions and a moving forward
 %     \begin{itemize}
 %         \item We have to refine the deconvolution
-%         \item HRF variability there are three: conference proceeding by Philippe~\cite{badillo2013group}, ISBI 2012 by César~\cite{gaudes2012structured}, and Farouj with a different formulation. Say conceptual differences among those.
-%         \item Mention stability-selection~\cite{meinshausen2010stability}
+%         \item HRF variability there are three: conference proceeding by Philippe~\citealt{badillo2013group}, ISBI 2012 by César~\citealt{gaudes2012structured}, and Farouj with a different formulation. Say conceptual differences among those.
+%         \item Mention stability-selection~\citealt{meinshausen2010stability}
 %         \item Debiasing
 %         \item Connected to debiasing other deconvolution algorithms that are based on a norm lower than 1.
 %     \end{itemize}
@@ -23,7 +23,7 @@
         Paradigm Free Mapping & Total Activation \\
         \toprule
         \begin{itemize}
-            \pro Its formulation can be extended straightforwardly for deconvolution of multiple signals with a common neuronal-related signal, e.g., for multi-echo formulations \cite{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}.
+            \pro Its formulation can be extended straightforwardly for deconvolution of multiple signals with a common neuronal-related signal, e.g., for multi-echo formulations \citealt{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}.
             \pro The model can implement any HRF shape very easily since it only requires the coefficients at the required temporal resolution.
             \con 
         \end{itemize} &
@@ -36,6 +36,6 @@
     \label{tab:proscons}
 \end{table}
 
-This work demonstrates that Paradigm Free Mapping and Total Activation yield practically identical results when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance must be due to differences in usage options. With the equivalence in the temporal deconvolution demonstrated, it is reasonable to assume that additional regularization terms in the spatial or temporal domains would not modify this equivalence when convex operators are employed; e.g.\ when the regularization problem can be solved by means of the Fast Iterative Shrinkage-Thresholding Algorithm (FISTA)~\cite{beck2009FastIterativeShrinkagethresholding} or the Generalized Forward-Backward Splitting~\cite{raguet2013GeneralizedForwardBackwardSplittinga} techniques. Our findings are in line with the equivalence of analysis and synthesis methods in under-determined cases (\(N \leq V\)) as demonstrated in~\cite{elad2007AnalysisSynthesisSignal}.
+This work demonstrates that Paradigm Free Mapping and Total Activation yield practically identical results when the same HRF model and regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance must be due to differences in usage options. With the equivalence in the temporal deconvolution demonstrated, it is reasonable to assume that additional regularization terms in the spatial or temporal domains would not modify this equivalence when convex operators are employed; e.g., when the regularization problem can be solved by means of the Fast Iterative Shrinkage-Thresholding Algorithm (FISTA) (\citealt{beck2009FastIterativeShrinkagethresholding}) or the Generalized Forward-Backward Splitting (\citealt{raguet2013GeneralizedForwardBackwardSplittinga}) techniques. Our findings are in line with the equivalence of analysis and synthesis methods in under-determined cases (\(N \leq V\)) as demonstrated in (\citealt{elad2007AnalysisSynthesisSignal}).
 
-Taking into account the advantages and disatvantages of the presented techniques shown in Table~\ref{tab:proscons}, future work will improve and extend deconvolution methods for fMRI. For instance, the appropriate formulation depending on data acquisition (i.e.\ single-echo vs multi-echo) could be studied and compared with existing methods~\cite{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}, or formulations that account for HRF variability could be investigated too~\cite{badillo2013GrouplevelImpactsBetweensubject,gaudes2012StructuredSparseDeconvolution,farouj2019BoldSignalDeconvolution}. Furthermore, robust methods to select the regularization parameter~\cite{urunuela2020StabilityBasedSparseParadigm,meinshausen2009StabilitySelection} and other potential \(\ell_{p,q}\)-norm regularization terms (e.g. \(p < 1\)) or debiasing approaches could be explored.
+Taking into account the advantages and disatvantages of the presented techniques shown in Table~\ref{tab:proscons}, future work will improve and extend deconvolution methods for fMRI. For instance, the appropriate formulation depending on data acquisition (i.e., single-echo vs multi-echo) could be studied and compared with existing methods (\citealt{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}), or formulations that account for HRF variability could be investigated too (\citealt{badillo2013GrouplevelImpactsBetweensubject,gaudes2012StructuredSparseDeconvolution,farouj2019BoldSignalDeconvolution}). Furthermore, robust methods to select the regularization parameter (\citealt{urunuela2020StabilityBasedSparseParadigm,meinshausen2009StabilitySelection}) and other potential \(\ell_{p,q}\)-norm regularization terms (e.g., \(p < 1\)) or debiasing approaches could be explored.
