@@ -24,7 +24,7 @@ Functional MRI data analyses are often directed to disentangling and understandi
 % Paradigm Free Mapping
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Paradigm Free Mapping}
+\subsection{Synthesis-based deconvolution}
 
 Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularized least-squares problem (\citealt{caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm,gaudes2011DetectionCharacterizationSingletrial}):
 \begin{equation}
@@ -50,7 +50,7 @@ Such formulation provides flexibility to expand the capabilities of PFM. For ins
 % Total Activation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Total Activation}
+\subsection{Analysis-based deconvolution}
 
 Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
 \begin{equation}
