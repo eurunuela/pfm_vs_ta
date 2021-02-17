@@ -11,22 +11,22 @@
 %     \item Spikes and block models
 % \end{itemize}
 
-The hemodynamic response to neuronal activity at time \(t\) can be modeled as the convolution with a finite impulse response function of the neuronal signal \(s_{t-\tau}\) at time \(t-\tau\) with the hemodynamic response function \(h_{\tau}\) (\citealt{gitelman2003ModelingRegionalPsychophysiologic}):
+The hemodynamic response to neuronal activity can be modeled as the convolution the activity-inducing signal \(s(t)\) with the hemodynamic response function \(h(t)\) as \(x(t) = h(t) * s(t)\) (\citealt{gitelman2003ModelingRegionalPsychophysiologic}). The fMRI signal at a given voxel \(y(t)\) can then be decomposed into neuronal-related hemodynamic \(x(t)\) and noise components \(n(t)\) as:
 \begin{equation}
     \label{eq:gitelman}
-    y_t = \sum_t h_{\tau} s_{t-\tau},
+    y(t) = x(t) + n(t),
 \end{equation}
-where \(y_t\) is the measured BOLD signal on a given voxel \(v\). This equation can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs} + \mathbf{\epsilon}\), where \(\mathbf{y, s} \in \mathbb{R}^N\), \(\mathbf{H} \in \mathbb{R}^{N \times N}\) is the HRF in Toeplitz matrix form, \(N\) is the number of frames of the fMRI acquisition, and \(\mathbf{\epsilon}\) represents additional white Gaussian noise. The signal model in~\eqref{eq:gitelman} can be extended to represent the neuronal signal \(\mathbf{s}\) in terms of its innovation signal \(\mathbf{u}\), i.e., its derivative, as \(\mathbf{s} = \mathbf{Lu}\) where \(\mathbf{L} \in \mathbb{R}^{N \times N}\) is an integration operator (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}).
+which can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs} + \mathbf{n}\), where \(\mathbf{y, s} \in \mathbb{R}^N\), \(\mathbf{H} \in \mathbb{R}^{N \times N}\) is the HRF in Toeplitz matrix form, and \(N\) is the number of frames of the fMRI acquisition. The signal model in~\eqref{eq:gitelman} can also be extended to represent the neuronal signal \(\mathbf{s}\) in terms of its innovation signal \(\mathbf{u}\), i.e., its derivative, as \(\mathbf{s} = \mathbf{Lu}\) where \(\mathbf{L} \in \mathbb{R}^{N \times N}\) is an integration operator (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}).
 
-Functional MRI data analyses are often directed to disentangling and understanding the neural processes that occur among brain regions. However, interactions in the brain are expressed, not at the level of hemodynamic responses, but at the neural level. Thus, an intermediate step that estimates the underlying neuronal activity is necessary for such analyses. Given the nature of the fMRI BOLD signal, the appropriate approximation of the neuronal activity can be obtained by means of deconvolution with an assumed hemodynamic response (\citealt{gitelman2003ModelingRegionalPsychophysiologic}). Hence, the maximum likelihood estimate of the hemodynamic response to the underlying neural activity can be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{Hs}\)) and measured (\(\mathbf{y}\)) signals. Yet, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity and high variability of the design matrix \(\mathbf{H}\).
+The maximum likelihood estimate of the hemodynamic response to the underlying neural activity can then be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{Hs}\)) and measured (\(\mathbf{y}\)) signals. When the information about the timings of the BOLD events is known, activity maps can be obtained by solving a GLM replacing the HRF matrix \(\mathbf{H}\) with a design matrix containing the regressors with the timings. Yet, when this information is unavailable, the design matrix \(\mathbf{H}\) can be described as the Toeplitz convolution matrix with shifted HRFs (see Figure~\ref{fig:hrf_diff}B). In this case, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity and high variability of the design matrix \(\mathbf{H}\), and the estimation of the underlying neural activity becomes a deconvolution problem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Paradigm Free Mapping
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Paradigm Free Mapping}
+\subsection{Synthesis-based deconvolution}
 
-Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularized least-squares problem (\citealt{caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm,gaudes2011DetectionCharacterizationSingletrial}):
+Synthesis-based Paradigm Free Mapping (PFM) builds upon the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal is the result of convolving the underlying neural activity with the hemodynamic response, and proposes to estimate the activity-inducing signal by solving the following regularized least-squares problem (\citealt{caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm,gaudes2011DetectionCharacterizationSingletrial}):
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \Omega(\mathbf{s}),
@@ -50,9 +50,9 @@ Such formulation provides flexibility to expand the capabilities of PFM. For ins
 % Total Activation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Total Activation}
+\subsection{Analysis-based deconvolution}
 
-Even though based on the same signal model as PFM, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
+Even though based on the same signal model as PFM, analysis-based Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
 \begin{equation}
     L_h\{x\}(t) = s(t)
 \end{equation}
