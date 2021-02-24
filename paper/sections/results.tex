@@ -75,6 +75,8 @@ The regularization path to estimate innovation signals yields mainly undistingui
 
 % Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC selection of \(\lambda\) in row 4, row 2 proves that the results are practically identical, and differences can be disregarded.
 
+\subsection{Performance on experimental data}
+
 Additionally, in order to describe the extent of the discrepancies between the techniques, we calculated the residual sum of squares (RSS); i.e., the sum of squares of the differences between the estimated activity-inducing or innovation signals of PFM and TA as:
 \begin{equation}
     RSS = \frac{\sum{(\hat{s}_{PFM} - \hat{s}_{TA})^2}}{N}.
