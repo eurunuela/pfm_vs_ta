@@ -11,14 +11,25 @@
 %     \item Spikes and block models
 % \end{itemize}
 
-The hemodynamic response to neuronal activity can be modeled as the convolution the activity-inducing signal \(s(t)\) with the hemodynamic response function \(h(t)\) as \(x(t) = h(t) * s(t)\) (\citealt{gitelman2003ModelingRegionalPsychophysiologic}). The fMRI signal at a given voxel \(y(t)\) can then be decomposed into neuronal-related hemodynamic \(x(t)\) and noise components \(n(t)\) as:
+The hemodynamic response to neuronal activity can be modeled as the convolution the activity-inducing signal \(s(t)\) with the hemodynamic response function \(h(t)\) as \(x(t) = h(t) * s(t)\) (\citealt{gitelman2003ModelingRegionalPsychophysiologic}). Then, the fMRI signal at a given voxel \(y(t)\) can be decomposed into neuronal-related hemodynamic \(x(t)\) and noise components \(n(t)\) as:
 \begin{equation}
     \label{eq:gitelman}
-    y(t) = x(t) + n(t),
+    y(t) = x(t) + n(t).
 \end{equation}
-which can be reformulated in matrix notation as \(\mathbf{y} = \mathbf{Hs} + \mathbf{n}\), where \(\mathbf{y, s} \in \mathbb{R}^N\), \(\mathbf{H} \in \mathbb{R}^{N \times N}\) is the HRF in Toeplitz matrix form, and \(N\) is the number of frames of the fMRI acquisition. The signal model in~\eqref{eq:gitelman} can also be extended to represent the neuronal signal \(\mathbf{s}\) in terms of its innovation signal \(\mathbf{u}\), i.e., its derivative, as \(\mathbf{s} = \mathbf{Lu}\) where \(\mathbf{L} \in \mathbb{R}^{N \times N}\) is an integration operator (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}).
 
-The maximum likelihood estimate of the hemodynamic response to the underlying neural activity can then be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{Hs}\)) and measured (\(\mathbf{y}\)) signals. When the information about the timings of the BOLD events is known, activity maps can be obtained by solving a GLM replacing the HRF matrix \(\mathbf{H}\) with a design matrix containing the regressors with the timings. Yet, when this information is unavailable, the design matrix \(\mathbf{H}\) can be described as the Toeplitz convolution matrix with shifted HRFs (see Figure~\ref{fig:hrf_diff}B). In this case, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity and high variability of the design matrix \(\mathbf{H}\), and the estimation of the underlying neural activity becomes a deconvolution problem.
+The maximum likelihood estimate of the hemodynamic response to the underlying neural activity can be calculated using the ordinary least-squares estimator that minimizes the residual sum of squares between the modeled (\(\mathbf{X}\)) and measured (\(\mathbf{y}\)) signals. In conventional fMRI data analysis, when the information about the timings of the BOLD events is known, the activity inducing signal, also known as the stimulus function of a condition of interest, is retrieved by solving a general linear model (GLM) problem such that:
+\begin{equation}
+    \label{eq:glm}
+    \mathbf{y} = \mathbf{X \beta} + \mathbf{n},
+\end{equation}
+where the measured signal (\(\mathbf{y}\)) is described as the sum of one or more experimental design variables (\(\mathbf{X}\)), each multiplied by a weighting factor (\(\mathbf{\beta}\)). The signal model in~\eqref{eq:gitelman} can also be extended to represent the neuronal signal \(\mathbf{s}\) in terms of its innovation signal \(\mathbf{u}\), i.e., its derivative, as \(\mathbf{s} = \mathbf{Lu}\) where \(\mathbf{L} \in \mathbb{R}^{N \times N}\) is an integration operator (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}). Thus, the GLM problem in \eqref{eq:glm} can be rewritten as \(\mathbf{y} = \mathbf{X L \beta} + \mathbf{n}\) to detect changes in the neuronal signal.
+
+Yet, when the information about the timings of the BOLD events is unavailable, the design matrix \(\mathbf{X}\) has to be described as the Toeplitz convolution matrix with shifted HRFs (see Figure~\ref{fig:hrf_diff}B). In this case, the estimates of the neuronal activity \(\mathbf{s}\) must be constrained with a regularization term to attenuate the collinearity and high variability of the new design matrix \(\mathbf{H}\), and the estimation of the underlying neural activity becomes a deconvolution problem such that:
+\begin{equation}
+    \label{eq:deconvolution}
+    \mathbf{y} = \mathbf{Hs} + \mathbf{n},
+\end{equation}
+where \(\mathbf{y, s} \in \mathbb{R}^N\), \(\mathbf{H} \in \mathbb{R}^{N \times N}\) is the HRF in Toeplitz matrix form, and \(N\) is the number of frames of the fMRI acquisition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Paradigm Free Mapping
