@@ -15,7 +15,7 @@
 %     \end{itemize}
 % \end{itemize}
 
-A critical decision with deconvolution methods is the selection of the regularization parameter \(\lambda\), for which many techniques have been proposed in the literature but an optimal is yet to be discovered. In fact, Paradigm Free Mapping and Total Activation base their selection of the regularization parameter on different criteria: the Bayesian Information Criterion (BIC) (\citealt{schwarz1978EstimatingDimensionModel}) and Akaike Information Criterion (AIC) (\citealt{akaike1998InformationTheoryExtension}), and a selection based on the convergence of the residuals to a pre-estimated level of the noise, respectively. Hence, we compare the performance of the two algorithms with both selection criteria. Furthermore, we explore the differences between the techniques in terms of the estimation of the activity-inducing signal \(\mathbf{s}\) using the \textit{spike model} in~\eqref{eq:pfm_spike} and the innovation signal \(\mathbf{u}\) using the \textit{block model} in~\eqref{eq:pfm_block}.
+A critical decision with deconvolution methods is the selection of the regularization parameter \(\lambda\), for which many techniques have been proposed in the literature but an optimal is yet to be discovered. In fact, Paradigm Free Mapping and Total Activation base their selection of the regularization parameter on different criteria: the Bayesian Information Criterion (BIC) (\citealt{schwarz1978EstimatingDimensionModel}), and a selection based on the convergence of the residuals to a pre-estimated level of the noise, respectively. Hence, we compare the performance of the two algorithms with both selection criteria. Furthermore, we explore the differences between the techniques in terms of the estimation of the activity-inducing signal \(\mathbf{s}\) using the \textit{spike model} in~\eqref{eq:pfm_spike} and the innovation signal \(\mathbf{u}\) using the \textit{block model} in~\eqref{eq:pfm_block}.
 
 \subsection{Selection of the hemodynamic response function}
 
@@ -33,19 +33,19 @@ While Paradigm Free Mapping allows for the use of any hemodynamic response funct
 
 \begin{figure*}[t!]
     \begin{center}
-        \includegraphics[width=\textwidth]{figures/std_based.pdf}
+        \includegraphics[width=\textwidth]{figures/figure_sim.pdf}
     \end{center}
-    \caption{Estimated activity-inducing, innovation and activity-related (fit, \(\mathbf{x}\)) signals when \(\lambda\) is selected based on convergence of residuals to have same variance as MAD estimate of noise with spike model (left, with PFM on the left and TA on the right) and block model (right, with PFM on the left and TA on the right) on SNR = 20 dB (top), SNR = 10 dB (middle) and SNR = 3 dB (bottom).}
-\label{fig:std}
+    \caption{A) (Left) Heatmap of the regularization paths of the activity-inducing (top) and innovation (bottom) signals estimated with PFM and TA as a function of \(\lambda\) for the simulated data with SNR = 3 dB (x-axis: increasing number of iterations or \(\lambda\) as given by LARS; y-axis: time; color: amplitude). Vertical lines denote iterations corresponding to the Akaike and Bayesian Information Criteria (AIC and BIC) optima. (Right) Estimated activity-inducing (blue) and activity-related (green) signals \(\lambda\) is selected based on BIC. B) Estimated activity-inducing, innovation and activity-related (fit, \(\mathbf{x}\)) signals when \(\lambda\) is selected based on the MAD method with the spike model (left, with PFM on the left and TA on the right) and block model (right, with PFM on the left and TA on the right) for the simulated data with SNR = 3 dB.}
+\label{fig:sim}
 \end{figure*}
 
-\begin{figure*}[t!]
-    \begin{center}
-        \includegraphics[width=\textwidth]{figures/exp.pdf}
-    \end{center}
-    \caption{(Row 1) Regularization paths of the estimated activity-inducing signal (spike model --- left) and innovation signal (block model --- right); (Row 2) activity-inducing, innovation and activity-related (fit, \(\mathbf{x}\)) signals when \(\lambda\) is selected based on BIC, or (Row 3) based on convergence of residuals to have same variance as MAD estimate of noise; (Row 4) Corresponding cost curves of BIC and AIC. The vertical lines indicate the three options to select \(\lambda\) (BIC, AIC and Converged/MAD).}
-\label{fig:exp}
-\end{figure*}
+% \begin{figure*}[t!]
+%     \begin{center}
+%         \includegraphics[width=\textwidth]{figures/exp.pdf}
+%     \end{center}
+%     \caption{(Row 1) Regularization paths of the estimated activity-inducing signal (spike model --- left) and innovation signal (block model --- right); (Row 2) activity-inducing, innovation and activity-related (fit, \(\mathbf{x}\)) signals when \(\lambda\) is selected based on BIC, or (Row 3) based on convergence of residuals to have same variance as MAD estimate of noise; (Row 4) Corresponding cost curves of BIC and AIC. The vertical lines indicate the three options to select \(\lambda\) (BIC, AIC and Converged/MAD).}
+% \label{fig:exp}
+% \end{figure*}
 
 Total Activation proposes to solve the inverse problem by updating the regularization parameter \(\lambda\) on every iteration \(n\) so that the residuals converge to a previously estimated noise level of the data fit \(\tilde{\sigma}\), where this pre-estimated noise is calculated from the median absolute deviation of fine-scale wavelet coefficients (Daubechies, order 3) (\citealt{karahanoglu2013TotalActivationFMRI}):
 
@@ -54,50 +54,24 @@ Total Activation proposes to solve the inverse problem by updating the regulariz
 \label{eq:std}
 \end{equation}
 
-Thus, we calculated the regularization path with PFM (as described in \ref{sec:regpath}) and selected the \(\lambda\) corresponding to the residuals that were closest to the estimated noise level of the data. We applied Total Activation with temporal regularization in its original form. Figure~\ref{fig:std} depicts the estimated activity-inducing, innovation. and activity-related signals when updating \(\lambda\) as in~\eqref{eq:std} in the three simulated SNR settings using the spike model (left) and the block model (right). Figure~\ref{fig:std} (left) shows nearly identical results between PFM (left) and TA (right) with the use of the spike model. The minimal differences are the result of slight dissimilarities in the convergence of the residuals to the estimated noise level of the data. Likewise, the use of the block model with a selection of \(\lambda\) based on the MAD estimate of the noise yields results that are identical in practice as shown in Figure~\ref{fig:std} (right).
-
-In addition, we performed the same comparison on experimental data as introduced in~\ref{sec:data}. Figure~\ref{fig:exp} (row 3) illustrates that the estimated activity-inducing, innovation, and activity-related signals with PFM and TA are practically identical both for the spike model (left) and the block model (right).
+Thus, we calculated the regularization path with PFM (as described in \ref{sec:regpath}) and selected the \(\lambda\) corresponding to the residuals that were closest to the estimated noise level of the data. We applied Total Activation with temporal regularization in its original form. Figure~\ref{fig:sim}B depicts the estimated activity-inducing, innovation, and activity-related signals when updating \(\lambda\) following~\eqref{eq:std} in the three simulated SNR settings using the spike model (left) and the block model (right). Figure~\ref{fig:sim}B (left) shows nearly identical results between PFM (left) and TA (right) with the use of the spike model. The minimal differences are the result of slight dissimilarities in the convergence of the residuals to the estimated noise level of the data. Likewise, the use of the block model with a selection of \(\lambda\) based on the MAD estimate of the noise yields results that are identical in practice as shown in Figure~\ref{fig:sim}B (right).
 
 \subsection{Selection of the regularization parameter by solving the regularization path}
 \label{sec:regpath}
 
 \begin{figure*}[t!]
     \begin{center}
-        \includegraphics[width=\textwidth]{figures/regpath_spike.pdf}
-    \end{center}
-    \caption{Spike model simulations. (Left) Heatmap of the regularization paths of the activity-inducing signal estimated with PFM and TA as a function of \(\lambda\) (increasing number of iterations in x-axis), whereas each row in the y-axis shows one time-point. Vertical lines denote iterations corresponding to the Akaike and Bayesian Information Criteria (AIC and BIC) optima. (Right) Estimated activity-inducing (blue) and activity-related (green) signals when set based on BIC. All estimates of are identical, regardless of SNR.}
-\label{fig:path_spike}
-\end{figure*}
-
-\begin{figure*}[t!]
-    \begin{center}
-        \includegraphics[width=\textwidth]{figures/regpath_block.pdf}
-    \end{center}
-    \caption{Block model simulations. (Left) Heatmap of the regularization paths of the innovation signal estimated with PFM and TA as a function of \(\lambda\) (increasing number of iterations in x-axis), whereas each row in the y-axis illustrates one time-point. Vertical lines denote iterations corresponding to the Akaike and Bayesian Information Criteria (AIC and BIC) optima. (Right) Estimated innovation (blue) and activity-related (green) signals when is set based on BIC. All the estimates are identical when compared between the PFM and TA cases, regardless of SNR.}
-\label{fig:path_block}
-\end{figure*}
-
-\begin{figure*}[t!]
-    \begin{center}
         \includegraphics[width=\textwidth]{figures/maps.pdf}
     \end{center}
-    \caption{Sum of squares of the differences of the activity-inducing signals estimated with Paradigm Free Mapping and Total activation for the different selections of the regularization parameter: AIC (top), BIC (middle), and MAD (bottom). The sum of square difference maps are shown for the three experimental datasets introduced in Section~\ref{sec:data}: the motor task (Motor), the monoband resting-state (Mono), and the multiband resting-state (Multi) datasets. A) Sum of squares of the differences when using the spike model. B) Sum of squares of the differences when using the block model.}
+    \caption{Sum of squares of the differences of the activity-inducing signals estimated with Paradigm Free Mapping and Total activation for the different selections of the regularization parameter: BIC (top), and MAD (bottom). The sum of square difference maps are shown for the three experimental datasets introduced in Section~\ref{sec:data}: the motor task (Motor), the monoband resting-state (Mono), and the multiband resting-state (Multi) datasets. A) Sum of squares of the differences when using the spike model. B) Sum of squares of the differences when using the block model.}
 \label{fig:rss}
 \end{figure*}
 
-% \begin{figure*}[t!]
-%     \begin{center}
-%         \includegraphics[width=\textwidth]{figures/lambda_cost.pdf}
-%     \end{center}
-%     \caption{Lambdas and cost.}
-% \label{fig:lambdas}
-% \end{figure*}
-
 Paradigm Free Mapping bases its selection of the regularization parameter on the Bayesian Information Criterion (BIC) and the Akaike Information Criterion (AIC). Hence, we calculated the regularization path with PFM by means of the least angle regression (LARS) algorithm (\citealt{efron2004LeastAngleRegression}) and used the \(\lambda\)s from the regularization path to solve the deconvolution problem with Total Activation.
 
-Figure~\ref{fig:path_spike} (left) shows the regularization paths of PFM and TA side by side for the three SNR conditions for the spike model; i.e., the inverse problem described in~\eqref{eq:pfm_spike}. Each iteration of LARS reduces the value of \(\lambda\); i.e., reduces the sparsity promoted by the \(l_1\)-norm, and reveals new non-zero coefficients as shown in the x axis of the heatmaps. Vertical black lines depict the selection of the regularization parameter based on BIC and AIC, and thus, the colored coefficients indicated by the vertical lines depict the estimated activity-inducing signal \(s(t)\). Figure~\ref{fig:path_spike} (right) illustrates the resulting estimation of the activity-inducing and neuronal-related signals when basing the selection of \(\lambda\) on BIC for the three simulated SNR conditions. Given that the regularization paths of both techniques are identical, the BIC-based selection of the regularization parameter and the results of deconvolving with said \(\lambda\) are identical too (see Figure~\ref{fig:lambdas}). Thus, Figure~\ref{fig:path_spike} demonstrates that, regardless of the simulated SNR condition, both deconvolution algorithms produce identical regularization paths when the same HRF and regularization parameters are applied, and hence, identical estimates of the activity-inducing signal \(\mathbf{s}\) and neuronal-related signal \(\mathbf{x}\).
+Figure~\ref{fig:sim}A (left) shows the regularization paths of PFM and TA side by side for the three SNR conditions for the spike model; i.e., the inverse problem described in~\eqref{eq:pfm_spike}. Each iteration of LARS reduces the value of \(\lambda\); i.e., reduces the sparsity promoted by the \(l_1\)-norm, and reveals new non-zero coefficients as shown in the x axis of the heatmaps. Vertical black lines depict the selection of the regularization parameter based on BIC and AIC, and thus, the colored coefficients indicated by the vertical lines depict the estimated activity-inducing signal \(s(t)\). Figure~\ref{fig:sim}A (right) illustrates the resulting estimation of the activity-inducing and neuronal-related signals when basing the selection of \(\lambda\) on BIC for the three simulated SNR conditions. Given that the regularization paths of both techniques are identical, the BIC-based selection of the regularization parameter and the results of deconvolving with said \(\lambda\) are identical too (see Figure~\ref{fig:lambdas}). Thus, Figure~\ref{fig:sim}A demonstrates that, regardless of the simulated SNR condition, both deconvolution algorithms produce identical regularization paths when the same HRF and regularization parameters are applied, and hence, identical estimates of the activity-inducing signal \(\mathbf{s}\) and neuronal-related signal \(\mathbf{x}\).
 
-The regularization path to estimate innovation signals yields mainly undistinguishable results for both PFM and TA methods as shown in Figure~\ref{fig:path_block} (left). Again, the BIC-based selection of \(\lambda\) is identical for both PFM and TA, and the estimation of the innovation signal \(\mathbf{u}\) shows no distinguishable differences between the algorithms (see Figure~\ref{fig:path_block} right). Therefore, both Paradigm Free Mapping and Total Activation yield nearly identical regularization paths and estimates of the innovation signal regardless of the simulated SNR condition when applying the same HRF and regularization parameters with the block model.
+The regularization path to estimate innovation signals yields mainly undistinguishable results for both PFM and TA methods as shown in Figure~\ref{fig:sim}A (left). Again, the BIC-based selection of \(\lambda\) is identical for both PFM and TA, and the estimation of the innovation signal \(\mathbf{u}\) shows no distinguishable differences between the algorithms (see Figure~\ref{fig:sim}A right). Therefore, both Paradigm Free Mapping and Total Activation yield nearly identical regularization paths and estimates of the innovation signal regardless of the simulated SNR condition when applying the same HRF and regularization parameters with the block model.
 
 Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC and AIC selection of \(\lambda\) in row 4, row 2 proves that the results are practically identical, and differences can be disregarded.
 
