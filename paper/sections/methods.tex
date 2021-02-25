@@ -1,7 +1,9 @@
 \section{Methods}
 \label{sec:data}
 
-\textbf{Simulations:} In order to compare the two methods while controlling for their correct performance, we simulated a 400 seconds (TR = 2 s) activity-inducing signal with five neuronal events, convolved it with the canonical HRF, and we added noise of different sources (physiological, thermal, and motion-related) with different signal-to-noise ratios (SNR = [20 dB, 10 dB, 3 dB]) that represent low, medium and high levels of noise as shown in Figure~\ref{fig:simulations}. Noise was created following the procedure in (\citealt{caballerogaudes2013ParadigmFreeMapping}) as the sum of uncorrelated Gaussian noise and sinusoidal signals to simulate a realistic noise model with thermal noise, cardiac and respiratory physiological fluctuations. We generated the sinusoidal term as
+\subsection{Simulated data}
+
+In order to compare the two methods while controlling for their correct performance, we simulated a 400 seconds (TR = 2 s) activity-inducing signal with five neuronal events, convolved it with the canonical HRF, and we added noise of different sources (physiological, thermal, and motion-related) with different signal-to-noise ratios (SNR = [20 dB, 10 dB, 3 dB]) that represent low, medium and high levels of noise as shown in Figure~\ref{fig:simulations}. Noise was created following the procedure in (\citealt{caballerogaudes2013ParadigmFreeMapping}) as the sum of uncorrelated Gaussian noise and sinusoidal signals to simulate a realistic noise model with thermal noise, cardiac and respiratory physiological fluctuations. We generated the sinusoidal term as
 \begin{equation}
     \sum_{i=1}^{2} \frac{1}{2^{i-1}}\left(\sin \left(2 \pi f_{r, i} t+\phi_{\mathrm{r}, i}\right)+\sin \left(2 \pi f_{c, i} t+\phi_{c, i}\right)\right),
 \end{equation}
@@ -15,6 +17,7 @@ with up to second-order harmonics per cardiac (\(f_{c,i}\)) and respiratory (\(f
 \label{fig:simulations}
 \end{figure}
 
+\subsection{Experimental data}
 \textbf{Motor task dataset:} One healthy subject was scanned in a 3T MR scanner (Siemens) as part of a larger experiment under a Basque Center on Cognition, Brain and Language Review Board-approved protocol. T2*-weighted multi-echo fMRI data was acquired with a multiband (MB) multi-echo gradient echo-planar imaging sequence (340 scans, 52 slices, Partial-Fourier = 6/8, voxel size = 2.4x2.4x3 mm\textsuperscript{3}, TR = 1.5 s, TEs = 10.6/28.69/46.78/64.87/82.96 ms, multiband factor = 4, flip angle = 70\(^o\), GRAPPA = 2).
 
 During the fMRI acquisition, subjects performed a motor task consisting of five different movements (left-hand finger tapping, right-hand finger tapping, moving the left toes, moving the right toes and moving the tongue). These conditions were randomly intermixed every 16 seconds, and were only repeated once the entire set of stimuli were presented. Data preprocessing consisted of optimally combining the echo time datasets, detrending of up to 5\(^{th}\)-order Legendre polynomials, spatial smoothing (3 mm FWHM) and normalization to signal percentage change. Figure~\ref{fig:finger_tapping} shows the time-series of a representative voxel in the motor cortex, where the colored bands illustrate the onset and duration of the right-hand finger-tapping condition of the paradigm.
@@ -30,3 +33,16 @@ During the fMRI acquisition, subjects performed a motor task consisting of five 
 \textbf{Resting-state datasets:} One healthy subject was scanned in a 3T MR scanner (Siemens) as part of a larger experiment under a Basque Center on Cognition, Brain and Language Review Board-approved protocol. Two runs of T2*-weighted fMRI data were acquired during resting-state, each with 10 min duration, with 1) a standard gradient-echo echo-planar imaging sequence (monoband) (TR = 2000 ms, TE = 29 ms, flip-angle = 78\(^o\), matrix size = 64x64, voxel size = 3x3x3 mm\textsuperscript{3}, 33 axial slices with interleaved acquisition, slice gap = 0.6 mm) and 2) a simultaneous multislice gradient-echo echo-planar imaging sequence (multiband factor = 3) developed by the Center of Magnetic Resonance Research (University of Minnesota, USA; TR = 800 ms, TE = 29 ms, flip-angle = 60\(^o\), matrix size = 64×64, voxel size = 3x3x3 mm\textsuperscript{3}, 42 axial slices with interleaved acquisition, no slice gap). Single-band reference images were also collected in both resting-state acquisitions for head motion realignment.
 
 During both acquisitions, participants were instructed to keep their eyes open, fixating a white cross that they saw through a mirror located on the head coil, and not to think about anything specific. Field maps were also obtained to correct for field distortions.
+
+
+\subsection{Selection of the hemodynamic response function}
+
+With the aim of making a fair comparison of the two methods, we first compared their hemodynamic response functions. Figure~\ref{fig:hrf_diff}A shows the difference in the hemodynamic response function that PFM and TA use by default for TR = 0.1 s and TR = 1 s adjusted to peak amplitude of one; i.e., the canonical HRF and the HRF resulting from the linear differential operator. The most observable difference between the two HRFs is the time to peak: the HRF used by Total Activation does not begin at zero while the one used by PFM does.
+
+\begin{figure}[h]
+    \includegraphics[width=\columnwidth]{figures/pfm_ta_hrf.pdf}
+    \caption{A) Canonical HRF models typically used by PFM (green) and TA (black) at TR = 0.1 s (dashed lines) and TR = 1 s (solid lines). Without loss of generality, the waveforms are scaled to unit amplitude for visualization. B) Representation of three shifted HRFs at TR=1 s (onsets=0, 1, and 15 s) that build the design matrix for PFM when the HRF model has been matched to that in TA.}
+\label{fig:hrf_diff}
+\end{figure}
+
+While Paradigm Free Mapping allows for the use of any hemodynamic response function --- the columns of the design matrix \(\mathbf{H}\) are composed by shifted versions of the HRF--- the linear differential operator in TA is tailored for a fixed HRF. Hence, for practical reasons, we reproduced the HRF in the Total Activation filter and incorporated it into the PFM formulation (Figure~\ref{fig:hrf_diff}B).
