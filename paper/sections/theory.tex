@@ -40,15 +40,14 @@ where the activity-inducing signal $\mathbf{s}$ is rewritten in terms of the inn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Synthesis-based deconvolution}
-
-Synthesis-based deconvolution models are those in which the candidate estimator is synthesized (i.e. constructed) from a linear combination of dictionary atoms. Paradigm Free Mapping (PFM) is based on such construction as its estimator \(\mathbf{H}\) is described by shifted HRFs (atoms). Hence, considering the signal model introduced in~\eqref{eq:gitelman}; i.e., the BOLD signal (\(\mathbf{x}\)) is the result of convolving the underlying neural activity (\(\mathbf{s}\)) with the hemodynamic response (\(\mathbf{H}\)), the activity-inducing signal can be estimated by solving the following regularized least-squares problem (\citealt{gaudes2011DetectionCharacterizationSingletrial,caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm}):
+Synthesis-based deconvolution is based on the forward formulation following Eq.~(\ref{eq:deconvolution}); i.e., the to-be-recovered activity-inducing signal $\hat{\mathbf{s}}$ is convolved by the HRF and compared against the measured timecourse in the least-squares sense: 
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \Omega(\mathbf{s}),
 \end{equation}
-where \(\Omega(\mathbf{s})\) is the regularization term.
+where \(\Omega(\mathbf{s})\) is a regularization term. Paradigm Free Mapping (PFM) is based on this formulation with the equivalent interpretation of elements of the activity-inducing signals weighting the columns of $\mathbf{H}$ that contain shifted versions of the HRF (\citealt{gaudes2011DetectionCharacterizationSingletrial,caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm}). 
 
-Assuming that single-trial BOLD responses are the result of brief bursts of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(l_0\)-norm and solving the optimization problem (\citealt{bruckstein2009SparseSolutionsSystems}). However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(l_1\)-norm, or LASSO (\citealt{tibshirani1996RegressionShrinkageSelection}), which is a convex function and therefore provides fast convergence to the optimal solution.
+Assuming that single-trial BOLD responses are the result of brief periods of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(l_0\)-norm and solving the optimization problem (\citealt{bruckstein2009SparseSolutionsSystems}). However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(l_1\)-norm, or LASSO (\citealt{tibshirani1996RegressionShrinkageSelection}), which is a convex function and therefore provides fast convergence to the optimal solution.
 \begin{equation}
     \label{eq:pfm_spike}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \lambda \| \mathbf{s} \|_1,
@@ -67,7 +66,7 @@ Such formulation provides flexibility to expand the capabilities of PFM. For ins
 
 \subsection{Analysis-based deconvolution}
 
-On the other hand, the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
+Alternatively, the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
 \begin{equation}
     L_h\{x\}(t) = s(t)
 \end{equation}
