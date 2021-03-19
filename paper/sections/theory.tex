@@ -13,6 +13,8 @@
 %     \item Spikes and block models
 % \end{itemize}
 
+\todo[inline]{I think we need a short paragraph here introducing: 1) our notations; 2) basic math definitions, in particular for norms.}
+
 Conventional general linear model (GLM) analysis puts forward a number of regressors incorporating knowledge about the paradigm or behavior. For instance, the timing of epochs for a certain condition can be modeled as an indicator function $p(t)$, convolved with the HRF $h(t)$, and sampled at TR resolution (\citealt{friston1994analysis, friston1998event, boynton1996linear, cohen1997parametric}):\todo{Rather some Friston paper(s) here}
 $$
    p(t) \rightarrow p*h(t) \rightarrow x[k] = p*h(k\cdot\text{TR}).
@@ -29,44 +31,37 @@ In the deconvolution approach, no prior knowledge is taken into account, and the
     \label{eq:deconvolution}
     \mathbf{y} = \mathbf{Hs} + \mathbf{e},
 \end{equation}
-where $\mathbf{H}$ is an $N\times N$ Toeplitz matrix that represents the discrete convolution with the HRF, and $\mathbf{s}$ a length-$N$ vector with the unknown activity-inducing signal. Despite the apparent similarity with the GLM equation, there are two important differences. First, the multiplication with the design matrix of the GLM is an expansion as a weighted linear combination of its columns, while the multiplication with the HRF matrix represents a convolution with its shifted rows. Second, determining $\mathbf{s}$ is an ill-posed problem given the nature of the HRF; e.g., as can be seen intuitively, the rows of $\mathbf{H}$ are highly correlated due to large overlap between shifted HRFs (see Figure~\ref{fig:hrf_diff}B), thus introducing ambiguity and instability in the estimates of $\mathbf{s}$. Therefore, additional assumptions under the form of regularization are needed. For the purpose of this paper, it will be useful to consider also the model under a slightly different form
-$$
-\mathbf{y} = \mathbf{H L u} + \mathbf{e},
-$$
-where the activity-inducing signal $\mathbf{s}$ is rewritten in terms of the innovation signal $\mathbf{u}$; i.e., the derivative $\mathbf{Ds}=\mathbf{u}$ of $\mathbf{s}$, or, equivalently, $\mathbf{s}=\mathbf{Lu}+c$, where $\mathbf{L}$ is the integrator and $c$ a constant (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}). 
+where $\mathbf{H}$ is an $N\times N$ Toeplitz matrix that represents the discrete convolution with the HRF, and $\mathbf{s}$ a length-$N$ vector with the unknown activity-inducing signal. Despite the apparent similarity with the GLM equation, there are two important differences. First, the multiplication with the design matrix of the GLM is an expansion as a weighted linear combination of its columns, while the multiplication with the HRF matrix represents a convolution with its shifted rows. Second, determining $\mathbf{s}$ is an ill-posed problem given the nature of the HRF; e.g., as can be seen intuitively, the rows of $\mathbf{H}$ are highly correlated due to large overlap between shifted HRFs (see Figure~\ref{fig:hrf_diff}B), thus introducing ambiguity and instability in the estimates of $\mathbf{s}$. Therefore, additional assumptions under the form of regularization are needed. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Paradigm Free Mapping
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Synthesis-based deconvolution}
-Synthesis-based deconvolution is based on the forward formulation following Eq.~(\ref{eq:deconvolution}); i.e., the to-be-recovered activity-inducing signal $\hat{\mathbf{s}}$ is convolved by the HRF and compared against the measured timecourse in the least-squares sense: 
+\subsection{Paradigm-free mapping}
+Synthesis-based deconvolution is based on the forward model formulation following Eq.~(\ref{eq:deconvolution}); i.e., the to-be-recovered activity-inducing signal $\hat{\mathbf{s}}$ is convolved by the HRF and compared against the measured timecourse in the least-squares sense: 
 \begin{equation}
     \label{eq:pfm}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \Omega(\mathbf{s}),
 \end{equation}
-where \(\Omega(\mathbf{s})\) is a regularization term. Paradigm Free Mapping (PFM) is based on this formulation with the equivalent interpretation of elements of the activity-inducing signals weighting the columns of $\mathbf{H}$ that contain shifted versions of the HRF (\citealt{gaudes2011DetectionCharacterizationSingletrial,caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm}). 
-
-Assuming that single-trial BOLD responses are the result of brief periods of neuronal activation, the activity-inducing signal \(\mathbf{s}\) must be a sparse vector. Thus, sparse estimates of \(\mathbf{s}\) could be obtained by substituting \(\Omega(\mathbf{s})\) in~\eqref{eq:pfm} with an \(l_0\)-norm and solving the optimization problem (\citealt{bruckstein2009SparseSolutionsSystems}). However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of the design matrix \(\mathbf{H}\). Hence, a pragmatic solution is to solve the optimization problem with the use of an \(l_1\)-norm, or LASSO (\citealt{tibshirani1996RegressionShrinkageSelection}), which is a convex function and therefore provides fast convergence to the optimal solution.
+where \(\Omega(\mathbf{s})\) is a regularization term. In classical Wiener deconvolution, the (squared) $\ell_2$-norm of $\mathbf{s}$ is imposed (i.e., $\Omega(\mathbf{s})=\lambda \left\| \mathbf{s}\right\|_2^2$), which introduces a trade-off, controlled by the regularization parameter $\lambda$, between data fit and ``energy'' of the solution. In paradigm-free mapping (PFM), the formulation of Eq.~(\ref{eq:pfm}) was considered equivalently as fitting the measurements using the atoms of a dictionary (columns of $\mathbf{H}$) with corresponding weights (entries of $\mathbf{s}$) (\citealt{gaudes2011DetectionCharacterizationSingletrial,caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm}). 
+In addition, sparsity-pursuing regularization was introduced on $\mathbf{s}$, which in a strict way reverts to choosing \(\Omega(\mathbf{s})=\lambda \| \mathbf{s} \|_0\) and solving the optimization problem (\citealt{bruckstein2009SparseSolutionsSystems}). However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of \(\mathbf{H}\). Hence, a  pragmatic solution is to solve the convex-relaxed optimization problem for the \(l_1\)-norm, commonly known as the LASSO (\citealt{tibshirani1996RegressionShrinkageSelection}): 
 \begin{equation}
     \label{eq:pfm_spike}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \lambda \| \mathbf{s} \|_1,
 \end{equation}
-where \(\lambda\) regulates how sparse the optimal solution is.
+which provides fast convergence to a global solution. From the neuronal perspective, imposing sparsity on the activity-inducing signal expresses that activity, at the fMRI timescale of seconds, is supposed to be short and typically can be explained by a small number of large entries. 
 
-Such formulation provides flexibility to expand the capabilities of PFM. For instance, incorporating the integration operator \(\mathbf{L}\) into the design matrix \(\mathbf{H}\) allows the recovery of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}):
-\begin{equation}
-    \label{eq:pfm_block}
-    \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1.
-\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Total Activation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Analysis-based deconvolution}
+\subsection{Total activation}
 
-Alternatively, the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
+Alternatively, the backward model formulation relies upon a differential operator to invert the convolution by the HRF, and can be seen as a denoising problem with tailored regularization.
+
+the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
 \begin{equation}
     L_h\{x\}(t) = s(t)
 \end{equation}
@@ -89,6 +84,22 @@ where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the fol
     \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \lambda \| \Delta_L \{\mathbf{x}\} \|_1,
 \end{equation}
 where \(\lambda\) is the regularization parameter.
+
+\subsection{Unifying both perspectives}
+[Below needs to be merged together -- It's better to first introduce PFM, then TA, and then unify]
+
+For the purpose of this paper, it will be useful to consider also the model under a slightly different form
+$$
+\mathbf{y} = \mathbf{H L u} + \mathbf{e},
+$$
+where the activity-inducing signal $\mathbf{s}$ is rewritten in terms of the innovation signal $\mathbf{u}$; i.e., the derivative $\mathbf{Ds}=\mathbf{u}$ of $\mathbf{s}$, or, equivalently, $\mathbf{s}=\mathbf{Lu}+c$, where $\mathbf{L}$ is the integrator and $c$ a constant (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}). 
+
+Such formulation provides flexibility to expand the capabilities of PFM. For instance, adding the integration operator \(\mathbf{L}\) by replacing $\mathbf{s}=\mathbf{Lu}$ turns it into a recovery problem of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}):
+\begin{equation}
+    \label{eq:pfm_block}
+    \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1.
+\end{equation}
+Importantly, sparsity by the $\ell_1$-norm on $\mathbf{u}$...
 
 This work evaluates the core of the two techniques, i.e., the regularized least-squares problem with temporal regularization, which corresponds to the generalized total-variation operator in Total Activation. Therefore, we do not study the impact of spatial constraints, as we assume that spatial regularization terms should perform identically on both methods.
 
