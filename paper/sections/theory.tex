@@ -58,36 +58,21 @@ which provides fast convergence to a global solution. From the neuronal perspect
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Total activation}
-Alternatively,  deconvolution can be formulated as a denoising problem where the signal to be recovered is directly fitting the measurements satisfying suitable regularization, which leads to
+Alternatively,  deconvolution can be formulated as a denoising problem where the signal to be recovered is directly fitting the measurements and at the same time satisfying some suitable regularization, which leads to
 \begin{equation}
     \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \Omega(\mathbf{x}).
 \end{equation}
-Popular regularized regression techniques such as ridge regression (i.e., $\Omega(\mathbf{x})=\lambda\|\mathbf{x}\|_2^2$) and elastic net (i.e., $\Omega(\mathbf{x})=\lambda_1\|\mathbf{x}\|_2^2 + \lambda_2\|\mathbf{x}\|_1$) fall under this category [REF]. One extremely powerful regularizer is total variation (TV), which is the $\ell_1$-norm of the derivative, $\Omega(\mathbf{x})=\lambda \|\mathbf{Dx}\|_1$, and favors recovery of piecewise-constant signals [REF]. The approach of generalized TV introduces an additional differential operator $\mathbf{D_H}$ in the regularizer that can be tailored as the inverse operator of a linear system~\citealt{karahanoglu2011SignalProcessingApproacha}: $\Omega(\mathbf{x})=\lambda \|\mathbf{D_H D x}\|_1$.
-
-
-the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets}):
+Well-known regularized regression techniques such as ridge regression (i.e., $\Omega(\mathbf{x})=\lambda\|\mathbf{x}\|_2^2$) and elastic net (i.e., $\Omega(\mathbf{x})=\lambda_1\|\mathbf{x}\|_2^2 + \lambda_2\|\mathbf{x}\|_1$) fall under this category [REF]. One other powerful regularizer is total variation (TV), which is the $\ell_1$-norm of the derivative, $\Omega(\mathbf{x})=\lambda \|\mathbf{Dx}\|_1$, and favors recovery of piecewise-constant signals [REF]. The approach of generalized TV introduces an additional differential operator $\mathbf{D_H}$ in the regularizer that can be tailored as the inverse operator of a linear system~(\citealt{karahanoglu2011SignalProcessingApproacha}), that is, $\Omega(\mathbf{x})=\lambda \|\mathbf{D D_H x}\|_1$. In the context of hemodynamic deconvolution, total activation is proposed for which the discrete operator $\mathbf{D_H}$ is derived from the inverse of the continuous-domain linearized balloon-windkessel model. Exchanging the poles and zeros of the latter's linear-system characterization leads to a differential operator of the form 
 \begin{equation}
-    L_h\{x\}(t) = s(t)
+    D_H\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1},
 \end{equation}
-where \(x\) is the neuronal-related signal; i.e., the activity inducing signal \(\mathbf{s}\) convolved with the HRF, and \(L_h\) is defined as
-\begin{equation}
-    L_h\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1},
-\end{equation}
-where \(D\) is the derivative operator, \(\alpha_i (i=1, \hdots, M_1)\) define the zeros of the filter, \(\gamma_j (j=1, \hdots, M_2)\) represent the poles, \(I\) is the identity matrix and \(M_1 > M_2\). Given the relationship between the activity-inducing and the innovation signal, the latter can be recovered as:
-\begin{equation}
-    L\{x\}(t) = D\{s\}(t) = u(t)
-\end{equation}
-where \(L = DL_h\) and \(D\) is the derivative.
+where \(D\) is the derivative operator, \(\alpha_i\) the zeros, and \(\gamma_j\) the poles. The interested reader is referred to (\citealt{karahanoglu2013TotalActivationFMRI}) for a detailed description. 
 
-Therefore, for a given voxel, the neuronal-related signal could be estimated by solving the following 
-
-xxx
-
-where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the following \(l_1\)-norm regularization term:
+Therefore, the solution of the total-activation problem 
 \begin{equation}
-    \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \lambda \| \Delta_L \{\mathbf{x}\} \|_1,
+    \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \lambda \| \mathbf{D D_H x} \|_1
 \end{equation}
-where \(\lambda\) is the regularization parameter.
+will render the activity-related signal $\mathbf{x}$ for which the activity-inducing signal $\mathbf{s}=\mathbf{D_H x}$ and so-called innovation signal $\mathbf{u}=\mathbf{Ds}$ will also be available, as they are required for the regularization.  
 
 \subsection{Unifying both perspectives}
 [Below needs to be merged together -- It's better to first introduce PFM, then TA, and then unify]
