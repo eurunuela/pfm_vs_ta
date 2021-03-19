@@ -38,13 +38,13 @@ where $\mathbf{H}$ is an $N\times N$ Toeplitz matrix that represents the discret
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Paradigm-free mapping}
-Synthesis-based deconvolution is based on the forward model formulation following Eq.~(\ref{eq:deconvolution}); i.e., the to-be-recovered activity-inducing signal $\hat{\mathbf{s}}$ is convolved by the HRF and compared against the measured timecourse in the least-squares sense: 
+The first approach for deconvolution is based on the forward model formulation of Eq.~(\ref{eq:deconvolution}); i.e., the to-be-recovered activity-inducing signal $\hat{\mathbf{s}}$ is convolved by the HRF and compared against the measured timecourse in the least-squares sense: 
 \begin{equation}
     \label{eq:pfm}
-    \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \Omega(\mathbf{s}),
+    \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \Omega(\mathbf{s}).
 \end{equation}
-where \(\Omega(\mathbf{s})\) is a regularization term. In classical Wiener deconvolution, the (squared) $\ell_2$-norm of $\mathbf{s}$ is imposed (i.e., $\Omega(\mathbf{s})=\lambda \left\| \mathbf{s}\right\|_2^2$), which introduces a trade-off, controlled by the regularization parameter $\lambda$, between data fit and ``energy'' of the solution. In paradigm-free mapping (PFM), the formulation of Eq.~(\ref{eq:pfm}) was considered equivalently as fitting the measurements using the atoms of a dictionary (columns of $\mathbf{H}$) with corresponding weights (entries of $\mathbf{s}$) (\citealt{gaudes2011DetectionCharacterizationSingletrial,caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm}). 
-In addition, sparsity-pursuing regularization was introduced on $\mathbf{s}$, which in a strict way reverts to choosing \(\Omega(\mathbf{s})=\lambda \| \mathbf{s} \|_0\) and solving the optimization problem (\citealt{bruckstein2009SparseSolutionsSystems}). However, due to the convolution model defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of \(\mathbf{H}\). Hence, a  pragmatic solution is to solve the convex-relaxed optimization problem for the \(l_1\)-norm, commonly known as the LASSO (\citealt{tibshirani1996RegressionShrinkageSelection}): 
+The first term quantifies data fitness, which can be justified as the log-likelihood term derived from Gaussian noise assumptions, while the second term \(\Omega(\mathbf{s})\) brings in regularization and be interpreted as a prior on the activity-inducing signal. In classical Wiener deconvolution, the (squared) $\ell_2$-norm of $\mathbf{s}$ is imposed (i.e., $\Omega(\mathbf{s})=\lambda \left\| \mathbf{s}\right\|_2^2$), which introduces a trade-off, controlled by the regularization parameter $\lambda$, between data fit and ``energy'' of the solution. In paradigm-free mapping (PFM), the formulation of Eq.~(\ref{eq:pfm}) was considered equivalently as fitting the measurements using the atoms of a dictionary (columns of $\mathbf{H}$) with corresponding weights (entries of $\mathbf{s}$) (\citealt{gaudes2011DetectionCharacterizationSingletrial,caballerogaudes2013ParadigmFreeMapping,urunuela2020StabilityBasedSparseParadigm}). 
+In addition, sparsity-pursuing regularization was introduced on $\mathbf{s}$, which in a strict way reverts to choosing \(\Omega(\mathbf{s})=\lambda \| \mathbf{s} \|_0\) and solving the optimization problem (\citealt{bruckstein2009SparseSolutionsSystems}). However, due to the convolution model\todo{Even without would be the case, right?} defined in~\eqref{eq:pfm}, finding the optimal solution to the problem demands an exhaustive search across all possible combinations of the columns of \(\mathbf{H}\). Hence, a  pragmatic solution is to solve the convex-relaxed optimization problem for the \(l_1\)-norm, commonly known as the LASSO (\citealt{tibshirani1996RegressionShrinkageSelection}): 
 \begin{equation}
     \label{eq:pfm_spike}
     \hat{\mathbf{s}} = \arg \min_{\mathbf{s}} \frac{1}{2} \| \mathbf{y} - \mathbf{Hs} \|_2^2 + \lambda \| \mathbf{s} \|_1,
@@ -58,10 +58,14 @@ which provides fast convergence to a global solution. From the neuronal perspect
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Total activation}
+Alternatively,  deconvolution can be formulated as a denoising problem where the signal to be recovered is directly fitting the measurements satisfying suitable regularization, which leads to
+\begin{equation}
+    \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \Omega(\mathbf{x}).
+\end{equation}
+Popular regularized regression techniques such as ridge regression (i.e., $\Omega(\mathbf{x})=\lambda\|\mathbf{x}\|_2^2$) and elastic net (i.e., $\Omega(\mathbf{x})=\lambda_1\|\mathbf{x}\|_2^2 + \lambda_2\|\mathbf{x}\|_1$) fall under this category [REF]. One extremely powerful regularizer is total variation (TV), which is the $\ell_1$-norm of the derivative, $\Omega(\mathbf{x})=\lambda \|\mathbf{Dx}\|_1$, and favors recovery of piecewise-constant signals [REF]. The approach of generalized TV introduces an additional differential operator $\mathbf{D_H}$ in the regularizer that can be tailored as the inverse operator of a linear system~\citealt{karahanoglu2011SignalProcessingApproacha}: $\Omega(\mathbf{x})=\lambda \|\mathbf{D_H D x}\|_1$.
 
-Alternatively, the backward model formulation relies upon a differential operator to invert the convolution by the HRF, and can be seen as a denoising problem with tailored regularization.
 
-the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets,karahanoglu2011SignalProcessingApproacha}):
+the estimator of the signal is analyzed in analysis-based deconvolution models, i.e., some aspects of it are calculated and penalized during the estimation process. For instance, Total Activation (TA) proposes to use a linear differential operator \(L_h\) that inverts the hemodynamic system based on activelets to recover the activity-inducing signal \(\mathbf{s}\) (\citealt{karahanoglu2013TotalActivationFMRI,khalidov2011activelets}):
 \begin{equation}
     L_h\{x\}(t) = s(t)
 \end{equation}
@@ -75,10 +79,10 @@ where \(D\) is the derivative operator, \(\alpha_i (i=1, \hdots, M_1)\) define t
 \end{equation}
 where \(L = DL_h\) and \(D\) is the derivative.
 
-Therefore, for a given voxel, the neuronal-related signal could be estimated by solving the following regularized least-squares problem:
-\begin{equation}
-    \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \Omega(\mathbf{x}),
-\end{equation}
+Therefore, for a given voxel, the neuronal-related signal could be estimated by solving the following 
+
+xxx
+
 where \(\mathbf{y}\) is the fMRI data and \(\mathcal{R}(\mathbf{x})\) is the following \(l_1\)-norm regularization term:
 \begin{equation}
     \hat{\mathbf{x}} = \arg \min_{\mathbf{x}} \frac{1}{2} \| \mathbf{y} - \mathbf{x} \|_2^2 + \lambda \| \Delta_L \{\mathbf{x}\} \|_1,
@@ -87,6 +91,10 @@ where \(\lambda\) is the regularization parameter.
 
 \subsection{Unifying both perspectives}
 [Below needs to be merged together -- It's better to first introduce PFM, then TA, and then unify]
+
+Explain difference between synthesis- and analysis-based formulation here.
+
+backward model formulation relies upon a differential operator to invert the convolution by the HRF
 
 For the purpose of this paper, it will be useful to consider also the model under a slightly different form
 $$
