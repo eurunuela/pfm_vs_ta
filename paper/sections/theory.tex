@@ -13,7 +13,7 @@
 %     \item Spikes and block models
 % \end{itemize}
 
-\todo[inline]{I think we need a short paragraph here introducing: 1) our notations; 2) basic math definitions, in particular for norms.}
+\todo[inline]{I think we need a short paragraph here introducing: 1) our notations (vectors, matrices, discrete, continuous); 2) basic math definitions, in particular for norms.}
 
 Conventional general linear model (GLM) analysis puts forward a number of regressors incorporating knowledge about the paradigm or behavior. For instance, the timing of epochs for a certain condition can be modeled as an indicator function $p(t)$, convolved with the HRF $h(t)$, and sampled at TR resolution (\citealt{friston1994analysis, friston1998event, boynton1996linear, cohen1997parametric}):\todo{Rather some Friston paper(s) here}
 $$
@@ -75,24 +75,18 @@ Therefore, the solution of the total-activation problem
 will render the activity-related signal $\mathbf{x}$ for which the activity-inducing signal $\mathbf{s}=\mathbf{D_H x}$ and so-called innovation signal $\mathbf{u}=\mathbf{Ds}$ will also be available, as they are required for the regularization.  
 
 \subsection{Unifying both perspectives}
-[Below needs to be merged together -- It's better to first introduce PFM, then TA, and then unify]
+\todo[inline]{I would go for a schematic block-flowchart that goes between activity-related/inducing/innovation signals with between each step the two operators; i.e., $\mathbf{H}$ and $\mathbf{D_H}$ for the first, $\mathbf{L}$ and $\mathbf{D}$ for the second.}
 
-Explain difference between synthesis- and analysis-based formulation here.
-
-backward model formulation relies upon a differential operator to invert the convolution by the HRF
-
-For the purpose of this paper, it will be useful to consider also the model under a slightly different form
+PFM and TA are based on the synthesis- and analysis-based formulation of the deconvolution problem, respectively. In the first case, the recovered deconvolved signal is synthesized to be matched to the measurements, while in the second case, the recovered signal is directly matched to the measurements but needs to satisfy its analysis in terms of deconvolution. This also corresponds to using the forward or backward model of the hemodynamic system, respectively. Both approaches can be made equivalent. First, TA can be made equivalent to PFM by removing the derivative operator of TA's regularizer. It can be readily verified that replacing in that case $\mathbf{x}=\mathbf{Hs}$ leads to identical equations. Second, PFM can also be made equivalent to TA, by considering the modified forward model
 $$
 \mathbf{y} = \mathbf{H L u} + \mathbf{e},
 $$
-where the activity-inducing signal $\mathbf{s}$ is rewritten in terms of the innovation signal $\mathbf{u}$; i.e., the derivative $\mathbf{Ds}=\mathbf{u}$ of $\mathbf{s}$, or, equivalently, $\mathbf{s}=\mathbf{Lu}+c$, where $\mathbf{L}$ is the integrator and $c$ a constant (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}). 
-
-Such formulation provides flexibility to expand the capabilities of PFM. For instance, adding the integration operator \(\mathbf{L}\) by replacing $\mathbf{s}=\mathbf{Lu}$ turns it into a recovery problem of the innovation signal \(\mathbf{u}\); i.e., the derivative of the activity-inducing signal \(\mathbf{s}\). Therefore, the innovation signal can be estimated by solving the following optimization problem (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}):
+where the activity-inducing signal $\mathbf{s}$ is rewritten in terms of the innovation signal $\mathbf{u}$; i.e., the derivative $\mathbf{Ds}=\mathbf{u}$ of $\mathbf{s}$ (\citealt{cherkaoui2019SparsitybasedBlindDeconvolution,urunuela2020StabilityBasedSparseParadigm}). This way, PFM will solve for the innovation signal $\mathbf{u}$: 
 \begin{equation}
     \label{eq:pfm_block}
-    \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1.
+    \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1,
 \end{equation}
-Importantly, sparsity by the $\ell_1$-norm on $\mathbf{u}$...
+and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$. 
 
 This work evaluates the core of the two techniques, i.e., the regularized least-squares problem with temporal regularization, which corresponds to the generalized total-variation operator in Total Activation. Therefore, we do not study the impact of spatial constraints, as we assume that spatial regularization terms should perform identically on both methods.
 
