@@ -1,3 +1,5 @@
+% !TEX root = ../main.tex
+
 \section{Methods}
 \label{sec:data}
 
@@ -20,7 +22,7 @@ with up to second-order harmonics per cardiac (\(f_{c,i}\)) and respiratory (\(f
 \subsection{Experimental data}
 \textbf{Motor task dataset:} One healthy subject was scanned in a 3T MR scanner (Siemens) as part of a larger experiment under a Basque Center on Cognition, Brain and Language Review Board-approved protocol. T2*-weighted multi-echo fMRI data was acquired with a multiband (MB) multi-echo gradient echo-planar imaging sequence (340 scans, 52 slices, Partial-Fourier = 6/8, voxel size = 2.4x2.4x3 mm\textsuperscript{3}, TR = 1.5 s, TEs = 10.6/28.69/46.78/64.87/82.96 ms, multiband factor = 4, flip angle = 70\(^o\), GRAPPA = 2).
 
-During the fMRI acquisition, subjects performed a motor task consisting of five different movements (left-hand finger tapping, right-hand finger tapping, moving the left toes, moving the right toes and moving the tongue). These conditions were randomly intermixed every 16 seconds, and were only repeated once the entire set of stimuli were presented. Data preprocessing consisted of optimally combining the echo time datasets, detrending of up to 5\(^{th}\)-order Legendre polynomials, spatial smoothing (3 mm FWHM) and normalization to signal percentage change. Figure~\ref{fig:finger_tapping} shows the time-series of a representative voxel in the motor cortex, where the colored bands illustrate the onset and duration of the right-hand finger-tapping condition of the paradigm.
+During the fMRI acquisition, subjects performed a motor task consisting of five different movements (left-hand finger tapping, right-hand finger tapping, moving the left toes, moving the right toes and moving the tongue). These conditions were randomly intermixed every 16 seconds, and were only repeated once the entire set of stimuli were presented. Data preprocessing consisted of optimally combining the echo time datasets, detrending of up to 5\(^{th}\)-order Legendre polynomials, spatial smoothing (3 mm FWHM) and normalization to signal percentage change. Figure~\ref{fig:finger_tapping}\todo{Fig. seems corrupted?} shows the time-series of a representative voxel in the motor cortex, where the colored bands illustrate the onset and duration of the right-hand finger-tapping condition of the paradigm.
 
 \begin{figure}[h]
     \begin{center}
@@ -36,7 +38,7 @@ During both acquisitions, participants were instructed to keep their eyes open, 
 
 \subsection{Selection of the hemodynamic response function}
 
-With the aim of making a fair comparison of the two methods, we first compared their hemodynamic response functions. Figure~\ref{fig:hrf_diff}A shows the difference in the hemodynamic response function that PFM and TA use by default for TR = 0.1 s and TR = 1 s adjusted to peak amplitude of one; i.e., the canonical HRF and the HRF resulting from the linear differential operator. The most observable difference between the two HRFs is the time to peak: the HRF used by Total Activation does not begin at zero while the one used by PFM does.
+With the aim of making a fair comparison between both methods, we first compared their HRFs. Figure~\ref{fig:hrf_diff}A shows the difference in the HRF that PFM and TA use by default for TR = 0.1 s and TR = 1 s\todo{I don't understand the x-axis in the figure, is then index, not time?} adjusted to peak amplitude of one; i.e., the canonical HRF and the HRF resulting from the linear differential operator. The most observable difference between the two HRFs is the time to peak: the HRF used by Total Activation does not begin at zero\todo{But that's not related to TTP} while the one used by PFM does.
 
 \begin{figure}[h]
     \includegraphics[width=\columnwidth]{figures/pfm_ta_hrf.pdf}
@@ -44,4 +46,4 @@ With the aim of making a fair comparison of the two methods, we first compared t
 \label{fig:hrf_diff}
 \end{figure}
 
-While Paradigm Free Mapping allows for the use of any hemodynamic response function --- the columns of the design matrix \(\mathbf{H}\) are composed by shifted versions of the HRF--- the linear differential operator in TA is tailored for a fixed HRF. Hence, for practical reasons, we reproduced the HRF in the Total Activation filter and incorporated it into the PFM formulation (Figure~\ref{fig:hrf_diff}B).
+While PFM allows for the use of any HRF---the columns of the design matrix \(\mathbf{H}\) are composed by shifted versions of the HRF--- the linear differential operator in TA is tailored for a fixed HRF\todo{It's maybe not so simple: what I take from Elad's paper is that any convolution operator $\mathbf{H}$ (for synthesis) can be turned in an equivalent analysis operator.}. Hence, for practical reasons, we reproduced the HRF in the Total Activation filter and incorporated it into the PFM formulation (Figure~\ref{fig:hrf_diff}B).
