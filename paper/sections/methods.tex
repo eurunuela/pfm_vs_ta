@@ -15,7 +15,7 @@ with up to second-order harmonics per cardiac (\(f_{c,i}\)) and respiratory (\(f
     \begin{center}
         \includegraphics[width=\columnwidth]{figures/sim.pdf}
     \end{center}
-    \caption{Simulated signal with different SNRs (20 dB, 10 dB and 3 dB).}
+    \caption{Simulated signal with different SNRs (20 dB, 10 dB and 3 dB)\todo[inline]{Why not combine this in a single plot with different lines/colors for the SNR levels?}.}
 \label{fig:simulations}
 \end{figure}
 
@@ -28,7 +28,7 @@ During the fMRI acquisition, subjects performed a motor task consisting of five 
     \begin{center}
         \includegraphics[width=\columnwidth]{figures/finger_tapping.pdf}
     \end{center}
-    \caption{Most representative voxel of the finger-tapping task. Green blocks indicate the onsets and the duration of it.}
+    \caption{Most representative voxel of the finger-tapping task. Green blocks indicate the onsets and the duration of it.\todo[inline]{This image does not look complete here?}}
 \label{fig:finger_tapping}
 \end{figure}
 
@@ -42,7 +42,7 @@ With the aim of making a fair comparison between both methods, we first compared
 
 \begin{figure}[h]
     \includegraphics[width=\columnwidth]{figures/pfm_ta_hrf.pdf}
-    \caption{A) Canonical HRF models typically used by PFM (green) and TA (black) at TR = 0.1 s (dashed lines) and TR = 1 s (solid lines). Without loss of generality, the waveforms are scaled to unit amplitude for visualization. B) Representation of three shifted HRFs at TR=1 s (onsets=0, 1, and 15 s) that build the design matrix for PFM when the HRF model has been matched to that in TA.}
+    \caption{A) Canonical HRF models typically used by PFM (green) and TA (black) at TR = 0.1 s (dashed lines) and TR = 1 s (solid lines). Without loss of generality, the waveforms are scaled to unit amplitude for visualization. B) Representation of three shifted HRFs at TR=1 s (onsets=0, 1, and 15 s) that build the design matrix for PFM when the HRF model has been matched to that in TA.\todo[inline]{If I understand well, you plot them as function of index? But I would map them on top of one another as function of time...}}
 \label{fig:hrf_diff}
 \end{figure}
 
