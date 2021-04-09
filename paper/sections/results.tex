@@ -17,6 +17,17 @@
 %     \end{itemize}
 % \end{itemize}
 
+\subsection{Selection of the regularization parameter by solving the regularization path}
+\label{sec:regpath}
+
+Paradigm Free Mapping bases its selection of the regularization parameter on the BIC. Hence, we calculated the regularization path with PFM by means of the least angle regression (LARS) algorithm (\citealt{efron2004LeastAngleRegression}) and used the \(\lambda\)s from the regularization path\todo{To be explained above in Algorithms.} to solve the deconvolution problem with Total Activation.
+
+Figure~\ref{fig:sim}A (left) shows the regularization paths of PFM and TA side by side for the three SNR conditions for the spike model; i.e., the inverse problem described in~\eqref{eq:pfm_spike}. Each iteration of LARS reduces the value of \(\lambda\); i.e., reduces the sparsity promoted by the \(l_1\)-norm, and reveals new non-zero coefficients as shown in the x-axis of the heatmaps. Vertical black lines depict the selection of the regularization parameter based on BIC, and thus, the colored coefficients indicated by the vertical lines depict the estimated activity-inducing signal \(s(t)\). Figure~\ref{fig:sim}A (right) illustrates the resulting estimation of the activity-inducing and neuronal-related signals when basing the selection of \(\lambda\) on BIC for the three simulated SNR conditions. Given that the regularization paths of both techniques are identical, the BIC-based selection of the regularization parameter and the results of deconvolving with said \(\lambda\) are identical too (see Figure~\ref{fig:lambdas}). Thus, Figure~\ref{fig:sim}A demonstrates that, regardless of the simulated SNR condition, both deconvolution algorithms produce identical regularization paths when the same HRF and regularization parameters are applied, and hence, identical estimates of the activity-inducing signal \(\mathbf{s}\) and neuronal-related signal \(\mathbf{x}\).
+
+The regularization path to estimate innovation signals yields mainly undistinguishable results for both PFM and TA methods as shown in Figure~\ref{fig:sim}A (left). Again, the BIC-based selection of \(\lambda\) is identical for both PFM and TA, and the estimation of the innovation signal \(\mathbf{u}\) shows no distinguishable differences between the algorithms (see Figure~\ref{fig:sim}A right). Therefore, both Paradigm Free Mapping and Total Activation yield nearly identical regularization paths and estimates of the innovation signal regardless of the simulated SNR condition when applying the same HRF and regularization parameters with the block model.
+
+% Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC selection of \(\lambda\) in row 4, row 2 proves that the results are practically identical, and differences can be disregarded.
+
 \subsection{Selection of the regularization parameter based on the estimation of the noise}
 
 \begin{figure*}[t!]
@@ -36,17 +47,6 @@
 % \end{figure*}
 
 We calculated the regularization path with PFM (as described in \ref{sec:regpath}) and selected the \(\lambda\) corresponding to the residuals that were closest to the estimated noise level of the data. We applied Total Activation with temporal regularization in its original form. Figure~\ref{fig:sim}B depicts the estimated activity-inducing, innovation, and activity-related signals when updating \(\lambda\) following~\eqref{eq:std} in the three simulated SNR settings using the spike model (left) and the block model (right). Figure~\ref{fig:sim}B (left) shows nearly identical results between PFM (left) and TA (right) with the use of the spike model. The minimal differences are the result of slight dissimilarities in the convergence of the residuals to the estimated noise level of the data. Likewise, the use of the block model with a selection of \(\lambda\) based on the MAD estimate of the noise yields results that are identical in practice as shown in Figure~\ref{fig:sim}B (right).
-
-\subsection{Selection of the regularization parameter by solving the regularization path}
-\label{sec:regpath}
-
-Paradigm Free Mapping bases its selection of the regularization parameter on the BIC. Hence, we calculated the regularization path with PFM by means of the least angle regression (LARS) algorithm (\citealt{efron2004LeastAngleRegression}) and used the \(\lambda\)s from the regularization path\todo{To be explained above in Algorithms.} to solve the deconvolution problem with Total Activation.
-
-Figure~\ref{fig:sim}A (left) shows the regularization paths of PFM and TA side by side for the three SNR conditions for the spike model; i.e., the inverse problem described in~\eqref{eq:pfm_spike}. Each iteration of LARS reduces the value of \(\lambda\); i.e., reduces the sparsity promoted by the \(l_1\)-norm, and reveals new non-zero coefficients as shown in the x-axis of the heatmaps. Vertical black lines depict the selection of the regularization parameter based on BIC, and thus, the colored coefficients indicated by the vertical lines depict the estimated activity-inducing signal \(s(t)\). Figure~\ref{fig:sim}A (right) illustrates the resulting estimation of the activity-inducing and neuronal-related signals when basing the selection of \(\lambda\) on BIC for the three simulated SNR conditions. Given that the regularization paths of both techniques are identical, the BIC-based selection of the regularization parameter and the results of deconvolving with said \(\lambda\) are identical too (see Figure~\ref{fig:lambdas}). Thus, Figure~\ref{fig:sim}A demonstrates that, regardless of the simulated SNR condition, both deconvolution algorithms produce identical regularization paths when the same HRF and regularization parameters are applied, and hence, identical estimates of the activity-inducing signal \(\mathbf{s}\) and neuronal-related signal \(\mathbf{x}\).
-
-The regularization path to estimate innovation signals yields mainly undistinguishable results for both PFM and TA methods as shown in Figure~\ref{fig:sim}A (left). Again, the BIC-based selection of \(\lambda\) is identical for both PFM and TA, and the estimation of the innovation signal \(\mathbf{u}\) shows no distinguishable differences between the algorithms (see Figure~\ref{fig:sim}A right). Therefore, both Paradigm Free Mapping and Total Activation yield nearly identical regularization paths and estimates of the innovation signal regardless of the simulated SNR condition when applying the same HRF and regularization parameters with the block model.
-
-% Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC selection of \(\lambda\) in row 4, row 2 proves that the results are practically identical, and differences can be disregarded.
 
 \subsection{Performance on experimental data}
 
@@ -74,7 +74,7 @@ Figure~\ref{fig:rss} depicts the RSS of the spike (Figure~\ref{fig:rss}A) and bl
     \begin{center}
         \includegraphics[width=\textwidth]{figures/task_maps.pdf}
     \end{center}
-    \caption{Row 1: Activation time-series of the innovation signals estimated by PFM calculated as the sum of squares at every time-frame. Color-bands indicate the onset and duration of each condition in the task (green: tongue, purple: left-hand finger-tapping, blue: right-hand finger-tapping, red: left-foot toes, orange: right-foot toes). Rows 2-6: time-series of a representative voxel for each task with the PFM-estimated innovation (blue) and neuronal-related (i.e., fitted, orange) signals, with their corresponding GLM, PFM and TA maps on the right.}
+    \caption{Row 1: Activation time-series of the innovation signals estimated by PFM (in blue) or TA (in red) calculated as the sum of squares at every time-frame. Positive-valued and negative-valued contributions were separated into two distinct timecourses. Color-bands indicate the onset and duration of each condition in the task (green: tongue, purple: left-hand finger-tapping, blue: right-hand finger-tapping, red: left-foot toes, orange: right-foot toes). Rows 2-6: time-series of a representative voxel for each task with the PFM-estimated innovation (blue), PFM-estimated activity-inducing (green), and activity-related (i.e., fitted, orange) signals, with their corresponding GLM, PFM, and TA maps on the right. The maps shown on the right are sampled at the time-point labeled with the red arrows and display the innovation signals at that moment across the whole brain.}
 \label{fig:task_maps}
 \end{figure*}
 
@@ -82,6 +82,6 @@ Figure~\ref{fig:rss} depicts the RSS of the spike (Figure~\ref{fig:rss}A) and bl
     \begin{center}
         \includegraphics[width=\textwidth]{figures/caps.pdf}
     \end{center}
-    \caption{CAPs (left) and iCAPs (right) obtained with the PFM-estimated activity-inducing and innovation signals respectively. Time-points selected with a 95th percentile threshold are shown over the average time-series (blue) in the seed region (white-cross) and the deconvolved signal (orange). CAPs and iCAPs maps of the seed and deconvolved signals obtained by averaging the selected time-points are illustrated in the center.}
+    \caption{CAPs (left) and iCAPs (right) obtained with the PFM-estimated activity-inducing and innovation signals, respectively. Time-points selected with a 95th percentile threshold are shown over the average time-series (blue) in the seed region (white-cross) and the deconvolved signal (orange). CAPs and iCAPs maps of the seed and deconvolved signals obtained by averaging the selected time-points are illustrated in the center.}
 \label{fig:caps}
 \end{figure*}

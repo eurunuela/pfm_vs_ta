@@ -22,9 +22,9 @@ $$
 The vector $\mathbf{x}=[x[k]]_{k=1,\ldots,N}$ then constitutes the hypothetical response, and several of them can be stacked as the columns of the design matrix $\mathbf{X}=[\mathbf{x}_1 \ldots \mathbf{x}_L]$, leading to the celebrated GLM: 
 \begin{equation}
     \label{eq:glm}
-    \mathbf{y} = \mathbf{X \beta} + \mathbf{e},
+    \mathbf{y} = \mathbf{X} \boldsymbol\beta + \mathbf{e},
 \end{equation}
-where the empirical timecourse $\mathbf{y}$ is explained by a linear combination of the regressors in $\mathbf{X}$ weighted by the parameter weights in $\mathbf{\beta}$ and corrupted by additive noise $\mathbf{e}$. Under independent and identically distributed Gaussian assumptions of the latter, the maximum likehood estimate of the parameter weights reverts to the ordinary least-squares estimator; i.e., minimizing the residual sum of squares between the fitted model and measurements. The number of regressors $L$ is typically much less than the number of measurements $N$, and thus the regression problem is over-determined and does no require additional constraints or assumptions.
+where the empirical timecourse $\mathbf{y}$ is explained by a linear combination of the regressors in $\mathbf{X}$ weighted by the parameter weights in $\boldsymbol\beta$ and corrupted by additive noise $\mathbf{e}$. Under independent and identically distributed Gaussian assumptions of the latter, the maximum likelihood estimate of the parameter weights reverts to the ordinary least-squares estimator; i.e., minimizing the residual sum of squares between the fitted model and measurements. The number of regressors $L$ is typically much less than the number of measurements $N$, and thus the regression problem is over-determined and does no require additional constraints or assumptions.
 
 In the deconvolution approach, no prior knowledge is taken into account, and the purpose is to estimate the deconvolved activity-inducing signal $\mathbf{s}$ from the measurements $\mathbf{y}$, which can be formulated as the signal model
 \begin{equation}
@@ -100,8 +100,9 @@ Here, we evaluate PFM and TA solved using XX and XX, respectively. We do not int
 
 The correct selection of the regularization parameter \(\lambda\) is a critical decision for the accurate performance of deconvolution methods. Even though many techniques have been proposed in the literature, the optimal strategy that selects \(\lambda\) is yet to be found. Algorithms like least angle regression (LARS) (\citealt{efron2004LeastAngleRegression}) provide all the possible solutions to the optimization problem and their corresponding value of \(\lambda\), i.e., the regularization path, but don't provide the optimal solution. Therefore, strategies that exploit the regularization path can provide a selection of \(\lambda\) that is close to the optimal. For instance, in PFM, the optimal result is given by the Bayesian Information Criterion (BIC) (\citealt{schwarz1978EstimatingDimensionModel}), i.e., the regularization path solution with the minimum BIC is considered optimal. Another approach could be to update the regularization parameter \(\lambda\) on every iteration \(n\) like TA does, so that the residuals converge to a previously estimated noise level of the data fit \(\tilde{\sigma}\). The pre-estimated noise level is calculated from the median absolute deviation of fine-scale wavelet coefficients (Daubechies, order 3) (\citealt{karahanoglu2013TotalActivationFMRI}):
 \begin{equation}
-    \lambda^{n+1} = \frac{N \tilde{\sigma}}{\frac{1}{2} \| \mathbf{y} - \mathbf{x}^n \|_F^2} \lambda^n.
+    \lambda^{n+1} = \frac{N \tilde{\sigma}}{\frac{1}{2} \| \mathbf{y} - \mathbf{x}^n \|_F^2} \lambda^n,
 \label{eq:std}
 \end{equation}
+where $x^n$ is the $n^{th}$ iteration estimate, ...
 
 Here, we compare the performance of the two deconvolution algorithms with both selection criteria and in terms of the estimation of the activity-inducing signal \(\mathbf{s}\) using the \textit{spike model} in~\eqref{eq:pfm_spike} and the innovation signal \(\mathbf{u}\) using the \textit{block model} in~\eqref{eq:pfm_block}.
