@@ -17,10 +17,9 @@
 %     \end{itemize}
 % \end{itemize}
 
-\subsection{Selection of the regularization parameter by solving the regularization path}
+\subsection{Performance on simulated data}
+\subsubsection{Selection of the regularization parameter by solving the regularization path}
 \label{sec:regpath}
-
-Paradigm Free Mapping bases its selection of the regularization parameter on the BIC. Hence, we calculated the regularization path with PFM by means of the least angle regression (LARS) algorithm (\citealt{efron2004LeastAngleRegression}) and used the \(\lambda\)s from the regularization path\todo{To be explained above in Algorithms.} to solve the deconvolution problem with Total Activation.
 
 Figure~\ref{fig:sim}A (left) shows the regularization paths of PFM and TA side by side for the three SNR conditions for the spike model; i.e., the inverse problem described in~\eqref{eq:pfm_spike}. Each iteration of LARS reduces the value of \(\lambda\); i.e., reduces the sparsity promoted by the \(l_1\)-norm, and reveals new non-zero coefficients as shown in the x-axis of the heatmaps. Vertical black lines depict the selection of the regularization parameter based on BIC, and thus, the colored coefficients indicated by the vertical lines depict the estimated activity-inducing signal \(s(t)\). Figure~\ref{fig:sim}A (right) illustrates the resulting estimation of the activity-inducing and neuronal-related signals when basing the selection of \(\lambda\) on BIC for the three simulated SNR conditions. Given that the regularization paths of both techniques are identical, the BIC-based selection of the regularization parameter and the results of deconvolving with said \(\lambda\) are identical too (see Figure~\ref{fig:lambdas}). Thus, Figure~\ref{fig:sim}A demonstrates that, regardless of the simulated SNR condition, both deconvolution algorithms produce identical regularization paths when the same HRF and regularization parameters are applied, and hence, identical estimates of the activity-inducing signal \(\mathbf{s}\) and neuronal-related signal \(\mathbf{x}\).
 
@@ -28,7 +27,7 @@ The regularization path to estimate innovation signals yields mainly undistingui
 
 % Furthermore, we performed the same analysis on experimental data as shown in Figure~\ref{fig:exp} (rows 1-2, 4). Row 1 demonstrates that the PFM and TA regularization paths are identical when deconvolving experimental data, regardless of the deconvolution model (spike or block). Even though tiny differences can be seen between the two methods in the BIC selection of \(\lambda\) in row 4, row 2 proves that the results are practically identical, and differences can be disregarded.
 
-\subsection{Selection of the regularization parameter based on the estimation of the noise}
+\subsubsection{Selection of the regularization parameter based on the estimation of the noise}
 
 \begin{figure*}[t!]
     \begin{center}
