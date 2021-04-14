@@ -100,6 +100,6 @@ The correct selection of the regularization parameter \(\lambda\) is a critical 
     \lambda^{n+1} = \frac{N \tilde{\sigma}}{\frac{1}{2} \| \mathbf{y} - \mathbf{x}^n \|_F^2} \lambda^n,
 \label{eq:std}
 \end{equation}
-where $x^n$ is the $n^{th}$ iteration estimate, ...
+where $x^n$ is the $n^{th}$ iteration estimate, $\lambda^n$ and $\lambda^{n+1}$ are the $n^{th}$ and $n+1^{th}$ iteration values for the regularization parameter $\lambda$, and $N$ is the number of points in the time-course.
 
 Here, we compare the performance of the two deconvolution algorithms with both selection criteria and in terms of the estimation of the activity-inducing signal \(\mathbf{s}\) using the \textit{spike model} in~\eqref{eq:pfm_spike} and the innovation signal \(\mathbf{u}\) using the \textit{block model} in~\eqref{eq:pfm_block}.
