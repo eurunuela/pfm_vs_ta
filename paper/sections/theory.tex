@@ -14,6 +14,13 @@
 % \end{itemize}
 
 \todo[inline]{I think we need a short paragraph here introducing: 1) our notations (vectors, matrices, discrete, continuous); 2) basic math definitions, in particular for norms.}
+\subsection{Notations and definitions}
+
+Let us begin by introducing some key notations and definitions. Matrices are denoted by boldface capital letters, e.g., $\mathbf{H}$, vectors are denoted by boldface lowercase letters, e.g., $\mathbf{y}$, and scalars are denoted by lowercase letters, e.g., $k$. Continuous functions are denoted by brackets, e.g., $h(t)$, while discrete functions are denoted by square brackets, e.g., $x[k]$.
+
+The euclidean norm of a matrix $\mathbf{Y}$ is denoted by $\| \mathbf{Y} \|_2$, and the quadratic distance between two matrices $\mathbf{Y}$ and $\mathbf{X}$ is denoted by $\| \mathbf{Y} - \mathbf{X} \|_2^2$. Likewise, the $\ell_1$-norm of a matrix $\mathbf{S}$ is denoted by $\| \mathbf{S} \|_1$.
+
+\subsection{Conventional general linear model analysis}
 
 Conventional general linear model (GLM) analysis puts forward a number of regressors incorporating knowledge about the paradigm or behavior. For instance, the timing of epochs for a certain condition can be modeled as an indicator function $p(t)$, convolved with the HRF $h(t)$, and sampled at TR resolution (\citealt{friston1994analysis, friston1998event, boynton1996linear, cohen1997parametric}):\todo{Rather some Friston paper(s) here}
 $$
