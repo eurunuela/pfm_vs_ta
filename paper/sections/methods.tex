@@ -19,6 +19,9 @@ with up to second-order harmonics per cardiac (\(f_{c,i}\)) and respiratory (\(f
 \label{fig:simulations}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experimental data}
 \textbf{Motor task dataset:} One healthy subject was scanned in a 3T MR scanner (Siemens) as part of a larger experiment under a Basque Center on Cognition, Brain and Language Review Board-approved protocol. T2*-weighted multi-echo fMRI data was acquired with a multiband (MB) multi-echo gradient echo-planar imaging sequence (340 scans, 52 slices, Partial-Fourier = 6/8, voxel size = 2.4x2.4x3 mm\textsuperscript{3}, TR = 1.5 s, TEs = 10.6/28.69/46.78/64.87/82.96 ms, multiband factor = 4, flip angle = 70\(^o\), GRAPPA = 2).
 
@@ -36,6 +39,9 @@ During the fMRI acquisition, subjects performed a motor task consisting of five 
 
 During both acquisitions, participants were instructed to keep their eyes open, fixating a white cross that they saw through a mirror located on the head coil, and not think about anything specific. The data was pre-processed using AFNI (\citealt{cox1996afni}). First, volumes corresponding to the initial 10 seconds were removed to allow for a steady-state magnetization. Then, the voxel time-series were despiked to reduce large-amplitude deviations and slice-time corrected. Inhomogeneities caused by magnetic susceptibility were corrected with FUGUE (FSL) using the field map images (\citealt{jenkinson2012fsl}). Next, functional images were realigned to a base volume (monoband: volume with the lowest head motion; multiband: single-band reference image). Finally, a simultaneous nuisance regression step was performed comprising up to 6th-order Legendre polynomials, low-pass filtering with a cutoff frequency of 0.25 Hz (only on multiband data to match the frequency content of the monoband), 6 realignment parameters plus temporal derivatives, 5 principal components of white matter (WM), 5 principal components of lateral ventricle voxels (anatomical CompCor) and 5 principal components of the brain's edge voxels. WM, CSF and brain's edge-voxel masks were obtained from Freesurfer tissue and brain segmentations. In addition, scans with potential artifacts were identified and censored as the euclidean norm of the temporal derivative of the realignment parameters (ENORM) was larger than 0.4, and the proportion of voxels adjusted in the despiking step exceeded 10\%.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Selection of the hemodynamic response function}
 
 With the aim of making a fair comparison between both methods, we first compared their HRFs. Figure~\ref{fig:hrf_diff}A shows the difference in the HRF that PFM and TA use by default for TR = 0.1 s and TR = 1 s\todo{I don't understand the x-axis in the figure, is then index, not time?} adjusted to peak amplitude of one; i.e., the canonical HRF and the HRF resulting from the linear differential operator. The most observable difference between the two HRFs is the time to peak: the HRF used by Total Activation does not begin at zero\todo{But that's not related to TTP} while the one used by PFM does.
@@ -47,3 +53,33 @@ With the aim of making a fair comparison between both methods, we first compared
 \end{figure}
 
 While PFM allows for the use of any HRF---the columns of the design matrix \(\mathbf{H}\) are composed by shifted versions of the HRF--- the linear differential operator in TA is tailored for a fixed HRF\todo{It's maybe not so simple: what I take from Elad's paper is that any convolution operator $\mathbf{H}$ (for synthesis) can be turned in an equivalent analysis operator.}. Hence, for practical reasons, we reproduced the HRF in the Total Activation filter and incorporated it into the PFM formulation (Figure~\ref{fig:hrf_diff}B).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Selection of the regularization parameter}
+
+Here, we use the simulated data to compare the performance of the two deconvolution algorithms with both selection criteria for the regularization parameter $\lambda$: a selection based on the BIC solution, and a selection based on the MAD estimate of the noise (see section \ref{sec:regparam}). We also evaluate if the algorithms behave differently in terms of the estimation of the activity-inducing signal \(\mathbf{s}\) using the \textit{spike model} in~\eqref{eq:pfm_spike} and the innovation signal \(\mathbf{u}\) using the \textit{block model} in~\eqref{eq:pfm_block}.
+
+In order to calculate the regularization paths, we perform LARS with the PFM deconvolution model and obtain the solution for every $\lambda$ in the path. Then, we use the values of $\lambda$ obtained with LARS to solve the TA deconvolution model by means of FISTA.
+
+On the other hand, to solve the deconvolution problem with a selection based on the MAD estimate of the noise with PFM, we selected the \(\lambda\) corresponding to the residuals that were closest to the estimated noise level of the data $\tilde{\sigma}$. We applied TA with temporal regularization in its original form and we do not introduce additional spatial regularization.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differences in experimental data}
+
+In order to describe the extent of the discrepancies between the techniques, we calculate the sum of squares of the differences (SSD) between the estimated activity-inducing signals of PFM and TA on the three experimental datasets as:
+\begin{equation}
+    SSD = \frac{\sum_{k}{(\hat{s}_\text{PFM}[k] - \hat{s}_\text{TA}[k])^2}}{N},
+\end{equation}
+where \(N\) is the number of frames of the acquisition. The SSD of the innovation signals $\mathbf{\hat{u}}$ was computed equally.
+
+At the same time, we evaluate the performance of PFM and TA with respect to a GLM that takes advantage of the duration and onsets of the stimuli in the motor task data. Given the block design of the motor task, we make this comparison with the block model only.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Beyond deconvolution}
+Finally, we show the usefulness of deconvolution approaches by using the activity-inducing and innovation signals obtained with PFM and performing a co-activation patterns (CAPs) and innovation-driven co-activation patterns (iCAPs) analysis. We then compare the results with the widely-used seed-based correlation approach.
