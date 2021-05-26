@@ -19,24 +19,24 @@
 %     \end{itemize}
 % \end{itemize}
 
-\begin{table}
-    \centering
-    \begin{tabular}{ m{4cm} m{4cm} }
-        Paradigm Free Mapping & Total Activation \\
-        \toprule
-        \begin{itemize}
-            \pro Its formulation can be extended straightforwardly for deconvolution of multiple signals with a common neuronal-related signal, e.g., for multi-echo formulations \citealt{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}.
-            \pro The model can implement any HRF shape very easily since it only requires the coefficients at the required temporal resolution.
-            \con 
-        \end{itemize} &
-        \begin{itemize}
-            \pro Both the spike and block models solve the regularization problem with the same HRF.
-            \con 
-        \end{itemize} \\
-    \end{tabular}
-    \caption{Advantages (+) and disadvantages (-) of Paradigm Free Mapping and Total Activation with respect to each other.}
-    \label{tab:proscons}
-\end{table}
+% \begin{table}
+%     \centering
+%     \begin{tabular}{ m{4cm} m{4cm} }
+%         Paradigm Free Mapping & Total Activation \\
+%         \toprule
+%         \begin{itemize}
+%             \pro Its formulation can be extended straightforwardly for deconvolution of multiple signals with a common neuronal-related signal, e.g., for multi-echo formulations \citealt{caballero-gaudes2019DeconvolutionAlgorithmMultiecho}.
+%             \pro The model can implement any HRF shape very easily since it only requires the coefficients at the required temporal resolution.
+%             \con 
+%         \end{itemize} &
+%         \begin{itemize}
+%             \pro Both the spike and block models solve the regularization problem with the same HRF.
+%             \con 
+%         \end{itemize} \\
+%     \end{tabular}
+%     \caption{Advantages (+) and disadvantages (-) of Paradigm Free Mapping and Total Activation with respect to each other.}
+%     \label{tab:proscons}
+% \end{table}
 
 \todo[inline]{Should be expanded to provide a clear message.}
 This work demonstrates that PFM and TA yield practically identical results when the same HRF model and equivalent regularization parameter are employed, demonstrating that synthesis and analysis models are equivalent for temporal fMRI deconvolution. Thus, previously observed differences in performance must be due to differences in usage options. With the equivalence in the temporal deconvolution demonstrated, it is reasonable to assume that additional regularization terms in the spatial or temporal domains would not modify this equivalence when convex operators are employed; e.g., when the regularization problem can be solved by means of the Fast Iterative Shrinkage-Thresholding Algorithm (FISTA) (\citealt{beck2009FastIterativeShrinkagethresholding}) or the Generalized Forward-Backward Splitting (\citealt{raguet2013GeneralizedForwardBackwardSplittinga}) techniques\todo{Again, move up}. Our findings are in line with the equivalence of analysis and synthesis methods in under-determined cases (\(N \leq V\))\todo{Ola, what is $V$? :-) Move up in Section on analysis-synthesis equivalence} as demonstrated in (\citealt{elad2007AnalysisSynthesisSignal}).
