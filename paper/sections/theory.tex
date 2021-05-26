@@ -71,7 +71,7 @@ Well-known regularized regression techniques such as ridge regression (i.e., $\O
 \begin{equation}
     D_H\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1},
 \end{equation}
-where \(D\) is the derivative operator, \(\alpha_i\) the zeros, and \(\gamma_j\) the poles. The interested reader is referred to (\citealt{Karahanoglu2013}) for a detailed description. 
+where \(D\) is the derivative operator, \(\alpha_i\) the zeros, and \(\gamma_j\) the poles. The interested reader is referred to (\citealt{karahanoglu2013TotalActivationfMRI}) for a detailed description. 
 
 Therefore, the solution of the total-activation problem 
 \begin{equation}
@@ -97,7 +97,7 @@ and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$, and thu
     \begin{center}
         \includegraphics[width=\columnwidth]{figures/flowchart.pdf}
     \end{center}
-    \caption{Flowchart of deconvolution.}
+    \caption{Flowchart detailing the different steps of the fMRI signal and the deconvolution methods described. The orange arrows indicate the flow to estimate the innovation signals. The blue box depicts the two algorithms used in this paper to solve the PFM and TA deconvolution problems.}
 \label{fig:flowchart}
 \end{figure}
 
