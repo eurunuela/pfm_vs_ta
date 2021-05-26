@@ -13,14 +13,13 @@
 %     \item Spikes and block models
 % \end{itemize}
 
-\todo[inline]{I think we need a short paragraph here introducing: 1) our notations (vectors, matrices, discrete, continuous); 2) basic math definitions, in particular for norms.}
 \subsection{Notations and definitions}
 
 Matrices of size $N$ rows and $M$ columns are denoted by boldface capital letters, e.g., $\mathbf{X} \in \mathcal{R}^{N\times M}$, whereas column vectors of length $N$ are denoted as boldface lowercase letters, e.g. $\mathbf{x} \in \mathcal{R}^{N}$. Scalars are denoted by lowercase letters, e.g., $k$. Continuous functions are denoted by brackets, e.g., $h(t)$, while discrete functions are denoted by square brackets, e.g., $x[k]$. The euclidean norm of a matrix $\mathbf{X}$ is denoted as $\|\mathbf{X}\|_2$, the $\ell_1$-norm is denoted by $\| \mathbf{X} \|_1$ and the Frobenius norm is denoted by $\| \mathbf{X} \|_F$. %The quadratic distance between two matrices $\mathbf{Y}$ and $\mathbf{X}$ is defined as $\| \mathbf{Y} - \mathbf{X} \|_2^2$.
 
 \subsection{Conventional general linear model analysis}
 
-Conventional general linear model (GLM) analysis puts forward a number of regressors incorporating hypothetical knowledge about the paradigm or behavior. For instance, the timing of epochs for a certain condition can be modeled as an indicator function $p(t)$ (e.g. Dirac functions for event-related designs or box-car functions for block-designs) convolved with the hemodynamic response function (HRF) $h(t)$, and sampled at TR resolution (\citealt{friston1994analysis, friston1998event, boynton1996linear, cohen1997parametric}):
+Conventional general linear model (GLM) analysis puts forward a number of regressors incorporating hypothetical knowledge about the paradigm or behavior. For instance, the timing of epochs for a certain condition can be modeled as an indicator function $p(t)$ (e.g. Dirac functions for event-related designs or box-car functions for block-designs) convolved with the hemodynamic response function (HRF) $h(t)$, and sampled at TR resolution (\citealt{Friston1994AnalysisfunctionalMRI,Friston1998EventRelatedfMRI,Boynton1996LinearSystemsAnalysis,Cohen1997ParametricAnalysisfMRI}):
 $$
    p(t) \rightarrow p*h(t) \rightarrow x[k] = p*h(k\cdot\text{TR}).
 $$
