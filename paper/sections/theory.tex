@@ -95,7 +95,7 @@ This work evaluates the core of the two techniques, i.e., the regularized least-
     \begin{center}
         \includegraphics[width=\columnwidth]{figures/flowchart.pdf}
     \end{center}
-    \caption{Flowchart detailing the different steps of the fMRI signal and the deconvolution methods described. The orange arrows indicate the flow to estimate the innovation signals. The blue box depicts the two algorithms used in this paper to solve the PFM and TA deconvolution problems. \textbf{I would remove the orange lines. We might need to add more details to the blue box, what's plotted in each figure (i.e. lines, etc)?}}
+    \caption{Flowchart detailing the different steps of the fMRI signal and the deconvolution methods described. The orange arrows indicate the flow to estimate the innovation signals. The blue box depicts the two algorithms used in this paper to solve the PFM and TA deconvolution problems. The regularization path obtained with LARS is shown on the left, where the x-axis illustrates the different iterations of the algorithm, the y-axis represents points in time, and the color describes the amplitude of the estimated signal. The green and red dashed lines illustrate the BIC and MAD solutions, respectively. The $\lambda$ values in the regularization path are shown in the center, with the $\lambda$ corresponding to the BIC and MAD solutions indicated with dashed lines. Comparatively, the changes in $\lambda$ when the FISTA method is made to converge to the MAD estimate of the noise are shown on the right. Likewise, the $\lambda$ corresponding to the BIC and MAD solutions are shown with dashed lines.}
 \label{fig:flowchart}
 \end{figure}
 
