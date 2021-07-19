@@ -2,20 +2,23 @@
 
 \section{Theory}
 
-% \begin{itemize}
-%     \item What is deconvolution and different formulations presented as a review.
-%     \item Analysis vs synthesis
-%     \begin{itemize}
-%         \item TA paper but without the spatial regularization
-%         \item PFM paper
-%         \item In Gitelman it's an \(\mathbf{H}\) multiplied by a Fourier term.
-%     \end{itemize}
-%     \item Spikes and block models
-% \end{itemize}
-
 \subsection{Notations and definitions}
 
-Matrices of size $N$ rows and $M$ columns are denoted by boldface capital letters, e.g., $\mathbf{X} \in \mathcal{R}^{N\times M}$, whereas column vectors of length $N$ are denoted as boldface lowercase letters, e.g. $\mathbf{x} \in \mathcal{R}^{N}$. Scalars are denoted by lowercase letters, e.g., $k$. Continuous functions are denoted by brackets, e.g., $h(t)$, while discrete functions are denoted by square brackets, e.g., $x[k]$. The euclidean norm of a matrix $\mathbf{X}$ is denoted as $\|\mathbf{X}\|_2$, the $\ell_1$-norm is denoted by $\| \mathbf{X} \|_1$ and the Frobenius norm is denoted by $\| \mathbf{X} \|_F$. %The quadratic distance between two matrices $\mathbf{Y}$ and $\mathbf{X}$ is defined as $\| \mathbf{Y} - \mathbf{X} \|_2^2$.
+Matrices of size $N$ rows and $M$ columns are denoted by boldface capital letters, e.g., $\mathbf{X} \in \mathcal{R}^{N\times M}$, whereas column vectors of length $N$ are denoted as boldface lowercase letters, e.g. $\mathbf{x} \in \mathcal{R}^{N}$. Scalars are denoted by lowercase letters, e.g., $k$. Continuous functions are denoted by brackets, e.g., $h(t)$, while discrete functions are denoted by square brackets, e.g., $x[k]$. The euclidean norm of a matrix $\mathbf{X}$ is denoted as $\|\mathbf{X}\|_2$, the $\ell_1$-norm is denoted by $\| \mathbf{X} \|_1$ and the Frobenius norm is denoted by $\| \mathbf{X} \|_F$. The discrete integration ($\mathbf{L}$) and difference ($\mathbf{D}$) operators are defined as:
+
+$$
+\mathbf{L} = \left[\begin{array}{ccccc}
+1 & 0 & \ldots & & \\
+1 & 1 & 0 & \ldots & \\
+1 & 1 & 1 & 0 & \ldots \\
+\vdots & \ddots & \ddots & \ddots & \ddots
+\end{array}\right], \quad \mathbf{D} = \left[\begin{array}{ccccc}
+1 & 0 & \ldots & & \\
+1 & -1 & 0 & \ldots & \\
+0 & \ddots & \ddots & \ddots & \ldots \\
+\vdots & \ddots & 0 & 1 & -1
+\end{array}\right].
+$$
 
 \subsection{Conventional general linear model analysis}
 
