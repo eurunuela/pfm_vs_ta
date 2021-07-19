@@ -24,7 +24,7 @@ $$
 
 Conventional general linear model (GLM) analysis puts forward a number of regressors incorporating hypothetical knowledge about the paradigm or behavior. For instance, the timing of epochs for a certain condition can be modeled as an indicator function $p(t)$ (e.g. Dirac functions for event-related designs or box-car functions for block-designs) convolved with the hemodynamic response function (HRF) $h(t)$, and sampled at TR resolution (\citealt{Friston1994AnalysisfunctionalMRI,Friston1998EventRelatedfMRI,Boynton1996LinearSystemsAnalysis,Cohen1997ParametricAnalysisfMRI}):
 $$
-   p(t) \rightarrow p*h(t) \rightarrow x[k] = p*h(k\cdot\text{TR}).
+   x(t) = p*h(t) \rightarrow x[k] = p*h(k\cdot\text{TR}).
 $$
 The vector $\mathbf{x}=[x[k]]_{k=1,\ldots,N}  \in \mathbb{R}^{N}$ then constitutes the regressor modelling the hypothetical response, and several of them can be stacked as columns of the design matrix $\mathbf{X}=[\mathbf{x}_1 \ldots \mathbf{x}_L] \in \mathbb{R}^{N \times L}$, leading to the well-known GLM formulation: 
 \begin{equation}
@@ -92,9 +92,7 @@ Conversely, the PFM spike model from Eq. (\ref{eq:pfm_spike}) can also be made e
     \label{eq:pfm_block}
     \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1,
 \end{equation}
-and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$, and thus adopting the block model.
-
-This work evaluates the core of the two techniques, i.e., the regularized least-squares problem with temporal regularization. Therefore, we do not study the impact of spatial constraints, as we assume that spatial regularization terms should perform identically on both methods.
+and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$, and thus adopting the block model. This work evaluates the core of the two techniques, i.e., the regularized least-squares problem with temporal regularization without considering the spatial regularization term originally incorporated in TA.
 
 \begin{figure}[t!]
     \begin{center}
