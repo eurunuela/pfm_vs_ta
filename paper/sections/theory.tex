@@ -92,7 +92,7 @@ Conversely, the PFM model from Eq. (\ref{eq:pfm_spike}) can be written as a bloc
     \label{eq:pfm_block}
     \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1,
 \end{equation}
-and becomes equivalent to the block model formulation of TA by replacing $\mathbf{u}=\mathbf{D D_H x}$ in Eq. (\ref{eq:TA}). This work evaluates the core of the two techniques, i.e., the regularized least-squares problem with temporal regularization without considering the spatial regularization term originally incorporated in TA.
+and becomes equivalent to the block model formulation of TA by replacing $\mathbf{u}=\mathbf{D D_H x}$ in Eq. (\ref{eq:TA}). Therefore, both PFM and TA can be written with the spike and block models, providing a signal model for the different assumptions of the neuronal-related signal. This work evaluates the core of the two techniques, i.e., the regularized least-squares problem with temporal regularization without considering the spatial regularization term originally incorporated in TA.
 
 \begin{figure}[t!]
     \begin{center}
