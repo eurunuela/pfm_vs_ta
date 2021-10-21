@@ -108,7 +108,7 @@ Despite their apparent resemblance, the practical implementations of the PFM and
 
 On the one hand, LARS is a homotopy approach that computes all the possible solutions to the optimization problem and their corresponding value of $\lambda$; i.e., the regularization path, and the solution according to the Bayesian Information Criterion (BIC) (\citealt{Schwarz1978EstimatingDimensionModel}), was recommended as the most appropriate in the case of PFM approaches since AIC often tends to overfit the signal(\citealt{Gaudes2013Paradigmfreemapping,CaballeroGaudes2019deconvolutionalgorithmmulti}). 
 
-\todo[inline]{You should also add 1-2 lines on principle of FISTA here} Alternatively, the regularization parameter $\lambda$ can also be updated in every iteration of the FISTA so that the residuals of the data fit converge to an estimated noise level of the data $\hat{\sigma}$:
+On the other hand, FISTA is an extension of the classical gradient algorithm that provides fast convergence for large-scale problems. In the case of FISTA though, the regularization parameter $\lambda$ must be selected prior to solving the problem, but can be updated in every iteration so that the residuals of the data fit converge to an estimated noise level of the data $\hat{\sigma}$:
 \begin{equation}
     \lambda^{n+1} = \frac{N \hat{\sigma}}{\frac{1}{2} \| \mathbf{y} - \mathbf{x}^n \|_F^2} \lambda^n,
 \label{eq:std}
