@@ -12,3 +12,6 @@ paper/auto
 paper/.vscode
 .vscode
 paper/*.gz
+code/.ipynb_checkpoints/*
+code/3dDeconvolve.err
+paper/sections/__latexindent_temp.tex

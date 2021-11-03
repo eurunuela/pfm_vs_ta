@@ -3,7 +3,44 @@
 Papers that talk about deconvolution:
 ###########################################################################
 
-@Article{Gitelman2003Modelingregionalpsychophysiologic,
+@article{bommarito2101p,
+  author    = {Bommarito, Giulia and Tarun, Anjali and Farouj, Younes and Preti, Maria Giulia and Petracca, Maria and Droby, Amgad and Mounir El Mendili, Mohamed and Inglese, Matilde and Van De Ville, Dimitri},
+  title     = {Altered Anterior Default Mode Network Dynamics in Progressive Multiple Sclerosis},
+  doi       = {10.1177/13524585211018116},
+  journal   = {Multiple Sclerosis Journal},
+  owner     = {dvdevill},
+  ranking   = {rank1},
+  timestamp = {2021.06.23},
+  year      = {in press}
+}
+
+@article{tarun2101,
+  author  = {Tarun, Anjali and Wainstein-Andriano, Danyal and Sterpenich, Virginie and Bayer, Laurence and Perogramvos, Lampros and Solms, Mark and Axmacher, Nikolai and Schwartz, Sophie and Van De Ville, Dimitri},
+  title   = {{NREM} Sleep Stages Specifically Alter Dynamical Integration of Large-scale Brain Networks},
+  doi     = {10.1016/j.isci.2020.101923},
+  issue   = {1},
+  pages   = {101923},
+  volume  = {24},
+  file    = {:tarun2101.pdf:PDF},
+  journal = {iScience},
+  year    = {2021}
+}
+
+@article{zoller1902,
+  author    = {Zoeller, Daniela and Sandini, Corrado and Karahanoglu, F. Isik and Schaer, Marie and Eliez, Stephan and Van De Ville, Dimitri},
+  title     = {Large-Scale Brain Network Dynamics Provide a Measure of Psychosis and Anxiety in {22q11.2} Deletion Syndrome},
+  journal   = {Biological Psychiatry: Cognitive Neuroscience and Neuroimaging},
+  year      = {2019},
+  volume    = {4},
+  issue     = {10},
+  pages     = {881-892},
+  doi       = {10.1016/j.bpsc.2019.04.004},
+  file      = {:zoller1902.pdf:PDF},
+  owner     = {dvdevill},
+  timestamp = {2019.04.09}
+}
+
+@article{Gitelman2003Modelingregionalpsychophysiologic,
   author    = {Darren R. Gitelman and William D. Penny and John Ashburner and Karl J. Friston},
   journal   = {{NeuroImage}},
   title     = {Modeling regional and psychophysiologic interactions in {fMRI}: the importance of hemodynamic deconvolution},
@@ -16,10 +53,10 @@ Papers that talk about deconvolution:
   doi       = {10.1016/s1053-8119(03)00058-2},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Gitelman et al/Gitelman et al. - 2003 - Modeling regional and psychophysiologic interactio.pdf:;:/Users/enekourunuela/Zotero/storage/4KFDSDDF/Gitelman et al. - 2003 - Modeling regional and psychophysiologic interactio.html:},
   ids       = {gitelmanModelingRegionalPsychophysiologic2003a},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Khalidov2011ActiveletsWaveletssparse,
+@article{Khalidov2011ActiveletsWaveletssparse,
   author    = {Ildar Khalidov and Jalal Fadili and Fran{\c{c}}ois Lazeyras and Dimitri Van De Ville and Michael Unser},
   journal   = {Signal Processing},
   title     = {Activelets: Wavelets for sparse representation of hemodynamic responses},
@@ -29,10 +66,10 @@ Papers that talk about deconvolution:
   pages     = {2810--2821},
   volume    = {91},
   doi       = {10.1016/j.sigpro.2011.03.008},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Karahanoglu2013TotalactivationfMRI,
+@article{Karahanoglu2013TotalactivationfMRI,
   author    = {Fikret I{\c{s}}{\i}k Karahano{\u{g}}lu and C{\'{e}}sar Caballero-Gaudes and Fran{\c{c}}ois Lazeyras and Dimitri Van De Ville},
   journal   = {{NeuroImage}},
   title     = {Total activation: {fMRI} deconvolution through spatio-temporal regularization},
@@ -45,10 +82,10 @@ Papers that talk about deconvolution:
   doi       = {10.1016/j.neuroimage.2013.01.067},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Karahanoǧlu et al/Karahanoǧlu et al. - 2013 - Total activation {{fMRI}} deconvolution through spati.pdf:},
   keywords  = {BOLD,Deconvolution,{{fMRI}},Paradigm-free mapping,Resting state,Sparsity,Spatio-temporal regularization,Total variation},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{HernandezGarcia2011Neuronaleventdetection,
+@article{HernandezGarcia2011Neuronaleventdetection,
   author    = {Luis Hernandez-Garcia and Magnus O. Ulfarsson},
   journal   = {Magnetic Resonance Imaging},
   title     = {Neuronal event detection in {fMRI} time series using iterative deconvolution techniques},
@@ -58,10 +95,10 @@ Papers that talk about deconvolution:
   pages     = {353--364},
   volume    = {29},
   doi       = {10.1016/j.mri.2010.10.012},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Gaudes2010Detectioncharacterizationsingle,
+@article{Gaudes2010Detectioncharacterizationsingle,
   author    = {C{\'{e}}sar Caballero Gaudes and Natalia Petridou and Ian L. Dryden and Li Bai and Susan T. Francis and Penny A. Gowland},
   journal   = {Human Brain Mapping},
   title     = {Detection and characterization of single-trial {fMRI} bold responses: Paradigm free mapping},
@@ -75,10 +112,10 @@ Papers that talk about deconvolution:
   doi       = {10.1002/hbm.21116},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Gaudes et al/Gaudes et al. - 2011 - Detection and characterization of single-trial fMR.pdf:},
   keywords  = {Brain mapping,Deconvolution,Event-related,Motor cortex,MRI,Single-trial analysis},
-  publisher = {Wiley},
+  publisher = {Wiley}
 }
 
-@Article{Gaudes2013Paradigmfreemapping,
+@article{Gaudes2013Paradigmfreemapping,
   author    = {C{\'{e}}sar Caballero Gaudes and Natalia Petridou and Susan T. Francis and Ian L. Dryden and Penny A. Gowland},
   journal   = {Human Brain Mapping},
   title     = {Paradigm free mapping with sparse regression automatically detects single-trial functional magnetic resonance imaging blood oxygenation level dependent responses},
@@ -89,10 +126,10 @@ Papers that talk about deconvolution:
   doi       = {10.1002/hbm.21452},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Caballero Gaudes et al/Caballero Gaudes et al. - 2013 - Paradigm free mapping with sparse regression autom.pdf:},
   keywords  = {Brain mapping,{{fMRI}},Paradigm free mapping,Single-trial analysis,Sparse regression},
-  publisher = {Wiley},
+  publisher = {Wiley}
 }
 
-@InProceedings{Cherkaoui2019SparsitybasedBlind,
+@inproceedings{Cherkaoui2019SparsitybasedBlind,
   author    = {Hamza Cherkaoui and Thomas Moreau and Abderrahim Halimi and Philippe Ciuciu},
   booktitle = {{ICASSP} 2019 - 2019 {IEEE} International Conference on Acoustics, Speech and Signal Processing ({ICASSP})},
   title     = {Sparsity-based Blind Deconvolution of Neural Activation Signal in {FMRI}},
@@ -105,11 +142,11 @@ Papers that talk about deconvolution:
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Cherkaoui et al/Cherkaoui et al. - 2019 - Sparsity-based Blind Deconvolution of Neural Activ.pdf:;:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Cherkaoui et al/Cherkaoui et al. - 2019 - Sparsity-based Blind Deconvolution of Neural Activ2.pdf:;:/Users/enekourunuela/Zotero/storage/ISRV5L5S/8683358.html:},
   ids       = {cherkaouiSparsitybasedBlindDeconvolution2019},
   issn      = {2379-190X},
-  keywords  = {biomedical MRI,BOLD signal,brain,cognition,cognitive responses,deconvolution,EP information,{{fMRI}},functional magnetic resonance imaging,haemodynamics,hemodynamic response function,Hemodynamic response function (HRF),HRF estimation technique,joint estimation,medical image processing,neural activation signal,neurophysiology,non-convex optimization,resting-state data,semiblind deconvolution problem,sparsity-based blind deconvolution,time-resolved neural activity},
+  keywords  = {biomedical MRI,BOLD signal,brain,cognition,cognitive responses,deconvolution,EP information,{{fMRI}},functional magnetic resonance imaging,haemodynamics,hemodynamic response function,Hemodynamic response function (HRF),HRF estimation technique,joint estimation,medical image processing,neural activation signal,neurophysiology,non-convex optimization,resting-state data,semiblind deconvolution problem,sparsity-based blind deconvolution,time-resolved neural activity}
 }
 
-@Article{Urunuela2020StabilityBasedSparse,
-  author    = {Eneko Urunuela and Stephen Jones and Anna Crawford and Wanyong Shin and Sehong Oh and Mark Lowe and Cesar Caballero-Gaudes},
+@article{Urunuela2020StabilityBasedSparse,
+  author    = {Eneko Uruñuela and Stephen Jones and Anna Crawford and Wanyong Shin and Sehong Oh and Mark Lowe and Cesar Caballero-Gaudes},
   journal   = {Proceedings of the Annual International Conference of the IEEE Engineering in Medicine and Biology Society, EMBS},
   title     = {Stability-Based Sparse Paradigm Free Mapping Algorithm for Deconvolution of Functional {MRI} Data},
   year      = {2020},
@@ -123,10 +160,10 @@ Papers that talk about deconvolution:
   doi       = {10.1109/embc44109.2020.9176137},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/9781728119908203100_2020_ieee1092.pdf:},
   keywords  = {deconvolution,functional MRI,paradigm free mapping,stability selection},
-  publisher = {{IEEE}},
+  publisher = {{IEEE}}
 }
 
-@Article{CaballeroGaudes2019deconvolutionalgorithmmulti,
+@article{CaballeroGaudes2019deconvolutionalgorithmmulti,
   author    = {C{\'{e}}sar Caballero-Gaudes and Stefano Moia and Puja Panwar and Peter A. Bandettini and Javier Gonzalez-Castillo},
   journal   = {{NeuroImage}},
   title     = {A deconvolution algorithm for multi-echo functional {MRI}: Multi-echo Sparse Paradigm Free Mapping},
@@ -135,10 +172,10 @@ Papers that talk about deconvolution:
   pages     = {116081},
   volume    = {202},
   doi       = {10.1016/j.neuroimage.2019.116081},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@InProceedings{Gaudes2012Structuredsparsedeconvolution,
+@inproceedings{Gaudes2012Structuredsparsedeconvolution,
   author       = {Cesar Caballero Gaudes and Fikret Isik Karahanoglu and Francois Lazeyras and Dimitri Van De Ville},
   booktitle    = {2012 9th {IEEE} International Symposium on Biomedical Imaging ({ISBI})},
   title        = {Structured sparse deconvolution for paradigm free mapping of functional {MRI} data},
@@ -147,10 +184,20 @@ Papers that talk about deconvolution:
   organization = {IEEE},
   pages        = {322--325},
   publisher    = {{IEEE}},
-  doi          = {10.1109/isbi.2012.6235549},
+  doi          = {10.1109/isbi.2012.6235549}
 }
 
-@Article{Karahanoglu2011SignalProcessingApproach,
+@inproceedings{Gaudes2011MorphologicalPFM,
+  title        = {Paradigm-free mapping with morphological component analysis: Getting most out of fMRI data},
+  author       = {Gaudes, C{\'e}sar Caballero and Van De Ville, Dimitri and Petridou, Natalia and Lazeyras, Fran{\c{c}}ois and Gowland, Penny},
+  booktitle    = {Wavelets and Sparsity XIV},
+  volume       = {8138},
+  pages        = {81381K},
+  year         = {2011},
+  organization = {International Society for Optics and Photonics}
+}
+
+@article{Karahanoglu2011SignalProcessingApproach,
   author    = {Fikret I{\c{s}}{\i}k Karahanoglu and {\.{I}}lker Bayram and Dimitri Van De Ville},
   journal   = {{IEEE} Transactions on Signal Processing},
   title     = {A Signal Processing Approach to Generalized 1-D Total Variation},
@@ -164,10 +211,10 @@ Papers that talk about deconvolution:
   doi       = {10.1109/tsp.2011.2164399},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Karahanoglu et al/Karahanoglu et al. - 2011 - A Signal Processing Approach to Generalized 1-D To.pdf:},
   keywords  = {1D signal processing,derivative operator,Dictionaries,Differential operators,edge-preserving regularization,generalized 1D total variation,Image edge detection,image processing,linear differential operator,linear systems,Linear systems,Noise reduction,nontrivial linear system,piecewise-constant signal,regularization,signal processing,Signal processing,Signal processing algorithms,sparsity,spike-like signal,total variation,TV},
-  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})}
 }
 
-@InProceedings{Farouj2019BoldSignalDeconvolution,
+@inproceedings{Farouj2019BoldSignalDeconvolution,
   author       = {Younes Farouj and F. Isik Karahanoglu and Dimitri Van De Ville},
   booktitle    = {2019 IEEE 16th International Symposium on Biomedical Imaging (ISBI 2019)},
   title        = {Bold Signal Deconvolution Under Uncertain HÆModynamics: A Semi-Blind Approach},
@@ -176,10 +223,10 @@ Papers that talk about deconvolution:
   organization = {IEEE},
   pages        = {1792--1796},
   publisher    = {{IEEE}},
-  doi          = {10.1109/isbi.2019.8759248},
+  doi          = {10.1109/isbi.2019.8759248}
 }
 
-@Article{Di2018TaskConnectomicsExamining,
+@article{Di2018TaskConnectomicsExamining,
   author          = {Xin Di and Bharat B Biswal},
   journal         = {Cerebral Cortex},
   title           = {Toward Task Connectomics: Examining Whole-Brain Task Modulated Connectivity in Different Task Domains},
@@ -206,10 +253,10 @@ Papers that talk about deconvolution:
   pubmodel        = {Print},
   pubstate        = {ppublish},
   revised         = {2020-06-24},
-  timestamp       = {2021.04.19},
+  timestamp       = {2021.04.19}
 }
 
-@Article{Gerchen2014Analyzingtaskdependent,
+@article{Gerchen2014Analyzingtaskdependent,
   author          = {Martin Fungisai Gerchen and David Bernal-Casas and Peter Kirsch},
   journal         = {Human Brain Mapping},
   title           = {Analyzing task-dependent brain network changes by whole-brain psychophysiological interactions: A comparison to conventional analysis},
@@ -236,7 +283,7 @@ Papers that talk about deconvolution:
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
   revised         = {2020-06-13},
-  timestamp       = {2021.04.19},
+  timestamp       = {2021.04.19}
 }
 
 ###########################################################################
@@ -245,7 +292,7 @@ Papers that talk about the post processing step:
 
 # Task-based
 
-@Article{Shine2015Estimationdynamicfunctional,
+@article{Shine2015Estimationdynamicfunctional,
   author    = {James M. Shine and Oluwasanmi Koyejo and Peter T. Bell and Krzysztof J. Gorgolewski and Moran Gilat and Russell A. Poldrack},
   journal   = {{NeuroImage}},
   title     = {Estimation of dynamic functional connectivity using Multiplication of Temporal Derivatives},
@@ -254,12 +301,12 @@ Papers that talk about the post processing step:
   pages     = {399--407},
   volume    = {122},
   doi       = {10.1016/j.neuroimage.2015.07.064},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
 # Task-based
 
-@Article{Shine2016DynamicsFunctionalBrain,
+@article{Shine2016DynamicsFunctionalBrain,
   author    = {James~M. Shine and Patrick~G. Bissett and Peter~T. Bell and Oluwasanmi Koyejo and Joshua~H. Balsters and Krzysztof~J. Gorgolewski and Craig~A. Moodie and Russell~A. Poldrack},
   journal   = {Neuron},
   title     = {The Dynamics of Functional Brain Networks: Integrated Network States during Cognitive Task Performance},
@@ -270,29 +317,12 @@ Papers that talk about the post processing step:
   pages     = {544--554},
   volume    = {92},
   doi       = {10.1016/j.neuron.2016.09.018},
-  publisher = {Elsevier {BV}},
-}
-
-# Naturalistic
-
-@TechReport{Faskowitz2020Edgecentricfunctional,
-  author    = {Joshua Faskowitz and Farnaz Zamani Esfahlani and Youngheun Jo and Olaf Sporns and Richard F. Betzel},
-  title     = {Edge-centric functional network representations of human cerebral cortex reveal overlapping system-level architecture},
-  year      = {2020},
-  month     = {oct},
-  number    = {12},
-  doi       = {10.1038/s41593-020-00719-y},
-  issn      = {1097-6256},
-  journal   = {Nature Neuroscience},
-  pages     = {1644--1654},
-  publisher = {Springer Science and Business Media {LLC}},
-  school    = {Nature Publishing Group},
-  volume    = {23},
+  publisher = {Elsevier {BV}}
 }
 
 # Resting
 
-@Article{Esfahlani2020Highamplitudecofluctuations,
+@article{Esfahlani2020Highamplitudecofluctuations,
   author    = {Farnaz Zamani Esfahlani and Youngheun Jo and Joshua Faskowitz and Lisa Byrge and Daniel P. Kennedy and Olaf Sporns and Richard F. Betzel},
   journal   = {Proceedings of the National Academy of Sciences},
   title     = {High-amplitude cofluctuations in cortical activity drive functional connectivity},
@@ -303,12 +333,12 @@ Papers that talk about the post processing step:
   pages     = {28393--28401},
   volume    = {117},
   doi       = {10.1073/pnas.2005531117},
-  publisher = {Proceedings of the National Academy of Sciences},
+  publisher = {Proceedings of the National Academy of Sciences}
 }
 
 # Naturalistic
 
-@Article{Betzel2020Temporalfluctuationsbrains,
+@article{Betzel2020Temporalfluctuationsbrains,
   author    = {Richard F. Betzel and Lisa Byrge and Farnaz Zamani Esfahlani and Daniel P. Kennedy},
   journal   = {{NeuroImage}},
   title     = {Temporal fluctuations in the brain's modular architecture during movie-watching},
@@ -321,12 +351,12 @@ Papers that talk about the post processing step:
   doi       = {10.1016/j.neuroimage.2020.116687},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Betzel et al/Betzel et al. - 2020 - Temporal fluctuations in the brain’s modular archi.pdf:;:/Users/enekourunuela/Zotero/storage/3GCVJNMT/S1053811920301749.html:},
   language  = {en},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
 # Rest
 
-@Article{GonzalezCastillo2019Imagingspontaneousflow,
+@article{GonzalezCastillo2019Imagingspontaneousflow,
   author     = {Javier Gonzalez-Castillo and C{\'{e}}sar Caballero-Gaudes and Natasha Topolski and Daniel A. Handwerker and Francisco Pereira and Peter A. Bandettini},
   journal    = {{NeuroImage}},
   title      = {Imaging the spontaneous flow of thought: Distinct periods of cognition contribute to dynamic functional connectivity during rest},
@@ -341,28 +371,12 @@ Papers that talk about the post processing step:
   ids        = {gonzalez-castilloImagingSpontaneousFlow2019},
   language   = {en},
   publisher  = {Elsevier {BV}},
-  shorttitle = {Imaging the Spontaneous Flow of Thought},
-}
-
-# Task-based
-
-@TechReport{Faskowitz2021edgecentricmodel,
-  author    = {Joshua Faskowitz and Jacob C. Tanner and Bratislav Mi{\v{s}}i{\'{c}} and Richard F. Betzel},
-  title     = {An edge-centric model for harmonizing multi-relational network datasets},
-  year      = {2021},
-  month     = {jan},
-  type      = {Preprint},
-  abstract  = {Functional and structural connections vary across conditions, measurements, and time. However, how to resolve multi-relational measures of connectivity remains an open challenge. Here, we propose an extension of structural covariance and morphometric similarity methods to integrate multiple estimates of connectivity into a single edge-centric network representation. We highlight the utility of this method through two applications: an analysis of multi-task functional connectivity data and multi-measure structural networks. In these analyses, we use data-driven clustering techniques to identify collections of edges that covary across tasks and measures, revealing overlapping mesoscale architecture. We also link these features to node-level properties such as modularity and canonical descriptors of brain systems. We further demonstrate that, in the case of multi-task functional networks, edge-level features are consistent across individuals yet exhibit subject-specificity. We conclude by highlighting other instances where the edge-centric model may be useful.},
-  doi       = {10.1101/2021.01.07.425450},
-  file      = {:/Users/enekourunuela/Zotero/storage/I6E9E4CH/Faskowitz et al. - 2021 - An edge-centric model for harmonizing multi-relati.pdf:},
-  language  = {en},
-  publisher = {Cold Spring Harbor Laboratory},
-  school    = {{Neuroscience}},
+  shorttitle = {Imaging the Spontaneous Flow of Thought}
 }
 
 # Rest
 
-@Article{Allan2015FunctionalConnectivityMRI,
+@article{Allan2015FunctionalConnectivityMRI,
   author    = {Thomas W. Allan and Susan T. Francis and Cesar Caballero-Gaudes and Peter G. Morris and Elizabeth B. Liddle and Peter F. Liddle and Matthew J. Brookes and Penny A. Gowland},
   journal   = {{PLOS} {ONE}},
   title     = {Functional Connectivity in {MRI} Is Driven by Spontaneous {BOLD} Events},
@@ -374,12 +388,12 @@ Papers that talk about the post processing step:
   volume    = {10},
   doi       = {10.1371/journal.pone.0124577},
   editor    = {Emmanuel Andreas Stamatakis},
-  publisher = {Public Library of Science ({PLoS})},
+  publisher = {Public Library of Science ({PLoS})}
 }
 
 # Clinical
 
-@Article{Zoeller2019Largescalebrain,
+@article{Zoeller2019Largescalebrain,
   author    = {Daniela Zöller and Corrado Sandini and Fikret I{\c{s}}ik Karahano{\u{g}}lu and Maria Carmela Padula and Marie Schaer and Stephan Eliez and Dimitri Van De Ville},
   journal   = {Biological Psychiatry: Cognitive Neuroscience and Neuroimaging},
   title     = {Large-scale brain network dynamics provide a measure of psychosis and anxiety in 22q11.2 deletion syndrome},
@@ -389,24 +403,24 @@ Papers that talk about the post processing step:
   pages     = {881--892},
   volume    = {4},
   doi       = {10.1101/551796},
-  publisher = {Cold Spring Harbor Laboratory},
+  publisher = {Cold Spring Harbor Laboratory}
 }
 
 # Clinical
 
-@Article{Bommarito2020Alteredanteriordefault,
+@article{Bommarito2020Alteredanteriordefault,
   author    = {Giulia Bommarito and Anjali Tarun and Younes Farouj and Maria Giulia Preti and Maria Petracca and Amgad Droby and Mohamed Mounir El Mendili and Matilde Inglese and Dimitri Van De Ville},
   journal   = {medRxiv},
   title     = {Altered anterior default mode network dynamics in progressive multiple sclerosis},
   year      = {2020},
   month     = {nov},
   doi       = {10.1101/2020.11.26.20238923},
-  publisher = {Cold Spring Harbor Laboratory},
+  publisher = {Cold Spring Harbor Laboratory}
 }
 
 # Clinical
 
-@Article{Tarun2020NREMsleepstages,
+@article{Tarun2020NREMsleepstages,
   author    = {Anjali Tarun and Danyal Wainstein-Andriano and Virginie Sterpenich and Laurence Bayer and Lampros Perogamvros and Mark Solms and Nikolai Axmacher and Sophie Schwartz and Dimitri Van De Ville},
   journal   = {Iscience},
   title     = {{NREM} sleep stages specifically alter dynamical integration of large-scale brain networks},
@@ -416,12 +430,12 @@ Papers that talk about the post processing step:
   pages     = {101923},
   volume    = {24},
   doi       = {10.1101/2020.07.08.193508},
-  publisher = {Cold Spring Harbor Laboratory},
+  publisher = {Cold Spring Harbor Laboratory}
 }
 
 # Clinical
 
-@Article{Lopes2012Detectionepilepticactivity,
+@article{Lopes2012Detectionepilepticactivity,
   author    = {R. Lopes and J.M. Lina and F. Fahoum and J. Gotman},
   journal   = {{NeuroImage}},
   title     = {Detection of epileptic activity in {fMRI} without recording the {EEG}},
@@ -432,12 +446,12 @@ Papers that talk about the post processing step:
   pages     = {1867--1879},
   volume    = {60},
   doi       = {10.1016/j.neuroimage.2011.12.083},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
 # Naturalistic
 
-@Article{Finn2020Moviewatchingoutperforms,
+@article{Finn2020Moviewatchingoutperforms,
   author    = {Emily S. Finn and Peter A. Bandettini},
   journal   = {bioRxiv},
   title     = {Movie-watching outperforms rest for functional connectivity-based prediction of behavior},
@@ -448,12 +462,12 @@ Papers that talk about the post processing step:
   doi       = {10.1101/2020.08.23.263723},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Finn_Bandettini/Finn and Bandettini - 2020 - Movie-watching outperforms rest for functional con.pdf:;:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/moviewatching_outperforms_rest_for_functional_connectivitybased_prediction_of.pdf:},
   ids       = {finnMoviewatchingOutperformsRest2020},
-  publisher = {Cold Spring Harbor Laboratory},
+  publisher = {Cold Spring Harbor Laboratory}
 }
 
 # Naturalistic
 
-@Article{Finn2020Idiosynchronysharedresponses,
+@article{Finn2020Idiosynchronysharedresponses,
   author    = {Emily S. Finn and Enrico Glerean and Arman Y. Khojandi and Dylan Nielson and Peter J. Molfese and Daniel A. Handwerker and Peter A. Bandettini},
   journal   = {{NeuroImage}},
   title     = {Idiosynchrony: From shared responses to individual differences during naturalistic neuroimaging},
@@ -466,14 +480,14 @@ Papers that talk about the post processing step:
   doi       = {10.1016/j.neuroimage.2020.116828},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Finn et al/Finn et al. - 2020 - Idiosynchrony From shared responses to individual.pdf:},
   keywords  = {Behavior,{{fMRI}},Individual differences,Inter-subject correlation,Naturalistic,Representational similarity analysis},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
 ###########################################################################
 iCAPs
 ###########################################################################
 
-@Article{Kinany2020DynamicFunctionalConnectivity,
+@article{Kinany2020DynamicFunctionalConnectivity,
   author    = {Nawal Kinany and Elvira Pirondini and Silvestro Micera and Dimitri Van De Ville},
   journal   = {Neuron},
   title     = {Dynamic Functional Connectivity of Resting-State Spinal Cord {fMRI} Reveals Fine-Grained Intrinsic Architecture},
@@ -488,10 +502,10 @@ iCAPs
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Kinany et al/Kinany et al. - 2020 - Dynamic Functional Connectivity of Resting-State S.pdf:;:/Users/enekourunuela/Zotero/storage/BJRZG3ZG/S0896627320305687.html:},
   keywords  = {dynamic functional connectivity,{{fMRI}},networks,resting-state,spinal cord},
   language  = {en},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Karahanoglu2015Transientbrainactivity,
+@article{Karahanoglu2015Transientbrainactivity,
   author    = {Fikret I{\c{s}}ik Karahano{\u{g}}lu and Dimitri Van De Ville},
   journal   = {Nature Communications},
   title     = {Transient brain activity disentangles {fMRI} resting-state dynamics in terms of spatially and temporally overlapping networks},
@@ -506,10 +520,10 @@ iCAPs
   doi       = {10.1038/ncomms8751},
   file      = {:/Users/enekourunuela/Zotero/storage/KQKMV2RN/Karahanoğlu and Van De Ville - 2015 - Transient brain activity disentangles {{fMRI}} resting.pdf:},
   language  = {en},
-  publisher = {Springer Science and Business Media {LLC}},
+  publisher = {Springer Science and Business Media {LLC}}
 }
 
-@Article{Karahanoglu2017Dynamicslargescale,
+@article{Karahanoglu2017Dynamicslargescale,
   author     = {Fikret I{\c{s}}{\i}k Karahano{\u{g}}lu and Dimitri Van De Ville},
   journal    = {Current Opinion in Biomedical Engineering},
   title      = {Dynamics of large-scale {fMRI} networks: Deconstruct brain activity to build better models of brain function},
@@ -525,14 +539,14 @@ iCAPs
   language   = {en},
   publisher  = {Elsevier {BV}},
   series     = {New {{Developments}} in {{Biomedical Imaging}}},
-  shorttitle = {Dynamics of Large-Scale {{{{fMRI}}}} Networks},
+  shorttitle = {Dynamics of Large-Scale {{{{fMRI}}}} Networks}
 }
 
 ###########################################################################
 Other methods
 ###########################################################################
 
-@Article{Meinshausen2010Stabilityselection,
+@article{Meinshausen2010Stabilityselection,
   author    = {Nicolai Meinshausen and Peter Bühlmann},
   journal   = {Journal of the Royal Statistical Society: Series B (Statistical Methodology)},
   title     = {Stability selection},
@@ -544,10 +558,10 @@ Other methods
   volume    = {72},
   doi       = {10.1111/j.1467-9868.2010.00740.x},
   publisher = {Wiley},
-  subtitle  = {Stability Selection},
+  subtitle  = {Stability Selection}
 }
 
-@Article{Bruckstein2009SparseSolutionsSystems,
+@article{Bruckstein2009SparseSolutionsSystems,
   author    = {Alfred M. Bruckstein and David L. Donoho and Michael Elad},
   journal   = {{SIAM} Review},
   title     = {From Sparse Solutions of Systems of Equations to Sparse Modeling of Signals and Images},
@@ -560,10 +574,10 @@ Other methods
   abstract  = {A full-rank matrix \$\{\textbackslash bf A\}\textbackslash in \textbackslash mathbb\{R\}\^\{n\textbackslash times m\}\$ with \$n},
   doi       = {10.1137/060657704},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Bruckstein et al/Bruckstein et al. - 2009 - From Sparse Solutions of Systems of Equations to S.pdf:},
-  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
+  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})}
 }
 
-@Article{Tibshirani1996RegressionShrinkageSelection,
+@article{Tibshirani1996RegressionShrinkageSelection,
   author    = {Robert Tibshirani},
   journal   = {Journal of the Royal Statistical Society: Series B (Methodological)},
   title     = {Regression Shrinkage and Selection Via the Lasso},
@@ -579,10 +593,10 @@ Other methods
   doi       = {10.1111/j.2517-6161.1996.tb02080.x},
   keywords  = {quadratic programming,regression,shrinkage,subset selection},
   language  = {en},
-  publisher = {Wiley},
+  publisher = {Wiley}
 }
 
-@Article{Badillo2013Grouplevelimpacts,
+@article{Badillo2013Grouplevelimpacts,
   author    = {Solveig Badillo and Thomas Vincent and Philippe Ciuciu},
   journal   = {{NeuroImage}},
   title     = {Group-level impacts of within- and between-subject hemodynamic variability in {fMRI}},
@@ -592,10 +606,10 @@ Other methods
   pages     = {433--448},
   volume    = {82},
   doi       = {10.1016/j.neuroimage.2013.05.100},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Petridou2012PeriodsrestfMRI,
+@article{Petridou2012PeriodsrestfMRI,
   author    = {Natalia Petridou and C{\'{e}}sar Caballero Gaudes and Ian L. Dryden and Susan T. Francis and Penny A. Gowland},
   journal   = {Human Brain Mapping},
   title     = {Periods of rest in {fMRI} contain individual spontaneous events which are related to slowly fluctuating spontaneous activity},
@@ -612,10 +626,10 @@ Other methods
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Petridou et al/Petridou et al. - 2013 - Periods of rest in {{fMRI}} contain individual spontan.pdf:;:/Users/enekourunuela/Zotero/storage/3LJNEU5A/hbm.html:},
   keywords  = {BOLD,brain mapping,fluctuations,nonstationary spontaneous activity,resting-state},
   language  = {en},
-  publisher = {Wiley},
+  publisher = {Wiley}
 }
 
-@Article{Schwarz1978EstimatingDimensionModel,
+@article{Schwarz1978EstimatingDimensionModel,
   author    = {Gideon Schwarz},
   journal   = {The Annals of Statistics},
   title     = {Estimating the Dimension of a Model},
@@ -632,10 +646,10 @@ Other methods
   language  = {EN},
   mrnumber  = {MR468014},
   publisher = {Institute of Mathematical Statistics},
-  zmnumber  = {0379.62005},
+  zmnumber  = {0379.62005}
 }
 
-@InCollection{Akaike1998InformationTheoryExtension,
+@incollection{Akaike1998InformationTheoryExtension,
   author    = {Hirotogu Akaike},
   booktitle = {Springer Series in Statistics},
   publisher = {Springer New York},
@@ -649,10 +663,10 @@ Other methods
   abstract  = {In this paper it is shown that the classical maximum likelihood principle can be considered to be a method of asymptotic realization of an optimum estimate with respect to a very general information theoretic criterion. This observation shows an extension of the principle to provide answers to many practical problems of statistical model fitting.},
   doi       = {10.1007/978-1-4612-1694-0_15},
   keywords  = {Autoregressive Model,Final Prediction Error,Maximum Likelihood Principle,Statistical Decision Function,Statistical Model Identification},
-  language  = {en},
+  language  = {en}
 }
 
-@Article{Efron2004Leastangleregression,
+@article{Efron2004Leastangleregression,
   author    = {Bradley Efron and Trevor Hastie and Iain Johnstone and Robert Tibshirani},
   journal   = {The Annals of Statistics},
   title     = {Least angle regression},
@@ -666,10 +680,10 @@ Other methods
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Efron et al/Efron et al. - 2004 - Least Angle Regression.pdf:;:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Efron et al/Efron et al. - 2004 - Least Angle Regression2.pdf:},
   ids       = {efronLeastAngle20022003},
   keywords  = {and phrases,boosting,coefficient paths,lasso,linear regression,variable selection},
-  publisher = {Institute of Mathematical Statistics},
+  publisher = {Institute of Mathematical Statistics}
 }
 
-@Article{Beck2009FastIterativeShrinkage,
+@article{Beck2009FastIterativeShrinkage,
   author    = {Amir Beck and Marc Teboulle},
   journal   = {{SIAM} Journal on Imaging Sciences},
   title     = {A Fast Iterative Shrinkage-Thresholding Algorithm for Linear Inverse Problems},
@@ -683,10 +697,10 @@ Other methods
   doi       = {10.1137/080716542},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Beck_Teboulle/Beck and Teboulle - 2009 - A Fast Iterative Shrinkage-Thresholding Algorithm.pdf:},
   keywords  = {algorithms,ams subject classifications,deconvolution,global rate of convergence,image deblurring,iterative shrinkage-thresholding algorithm,l 1 regularization problems,least squares and,linear inverse problem,optimal gradient method,two-step iterative},
-  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
+  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})}
 }
 
-@Article{Raguet2013GeneralizedForwardBackward,
+@article{Raguet2013GeneralizedForwardBackward,
   author    = {Hugo Raguet and Jalal Fadili and Gabriel Peyr{\'{e}}},
   journal   = {{SIAM} Journal on Imaging Sciences},
   title     = {A Generalized Forward-Backward Splitting},
@@ -700,10 +714,10 @@ Other methods
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Raguet et al/Raguet et al. - 2013 - A Generalized Forward-Backward Splitting.pdf:},
   ids       = {raguet2013GeneralizedForwardBackwardSplitting},
   keywords  = {10,1137,120872802,47n10,90c25,94a08,ams subject classifications,doi,forward-backward algorithm,image processing,imal splitting,monotone operator splitting,nonsmooth convex optimization,prox-,sparsity},
-  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
+  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})}
 }
 
-@Article{Pang2018Biophysicallybasedmethod,
+@article{Pang2018Biophysicallybasedmethod,
   author    = {J.C. Pang and K.M. Aquino and P.A. Robinson and T.C. Lacy and M.M. Schira},
   journal   = {Journal of Neuroscience Methods},
   title     = {Biophysically based method to deconvolve spatiotemporal neurovascular signals from {fMRI} data},
@@ -717,10 +731,10 @@ Other methods
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Pang et al/Pang et al. - 2018 - Biophysically based method to deconvolve spatiotem.pdf:},
   keywords  = {BOLD,Deconvolution,{{fMRI}},Modeling,Neurovascular,Spatiotemporal},
   language  = {en},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Elad2007Analysisversussynthesis,
+@article{Elad2007Analysisversussynthesis,
   author    = {Michael Elad and Peyman Milanfar and Ron Rubinstein},
   journal   = {Inverse Problems},
   title     = {Analysis versus synthesis in signal priors},
@@ -731,25 +745,45 @@ Other methods
   pages     = {947--968},
   volume    = {23},
   doi       = {10.1088/0266-5611/23/3/007},
-  publisher = {{IOP} Publishing},
+  publisher = {{IOP} Publishing}
 }
 
-@Article{Ortelli2020Oracleinequalitiessquare,
-  author    = {Francesco Ortelli and Sara van de Geer},
-  journal   = {Information and Inference: A Journal of the {IMA}},
-  title     = {Oracle inequalities for square root analysis estimators with application to total variation penalties},
-  year      = {2020},
-  issn      = {2049-8764},
-  month     = {mar},
-  doi       = {10.1093/imaiai/iaaa002},
-  publisher = {Oxford University Press ({OUP})},
+@misc{ortelli2019synthesis,
+  title         = {Synthesis and analysis in total variation regularization},
+  author        = {Francesco Ortelli and Sara van de Geer},
+  year          = {2019},
+  eprint        = {1901.06418},
+  archiveprefix = {arXiv},
+  primaryclass  = {math.ST}
+}
+
+@article{Chen2001BasisPursuitDenoising,
+  title     = {Atomic decomposition by basis pursuit},
+  author    = {Chen, Scott Shaobing and Donoho, David L and Saunders, Michael A},
+  journal   = {SIAM review},
+  volume    = {43},
+  number    = {1},
+  pages     = {129--159},
+  year      = {2001},
+  publisher = {SIAM}
+}
+
+@article{Chambolle2004TotalVariation,
+  title     = {An algorithm for total variation minimization and applications},
+  author    = {Chambolle, Antonin},
+  journal   = {Journal of Mathematical imaging and vision},
+  volume    = {20},
+  number    = {1},
+  pages     = {89--97},
+  year      = {2004},
+  publisher = {Springer}
 }
 
 ##############
 CAPS
 ##############
 
-@Article{Majeed2011Spatiotemporaldynamicslow,
+@article{Majeed2011Spatiotemporaldynamicslow,
   author    = {Waqas Majeed and Matthew Magnuson and Wendy Hasenkamp and Hillary Schwarb and Eric H. Schumacher and Lawrence Barsalou and Shella D. Keilholz},
   journal   = {{NeuroImage}},
   title     = {Spatiotemporal dynamics of low frequency {BOLD} fluctuations in rats and humans},
@@ -760,10 +794,10 @@ CAPS
   pages     = {1140--1150},
   volume    = {54},
   doi       = {10.1016/j.neuroimage.2010.08.030},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Majeed2009Spatiotemporaldynamicslow,
+@article{Majeed2009Spatiotemporaldynamicslow,
   author    = {Waqas Majeed and Matthew Magnuson and Shella D. Keilholz},
   journal   = {Journal of Magnetic Resonance Imaging},
   title     = {Spatiotemporal dynamics of low frequency fluctuations in {BOLD} {fMRI} of the rat},
@@ -774,10 +808,10 @@ CAPS
   pages     = {384--393},
   volume    = {30},
   doi       = {10.1002/jmri.21848},
-  publisher = {Wiley},
+  publisher = {Wiley}
 }
 
-@Article{Cifre2020Furtherresultswhy,
+@article{Cifre2020Furtherresultswhy,
   author    = {I. Cifre and M. Zarepour and S. G. Horovitz and S. A. Cannas and D. R. Chialvo},
   journal   = {Papers in Physics},
   title     = {Further results on why a point process is effective for estimating correlation between brain regions},
@@ -787,10 +821,10 @@ CAPS
   pages     = {120003},
   volume    = {12},
   doi       = {10.4279/pip.120003},
-  publisher = {Papers in Physics},
+  publisher = {Papers in Physics}
 }
 
-@Article{Zhang2020relationshipBOLDneural,
+@article{Zhang2020relationshipBOLDneural,
   author    = {Xiaodi Zhang and Wen-Ju Pan and Shella Dawn Keilholz},
   journal   = {{NeuroImage}},
   title     = {The relationship between {BOLD} and neural activity arises from temporally sparse events},
@@ -800,20 +834,20 @@ CAPS
   pages     = {116390},
   volume    = {207},
   doi       = {10.1016/j.neuroimage.2019.116390},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Ochab2020Staticdynamicproperties,
+@article{Ochab2020Staticdynamicproperties,
   author    = {Jeremi Ochab},
   journal   = {arXiv preprint arXiv:2007.15728},
   title     = {Static and dynamic properties of selected stochastic processes on complex networks},
   year      = {2020},
   month     = {apr},
   doi       = {10.31237/osf.io/4kbgj},
-  publisher = {Center for Open Science},
+  publisher = {Center for Open Science}
 }
 
-@Article{Liu2013Timevaryingfunctional,
+@article{Liu2013Timevaryingfunctional,
   author    = {Xiao Liu and Jeff H. Duyn},
   journal   = {Proceedings of the National Academy of Sciences},
   title     = {Time-varying functional network information extracted from brief instances of spontaneous brain activity},
@@ -824,10 +858,10 @@ CAPS
   pages     = {4392--4397},
   volume    = {110},
   doi       = {10.1073/pnas.1216856110},
-  publisher = {Proceedings of the National Academy of Sciences},
+  publisher = {Proceedings of the National Academy of Sciences}
 }
 
-@Article{Liu2013Decompositionspontaneousbrain,
+@article{Liu2013Decompositionspontaneousbrain,
   author    = {Xiao Liu and Catie Chang and Jeff H. Duyn},
   journal   = {Frontiers in Systems Neuroscience},
   title     = {Decomposition of spontaneous brain activity into distinct {fMRI} co-activation patterns},
@@ -836,10 +870,10 @@ CAPS
   pages     = {101},
   volume    = {7},
   doi       = {10.3389/fnsys.2013.00101},
-  publisher = {Frontiers Media {SA}},
+  publisher = {Frontiers Media {SA}}
 }
 
-@Article{Liu2018Coactivationpatterns,
+@article{Liu2018Coactivationpatterns,
   author    = {Xiao Liu and Nanyin Zhang and Catie Chang and Jeff H. Duyn},
   journal   = {{NeuroImage}},
   title     = {Co-activation patterns in resting-state {fMRI} signals},
@@ -849,10 +883,10 @@ CAPS
   pages     = {485--494},
   volume    = {180},
   doi       = {10.1016/j.neuroimage.2018.01.041},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Birn2006Separatingrespiratoryvariation,
+@article{Birn2006Separatingrespiratoryvariation,
   author    = {Rasmus M. Birn and Jason B. Diamond and Monica A. Smith and Peter A. Bandettini},
   journal   = {{NeuroImage}},
   title     = {Separating respiratory-variation-related fluctuations from neuronal-activity-related fluctuations in {fMRI}},
@@ -863,10 +897,10 @@ CAPS
   pages     = {1536--1548},
   volume    = {31},
   doi       = {10.1016/j.neuroimage.2006.02.048},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Shmueli2007Lowfrequencyfluctuations,
+@article{Shmueli2007Lowfrequencyfluctuations,
   author    = {Karin Shmueli and Peter van Gelderen and Jacco A. de Zwart and Silvina G. Horovitz and Masaki Fukunaga and J. Martijn Jansma and Jeff H. Duyn},
   journal   = {{NeuroImage}},
   title     = {Low-frequency fluctuations in the cardiac rate as a source of variance in the resting-state {fMRI} {BOLD} signal},
@@ -877,10 +911,10 @@ CAPS
   pages     = {306--320},
   volume    = {38},
   doi       = {10.1016/j.neuroimage.2007.07.037},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Triantafyllou2005Comparisonphysiologicalnoise,
+@article{Triantafyllou2005Comparisonphysiologicalnoise,
   author    = {C. Triantafyllou and R.D. Hoge and G. Krueger and C.J. Wiggins and A. Potthast and G.C. Wiggins and L.L. Wald},
   journal   = {{NeuroImage}},
   title     = {Comparison of physiological noise at 1.5 T, 3 T and 7 T and optimization of {fMRI} acquisition parameters},
@@ -891,10 +925,10 @@ CAPS
   pages     = {243--250},
   volume    = {26},
   doi       = {10.1016/j.neuroimage.2005.01.007},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Cox1996AFNISoftwareAnalysis,
+@article{Cox1996AFNISoftwareAnalysis,
   author    = {Robert W. Cox},
   journal   = {Computers and Biomedical Research},
   title     = {{AFNI}: Software for Analysis and Visualization of Functional Magnetic Resonance Neuroimages},
@@ -905,10 +939,10 @@ CAPS
   pages     = {162--173},
   volume    = {29},
   doi       = {10.1006/cbmr.1996.0014},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Jenkinson2012FSL,
+@article{Jenkinson2012FSL,
   author    = {Mark Jenkinson and Christian F. Beckmann and Timothy E.J. Behrens and Mark W. Woolrich and Stephen M. Smith},
   journal   = {{NeuroImage}},
   title     = {{FSL}},
@@ -919,10 +953,10 @@ CAPS
   pages     = {782--790},
   volume    = {62},
   doi       = {10.1016/j.neuroimage.2011.09.015},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Boynton1996LinearSystemsAnalysis,
+@article{Boynton1996LinearSystemsAnalysis,
   author    = {Geoffrey M. Boynton and Stephen A. Engel and Gary H. Glover and David J. Heeger},
   journal   = {The Journal of Neuroscience},
   title     = {Linear Systems Analysis of Functional Magnetic Resonance Imaging in Human V1},
@@ -933,10 +967,10 @@ CAPS
   pages     = {4207--4221},
   volume    = {16},
   doi       = {10.1523/jneurosci.16-13-04207.1996},
-  publisher = {Society for Neuroscience},
+  publisher = {Society for Neuroscience}
 }
 
-@Article{Glover1999DeconvolutionImpulseResponse,
+@article{Glover1999DeconvolutionImpulseResponse,
   author    = {Gary H. Glover},
   journal   = {{NeuroImage}},
   title     = {Deconvolution of Impulse Response in Event-Related {BOLD} {fMRI}1},
@@ -947,10 +981,10 @@ CAPS
   pages     = {416--429},
   volume    = {9},
   doi       = {10.1006/nimg.1998.0419},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Friston1994AnalysisfunctionalMRI,
+@article{Friston1994AnalysisfunctionalMRI,
   author    = {K. J. Friston and P. Jezzard and R. Turner},
   journal   = {Human Brain Mapping},
   title     = {Analysis of functional {MRI} time-series},
@@ -960,10 +994,10 @@ CAPS
   pages     = {153--171},
   volume    = {1},
   doi       = {10.1002/hbm.460010207},
-  publisher = {Wiley},
+  publisher = {Wiley}
 }
 
-@Article{Friston1998EventRelatedfMRI,
+@article{Friston1998EventRelatedfMRI,
   author    = {K.J. Friston and P. Fletcher and O. Josephs and A. Holmes and M.D. Rugg and R. Turner},
   journal   = {{NeuroImage}},
   title     = {Event-Related {fMRI}: Characterizing Differential Responses},
@@ -974,10 +1008,32 @@ CAPS
   pages     = {30--40},
   volume    = {7},
   doi       = {10.1006/nimg.1997.0306},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Cohen1997ParametricAnalysisfMRI,
+@article{Buxton1998BalloonModel,
+  title     = {Dynamics of blood flow and oxygenation changes during brain activation: the balloon model},
+  author    = {Buxton, Richard B and Wong, Eric C and Frank, Lawrence R},
+  journal   = {Magnetic resonance in medicine},
+  volume    = {39},
+  number    = {6},
+  pages     = {855--864},
+  year      = {1998},
+  publisher = {Wiley Online Library}
+}
+
+@article{Friston2000Nonlinear-Balloon,
+  title     = {Nonlinear responses in fMRI: the Balloon model, Volterra kernels, and other hemodynamics},
+  author    = {Friston, Karl J and Mechelli, Andrea and Turner, Robert and Price, Cathy J},
+  journal   = {NeuroImage},
+  volume    = {12},
+  number    = {4},
+  pages     = {466--477},
+  year      = {2000},
+  publisher = {Elsevier}
+}
+
+@article{Cohen1997ParametricAnalysisfMRI,
   author    = {Mark S. Cohen},
   journal   = {{NeuroImage}},
   title     = {Parametric Analysis of {fMRI} Data Using Linear Systems Methods},
@@ -988,10 +1044,10 @@ CAPS
   pages     = {93--103},
   volume    = {6},
   doi       = {10.1006/nimg.1997.0278},
-  publisher = {Elsevier {BV}},
+  publisher = {Elsevier {BV}}
 }
 
-@Article{Bolton2020TappingMultiFaceted,
+@article{Bolton2020TappingMultiFaceted,
   author          = {Thomas A.W. Bolton and Elenor Morgenroth and Maria Giulia Preti and Dimitri Van De Ville},
   journal         = {Trends in Neurosciences},
   title           = {Tapping into Multi-Faceted Human Behavior and Psychopathology Using {fMRI} Brain Dynamics},
@@ -1015,10 +1071,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2020-10-30},
+  revised         = {2020-10-30}
 }
 
-@Article{Preti2017dynamicfunctionalconnectome,
+@article{Preti2017dynamicfunctionalconnectome,
   author          = {Maria Giulia Preti and Thomas AW Bolton and Dimitri Van De Ville},
   journal         = {{NeuroImage}},
   title           = {The dynamic functional connectome: State-of-the-art and perspectives},
@@ -1041,10 +1097,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2018-09-07},
+  revised         = {2018-09-07}
 }
 
-@Article{Keilholz2017TimeResolvedResting,
+@article{Keilholz2017TimeResolvedResting,
   author          = {Shella Keilholz and Cesar Caballero-Gaudes and Peter Bandettini and Gustavo Deco and Vince Calhoun},
   journal         = {Brain Connectivity},
   title           = {Time-Resolved Resting-State Functional Magnetic Resonance Imaging Analysis: Current Status, Challenges, and New Directions},
@@ -1069,10 +1125,10 @@ CAPS
   publisher       = {Mary Ann Liebert Inc},
   pubmodel        = {Print},
   pubstate        = {ppublish},
-  revised         = {2018-11-13},
+  revised         = {2018-11-13}
 }
 
-@Article{Lurie2020Questionscontroversiesstudy,
+@article{Lurie2020Questionscontroversiesstudy,
   author       = {Daniel J. Lurie and Daniel Kessler and Danielle S. Bassett and Richard F. Betzel and Michael Breakspear and Shella Kheilholz and Aaron Kucyi and Raphaël Li{\'{e}}geois and Martin A. Lindquist and Anthony Randal McIntosh and Russell A. Poldrack and James M. Shine and William Hedley Thompson and Natalia Z. Bielczyk and Linda Douw and Dominik Kraft and Robyn L. Miller and Muthuraman Muthuraman and Lorenzo Pasquini and Adeel Razi and Diego Vidaurre and Hua Xie and Vince D. Calhoun},
   journal      = {Network Neuroscience},
   title        = {Questions and controversies in the study of time-varying functional connectivity in resting {fMRI}},
@@ -1096,10 +1152,10 @@ CAPS
   publisher    = {{MIT} Press - Journals},
   pubmodel     = {Electronic-eCollection},
   pubstate     = {epublish},
-  revised      = {2021-01-22},
+  revised      = {2021-01-22}
 }
 
-@Article{Freitas2020Timeresolvedeffective,
+@article{Freitas2020Timeresolvedeffective,
   author          = {Lorena G.A. Freitas and Thomas A.W. Bolton and Benjamin E. Krikler and Delphine Jochaut and Anne-Lise Giraud and Petra S. Hüppi and Dimitri Van De Ville},
   journal         = {{NeuroImage}},
   title           = {Time-resolved effective connectivity in task {fMRI}: Psychophysiological interactions of Co-Activation patterns},
@@ -1122,10 +1178,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2021-02-15},
+  revised         = {2021-02-15}
 }
 
-@Article{Di2015Characterizationsrestingstate,
+@article{Di2015Characterizationsrestingstate,
   author          = {Xin Di and Bharat B. Biswal},
   journal         = {Journal of Neurophysiology},
   title           = {Characterizations of resting-state modulatory interactions in the human brain},
@@ -1151,10 +1207,10 @@ CAPS
   publisher       = {American Physiological Society},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2018-11-13},
+  revised         = {2018-11-13}
 }
 
-@Article{Di2013ModulatoryInteractionsResting,
+@article{Di2013ModulatoryInteractionsResting,
   author          = {Xin Di and Bharat B. Biswal},
   journal         = {{PLoS} {ONE}},
   title           = {Modulatory Interactions of Resting-State Brain Functional Connectivity},
@@ -1181,10 +1237,10 @@ CAPS
   publisher       = {Public Library of Science ({PLoS})},
   pubmodel        = {Electronic-eCollection},
   pubstate        = {epublish},
-  revised         = {2020-12-18},
+  revised         = {2020-12-18}
 }
 
-@Article{Bush2013Decodingneuralevents,
+@article{Bush2013Decodingneuralevents,
   author          = {Keith Bush and Josh Cisler},
   journal         = {Magnetic Resonance Imaging},
   title           = {Decoding neural events from {fMRI} {BOLD} signal: A comparison of existing approaches and development of a new algorithm},
@@ -1211,10 +1267,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2019-12-10},
+  revised         = {2019-12-10}
 }
 
-@Article{Bush2015deconvolutionbasedapproach,
+@article{Bush2015deconvolutionbasedapproach,
   author          = {Keith Bush and Suijian Zhou and Josh Cisler and Jiang Bian and Onder Hazaroglu and Keenan Gillispie and Kenji Yoshigoe and Clint Kilts},
   journal         = {Magnetic Resonance Imaging},
   title           = {A deconvolution-based approach to identifying large-scale effective connectivity},
@@ -1241,10 +1297,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2019-10-08},
+  revised         = {2019-10-08}
 }
 
-@Article{Bush2015ImprovingprecisionfMRI,
+@article{Bush2015ImprovingprecisionfMRI,
   author          = {Keith Bush and Josh Cisler and Jiang Bian and Gokce Hazaroglu and Onder Hazaroglu and Clint Kilts},
   journal         = {Magnetic Resonance Imaging},
   title           = {Improving the precision of {fMRI} {BOLD} signal deconvolution with implications for connectivity analysis},
@@ -1271,30 +1327,30 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2019-10-08},
+  revised         = {2019-10-08}
 }
 
-@Article{Pidnebesna2019EstimatingSparseNeuronal,
+@article{Pidnebesna2019EstimatingSparseNeuronal,
   author    = {Anna Pidnebesna and Iveta Fajnerov{\'{a}} and Ji{\v{r}}{\'{\i}} Hor{\'{a}}{\v{c}}ek and Jaroslav Hlinka},
   journal   = {bioRxiv},
   title     = {Estimating Sparse Neuronal Signal from Hemodynamic Response: the Mixture Components Inference Approach},
   year      = {2019},
   month     = {dec},
   doi       = {10.1101/2019.12.19.876508},
-  publisher = {Cold Spring Harbor Laboratory},
+  publisher = {Cold Spring Harbor Laboratory}
 }
 
-@Article{Costantini2021ParadigmFreeRegularization,
+@article{Costantini2021ParadigmFreeRegularization,
   author    = {Isa Costantini and Rachid Deriche and Samuel Deslauriers-Gauthier},
   journal   = {bioRxiv},
   title     = {A Paradigm Free Regularization Approach to Recover Brain Activation from Functional {MRI} Data},
   year      = {2021},
   month     = {apr},
   doi       = {10.1101/2021.04.14.438942},
-  publisher = {Cold Spring Harbor Laboratory},
+  publisher = {Cold Spring Harbor Laboratory}
 }
 
-@InProceedings{Karahanoglu2013Spatialmappinginterictal,
+@inproceedings{Karahanoglu2013Spatialmappinginterictal,
   author       = {F. Isik Karahanoglu and Frederic Grouiller and Cesar C. Gaudes and Margitta Seeck and Serge Vulliemoz and Dimitri Van De Ville},
   booktitle    = {2013 {IEEE} 10th International Symposium on Biomedical Imaging},
   title        = {Spatial mapping of interictal epileptic discharges in {fMRI} with total activation},
@@ -1303,10 +1359,10 @@ CAPS
   organization = {Ieee},
   pages        = {1500--1503},
   publisher    = {{IEEE}},
-  doi          = {10.1109/isbi.2013.6556819},
+  doi          = {10.1109/isbi.2013.6556819}
 }
 
-@InProceedings{Huetel2018NeuralActivationEstimation,
+@inproceedings{Huetel2018NeuralActivationEstimation,
   author       = {Michael Hütel and Andrew Melbourne and Sebastien Ourselin},
   booktitle    = {Medical Image Computing and Computer Assisted Intervention {\textendash} {MICCAI} 2018},
   title        = {Neural Activation Estimation in Brain Networks During Task and Rest Using {BOLD}-{fMRI}},
@@ -1315,10 +1371,10 @@ CAPS
   pages        = {215--222},
   publisher    = {Springer International Publishing},
   doi          = {10.1007/978-3-030-00931-1_25},
-  issn         = {0302-9743},
+  issn         = {0302-9743}
 }
 
-@Article{Huetel2021Hemodynamicmatrixfactorization,
+@article{Huetel2021Hemodynamicmatrixfactorization,
   author          = {Michael Hütel and Michela Antonelli and Andrew Melbourne and Sebastien Ourselin},
   journal         = {{NeuroImage}},
   title           = {Hemodynamic matrix factorization for functional magnetic resonance imaging},
@@ -1339,10 +1395,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {aheadofprint},
-  revised         = {2021-03-10},
+  revised         = {2021-03-10}
 }
 
-@Article{Loula2018DecodingfMRIactivity,
+@article{Loula2018DecodingfMRIactivity,
   author          = {Jo{\~{a}}o Loula and Gaël Varoquaux and Bertrand Thirion},
   journal         = {{NeuroImage}},
   title           = {Decoding {fMRI} activity in the time domain improves classification performance},
@@ -1366,10 +1422,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2019-02-01},
+  revised         = {2019-02-01}
 }
 
-@Article{Sreenivasan2015NonparametricHemodynamicDeconvolution,
+@article{Sreenivasan2015NonparametricHemodynamicDeconvolution,
   author          = {Karthik Ramakrishnan Sreenivasan and Martin Havlicek and Gopikrishna Deshpande},
   journal         = {{IEEE} Transactions on Medical Imaging},
   title           = {Nonparametric Hemodynamic Deconvolution of {fMRI} Using Homomorphic Filtering},
@@ -1393,10 +1449,10 @@ CAPS
   publisher       = {Institute of Electrical and Electronics Engineers ({IEEE})},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2015-05-03},
+  revised         = {2015-05-03}
 }
 
-@Article{Madi2017HybridCubatureKalman,
+@article{Madi2017HybridCubatureKalman,
   author          = {Mahmoud K. Madi and Fadi N. Karameh},
   journal         = {{PLOS} {ONE}},
   title           = {Hybrid Cubature Kalman filtering for identifying nonlinear models from sampled recording: Estimation of neuronal dynamics},
@@ -1424,10 +1480,10 @@ CAPS
   publisher       = {Public Library of Science ({PLoS})},
   pubmodel        = {Electronic-eCollection},
   pubstate        = {epublish},
-  revised         = {2018-11-13},
+  revised         = {2018-11-13}
 }
 
-@Article{Havlicek2011Dynamicmodelingneuronal,
+@article{Havlicek2011Dynamicmodelingneuronal,
   author          = {Martin Havlicek and Karl J. Friston and Jiri Jan and Milan Brazdil and Vince D. Calhoun},
   journal         = {{NeuroImage}},
   title           = {Dynamic modeling of neuronal responses in {fMRI} using cubature Kalman filtering},
@@ -1454,10 +1510,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2021-01-08},
+  revised         = {2021-01-08}
 }
 
-@Article{Aslan2016Jointstateparameter,
+@article{Aslan2016Jointstateparameter,
   author          = {Serdar Aslan and Ali Taylan Cemgil and Ata Ak{\i}n},
   journal         = {Journal of Neural Engineering},
   title           = {Joint state and parameter estimation of the hemodynamic model by particle smoother expectation maximization method},
@@ -1482,10 +1538,10 @@ CAPS
   publisher       = {{IOP} Publishing},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2017-12-11},
+  revised         = {2017-12-11}
 }
 
-@Article{Friston2008DEMvariationaltreatment,
+@article{Friston2008DEMvariationaltreatment,
   author          = {K.J. Friston and N. Trujillo-Barreto and J. Daunizeau},
   journal         = {{NeuroImage}},
   title           = {{DEM}: A variational treatment of dynamic systems},
@@ -1510,10 +1566,10 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2019-10-08},
+  revised         = {2019-10-08}
 }
 
-@Article{Riera2004statespacemodel,
+@article{Riera2004statespacemodel,
   author          = {Jorge J. Riera and Jobu Watanabe and Iwata Kazuki and Miura Naoki and Eduardo Aubert and Tohru Ozaki and Ryuta Kawashima},
   journal         = {{NeuroImage}},
   title           = {A state-space model of the hemodynamic approach: nonlinear filtering of {BOLD} signals},
@@ -1538,25 +1594,537 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print},
   pubstate        = {ppublish},
-  revised         = {2007-11-15},
+  revised         = {2007-11-15}
 }
 
-@Misc{ruizeuler2018nonlinear,
+@misc{ruizeuler2018nonlinear,
   author        = {Hans-Christian Ruiz-Euler and Jose R. Ferreira Marques and Hilbert J. Kappen},
   title         = {Nonlinear Deconvolution by Sampling Biophysically Plausible Hemodynamic Models},
   year          = {2018},
   archiveprefix = {arXiv},
   eprint        = {1803.08797},
-  primaryclass  = {q-bio.NC},
+  primaryclass  = {q-bio.NC}
 }
 
-@Misc{cifre2020revisiting,
+@misc{cifre2020revisiting,
   author        = {Ignacio Cifre and Maria T. Miller Flores and Jeremi K. Ochab and Dante R. Chialvo},
   title         = {Revisiting non-linear functional brain co-activations: directed, dynamic and delayed},
   year          = {2020},
   archiveprefix = {arXiv},
   eprint        = {2007.15728},
-  primaryclass  = {q-bio.NC},
+  primaryclass  = {q-bio.NC}
+}
+
+@article{Tagliazucchi2016,
+  author       = {Tagliazucchi, Enzo and Siniatchkin, Michael and Laufs, Helmut and Chialvo, Dante R.},
+  journal      = {Frontiers in neuroscience},
+  title        = {The Voxel-Wise Functional Connectome Can Be Efficiently Derived from Co-activations in a Sparse Spatio-Temporal Point-Process.},
+  year         = {2016},
+  issn         = {1662-4548},
+  pages        = {381},
+  volume       = {10},
+  abstract     = {Large efforts are currently under way to systematically map functional connectivity between all pairs of millimeter-scale brain regions based on large neuroimaging databases. The exploratory unraveling of this "functional connectome" based on functional Magnetic Resonance Imaging (fMRI) can benefit from a better understanding of the contributors to resting state functional connectivity. In this work, we introduce a sparse representation of fMRI data in the form of a discrete point-process encoding high-amplitude events in the blood oxygenation level-dependent (BOLD) signal and we show it contains sufficient information for the estimation of functional connectivity between all pairs of voxels. We validate this method by replicating results obtained with standard whole-brain voxel-wise linear correlation matrices in two datasets. In the first one (n = 71), we study the changes in node strength (a measure of network centrality) during deep sleep. The second is a large database (n = 1147) of subjects in which we look at the age-related reorganization of the voxel-wise network of functional connections. In both cases it is shown that the proposed method compares well with standard techniques, despite requiring only data on the order of 1% of the original BOLD signal time series. Furthermore, we establish that the point-process approach does not reduce (and in one case increases) classification accuracy compared to standard linear correlations. Our results show how large fMRI datasets can be drastically simplified to include only the timings of large-amplitude events, while still allowing the recovery of all pair-wise interactions between voxels. The practical importance of this dimensionality reduction is manifest in the increasing number of collaborative efforts aiming to study large cohorts of healthy subjects as well as patients suffering from brain disease. Our method also suggests that the electrophysiological signals underlying the dynamics of fMRI time series consist of all-or-none temporally localized events, analogous to the avalanches of neural activity observed in recordings of local field potentials (LFP), an observation of potentially high neurobiological relevance.},
+  completed    = {2016-09-07},
+  country      = {Switzerland},
+  doi          = {10.3389/fnins.2016.00381},
+  issn-linking = {1662-453X},
+  keywords     = {dimensionality reduction; functional connectivity; functional connectome; point process; resting state fMRI},
+  nlm-id       = {101478481},
+  owner        = {NLM},
+  pmc          = {PMC4994538},
+  pmid         = {27601975},
+  pubmodel     = {Electronic-eCollection},
+  pubstate     = {epublish},
+  revised      = {2020-09-29}
+}
+
+@article{Tagliazucchi2012,
+  author       = {Tagliazucchi, Enzo and Balenzuela, Pablo and Fraiman, Daniel and Chialvo, Dante R.},
+  journal      = {Frontiers in physiology},
+  title        = {Criticality in large-scale brain FMRI dynamics unveiled by a novel point process analysis.},
+  year         = {2012},
+  issn         = {1664-042X},
+  pages        = {15},
+  volume       = {3},
+  abstract     = {Functional magnetic resonance imaging (fMRI) techniques have contributed significantly to our understanding of brain function. Current methods are based on the analysis of gradual and continuous changes in the brain blood oxygenated level dependent (BOLD) signal. Departing from that approach, recent work has shown that equivalent results can be obtained by inspecting only the relatively large amplitude BOLD signal peaks, suggesting that relevant information can be condensed in discrete events. This idea is further explored here to demonstrate how brain dynamics at resting state can be captured just by the timing and location of such events, i.e., in terms of a spatiotemporal point process. The method allows, for the first time, to define a theoretical framework in terms of an order and control parameter derived from fMRI data, where the dynamical regime can be interpreted as one corresponding to a system close to the critical point of a second order phase transition. The analysis demonstrates that the resting brain spends most of the time near the critical point of such transition and exhibits avalanches of activity ruled by the same dynamical and statistical properties described previously for neuronal events at smaller scales. Given the demonstrated functional relevance of the resting state brain dynamics, its representation as a discrete process might facilitate large-scale analysis of brain function both in health and disease.},
+  completed    = {2012-10-02},
+  country      = {Switzerland},
+  doi          = {10.3389/fphys.2012.00015},
+  issn-linking = {1664-042X},
+  keywords     = {brain dynamics; criticality; fMRI; point processes},
+  nlm-id       = {101549006},
+  owner        = {NLM},
+  pmc          = {PMC3274757},
+  pmid         = {22347863},
+  pubmodel     = {Electronic-eCollection},
+  pubstate     = {epublish},
+  revised      = {2020-09-30}
+}
+
+@article{Tagliazucchi2011,
+  author          = {Tagliazucchi, Enzo and Balenzuela, Pablo and Fraiman, Daniel and Montoya, Pedro and Chialvo, Dante R.},
+  journal         = {Neuroscience letters},
+  title           = {Spontaneous BOLD event triggered averages for estimating functional connectivity at resting state.},
+  year            = {2011},
+  issn            = {1872-7972},
+  month           = jan,
+  pages           = {158--163},
+  volume          = {488},
+  abstract        = {Recent neuroimaging studies have demonstrated that the spontaneous brain activity reflects, to a large extent, the same activation patterns measured in response to cognitive and behavioral tasks. This correspondence between activation and rest has been explored with a large repertoire of computational methods, ranging from analysis of pairwise interactions between areas of the brain to the global brain networks yielded by independent component analysis. In this paper we describe an alternative method based on the averaging of the BOLD signal at a region of interest (target) triggered by spontaneous increments in activity at another brain area (seed). The resting BOLD event triggered averages ("rBeta") can be used to estimate functional connectivity at resting state. Using two simple examples, here we illustrate how the analysis of the average response triggered by spontaneous increases/decreases in the BOLD signal is sufficient to capture the aforementioned correspondence in a variety of circumstances. The computation of the non linear response during rest here described allows for a direct comparison with results obtained during task performance, providing an alternative measure of functional interaction between brain areas.},
+  citation-subset = {IM},
+  completed       = {2011-04-25},
+  country         = {Ireland},
+  doi             = {10.1016/j.neulet.2010.11.020},
+  issn-linking    = {0304-3940},
+  issue           = {2},
+  keywords        = {Adult; Aged; Back Pain, physiopathology; Brain, physiology; Brain Mapping, methods; Chronic Disease; Female; Humans; Image Interpretation, Computer-Assisted; Magnetic Resonance Imaging, methods; Middle Aged; Neural Pathways, physiology; Rest; Young Adult},
+  mid             = {NIHMS253382},
+  nlm-id          = {7600130},
+  owner           = {NLM},
+  pii             = {S0304-3940(10)01474-6},
+  pmc             = {PMC3014405},
+  pmid            = {21078369},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2018-11-13}
+}
+
+@article{Faskowitz2020,
+  author          = {Faskowitz, Joshua and Esfahlani, Farnaz Zamani and Jo, Youngheun and Sporns, Olaf and Betzel, Richard F.},
+  journal         = {Nature neuroscience},
+  title           = {Edge-centric functional network representations of human cerebral cortex reveal overlapping system-level architecture.},
+  year            = {2020},
+  issn            = {1546-1726},
+  month           = dec,
+  pages           = {1644--1654},
+  volume          = {23},
+  abstract        = {Network neuroscience has relied on a node-centric network model in which cells, populations and regions are linked to one another via anatomical or functional connections. This model cannot account for interactions of edges with one another. In this study, we developed an edge-centric network model that generates constructs 'edge time series' and 'edge functional connectivity' (eFC). Using network analysis, we show that, at rest, eFC is consistent across datasets and reproducible within the same individual over multiple scan sessions. We demonstrate that clustering eFC yields communities of edges that naturally divide the brain into overlapping clusters, with regions in sensorimotor and attentional networks exhibiting the greatest levels of overlap. We show that eFC is systematically modulated by variation in sensory input. In future work, the edge-centric approach could be useful for identifying novel biomarkers of disease, characterizing individual variation and mapping the architecture of highly resolved neural circuits.},
+  citation-subset = {IM},
+  completed       = {2021-02-08},
+  country         = {United States},
+  doi             = {10.1038/s41593-020-00719-y},
+  issn-linking    = {1097-6256},
+  issue           = {12},
+  keywords        = {Adult; Algorithms; Behavior, physiology; Brain Mapping; Cerebral Cortex, diagnostic imaging, physiology; Cluster Analysis; Connectome; Databases, Factual; Female; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging; Male; Models, Neurological; Nerve Net, diagnostic imaging, physiology; Neural Pathways, physiology; Sensation, physiology; Young Adult},
+  nlm-id          = {9809671},
+  owner           = {NLM},
+  pii             = {10.1038/s41593-020-00719-y},
+  pmid            = {33077948},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2021-02-10}
+}
+
+@article{Jo2021,
+  author          = {Jo, Youngheun and Faskowitz, Joshua and Esfahlani, Farnaz Zamani and Sporns, Olaf and Betzel, Richard F.},
+  journal         = {NeuroImage},
+  title           = {Subject identification using edge-centric functional connectivity.},
+  year            = {2021},
+  issn            = {1095-9572},
+  month           = jun,
+  pages           = {118204},
+  volume          = {238},
+  abstract        = {Group-level studies do not capture individual differences in network organization, an important prerequisite for understanding neural substrates shaping behavior and for developing interventions in clinical conditions. Recent studies have employed 'fingerprinting' analyses on functional connectivity to identify subjects' idiosyncratic features. Here, we develop a complementary approach based on an edge-centric model of functional connectivity, which focuses on the co-fluctuations of edges. We first show whole-brain edge functional connectivity (eFC) to be a robust substrate that improves identifiability over nodal FC (nFC) across different datasets and parcellations. Next, we characterize subjects' identifiability at different spatial scales, from single nodes to the level of functional systems and clusters using k-means clustering. Across spatial scales, we find that heteromodal brain regions exhibit consistently greater identifiability than unimodal, sensorimotor, and limbic regions. Lastly, we show that identifiability can be further improved by reconstructing eFC using specific subsets of its principal components. In summary, our results highlight the utility of the edge-centric network model for capturing meaningful subject-specific features and sets the stage for future investigations into individual differences using edge-centric models.},
+  citation-subset = {IM},
+  country         = {United States},
+  doi             = {10.1016/j.neuroimage.2021.118204},
+  issn-linking    = {1053-8119},
+  nlm-id          = {9215515},
+  owner           = {NLM},
+  pii             = {S1053-8119(21)00481-X},
+  pmid            = {34087363},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {aheadofprint},
+  revised         = {2021-06-30}
+}
+
+@article{Sporns2021,
+  author       = {Sporns, Olaf and Faskowitz, Joshua and Teixeira, Andreia Sofia and Cutts, Sarah A. and Betzel, Richard F.},
+  journal      = {Network neuroscience (Cambridge, Mass.)},
+  title        = {Dynamic expression of brain functional systems disclosed by fine-scale analysis of edge time series.},
+  year         = {2021},
+  issn         = {2472-1751},
+  pages        = {405--433},
+  volume       = {5},
+  abstract     = {Functional connectivity (FC) describes the statistical dependence between neuronal populations or brain regions in resting-state fMRI studies and is commonly estimated as the Pearson correlation of time courses. Clustering or community detection reveals densely coupled sets of regions constituting resting-state networks or functional systems. These systems manifest most clearly when FC is sampled over longer epochs but appear to fluctuate on shorter timescales. Here, we propose a new approach to reveal temporal fluctuations in neuronal time series. Unwrapping FC signal correlations yields pairwise co-fluctuation time series, one for each node pair or edge, and allows tracking of fine-scale dynamics across the network. Co-fluctuations partition the network, at each time step, into exactly two communities. Sampled over time, the overlay of these bipartitions, a binary decomposition of the original time series, very closely approximates functional connectivity. Bipartitions exhibit characteristic spatiotemporal patterns that are reproducible across participants and imaging runs, capture individual differences, and disclose fine-scale temporal expression of functional systems. Our findings document that functional systems appear transiently and intermittently, and that FC results from the overlay of many variable instances of system expression. Potential applications of this decomposition of functional connectivity into a set of binary patterns are discussed.},
+  country      = {United States},
+  doi          = {10.1162/netn_a_00182},
+  issn-linking = {2472-1751},
+  issue        = {2},
+  keywords     = {Connectome; Functional MRI; Graph theory; Network dynamics; Resting state},
+  nlm-id       = {101719149},
+  owner        = {NLM},
+  pii          = {netn_a_00182},
+  pmc          = {PMC8233118},
+  pmid         = {34189371},
+  pubmodel     = {Electronic-eCollection},
+  pubstate     = {epublish},
+  revised      = {2021-06-30}
+}
+
+@article{Rolls2021,
+  author          = {Rolls, Edmund T. and Cheng, Wei and Feng, Jianfeng},
+  journal         = {Human brain mapping},
+  title           = {Brain dynamics: Synchronous peaks, functional connectivity, and its temporal variability.},
+  year            = {2021},
+  issn            = {1097-0193},
+  month           = jun,
+  pages           = {2790--2801},
+  volume          = {42},
+  abstract        = {We describe advances in the understanding of brain dynamics that are important for understanding the operation of the cerebral cortex in health and disease. Peaks in the resting state fMRI BOLD signal in many different brain areas can become synchronized. In data from 1,017 participants from the Human Connectome Project, we show that early visual and connected areas have the highest probability of synchronized peaks. We show that these cortical areas also have low temporal variability of their functional connectivity. We show that there is an approximately reciprocal relation between the probability that a brain region will be involved in synchronized peaks and the temporal variability of the connectivity of a brain region. We show that a high probability of synchronized peaks and a low temporal variability of the connectivity of cortical areas are related to high mean functional connectivity, and provide an account of how these dynamics with some of the properties of avalanches arise. These discoveries help to advance our understanding of cortical operation in health, and in some mental disorders including schizophrenia.},
+  citation-subset = {IM},
+  country         = {United States},
+  doi             = {10.1002/hbm.25404},
+  issn-linking    = {1065-9471},
+  issue           = {9},
+  keywords        = {avalanches; brain dynamics; human connectome; neuroimaging; resting state fMRI; synchronous events; temporal variability of functional connectivity},
+  nlm-id          = {9419065},
+  owner           = {NLM},
+  pmc             = {PMC8127146},
+  pmid            = {33742498},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2021-05-22}
+}
+
+@article{Deco2017,
+  author          = {Deco, Gustavo and Tagliazucchi, Enzo and Laufs, Helmut and Sanjuán, Ana and Kringelbach, Morten L.},
+  journal         = {eNeuro},
+  title           = {Novel Intrinsic Ignition Method Measuring Local-Global Integration Characterizes Wakefulness and Deep Sleep.},
+  year            = {2017},
+  issn            = {2373-2822},
+  volume          = {4},
+  abstract        = {A precise definition of a brain state has proven elusive. Here, we introduce the novel local-global concept of intrinsic ignition characterizing the dynamical complexity of different brain states. Naturally occurring intrinsic ignition events reflect the capability of a given brain area to propagate neuronal activity to other regions, giving rise to different levels of integration. The ignitory capability of brain regions is computed by the elicited level of integration for each intrinsic ignition event in each brain region, averaged over all events. This intrinsic ignition method is shown to clearly distinguish human neuroimaging data of two fundamental brain states (wakefulness and deep sleep). Importantly, whole-brain computational modelling of this data shows that at the optimal working point is found where there is maximal variability of the intrinsic ignition across brain regions. Thus, combining whole brain models with intrinsic ignition can provide novel insights into underlying mechanisms of brain states.},
+  chemicals       = {Oxygen},
+  citation-subset = {IM},
+  completed       = {2018-05-30},
+  country         = {United States},
+  doi             = {10.1523/ENEURO.0106-17.2017},
+  issn-linking    = {2373-2822},
+  issue           = {5},
+  keywords        = {Adult; Brain, diagnostic imaging, physiology; Brain Mapping; Computer Simulation; Diffusion Tensor Imaging; Electroencephalography; Female; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging; Male; Models, Neurological; Oxygen, blood; Sleep, physiology; Wakefulness, physiology; Young Adult; ignition; integration; metastability; neuroimaging; whole-brain modeling},
+  nlm-id          = {101647362},
+  owner           = {NLM},
+  pii             = {ENEURO.0106-17.2017},
+  pmc             = {PMC5617208},
+  pmid            = {28966977},
+  pubmodel        = {Electronic-eCollection},
+  pubstate        = {epublish},
+  revised         = {2019-01-11}
+}
+
+@article{Deco2017a,
+  author          = {Deco, Gustavo and Kringelbach, Morten L.},
+  journal         = {Neuron},
+  title           = {Hierarchy of Information Processing in the Brain: A Novel 'Intrinsic Ignition' Framework.},
+  year            = {2017},
+  issn            = {1097-4199},
+  month           = jun,
+  pages           = {961--968},
+  volume          = {94},
+  abstract        = {A general theory of brain function has to be able to explain local and non-local network computations over space and time. We propose a new framework to capture the key principles of how local activity influences global computation, i.e., describing the propagation of information and thus the broadness of communication driven by local activity. More specifically, we consider the diversity in space (nodes or brain regions) over time using the concept of intrinsic ignition, which are naturally occurring intrinsic perturbations reflecting the capability of a given brain area to propagate neuronal activity to other regions in a given brain state. Characterizing the profile of intrinsic ignition for a given brain state provides insight into the precise nature of hierarchical information processing. Combining this data-driven method with a causal whole-brain computational model can provide novel insights into the imbalance of brain states found in neuropsychiatric disorders.},
+  citation-subset = {IM},
+  completed       = {2017-07-26},
+  country         = {United States},
+  doi             = {10.1016/j.neuron.2017.03.028},
+  issn-linking    = {0896-6273},
+  issue           = {5},
+  keywords        = {Brain, physiology; Humans; Mental Processes, physiology; Models, Neurological; binding; brain function; brain state; computational modeling; ignition; perturbation; whole-brain modeling},
+  nlm-id          = {8809320},
+  owner           = {NLM},
+  pii             = {S0896-6273(17)30240-4},
+  pmid            = {28595052},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2017-07-26}
+}
+
+@unpublished{cherkaoui:hal-03005584,
+  author      = {Cherkaoui, Hamza and Moreau, Thomas and Halimi, Abderrahim and Leroy, Claire and Ciuciu, Philippe},
+  note        = {working paper or preprint},
+  title       = {{Multivariate semi-blind deconvolution of fMRI time series}},
+  month       = Nov,
+  year        = {2020},
+  hal_id      = {hal-03005584},
+  hal_version = {v1},
+  keywords    = {BOLD signal ; HRF ; sparsity ; low-rank decomposition ; multivariate modeling ; dictionary learning ; UK Biobank},
+  pdf         = {https://hal.archives-ouvertes.fr/hal-03005584/file/paper.pdf},
+  url         = {https://hal.archives-ouvertes.fr/hal-03005584}
+}
+
+@article{Monga2021,
+  author  = {Monga, Vishal and Li, Yuelong and Eldar, Yonina C.},
+  journal = {IEEE Signal Processing Magazine},
+  title   = {Algorithm Unrolling: Interpretable, Efficient Deep Learning for Signal and Image Processing},
+  year    = {2021},
+  number  = {2},
+  pages   = {18-44},
+  volume  = {38},
+  doi     = {10.1109/MSP.2020.3016905}
+}
+
+@article{Akcakaya2021,
+  author        = {Mehmet Ak\c{c}akaya and Burhaneddin Yaman and Hyungjin Chung and Jong Chul Ye},
+  title         = {Unsupervised Deep Learning Methods for Biological Image Reconstruction},
+  year          = {2021},
+  month         = may,
+  abstract      = {Recently, deep learning approaches have become the main research frontier for biological image reconstruction problems thanks to their high performance, along with their ultra-fast reconstruction times. However, due to the difficulty of obtaining matched reference data for supervised learning, there has been increasing interest in unsupervised learning approaches that do not need paired reference data. In particular, self-supervised learning and generative models have been successfully used for various biological imaging applications. In this paper, we overview these approaches from a coherent perspective in the context of classical inverse problems, and discuss their applications to biological imaging.},
+  archiveprefix = {arXiv},
+  eprint        = {2105.08040},
+  file          = {:http\://arxiv.org/pdf/2105.08040v1:PDF},
+  keywords      = {eess.IV, cs.CV, cs.LG, eess.SP, physics.med-ph},
+  primaryclass  = {eess.IV}
+}
+
+@article{Ongie2020,
+  author  = {Ongie, Gregory and Jalal, Ajil and Metzler, Christopher A. and Baraniuk, Richard G. and Dimakis, Alexandros G. and Willett, Rebecca},
+  journal = {IEEE Journal on Selected Areas in Information Theory},
+  title   = {Deep Learning Techniques for Inverse Problems in Imaging},
+  year    = {2020},
+  number  = {1},
+  pages   = {39-56},
+  volume  = {1},
+  doi     = {10.1109/JSAIT.2020.2991563}
+}
+
+@article{Oort2018,
+  author          = {van Oort, Erik S. B. and Mennes, Maarten and Navarro Schröder, Tobias and Kumar, Vinod J. and Zaragoza Jimenez, Nestor I. and Grodd, Wolfgang and Doeller, Christian F. and Beckmann, Christian F.},
+  journal         = {NeuroImage},
+  title           = {Functional parcellation using time courses of instantaneous connectivity.},
+  year            = {2018},
+  issn            = {1095-9572},
+  month           = apr,
+  pages           = {31--40},
+  volume          = {170},
+  abstract        = {Functional neuroimaging studies have led to understanding the brain as a collection of spatially segregated functional networks. It is thought that each of these networks is in turn composed of a set of distinct sub-regions that together support each network's function. Considering the sub-regions to be an essential part of the brain's functional architecture, several strategies have been put forward that aim at identifying the functional sub-units of the brain by means of functional parcellations. Current parcellation strategies typically employ a bottom-up strategy, creating a parcellation by clustering smaller units. We propose a novel top-down parcellation strategy, using time courses of instantaneous connectivity to subdivide an initial region of interest into sub-regions. We use split-half reproducibility to choose the optimal number of sub-regions. We apply our Instantaneous Connectivity Parcellation (ICP) strategy on high-quality resting-state FMRI data, and demonstrate the ability to generate parcellations for thalamus, entorhinal cortex, motor cortex, and subcortex including brainstem and striatum. We evaluate the subdivisions against available cytoarchitecture maps to show that our parcellation strategy recovers biologically valid subdivisions that adhere to known cytoarchitectural features.},
+  citation-subset = {IM},
+  completed       = {2018-12-11},
+  country         = {United States},
+  doi             = {10.1016/j.neuroimage.2017.07.027},
+  issn-linking    = {1053-8119},
+  keywords        = {Brain, diagnostic imaging, physiology; Brain Mapping, methods; Humans; Image Processing, Computer-Assisted, methods; Magnetic Resonance Imaging, methods; Entorhinal cortex; FMRI; Motor cortex; Parcellation; Resting state; Subcortex; Thalamus},
+  nlm-id          = {9215515},
+  owner           = {NLM},
+  pii             = {S1053-8119(17)30595-5},
+  pmid            = {28716715},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2018-12-11}
+}
+
+@article{Feinberg_2010,
+  author    = {David A. Feinberg and Steen Moeller and Stephen M. Smith and Edward Auerbach and Sudhir Ramanna and Matt F. Glasser and Karla L. Miller and Kamil Ugurbil and Essa Yacoub},
+  journal   = {{PLoS} {ONE}},
+  title     = {Multiplexed Echo Planar Imaging for Sub-Second Whole Brain {FMRI} and Fast Diffusion Imaging},
+  year      = {2010},
+  month     = {dec},
+  number    = {12},
+  pages     = {e15710},
+  volume    = {5},
+  doi       = {10.1371/journal.pone.0015710},
+  editor    = {Pedro Antonio Valdes-Sosa},
+  publisher = {Public Library of Science ({PLoS})}
+}
+
+@article{Moeller_2010,
+  author    = {Steen Moeller and Essa Yacoub and Cheryl A. Olman and Edward Auerbach and John Strupp and Noam Harel and K{\^{a}}mil U{\u{g}}urbil},
+  journal   = {Magnetic Resonance in Medicine},
+  title     = {Multiband multislice {GE}-{EPI} at 7 tesla, with 16-fold acceleration using partial parallel imaging with application to high spatial and temporal whole-brain {fMRI}},
+  year      = {2010},
+  month     = {apr},
+  number    = {5},
+  pages     = {1144--1153},
+  volume    = {63},
+  doi       = {10.1002/mrm.22361},
+  publisher = {Wiley}
+}
+
+@article{Setsompop_2011,
+  author    = {Kawin Setsompop and Borjan A. Gagoski and Jonathan R. Polimeni and Thomas Witzel and Van J. Wedeen and Lawrence L. Wald},
+  journal   = {Magnetic Resonance in Medicine},
+  title     = {Blipped-controlled aliasing in parallel imaging for simultaneous multislice echo planar imaging with reduced g -factor penalty},
+  year      = {2011},
+  month     = {aug},
+  number    = {5},
+  pages     = {1210--1224},
+  volume    = {67},
+  doi       = {10.1002/mrm.23097},
+  publisher = {Wiley}
+}
+
+@article{urunuela-tremino_2019,
+  author  = {Uruñuela-Tremiño, Eneko and Moia, Stefano and Gonzalez-Castillo, Javier and Caballero-Gaudes, César},
+  journal = {ISMRM 27th Annual Meeting and Exhibition},
+  title   = {Deconvolution of multi-echo functional {MRI} data with Multivariate Multi-Echo Sparse Paradigm Free Mapping},
+  year    = {2019},
+  month   = may
+}
+
+@article{Urunuela_2021,
+  author    = {Eneko Uruñuela and Stefano Moia and Cesar Caballero-Gaudes},
+  title     = {A Low Rank and Sparse Paradigm Free Mapping Algorithm For Deconvolution of {fMRI} Data},
+  year      = {2021},
+  month     = {apr},
+  booktitle = {2021 {IEEE} 18th International Symposium on Biomedical Imaging ({ISBI})},
+  doi       = {10.1109/isbi48211.2021.9433821},
+  publisher = {{IEEE}}
+}
+
+@article{Lindquist_2007,
+  author    = {Martin A. Lindquist and Christian Waugh and Tor D. Wager},
+  journal   = {{NeuroImage}},
+  title     = {Modeling state-related {fMRI} activity using change-point theory},
+  year      = {2007},
+  month     = {apr},
+  number    = {3},
+  pages     = {1125--1141},
+  volume    = {35},
+  doi       = {10.1016/j.neuroimage.2007.01.004},
+  publisher = {Elsevier {BV}}
+}
+
+@article{Cherkaoui_2020,
+  author    = {Cherkaoui, Hamza and Sulam, Jeremias and Moreau, Thomas},
+  title     = {Learning to solve {TV} regularised problems with unrolled algorithms},
+  year      = {2020},
+  pages     = {11513--11524},
+  volume    = {33},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor    = {H. Larochelle and M. Ranzato and R. Hadsell and M. F. Balcan and H. Lin},
+  publisher = {Curran Associates, Inc.},
+  url       = {https://proceedings.neurips.cc/paper/2020/file/84fec9a8e45846340fdf5c7c9f7ed66c-Paper.pdf}
+}
+
+@article{Tan_2017,
+  author    = {Francisca M. Tan and C{\'{e}}sar Caballero-Gaudes and Karen J. Mullinger and Siu-Yeung Cho and Yaping Zhang and Ian L. Dryden and Susan T. Francis and Penny A. Gowland},
+  journal   = {Human Brain Mapping},
+  title     = {Decoding {fMRI} events in sensorimotor motor network using sparse paradigm free mapping and activation likelihood estimates},
+  year      = {2017},
+  month     = {aug},
+  number    = {11},
+  pages     = {5778--5794},
+  volume    = {38},
+  doi       = {10.1002/hbm.23767},
+  publisher = {Wiley}
+}
+
+@article{Behzadi_2007,
+  author    = {Yashar Behzadi and Khaled Restom and Joy Liau and Thomas T. Liu},
+  journal   = {{NeuroImage}},
+  title     = {A component based noise correction method ({CompCor}) for {BOLD} and perfusion based {fMRI}},
+  year      = {2007},
+  month     = {aug},
+  number    = {1},
+  pages     = {90--101},
+  volume    = {37},
+  doi       = {10.1016/j.neuroimage.2007.04.042},
+  publisher = {Elsevier {BV}}
+}
+
+@article{Patriat_2015,
+  author    = {R{\'{e}}mi Patriat and Erin K. Molloy and Rasmus M. Birn},
+  journal   = {Brain Connectivity},
+  title     = {Using Edge Voxel Information to Improve Motion Regression for rs-{fMRI} Connectivity Studies},
+  year      = {2015},
+  month     = {nov},
+  number    = {9},
+  pages     = {582--595},
+  volume    = {5},
+  doi       = {10.1089/brain.2014.0321},
+  publisher = {Mary Ann Liebert Inc}
+}
+
+@article{Jenkinson_2001,
+  author    = {Mark Jenkinson and Stephen Smith},
+  journal   = {Medical Image Analysis},
+  title     = {A global optimisation method for robust affine registration of brain images},
+  year      = {2001},
+  month     = {jun},
+  number    = {2},
+  pages     = {143--156},
+  volume    = {5},
+  doi       = {10.1016/s1361-8415(01)00036-6},
+  publisher = {Elsevier {BV}}
+}
+
+@article{Posse_1999,
+  author    = {Stefan Posse and Stefan Wiese and Daniel Gembris and Klaus Mathiak and Christoph Kessler and Maria-Liisa Grosse-Ruyken and Barbara Elghahwagi and Todd Richards and Stephen R. Dager and Valerij G. Kiselev},
+  journal   = {Magnetic Resonance in Medicine},
+  title     = {Enhancement of {BOLD}-contrast sensitivity by single-shot multi-echo functional {MR} imaging},
+  year      = {1999},
+  month     = {jul},
+  number    = {1},
+  pages     = {87--97},
+  volume    = {42},
+  doi       = {10.1002/(sici)1522-2594(199907)42:1<87::aid-mrm13>3.0.co;2-o},
+  publisher = {Wiley}
+}
+
+@article{Andersson_2003,
+  author    = {Jesper L.R. Andersson and Stefan Skare and John Ashburner},
+  journal   = {{NeuroImage}},
+  title     = {How to correct susceptibility distortions in spin-echo echo-planar images: application to diffusion tensor imaging},
+  year      = {2003},
+  month     = {oct},
+  number    = {2},
+  pages     = {870--888},
+  volume    = {20},
+  doi       = {10.1016/s1053-8119(03)00336-7},
+  publisher = {Elsevier {BV}}
+}
+
+@article{Glasser_2016,
+  author    = {Matthew F Glasser and Stephen M Smith and Daniel S Marcus and Jesper L R Andersson and Edward J Auerbach and Timothy E J Behrens and Timothy S Coalson and Michael P Harms and Mark Jenkinson and Steen Moeller and Emma C Robinson and Stamatios N Sotiropoulos and Junqian Xu and Essa Yacoub and Kamil Ugurbil and David C Van Essen},
+  journal   = {Nature Neuroscience},
+  title     = {The Human Connectome Project{\textquotesingle}s neuroimaging approach},
+  year      = {2016},
+  month     = {aug},
+  number    = {9},
+  pages     = {1175--1187},
+  volume    = {19},
+  doi       = {10.1038/nn.4361},
+  publisher = {Springer Science and Business Media {LLC}}
+}
+
+@article{Jewell_2019,
+  author    = {Sean W Jewell and Toby Dylan Hocking and Paul Fearnhead and Daniela M Witten},
+  journal   = {Biostatistics},
+  title     = {Fast nonconvex deconvolution of calcium imaging data},
+  year      = {2019},
+  month     = {feb},
+  number    = {4},
+  pages     = {709--726},
+  volume    = {21},
+  doi       = {10.1093/biostatistics/kxy083},
+  publisher = {Oxford University Press ({OUP})}
+}
+
+@article{Friedrich_2017,
+  author    = {Johannes Friedrich and Pengcheng Zhou and Liam Paninski},
+  journal   = {{PLOS} Computational Biology},
+  title     = {Fast online deconvolution of calcium imaging data},
+  year      = {2017},
+  month     = {mar},
+  number    = {3},
+  pages     = {e1005423},
+  volume    = {13},
+  doi       = {10.1371/journal.pcbi.1005423},
+  editor    = {Joshua Vogelstein},
+  publisher = {Public Library of Science ({PLoS})}
+}
+
+@incollection{HENSON2007178,
+  title     = {CHAPTER 14 - {Convolution} {Models} for f{MRI}},
+  editor    = {Karl Friston and John Ashburner and Stefan Kiebel and Thomas Nichols and William Penny},
+  booktitle = {Statistical Parametric Mapping},
+  publisher = {Academic Press},
+  address   = {London},
+  pages     = {178-192},
+  year      = {2007},
+  isbn      = {978-0-12-372560-8},
+  doi       = {https://doi.org/10.1016/B978-012372560-8/50014-0},
+  url       = {https://www.sciencedirect.com/science/article/pii/B9780123725608500140},
+  author    = {R. Henson and K. Friston}
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

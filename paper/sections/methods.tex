@@ -5,19 +5,19 @@
 
 \subsection{Simulated data}
 
+\begin{figure}[t!]
+    \begin{center}
+        \includegraphics[width=0.75\columnwidth]{figures/sim_and_hrf.pdf}
+    \end{center}
+    \caption{A) Simulated signal with different SNRs (20 dB, 10 dB and 3 dB) and ground truth given in signal percentage change (SPC). B) Canonical HRF models typically used by PFM (solid line) and TA (dashed line) at TR = 0.5 s (blue), TR = 1 s (green) and TR = 2 s (black). Without loss of generality, the waveforms are scaled to unit amplitude for visualization. C) Representation of shifted HRFs at TR = 2 s that build the design matrix for PFM when the HRF model has been matched to that in TA. The red line corresponds to one of the columns of the HRF matrix.}
+\label{fig:sim_and_hrf}
+\end{figure}
+
 In order to compare the two methods while controlling for their correct performance, we created a simulation scenario that can be found in the GitHub repository shared in Section~\ref{sec:github}. For the sake of illustration, we describe here the simulations corresponding to a timecourse with a duration of 400 seconds (TR = 2 s) where the activity-inducing signal includes 5 events, which are convolved with the canonical HRF. Different noise sources (physiological, thermal, and motion-related) were also added and we simulated three different scenarios with varying signal-to-noise ratios (SNR = [20 dB, 10 dB, 3 dB]) that represent high, medium and low contrast-to-noise ratios as shown in Figure~\ref{fig:sim_and_hrf}A. Noise was created following the procedure in (\citealt{Gaudes2013Paradigmfreemapping}) as the sum of uncorrelated Gaussian noise and sinusoidal signals to simulate a realistic noise model with thermal noise, cardiac and respiratory physiological fluctuations, respectively. The physiological signals were generated as
 \begin{equation}
     \sum_{i=1}^{2} \frac{1}{2^{i-1}}\left(\sin \left(2 \pi f_{r, i} t+\phi_{\mathrm{r}, i}\right)+\sin \left(2 \pi f_{c, i} t+\phi_{c, i}\right)\right),
 \end{equation}
 with up to second-order harmonics per cardiac (\(f_{c,i}\)) and respiratory (\(f_{r,i}\)) component that were randomly generated following normal distributions with variance 0.04 and mean \(if_r\) and \(if_c\), for \(i = [1, 2]\). We set the fundamental frequencies to \(f_r = 0.3\) Hz for the respiratory component (\citealt{Birn2006Separatingrespiratoryvariation}) and \(f_c = 1.1\) Hz for the cardiac component (\citealt{Shmueli2007Lowfrequencyfluctuations}). The phases of each harmonic \(\phi\) were randomly selected from a uniform distribution between 0 and 2$\pi$ radians. To simulate physiological noise that is proportional to the change in BOLD signal, a variable ratio between the physiological (\(\sigma_P\)) and the thermal (\(\sigma_0\)) noise was modeled as \(\sigma_P/\sigma_0 = a(tSNR)^b + c\), where \(a = 5.01 \times 10^{-6}\), \(b = 2.81\), and \(c = 0.397\), following the experimental measures available in Table 3 from (\citealt{Triantafyllou2005Comparisonphysiologicalnoise}).
-
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=0.75\columnwidth]{figures/sim_and_hrf.pdf}
-    \end{center}
-    \caption{A) Simulated signal with different SNRs (20 dB, 10 dB and 3 dB) and ground truth given in signal percentage change (SPC). B) Canonical HRF models typically used by PFM (green) and TA (black) at TR = 0.1 s (dashed lines) and TR = 2 s (solid lines). Without loss of generality, the waveforms are scaled to unit amplitude for visualization. C) Representation of shifted HRFs at TR = 2 s that build the design matrix for PFM when the HRF model has been matched to that in TA. The red line corresponds to one of the columns of the HRF matrix. \todo[inline]{Would be nice to add also the TR=1s case to (B).}}
-\label{fig:sim_and_hrf}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,9 +38,7 @@ During both acquisitions, participants were instructed to keep their eyes open, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Selection of the hemodynamic response function}
 
-In their original formulations, PFM and TA specify the discrete-time HRF in different ways. For PFM, the continuous-domain specification of the canonical HRF\todo{REF to analytical formula?} is sampled at the TR and then put as shifted impulse responses to build the matrix $\mathbf{H}$.  In the case of TA, however, the continuous-domain linearized version of the balloon-windkessel model is discretized to build the linear differential operator in $\mathbf{D_H}$. While the impact of the TR on the HRF shape is trivial for PFM, the equivalent impulse response of the discretized differential operator at different TR less obvious. As shown in Figure~\ref{fig:sim_and_hrf}B, longer TR leads to equivalent impulse responses of TA that lack the initial rise of the response. To avoid differences between PFM and TA based on their built-in HRF, we choose to build the synthesis operator $\mathbf{H}$ with shifted versions of the HRF given by the TA analysis operator (e.g., see Figure~\ref{fig:sim_and_hrf}C for the TR=2s case).
-
-\todo[inline]{This would suggest that TA at for instance TR=2s comes with systematically earlier innovations than PFM with the canonical HRF. Did you ever check if this is the case?}
+In their original formulations, PFM and TA specify the discrete-time HRF in different ways. For PFM, the continuous-domain specification of the canonical double-gamma HRF (\citealt{HENSON2007178}) is sampled at the TR and then put as shifted impulse responses to build the matrix $\mathbf{H}$.  In the case of TA, however, the continuous-domain linearized version of the balloon-windkessel model is discretized to build the linear differential operator in $\mathbf{D_H}$. While the TR only changes the resolution of the HRF shape for PFM, the impact of an equivalent impulse response of the discretized differential operator at different TR is more pronounced. As shown in Figure~\ref{fig:sim_and_hrf}B, longer TR leads to equivalent impulse responses of TA that are shifted in time, provoking a lack of the initial baseline and rise of the response. We refer the reader to Figure {\ref{fig:hrf_differences}} to see the differences in the estimation of the activity-inducing and innovation signals when both methods use the HRF in their original formulation. To avoid differences between PFM and TA based on their built-in HRF, we choose to build the synthesis operator $\mathbf{H}$ with shifted versions of the HRF given by the TA analysis operator (e.g., see Figure~\ref{fig:sim_and_hrf}C for the TR=2s case).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,12 +56,12 @@ For a selection based on the MAD estimate of the noise, we apply the temporal re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Analyses in experimental fMRI data}
 
-\textbf{Difference between approaches}: To assess the discrepancies between both approaches when applied on experimental fMRI data, we calculate the sum of squares of the differences (SSD) between the activity-inducing signals estimated with PFM and TA on the three experimental datasets as
+\textbf{Difference between approaches}: To assess the discrepancies between both approaches when applied on experimental fMRI data, we calculate the square root of the sum of squares of the differences (RSSD) between the activity-inducing signals estimated with PFM and TA on the three experimental datasets as
 \begin{equation}
-    \text{SSD} = \frac{1}{N} \sum_{k=1}^N (\hat{s}_\text{PFM}[k] - \hat{s}_\text{TA}[k])^2,
+    \text{RSSD} = \sqrt{\frac{1}{N} \sum_{k=1}^N (\hat{s}_\text{PFM}[k] - \hat{s}_\text{TA}[k])^2},
 \end{equation}
-where $N$ is the number of timepoints of the acquisition. The SSD of the innovation signals $\mathbf{\hat{u}}$ was computed equally.
+where $N$ is the number of timepoints of the acquisition. The RSSD of the innovation signals $\mathbf{\hat{u}}$ was computed equally.
 
 \textbf{Task fMRI data}: In the analysis of the motor task data, we evaluate the performance of PFM and TA in comparison with a conventional General Linear Model analysis (\textit{3dDeconvolve} in AFNI) that takes advantage of the information about the duration and onsets of the motor trials. Given the block design of the motor task, we only make this comparison with the block model.
 
-\textbf{Resting-state fMRI data}: We also illustrate the usefulness of deconvolution approaches in the analysis of resting-state data where information about the timings of neuronal-related BOLD activity cannot be predicted. Apart from being able to explore individual maps of deconvolved activity (i.e., innovation signals, activity-inducing signals or hemodynamic signals) at the temporal resolution of the acquisition (or deconvolution), here we calculate the co-activation patterns (CAPs) and innovation-driven co-activation patterns (iCAPs) from the obtained activity-inducing and innovation signals\todo{CAPs and iCAPs fall a bit out of the sky here...}. To achieve this, we calculate the average time-series in a seed of 9 voxels located in the precuneus, supramarginal gyrus and occipital gyri independently, and solve the deconvolution problem to find the activity-inducing and innovation signals in the seeds. We then apply a 95\textsuperscript{th} percentile threshold and average the maps of the time-frames that survive the threshold. Finally, we apply the same procedure to the original--- i.e., non-deconvolved--- signal in the seed and compare the results with the widely-used seed correlation approach.
+\textbf{Resting-state fMRI data}: We also illustrate the usefulness of deconvolution approaches in the analysis of resting-state data where information about the timings of neuronal-related BOLD activity cannot be predicted. Apart from being able to explore individual maps of deconvolved activity (i.e., innovation signals, activity-inducing signals or hemodynamic signals) at the temporal resolution of the acquisition (or deconvolution), here we calculate the co-activation patterns (CAPs)(\citealt{Tagliazucchi2012,Liu2018Coactivationpatterns}) and innovation-driven co-activation patterns (iCAPs) (\citealt{Karahanoglu2015Transientbrainactivity}) from the obtained activity-inducing and innovation signals, respectively, and illustrate how these popular approaches can be applied on the deconvolved signals to reveal patterns of coordinated brain activity. To achieve this, we calculate the average time-series in a seed of 9 voxels located in the precuneus, supramarginal gyrus and occipital gyri independently, and solve the deconvolution problem to find the activity-inducing and innovation signals in the seeds. We then apply a 95\textsuperscript{th} percentile threshold and average the maps of the time-frames that survive the threshold. Finally, we apply the same procedure to the original--- i.e., non-deconvolved--- signal in the seed and compare the results with the widely-used seed correlation approach.

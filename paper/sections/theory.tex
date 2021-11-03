@@ -5,7 +5,7 @@
 \subsection{Notations and definitions}
 
 Matrices of size $N$ rows and $M$ columns are denoted by boldface capital letters, e.g., $\mathbf{X} \in \mathbb{R}^{N\times M}$, whereas column vectors of length $N$ are denoted as boldface lowercase letters, e.g., $\mathbf{x} \in \mathbb{R}^{N}$. Scalars are denoted by lowercase letters, e.g., $k$. Continuous functions are denoted by brackets, e.g., $h(t)$, while discrete functions are denoted by square brackets, e.g., $x[k]$. The Euclidean norm of a matrix $\mathbf{X}$ is denoted as $\|\mathbf{X}\|_2$, the $\ell_1$-norm is denoted by $\| \mathbf{X} \|_1$ and the Frobenius norm is denoted by $\| \mathbf{X} \|_F$. The discrete integration ($\mathbf{L}$) and difference ($\mathbf{D}$) operators are defined as:
-\todo[inline]{One detail here, to be fully in line with algorithms--what are the boundary conditions when applying these operators?}
+
 $$
 \mathbf{L} = \left[\begin{array}{ccccc}
 1 & 0 & \ldots & & \\
@@ -31,8 +31,7 @@ The vector $\mathbf{x}=[x[k]]_{k=1,\ldots,N}  \in \mathbb{R}^{N}$ then constitut
     \label{eq:glm}
     \mathbf{y} = \mathbf{X} \boldsymbol\beta + \mathbf{e},
 \end{equation}
-where the empirical timecourse $\mathbf{y} \in \mathbb{R}^{N}$ is explained by a linear combination of the regressors in $\mathbf{X}$ weighted by the parameters in $\boldsymbol\beta \in \mathbb{R}^{L}$ and corrupted by additive noise $\mathbf{e}\in \mathbb{R}^{N}$. Under independent and identically distributed Gaussian assumptions of the latter, the maximum likelihood estimate of the parameter weights reverts to the ordinary least-squares estimator; i.e., minimizing the residual sum of squares between the fitted model and measurements. The number of regressors $L$ is typically much less than the number of measurements $N$, and thus the regression problem is over-determined and does not require additional constraints or assumptions. 
-\todo[inline]{Maybe here a ref to one of the early GLM-SPM hallmark papers would be nice? Or the SPM Book?}
+where the empirical timecourse $\mathbf{y} \in \mathbb{R}^{N}$ is explained by a linear combination of the regressors in $\mathbf{X}$ weighted by the parameters in $\boldsymbol\beta \in \mathbb{R}^{L}$ and corrupted by additive noise $\mathbf{e}\in \mathbb{R}^{N}$. Under independent and identically distributed Gaussian assumptions of the latter, the maximum likelihood estimate of the parameter weights reverts to the ordinary least-squares estimator; i.e., minimizing the residual sum of squares between the fitted model and measurements. The number of regressors $L$ is typically much less than the number of measurements $N$, and thus the regression problem is over-determined and does not require additional constraints or assumptions (\citealt{HENSON2007178}).
 
 In the deconvolution approach, no prior knowledge of the hypothetical response is taken into account, and the purpose is to estimate the deconvolved activity-inducing signal $\mathbf{s}$ from the measurements $\mathbf{y}$, which can be formulated as the signal model
 \begin{equation}
@@ -84,7 +83,7 @@ will yield the activity-related signal $\mathbf{x}$ for which the activity-induc
 
 \subsection{Unifying both perspectives}
 
-PFM and TA are based on the synthesis- and analysis-based formulation of the deconvolution problem, respectively. They are also tailored for the spike and block model, respectively. In the first case, the recovered deconvolved signal is synthesized to be matched to the measurements, while in the second case, the recovered signal is directly matched to the measurements but needs to satisfy its analysis in terms of deconvolution. This also corresponds to using the forward or backward model of the hemodynamic system, respectively. Hence, it should be possible to make both approaches equivalent (\citealt{Elad2007Analysisversussynthesis})\footnote{Without dwelling into technicalities, for total variation, this equivalence is correct up to the constant, which is in the null space of the derivative operator.}.
+PFM and TA are based on the synthesis- and analysis-based formulation of the deconvolution problem, respectively. They are also tailored for the spike and block model, respectively. In the first case, the recovered deconvolved signal is synthesized to be matched to the measurements, while in the second case, the recovered signal is directly matched to the measurements but needs to satisfy its analysis in terms of deconvolution. This also corresponds to using the forward or backward model of the hemodynamic system, respectively. Hence, it is possible to make both approaches equivalent (\citealt{Elad2007Analysisversussynthesis})\footnote{Without dwelling into technicalities, for total variation, this equivalence is correct up to the constant, which is in the null space of the derivative operator.}.
 
 To start with, TA can be made equivalent to PFM by adapting it for the spike model; i.e., when removing the derivative operator $\mathbf{D}$ of the regularizer in Eq. (\ref{eq:TA}), it can be readily verified that replacing in that case $\mathbf{x}=\mathbf{Hs}$ leads to identical equations and thus both assume a spike model, since $\mathbf{H}$ and $\mathbf{D_H}$ will cancel out each other (\citealt{Karahanoglu2011SignalProcessingApproach})\footnote{Again, this holds up to elements of the null space.}.
 
@@ -93,7 +92,7 @@ Conversely, PFM spike model can also accommodate the TA block model by modifying
     \label{eq:pfm_block}
     \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1,
 \end{equation}
-and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$, and thus adopting the block model. This work evaluates the core of the two techniques; i.e., the regularized least-squares problem with temporal regularization without considering the spatial regularization term originally incorporated in TA. For the remainder of this paper, we will use the PFM and TA formalisms with both spike and block models. 
+and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$, and thus adopting the block model. Based on the previous equations (\ref{eq:pfm_spike}), (\ref{eq:TA}) and (\ref{eq:pfm_block}), it is clear that both PFM and TA can operate under the spike and block models, providing a convenient signal model according to the different assumptions of the underlying neuronal-related signal. This work evaluates the core of the two techniques; i.e., the regularized least-squares problem with temporal regularization without considering the spatial regularization term originally incorporated in TA. For the remainder of this paper, we will use the PFM and TA formalisms with both spike and block models. 
 
 \begin{figure}[t!]
     \begin{center}
@@ -105,11 +104,11 @@ and becomes equivalent to TA by replacing $\mathbf{u}=\mathbf{D D_H x}$, and thu
 
 \subsection{Algorithms and parameter selection}
 \label{sec:regparam}
-Despite their analytical equivalence\todo{We didn't show/discuss that yet -- do we mean here rather ``apparent resemblance''?}, the PFM and TA methods proposed different algorithms to solve the corresponding optimization problem and select an adequate regularization parameter $\lambda$. The PFM implementation available in AFNI employs the least angle regression (LARS) (\citealt{Efron2004Leastangleregression}), whereas the TA implementation uses the fast iterative shrinkage-thresholding algorithm (FISTA) (\citealt{Beck2009FastIterativeShrinkage}). The blue box in Figure \ref{fig:flowchart} provides a descriptive view of the iterative \textit{modus operandi} of the two algorithms.
+Despite their apparent resemblance, the practical implementations of the PFM and TA methods proposed different algorithms to solve the corresponding optimization problem and select an adequate regularization parameter $\lambda$ (\citealt{Gaudes2013Paradigmfreemapping,Karahanoglu2013TotalactivationfMRI}). The PFM implementation available in AFNI employs the least angle regression (LARS) (\citealt{Efron2004Leastangleregression}), whereas the TA implementation uses the fast iterative shrinkage-thresholding algorithm (FISTA) (\citealt{Beck2009FastIterativeShrinkage}). The blue box in Figure \ref{fig:flowchart} provides a descriptive view of the iterative \textit{modus operandi} of the two algorithms.
 
-On the one hand, LARS is a homotopy approach that computes all the possible solutions to the optimization problem and their corresponding value of $\lambda$; i.e., the regularization path, and the solution according to the Bayesian Information Criterion (BIC) (\citealt{Schwarz1978EstimatingDimensionModel}), was recommended as the most appropriate\todo{why? this needs something more why BIC is useful for a practioner} in the case of PFM approaches (\citealt{Gaudes2013Paradigmfreemapping,CaballeroGaudes2019deconvolutionalgorithmmulti}). 
+On the one hand, LARS is a homotopy approach that computes all the possible solutions to the optimization problem and their corresponding value of $\lambda$; i.e., the regularization path, and the solution according to the Bayesian Information Criterion (BIC) (\citealt{Schwarz1978EstimatingDimensionModel}), was recommended as the most appropriate in the case of PFM approaches since AIC often tends to overfit the signal(\citealt{Gaudes2013Paradigmfreemapping,CaballeroGaudes2019deconvolutionalgorithmmulti}). 
 
-\todo[inline]{You should also add 1-2 lines on principle of FISTA here} Alternatively, the regularization parameter $\lambda$ can also be updated in every iteration of the FISTA so that the residuals of the data fit converge to an estimated noise level of the data $\hat{\sigma}$:
+On the other hand, FISTA is an extension of the classical gradient algorithm that provides fast convergence for large-scale problems. In the case of FISTA though, the regularization parameter $\lambda$ must be selected prior to solving the problem, but can be updated in every iteration so that the residuals of the data fit converge to an estimated noise level of the data $\hat{\sigma}$:
 \begin{equation}
     \lambda^{n+1} = \frac{N \hat{\sigma}}{\frac{1}{2} \| \mathbf{y} - \mathbf{x}^n \|_F^2} \lambda^n,
 \label{eq:std}
