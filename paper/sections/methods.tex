@@ -56,11 +56,11 @@ For a selection based on the MAD estimate of the noise, we apply the temporal re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Analyses in experimental fMRI data}
 
-\textbf{Difference between approaches}: To assess the discrepancies between both approaches when applied on experimental fMRI data, we calculate the sum of squares of the differences (SSD) between the activity-inducing signals estimated with PFM and TA on the three experimental datasets as
+\textbf{Difference between approaches}: To assess the discrepancies between both approaches when applied on experimental fMRI data, we calculate the square root of the sum of squares of the differences (RSSD) between the activity-inducing signals estimated with PFM and TA on the three experimental datasets as
 \begin{equation}
-    \text{SSD} = \frac{1}{N} \sum_{k=1}^N (\hat{s}_\text{PFM}[k] - \hat{s}_\text{TA}[k])^2,
+    \text{RSSD} = \sqrt{\frac{1}{N} \sum_{k=1}^N (\hat{s}_\text{PFM}[k] - \hat{s}_\text{TA}[k])^2},
 \end{equation}
-where $N$ is the number of timepoints of the acquisition. The SSD of the innovation signals $\mathbf{\hat{u}}$ was computed equally.
+where $N$ is the number of timepoints of the acquisition. The RSSD of the innovation signals $\mathbf{\hat{u}}$ was computed equally.
 
 \textbf{Task fMRI data}: In the analysis of the motor task data, we evaluate the performance of PFM and TA in comparison with a conventional General Linear Model analysis (\textit{3dDeconvolve} in AFNI) that takes advantage of the information about the duration and onsets of the motor trials. Given the block design of the motor task, we only make this comparison with the block model.
 
