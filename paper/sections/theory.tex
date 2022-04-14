@@ -42,7 +42,7 @@ Boynton1996LinearSystemsAnalysis,Cohen1997ParametricAnalysisfMRI}:
 $$
    x(t) = p*h(t) \rightarrow x[k] = p*h(k\cdot\text{TR}).
 $$
-The vector $\mathbf{x}=[x[k]]_{k=1,\ldots,N}  \in \mathbb{R}^{N}$ then
+The vector $\mathbf{x}=[x[k]]_{k=1,\ldots,N} \in \mathbb{R}^{N}$ then
 constitutes the regressor modelling the hypothetical response, and several of
 them can be stacked as columns of the design matrix $\mathbf{X}=[\mathbf{x}_1
 \ldots \mathbf{x}_L] \in \mathbb{R}^{N \times L}$, leading to the well-known GLM
@@ -133,7 +133,10 @@ which provides fast convergence to a global solution. Imposing sparsity on the
 activity-inducing signal implies that it is assumed to be well represented by a
 reduced subset of few non-zero coefficients at the fMRI timescale, which in turn
 trigger event-related BOLD responses. Hereinafter, we refer to this assumption
-as the \textit{spike model}. 
+as the \textit{spike model}. \textcolor{blue}{However, even if PFM was developed
+as a spike model, its formulation in Eq.\eqref{eq:pfm_spike} can be extended to
+estimate the innovation signal, i.e., the derivative of the activity-inducing
+signal, as shown in section~\ref{sec:unifying_both_perspectives}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Total Activation
@@ -150,26 +153,25 @@ regularization, which leads to
 Under this analysis formulation, total variation (TV), i.e., the $\ell_1$-norm
 of the derivative $\Omega(\mathbf{x})=\lambda \|\mathbf{Dx}\|_1$, is a powerful
 regularizer since it favors recovery of piecewise-constant signals
-\citep{Chambolle2004TotalVariation}. Going beyond, the approach of
-generalized TV introduces an additional differential operator $\mathbf{D_H}$ in
-the regularizer that can be tailored as the inverse operator of a linear
+\citep{Chambolle2004TotalVariation}. Going beyond, the approach of generalized
+TV introduces an additional differential operator $\mathbf{D_H}$ in the
+regularizer that can be tailored as the inverse operator of a linear
 system~\citep{Karahanoglu2011SignalProcessingApproach}, that is,
 $\Omega(\mathbf{x})=\lambda \|\mathbf{D D_H x}\|_1$. In the context of
 hemodynamic deconvolution, Total Activation is proposed for which the discrete
 operator $\mathbf{D_H}$ is derived from the inverse of the continuous-domain
 linearized Balloon-Windkessel model
 \citep{Buxton1998BalloonModel,Friston2000Nonlinear-Balloon}. %\todo{I would
-% exclude this part of Equation 6, and refer to the paper of activelets and TA for
-% more information} 
-%Exchanging the poles and zeros of the latter's linear-system characterization
-%leads to a differential operator of the form \begin{equation} D_H\ =
-%\prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D - \gamma_j I))^{-1},
-%\end{equation} where \(D\) is the derivative operator, \(\alpha_i\) the zeros,
-%and \(\gamma_j\) the poles. 
+% exclude this part of Equation 6, and refer to the paper of activelets and TA
+% for more information} Exchanging the poles and zeros of the latter's
+% linear-system characterization leads to a differential operator of the form
+% \begin{equation} D_H\ = \prod_{i=1}^{M_1} (D-\alpha_i I) (\prod_{j=1}^{M_2} (D
+% - \gamma_j I))^{-1}, \end{equation} where \(D\) is the derivative operator,
+%   \(\alpha_i\) the zeros, and \(\gamma_j\) the poles. 
 The interested reader is referred to
 \citep{Khalidov2011ActiveletsWaveletssparse,Karahanoglu2011SignalProcessingApproach,
-Karahanoglu2013TotalactivationfMRI}
-for a detailed description of this derivation. 
+Karahanoglu2013TotalactivationfMRI} for a detailed description of this
+derivation. 
 
 Therefore, the solution of the Total Activation (TA) problem
 \begin{equation}
@@ -178,12 +180,16 @@ Therefore, the solution of the Total Activation (TA) problem
 \end{equation}
 will yield the activity-related signal $\mathbf{x}$ for which the
 activity-inducing signal $\mathbf{s}=\mathbf{D_H x}$ and the so-called
-innovation signal $\mathbf{u}=\mathbf{Ds}$ will also be available, as they are
-required for the regularization. We refer to modelling the activity-inducing
-signal based on the innovation signal as the \textit{block model}.
+innovation signal $\mathbf{u}=\mathbf{Ds}$\textcolor{blue}{, i.e., the derivate
+of the activity-inducing signal,} will also be available, as they are required
+for the regularization. We refer to modelling the activity-inducing signal based
+on the innovation signal as the \textit{block model}.
+\textcolor{blue}{Nevertheless, even if TA was originally developed as a block
+model, its formulation in Eq.\eqref{eq:TA} can be made equivalent to the spike
+model as shown in section~\ref{sec:unifying_both_perspectives}.}
 
 \subsection{Unifying both perspectives}
-
+\label{sec:unifying_both_perspectives}
 PFM and TA are based on the synthesis- and analysis-based formulation of the
 deconvolution problem, respectively. They are also tailored for the spike and
 block model, respectively. In the first case, the recovered deconvolved signal
@@ -201,16 +207,17 @@ model; i.e., when removing the derivative operator $\mathbf{D}$ of the
 regularizer in Eq. (\ref{eq:TA}), it can be readily verified that replacing in
 that case $\mathbf{x}=\mathbf{Hs}$ leads to identical equations and thus both
 assume a spike model, since $\mathbf{H}$ and $\mathbf{D_H}$ will cancel out each
-other \citep{Karahanoglu2011SignalProcessingApproach}\footnote{Again, this
-holds up to elements of the null space.}.
+other \citep{Karahanoglu2011SignalProcessingApproach}\footnote{Again, this holds
+up to elements of the null space.}.
 
-Conversely, PFM spike model can also accommodate the TA block model by modifying
-Eq. (\ref{eq:pfm_spike}) with the forward model $\mathbf{y} = \mathbf{H L u} +
-\mathbf{e}$. Here, the activity-inducing signal $\mathbf{s}$ is rewritten in
-terms of the innovation signal $\mathbf{u}$ as $\mathbf{s}=\mathbf{Lu}$ where
-the matrix $\mathbf{L}$ is the first-order integration operator
-\citep{Cherkaoui2019SparsitybasedBlind,Urunuela2020StabilityBasedSparse}.
-This way, PFM can estimate the innovation signal $\mathbf{u}$ as follows: 
+Conversely, \textcolor{blue}{the} PFM spike model can also accommodate the
+\textcolor{blue}{\sout{TA}} block model by modifying Eq. (\ref{eq:pfm_spike})
+with the forward model $\mathbf{y} = \mathbf{H L u} + \mathbf{e}$. Here, the
+activity-inducing signal $\mathbf{s}$ is rewritten in terms of the innovation
+signal $\mathbf{u}$ as $\mathbf{s}=\mathbf{Lu}$ where the matrix $\mathbf{L}$ is
+the first-order integration operator
+\citep{Cherkaoui2019SparsitybasedBlind,Urunuela2020StabilityBasedSparse}. This
+way, PFM can estimate the innovation signal $\mathbf{u}$ as follows: 
 \begin{equation}
     \label{eq:pfm_block}
     \hat{\mathbf{u}} = \arg \min_{\mathbf{u}} \frac{1}{2} \| \mathbf{y} - \mathbf{HLu} \|_2^2 + \lambda \| \mathbf{u} \|_1,
@@ -232,19 +239,23 @@ spike and block models.
     \end{center}
     \caption{Flowchart detailing the different steps of the fMRI signal and the
     deconvolution methods described. The orange arrows indicate the flow to
-    estimate the innovation signals. The blue box depicts the iterative
+    estimate the innovation signals\textcolor{blue}{, i.e., the derivative of
+    the activity-inducing signal}. The blue box depicts the iterative
     \textit{modus operandi} of the two algorithms used in this paper to solve
-    the PFM and TA deconvolution problems. The plot on the left shows the
-    regularization path obtained with LARS, where the x-axis illustrates the
-    different iterations of the algorithm, the y-axis represents points in time,
-    and the color describes the amplitude of the estimated signal. The middle
-    plot depicts the decreasing values of $\lambda$ for each iteration of LARS
-    as the regularization path is computed. The green and r ed dashed lines in
-    both plots illustrate the BIC and MAD solutions, respectively.
-    Comparatively, the changes in $\lambda$ when the FISTA method is made to
-    converge to the MAD estimate of the noise are shown on the right. Likewise,
-    the $\lambda$ corresponding to the BIC and MAD solutions are shown with
-    dashed lines.}
+    the \textcolor{blue}{paradigm free mapping (PFM) and total activation (TA)}
+    deconvolution problems. The plot on the left shows the regularization path
+    obtained with the \textcolor{blue}{least angle regression (LARS) algorithm},
+    where the x-axis illustrates the different iterations of the algorithm, the
+    y-axis represents points in time, and the color describes the amplitude of
+    the estimated signal. The middle plot depicts the decreasing values of
+    $\lambda$ for each iteration of LARS as the regularization path is computed.
+    The green and r ed dashed lines in both plots illustrate the BIC and MAD
+    solutions, respectively. Comparatively, the changes in $\lambda$ when the
+    \textcolor{blue}{fast iterative shrinkage-thresholding algorithm (FISTA)}
+    method is made to converge to the \textcolor{blue}{median absolute deviation
+    (MAD)} estimate of the noise are shown on the right. Likewise, the $\lambda$
+    corresponding to the \textcolor{blue}{bayesian information criterion (BIC)}
+    and MAD solutions are shown with dashed lines.}
 \label{fig:flowchart}
 \end{figure}
 
@@ -253,10 +264,10 @@ spike and block models.
 Despite their apparent resemblance, the practical implementations of the PFM and
 TA methods proposed different algorithms to solve the corresponding optimization
 problem and select an adequate regularization parameter $\lambda$
-\citep{Gaudes2013Paradigmfreemapping,Karahanoglu2013TotalactivationfMRI}.
-The PFM implementation available in AFNI employs the least angle regression
-(LARS) \citep{Efron2004Leastangleregression}, whereas the TA implementation
-uses the fast iterative shrinkage-thresholding algorithm (FISTA)
+\citep{Gaudes2013Paradigmfreemapping,Karahanoglu2013TotalactivationfMRI}. The
+PFM implementation available in AFNI employs the least angle regression (LARS)
+\citep{Efron2004Leastangleregression}, whereas the TA implementation uses the
+fast iterative shrinkage-thresholding algorithm (FISTA)
 \citep{Beck2009FastIterativeShrinkage}. The blue box in Figure
 \ref{fig:flowchart} provides a descriptive view of the iterative \textit{modus
 operandi} of the two algorithms.
@@ -284,8 +295,8 @@ parameter $\lambda$, and $N$ is the number of points in the time-course. The
 pre-estimated noise level can be obtained as the median absolute deviation (MAD)
 of the fine-scale wavelet coefficients (Daubechies, order 3) of the fMRI
 timecourse. The MAD criterion has been adopted in TA
-\citep{Karahanoglu2013TotalactivationfMRI}. Of note, similar formulations
-based on the MAD estimate have also been applied in PFM formulations
+\citep{Karahanoglu2013TotalactivationfMRI}. Of note, similar formulations based
+on the MAD estimate have also been applied in PFM formulations
 \citep{Gaudes2012Structuredsparsedeconvolution,Gaudes2011MorphologicalPFM}.
 
 % two techniques, i.e., the regularized least-squares problem with temporal
