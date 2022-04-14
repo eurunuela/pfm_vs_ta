@@ -26,15 +26,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Elsevier bibliography styles
 %%%%%%%%%%%%%%%%%%%%%%%
-%% To change the style, put a % in front of the second line of the current style and
-%% remove the % from the second line of the style you would like to use.
+%% To change the style, put a % in front of the second line of the current style
+%and % remove the % from the second line of the style you would like to use.
 %%%%%%%%%%%%%%%%%%%%%%%
 
-%% Numbered
-% \bibliographystyle{model1-num-names}
+%% Numbered \bibliographystyle{model1-num-names}
 
-%% Numbered without titles
-%\bibliographystyle{model1a-num-names}
+%% Numbered without titles \bibliographystyle{model1a-num-names}
 
 %% Harvard
 \bibliographystyle{model2-names.bst}\biboptions{authoryear}
@@ -45,14 +43,11 @@
 %% Vancouver name/year
 %\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
 
-%% APA style
-% \bibliographystyle{model5-names}\biboptions{authoryear}
+%% APA style \bibliographystyle{model5-names}\biboptions{authoryear}
 
-%% AMA style
-% \usepackage{numcompress}\bibliographystyle{model6-num-names}
+%% AMA style \usepackage{numcompress}\bibliographystyle{model6-num-names}
 
-%% `Elsevier LaTeX' style
-% \bibliographystyle{elsarticle-num}
+%% `Elsevier LaTeX' style \bibliographystyle{elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -71,8 +66,9 @@
 \author[bcbl]{C\'{e}sar Caballero-Gaudes\corref{mycorrespondingauthor}}
 \ead{c.caballero@bcbl.eu}
 
-\address[bcbl]{Basque Center on Cognition, Brain and Language (BCBL), Donostia-San Sebasti\'{a}n, Spain.}
-\address[upv]{University of the Basque Country (EHU/UPV), Donostia-San Sebasti\'{a}n, Spain.}
+\address[bcbl]{Basque Center on Cognition, Brain and Language (BCBL),
+Donostia-San Sebasti\'{a}n, Spain.} \address[upv]{University of the Basque
+Country (EHU/UPV), Donostia-San Sebasti\'{a}n, Spain.}
 \address[epfl]{Ecole Polytechnique F\'ed\'erale de Lausanne (EPFL), Lausanne, Switzerland.}
 \address[chuv]{Gamma Knife Center, Department of Clinical Neuroscience, Centre Hospitalier Universitaire Vaudois (CHUV), Lausanne, Switzerland}
 \address[unige]{Faculty of Medicine, University of Geneva, Geneva, Switzerland}
@@ -82,7 +78,8 @@
 \end{abstract}
 
 \begin{keyword}
-fMRI deconvolution, paradigm free mapping, total activation, temporal regularization
+fMRI deconvolution, paradigm free mapping, total activation, temporal
+regularization
 \end{keyword}
 
 \end{frontmatter}
@@ -106,13 +103,29 @@ fMRI deconvolution, paradigm free mapping, total activation, temporal regulariza
 
 \section{Code and data availability}
 \label{sec:github}
-The code and materials used in this work can be found in the following GitHub repository: \url{https://github.com/eurunuela/pfm_vs_ta}. We encourage the reader to explore the parameters (e.g., SNR, varying HRF options and mismatch between algorithms, TR, number of events, onsets, and durations) in the provided Jupyter notebooks. Likewise, the data used to produce the figures can be found in \url{https://osf.io/f3ryg/}.
+The code and materials used in this work can be found in the following GitHub
+repository: \url{https://github.com/eurunuela/pfm_vs_ta}. We encourage the
+reader to explore the parameters (e.g., SNR, varying HRF options and mismatch
+between algorithms, TR, number of events, onsets, and durations) in the provided
+Jupyter notebooks. Likewise, the data used to produce the figures can be found
+in \url{https://osf.io/f3ryg/}.
 
 \section{Acknowledgements}
-We thank Stefano Moia and Vicente Ferrer for data availability, and Younes Farouj for valuable comments on the manuscript. This research was funded by the Spanish Ministry of Economy and Competitiveness (RYC-2017-21845), the Basque Government (BERC 2018-2021, PIB\_2019\_104, PRE\_2020\_2\_0227), and the Spanish Ministry of Science, Innovation and Universities (PID2019-105520GB-100), and the Swiss National Science Foundation (grant 205321\_163376).
+We thank Stefano Moia and Vicente Ferrer for data availability, and Younes
+Farouj for valuable comments on the manuscript. This research was funded by the
+Spanish Ministry of Economy and Competitiveness (RYC-2017-21845), the Basque
+Government (BERC 2018-2021, PIB\_2019\_104, PRE\_2020\_2\_0227), and the Spanish
+Ministry of Science, Innovation and Universities (PID2019-105520GB-100), and the
+Swiss National Science Foundation (grant 205321\_163376).
 
 \section{CRediT}
-Eneko Uru\~nuela: Conceptualisation, Methodology, Software, Formal Analysis, Investigation, Data Curation, Writing (OD), Writing (RE), Visualisation, Funding acquisition. Thomas A.W. Bolton: Conceptualisation, Methodology, Writing (RE). Dimitri Van de Ville: Conceptualisation, Methodology, Writing (RE). C\'{e}sar Caballero-Gaudes: Conceptualisation, Methodology, Software, Formal Analysis, Investigation, Data Curation, Writing (OD), Writing (RE), Visualisation, Funding acquisition.
+Eneko Uru\~nuela: Conceptualisation, Methodology, Software, Formal Analysis,
+Investigation, Data Curation, Writing (OD), Writing (RE), Visualisation, Funding
+acquisition. Thomas A.W. Bolton: Conceptualisation, Methodology, Writing (RE).
+Dimitri Van de Ville: Conceptualisation, Methodology, Writing (RE). C\'{e}sar
+Caballero-Gaudes: Conceptualisation, Methodology, Software, Formal Analysis,
+Investigation, Data Curation, Writing (OD), Writing (RE), Visualisation, Funding
+acquisition.
 
 \bibliography{mybibfile}
 
