@@ -182,7 +182,7 @@ will yield the activity-related signal $\mathbf{x}$ for which the
 activity-inducing signal $\mathbf{s}=\mathbf{D_H x}$ and the so-called
 innovation signal $\mathbf{u}=\mathbf{Ds}$\textcolor{blue}{, i.e., the derivate
 of the activity-inducing signal,} will also be available, as they are required
-for the regularization. We refer to modelling the activity-inducing signal based
+for the regularization. We refer to modeling the activity-inducing signal based
 on the innovation signal as the \textit{block model}.
 \textcolor{blue}{Nevertheless, even if TA was originally developed as a block
 model, its formulation in Eq.\eqref{eq:TA} can be made equivalent to the spike
@@ -249,13 +249,14 @@ spike and block models.
     y-axis represents points in time, and the color describes the amplitude of
     the estimated signal. The middle plot depicts the decreasing values of
     $\lambda$ for each iteration of LARS as the regularization path is computed.
-    The green and r ed dashed lines in both plots illustrate the BIC and MAD
-    solutions, respectively. Comparatively, the changes in $\lambda$ when the
+    The green and r ed dashed lines in both plots illustrate the
+    \textcolor{blue}{Bayesian information criterion (BIC)} and
+    \textcolor{blue}{median absolute deviation (MAD)} solutions, respectively.
+    Comparatively, the changes in $\lambda$ when the
     \textcolor{blue}{fast iterative shrinkage-thresholding algorithm (FISTA)}
-    method is made to converge to the \textcolor{blue}{median absolute deviation
-    (MAD)} estimate of the noise are shown on the right. Likewise, the $\lambda$
-    corresponding to the \textcolor{blue}{bayesian information criterion (BIC)}
-    and MAD solutions are shown with dashed lines.}
+    method is made to converge to the MAD estimate of the noise are shown on the
+    right. Likewise, the $\lambda$ corresponding to the BIC and MAD solutions
+    are shown with dashed lines.}
 \label{fig:flowchart}
 \end{figure}
 

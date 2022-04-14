@@ -23,9 +23,9 @@ which are convolved with the canonical HRF. Different noise sources
 three different scenarios with varying signal-to-noise ratios (SNR = [20 dB, 10
 dB, 3 dB]) that represent high, medium and low contrast-to-noise ratios as shown
 in Figure~\ref{fig:sim_and_hrf}A. Noise was created following the procedure in
-\citep{Gaudes2013Paradigmfreemapping} as the sum of uncorrelated Gaussian
-noise and sinusoidal signals to simulate a realistic noise model with thermal
-noise, cardiac and respiratory physiological fluctuations, respectively. The
+\citep{Gaudes2013Paradigmfreemapping} as the sum of uncorrelated Gaussian noise
+and sinusoidal signals to simulate a realistic noise model with thermal noise,
+cardiac and respiratory physiological fluctuations, respectively. The
 physiological signals were generated as
 \begin{equation}
     \sum_{i=1}^{2} \frac{1}{2^{i-1}}\left(\sin \left(2 \pi f_{r, i} t+\phi_{\mathrm{r}, i}\right)+\sin \left(2 \pi f_{c, i} t+\phi_{c, i}\right)\right),
@@ -34,9 +34,9 @@ with up to second-order harmonics per cardiac (\(f_{c,i}\)) and respiratory
 (\(f_{r,i}\)) component that were randomly generated following normal
 distributions with variance 0.04 and mean \(if_r\) and \(if_c\), for \(i = [1,
 2]\). We set the fundamental frequencies to \(f_r = 0.3\) Hz for the respiratory
-component \citep{Birn2006Separatingrespiratoryvariation}) and \(f_c = 1.1\)
-Hz for the cardiac component \citep{Shmueli2007Lowfrequencyfluctuations}).
-The phases of each harmonic \(\phi\) were randomly selected from a uniform
+component \citep{Birn2006Separatingrespiratoryvariation}) and \(f_c = 1.1\) Hz
+for the cardiac component \citep{Shmueli2007Lowfrequencyfluctuations}). The
+phases of each harmonic \(\phi\) were randomly selected from a uniform
 distribution between 0 and 2$\pi$ radians. To simulate physiological noise that
 is proportional to the change in BOLD signal, a variable ratio between the
 physiological (\(\sigma_P\)) and the thermal (\(\sigma_0\)) noise was modeled as
@@ -72,16 +72,16 @@ first 10 volumes of the functional data to achieve a steady state of
 magnetization. Then, image realignment to the skull-stripped single-band
 reference image (SBRef) was computed on the first echo, and the estimated
 rigid-body spatial transformation was applied to all other echoes
-\citep{Jenkinson2012FSL,Jenkinson_2001}. A brain mask obtained from the
-SBRef volume was applied to all the echoes and the different echo timeseries
-were optimally combined (OC) voxelwise by weighting each timeseries contribution
-by its T2* value \citep{Posse_1999}. AFNI
-\citep{Cox1996AFNISoftwareAnalysis} was employed for a detrending of up to
-4\textsuperscript{th}-order Legendre polynomials, within-brain spatial smoothing
-(3 mm FWHM) and voxelwise signal normalization to percentage change. Finally,
-distortion field correction was performed on the OC volume with Topup
-\citep{Andersson_2003}, using the pair of spin-echo EPI images with reversed
-phase encoding acquired before the ME-EPI acquisition \citep{Glasser_2016}.
+\citep{Jenkinson2012FSL,Jenkinson_2001}. A brain mask obtained from the SBRef
+volume was applied to all the echoes and the different echo timeseries were
+optimally combined (OC) voxelwise by weighting each timeseries contribution by
+its T2* value \citep{Posse_1999}. AFNI \citep{Cox1996AFNISoftwareAnalysis} was
+employed for a detrending of up to 4\textsuperscript{th}-order Legendre
+polynomials, within-brain spatial smoothing (3 mm FWHM) and voxelwise signal
+normalization to percentage change. Finally, distortion field correction was
+performed on the OC volume with Topup \citep{Andersson_2003}, using the pair of
+spin-echo EPI images with reversed phase encoding acquired before the ME-EPI
+acquisition \citep{Glasser_2016}.
 
 \textbf{Resting-state datasets:} One healthy subject was scanned in a 3T MR
 scanner (Siemens) under a Basque Center on Cognition, Brain and Language Review
@@ -101,25 +101,25 @@ correct for field distortions.
 During both acquisitions, participants were instructed to keep their eyes open,
 fixating a white cross that they saw through a mirror located on the head coil,
 and not to think about anything specific. The data was pre-processed using AFNI
-\citep{Cox1996AFNISoftwareAnalysis}. First, volumes corresponding to the
-initial 10 seconds were removed to allow for a steady-state magnetization. Then,
-the voxel time-series were despiked to reduce large-amplitude deviations and
+\citep{Cox1996AFNISoftwareAnalysis}. First, volumes corresponding to the initial
+10 seconds were removed to allow for a steady-state magnetization. Then, the
+voxel time-series were despiked to reduce large-amplitude deviations and
 slice-time corrected. Inhomogeneities caused by magnetic susceptibility were
-corrected with FUGUE (FSL) using the field map images
-\citep{Jenkinson2012FSL}. Next, functional images were realigned to a base
-volume (monoband: volume with the lowest head motion; multiband: single-band
-reference image). Finally, a simultaneous nuisance regression step was performed
-comprising up to 6\textsuperscript{th}-order Legendre polynomials, low-pass
-filtering with a cutoff frequency of 0.25 Hz (only on multiband data to match
-the frequency content of the monoband), 6 realignment parameters plus temporal
-derivatives, 5 principal components of white matter (WM), 5 principal components
-of lateral ventricle voxels (anatomical CompCor) \citep{Behzadi_2007} and 5
-principal components of the brain's edge voxels ,\citep{Patriat_2015}. WM,
-CSF and brain's edge-voxel masks were obtained from Freesurfer tissue and brain
-segmentations. In addition, scans with potential artifacts were identified and
-censored when the euclidean norm of the temporal derivative of the realignment
-parameters (ENORM) was larger than 0.4, and the proportion of voxels adjusted in
-the despiking step exceeded 10\%.
+corrected with FUGUE (FSL) using the field map images \citep{Jenkinson2012FSL}.
+Next, functional images were realigned to a base volume (monoband: volume with
+the lowest head motion; multiband: single-band reference image). Finally, a
+simultaneous nuisance regression step was performed comprising up to
+6\textsuperscript{th}-order Legendre polynomials, low-pass filtering with a
+cutoff frequency of 0.25 Hz (only on multiband data to match the frequency
+content of the monoband), 6 realignment parameters plus temporal derivatives, 5
+principal components of white matter (WM), 5 principal components of lateral
+ventricle voxels (anatomical CompCor) \citep{Behzadi_2007} and 5 principal
+components of the brain's edge voxels ,\citep{Patriat_2015}. WM, CSF and brain's
+edge-voxel masks were obtained from Freesurfer tissue and brain segmentations.
+In addition, scans with potential artifacts were identified and censored when
+the euclidean norm of the temporal derivative of the realignment parameters
+(ENORM) was larger than 0.4, and the proportion of voxels adjusted in the
+despiking step exceeded 10\%.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,17 +196,16 @@ about the timings of neuronal-related BOLD activity cannot be predicted. Apart
 from being able to explore individual maps of deconvolved activity (i.e.,
 innovation signals, activity-inducing signals or hemodynamic signals) at the
 temporal resolution of the acquisition (or deconvolution), here we calculate the
-co-activation patterns
-(CAPs)\citep{Tagliazucchi2012,Liu2018Coactivationpatterns} and
-innovation-driven co-activation patterns (iCAPs)
-\citep{Karahanoglu2015Transientbrainactivity} from the obtained
-activity-inducing and innovation signals, respectively, and illustrate how these
-popular approaches can be applied on the deconvolved signals to reveal patterns
-of coordinated brain activity. To achieve this, we calculate the average
-time-series in a seed of 9 voxels located in the precuneus, supramarginal gyrus
-and occipital gyri independently, and solve the deconvolution problem to find
-the activity-inducing and innovation signals in the seeds. We then apply a
-95\textsuperscript{th} percentile threshold and average the maps of the
-time-frames that survive the threshold. Finally, we apply the same procedure to
-the original--- i.e., non-deconvolved--- signal in the seed and compare the
-results with the widely-used seed correlation approach.
+\textcolor{blue}{average} co-activation patterns
+(CAPs)\citep{Tagliazucchi2012,Liu2018Coactivationpatterns} and innovation-driven
+co-activation patterns (iCAPs) \citep{Karahanoglu2015Transientbrainactivity}
+from the obtained activity-inducing and innovation signals, respectively, and
+illustrate how these popular approaches can be applied on the deconvolved
+signals to reveal patterns of coordinated brain activity. To achieve this, we
+calculate the average time-series in a seed of 9 voxels located in the
+precuneus, supramarginal gyrus and occipital gyri independently, and solve the
+deconvolution problem to find the activity-inducing and innovation signals in
+the seeds. We then apply a 95\textsuperscript{th} percentile threshold and
+average the maps of the time-frames that survive the threshold. Finally, we
+apply the same procedure to the original--- i.e., non-deconvolved--- signal in
+the seed and compare the results with the widely-used seed correlation approach.

@@ -45,10 +45,9 @@ show no distinguishable differences between the algorithms. % Hence,
 Figures~\ref{fig:sim} A-D demonstrate that both PFM and TA yield equivalent
 regularization paths and estimates of the innovation signal and
 activity-inducing signal regardless of the simulated SNR condition when applying
-the same HRF and regularization parameters with the block and spike
-models.
-% \todo{Last sentence could be skipped and moved to a general conclusion
-% paper in the discussion}
+the same HRF and regularization parameters with the block and spike models.
+% \todo{Last sentence could be skipped and moved to a general conclusion paper
+% in the discussion}
 
 As for selecting $\lambda$ with the MAD criterion defined in Eq.~\eqref{eq:std},
 Figure~\ref{fig:sim}E depicts the estimated activity-inducing and
@@ -152,26 +151,30 @@ as well.
 \end{figure}
 
 As an illustration of the insights that deconvolution methods can provide in the
-analysis of resting-state data, Figure~\ref{fig:caps} depicts the CAPs and iCAPs
-obtained from thresholding and averaging the activity-inducing and innovation
-signals, respectively, estimated from the resting-state multiband data using PFM
-with a selection of $\lambda$ based on the BIC. The activity-inducing CAPs
-obtained via deconvolution show spatial patterns of the default mode network
-(DMN), dorsal attention network (DAN) and visual network (VIS) that highly
-resemble the maps obtained with conventional seed correlation analysis using
-Pearson's correlation, and the CAPs based on the amplitude of the signal (i.e.,
-with no deconvolution). With deconvolution, the CAPs seem to depict less
-spurious voxels (mainly negative) and more accurate spatial delineation (i.e.,
-less smoothness) than those obtained from the original data, while mantaining
-the structure of the networks. The BIC-informed selection of $\lambda$ yields
-spatial patterns of CAPs and iCAPs that are more sparse than those obtained with
-a selection of $\lambda$ based on the MAD estimate (see
-Figure~\ref{fig:caps_mad}). Furthermore, the spatial patterns of the iCAPs based
-on the innovation signals using the block model yield complementary information
-to those obtained with the activity-inducing signal since iCAPs allow to reveal
-regions with synchronous innovations, i.e., with the same upregulating and
-downregulating events. For instance, it is interesting to observe that the
-structure of the visual network nearly disappears in its corresponding iCAP,
+analysis of resting-state data, Figure~\ref{fig:caps} depicts the
+\textcolor{blue}{average} CAPs and iCAPs \textcolor{blue}{of common
+resting-state networks} obtained from thresholding and averaging the
+activity-inducing and innovation signals, respectively, estimated from the
+resting-state multiband data using PFM with a selection of $\lambda$ based on
+the BIC. The \textcolor{blue}{average} activity-inducing CAPs obtained via
+deconvolution show spatial patterns of the default mode network (DMN), dorsal
+attention network (DAN) and visual network (VIS) that highly resemble the maps
+obtained with conventional seed correlation analysis using Pearson's
+correlation, and the \textcolor{blue}{average} CAPs based on the amplitude of
+the signal (i.e., with no deconvolution). With deconvolution, the
+\textcolor{blue}{average} CAPs seem to depict less spurious voxels (mainly
+negative) and more accurate spatial delineation (i.e., less smoothness) than
+those obtained from the original data, while mantaining the structure of the
+networks. The BIC-informed selection of $\lambda$ yields spatial patterns of
+\textcolor{blue}{average} CAPs and iCAPs that are more sparse than those
+obtained with a selection of $\lambda$ based on the MAD estimate (see
+Figure~\ref{fig:caps_mad}). Furthermore, the spatial patterns of the
+\textcolor{blue}{average} iCAPs based on the innovation signals using the block
+model yield complementary information to those obtained with the
+activity-inducing signal since iCAPs allow to reveal regions with synchronous
+innovations, i.e., with the same upregulating and downregulating events. For
+instance, it is interesting to observe that the structure of the visual network
+nearly disappears in its corresponding \textcolor{blue}{average} iCAP,
 suggesting the existence of different temporal neuronal patterns across voxels
 in the primary and secondary visual cortices. 
 
@@ -179,14 +182,15 @@ in the primary and secondary visual cortices.
     \begin{center}
         \includegraphics[width=\textwidth]{figures/caps.png}
     \end{center}
-    \caption{Activity-inducing co-activation patterns (activity-inducing CAPs,
-    left) and innovation-driven co-activation patterns (innovation CAPs, right)
-    obtained from PFM-estimated activity-inducing and innovation signals,
-    respectively, using a BIC-based selection of $\lambda$. Time-points selected
-    with a 95\textsuperscript{th} percentile threshold (horizontal lines) are
-    shown over the average time-series (blue) in the seed region (white cross)
-    and the deconvolved signals, i.e., activity inducing (left) and innovation
-    (right) signals (orange). CAPs and seed correlation maps are illustrated in
-    the center.}
+    \caption{\textcolor{blue}{Average} activity-inducing co-activation patterns
+    (\textcolor{blue}{average} activity-inducing CAPs, left) and
+    innovation-driven co-activation patterns (\textcolor{blue}{average}
+    innovation CAPs, right) obtained from PFM-estimated activity-inducing and
+    innovation signals, respectively, using a BIC-based selection of $\lambda$.
+    Time-points selected with a 95\textsuperscript{th} percentile threshold
+    (horizontal lines) are shown over the average time-series (blue) in the seed
+    region (white cross) and the deconvolved signals, i.e., activity inducing
+    (left) and innovation (right) signals (orange). \textcolor{blue}{Average}
+    CAPs and seed correlation maps are illustrated in the center.}
 \label{fig:caps}
 \end{figure}
