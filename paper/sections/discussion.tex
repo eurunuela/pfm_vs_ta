@@ -10,30 +10,32 @@ equivalent regularization parameters are employed. Hence, we argue that
 previously observed differences in performance can be explained by specific
 settings, such as the HRF model and selection of the regularization parameter,
 convergence thresholds, as well as the addition of a spatial regularization term
-in the spatiotemporal TA formulation
-\citep{Karahanoglu2013TotalactivationfMRI}. However, given the equivalence
-of the temporal deconvolution, incorporating extra spatial or temporal
+in the spatiotemporal TA formulation \citep{Karahanoglu2013TotalactivationfMRI}.
+\textcolor{blue}{For instance, the use of PFM with the spike model in
+\citep{Tan_2017} was seen not to be ideal due to the prolonged trials in the
+paradigm, which better fit the block model.} However, given the equivalence of
+the temporal deconvolution, incorporating extra spatial or temporal
 regularization terms in the optimization problem should not modify this
 equivalence providing convex operators are employed. For a convex optimization
 problem, with a unique global solution, iterative shrinkage thresholding
 procedures alternating between the different regularization terms guarantee
 convergence; e.g., the generalized forward-backward splitting
-\citep{Raguet2013GeneralizedForwardBackward} algorithm originally employed
-for TA. Our findings are also in line with the equivalence of analysis and
-synthesis methods in under-determined cases (\(N \leq V\)) demonstrated in
-\citep{Elad2007Analysisversussynthesis} and
-\citep{ortelli2019synthesis}. Still, we have shown that a slight difference
-in the selection of the regularization parameter can lead to small differences
-in the estimated signals when employing the block model with the MAD selection
-of $\lambda$. However, since their regularization paths are equivalent, the
-algorithms can easily be forced to converge to the same selection of $\lambda$,
-thus resulting in identical estimated signals.
+\citep{Raguet2013GeneralizedForwardBackward} algorithm originally employed for
+TA. Our findings are also in line with the equivalence of analysis and synthesis
+methods in under-determined cases (\(N \leq V\)) demonstrated in
+\citep{Elad2007Analysisversussynthesis} and \citep{ortelli2019synthesis}. Still,
+we have shown that a slight difference in the selection of the regularization
+parameter can lead to small differences in the estimated signals when employing
+the block model with the MAD selection of $\lambda$. However, since their
+regularization paths are equivalent, the algorithms can easily be forced to
+converge to the same selection of $\lambda$, thus resulting in identical
+estimated signals.
 
 Nevertheless, the different formulations of analysis and synthesis deconvolution
 models bring along different kinds of flexibility. One notable advantage of PFM
 is that it can readily incorporate any HRF as part of the synthesis operator
-\citep{Elad2007Analysisversussynthesis}, only requiring the sampled HRF at
-the desired temporal resolution, which is typically equal to the TR of the
+\citep{Elad2007Analysisversussynthesis}, only requiring the sampled HRF at the
+desired temporal resolution, which is typically equal to the TR of the
 acquisition. Conversely, TA relies upon the specification of the discrete
 differential operator that inverts the HRF, which needs to be derived either by
 the inverse solution of the sampled HRF impulse response, or by discretizing a
@@ -53,9 +55,9 @@ derivative operator to enforce the block model, instead of the integrator in
 PFM, impacts positively the stability and rate of the convergence of the
 optimization algorithms. Moreover, analysis formulations can be more suitable
 for online applications that are still to be explored in fMRI data, but are
-employed for calcium imaging deconvolution
-\citep{Friedrich_2017,Jewell_2019}, and which have been applied for offline
-calcium deconvolution \citep{Farouj2020DeconvolutionSustainedNeural}.
+employed for calcium imaging deconvolution \citep{Friedrich_2017,Jewell_2019},
+and which have been applied for offline calcium deconvolution
+\citep{Farouj2020DeconvolutionSustainedNeural}.
 % \todo[inline]{The other point to further briefly develop here would be which
 % type of optimization algorithms are accessible by both formulations. This
 % would be an excellent point to be addressed by Younes. From what Hamza's PhD,
@@ -71,29 +73,28 @@ compared to when the BOLD signals are analyzed directly. In addition,
 deconvolution approaches hold a close parallelism to recent methodologies aiming
 to understand the dynamics of neuronal activations and interactions at short
 temporal resolution and that focus on extreme events of the fMRI signal
-\citep{Lindquist_2007}. As an illustration, Figure 6 shows that the
-innovation- or activity-inducing CAPs computed from deconvolved events in a
-single resting-state fMRI dataset closely resemble the conventional CAPs
-computed directly from extreme events of the fMRI signal
+\citep{Lindquist_2007}. As an illustration, Figure 6 shows that the innovation-
+or activity-inducing CAPs computed from deconvolved events in a single
+resting-state fMRI dataset closely resemble the conventional CAPs computed
+directly from extreme events of the fMRI signal
 \citep{Liu2013Timevaryingfunctional,Liu2013Decompositionspontaneousbrain,
 Liu2018Coactivationpatterns,cifre2020revisiting,Cifre2020Furtherresultswhy,
 Zhang2020relationshipBOLDneural,Tagliazucchi2011,Tagliazucchi2012,
-Tagliazucchi2016,Rolls2021}.
-Similarly, we hypothesize that these extreme events will also show a close
-resemblance to intrinsic ignition events \citep{Deco2017a,Deco2017}. As
-shown in the maps, deconvolution approaches can offer a more straightforward
-interpretability of the activation events and resulting functional connectivity
-patterns. Here, CAPs were computed as the average of spatial maps corresponding
-to the events of a single dataset. Beyond simple averaging, clustering
-algorithms (e.g., K-means and consensus clustering) can be employed to discern
-multiple CAPs or iCAPs at the whole-brain level for a large number of subjects.
-Previous findings based on iCAPs have for instance revealed organizational
-principles of brain function during rest
-\citep{Karahanoglu2015Transientbrainactivity} and sleep
-\citep{tarun2101} in healthy controls, next to alterations in 22q11ds
-\citep{zoller1902} and multiple sclerosis \citep{bommarito2101p}. Next
-to CAPs-inspired approaches, dynamic functional connectivity has recently been
-investigated with the use of co-fluctuations and edge-centric techniques
+Tagliazucchi2016,Rolls2021}. Similarly, we hypothesize that these extreme events
+will also show a close resemblance to intrinsic ignition events
+\citep{Deco2017a,Deco2017}. As shown in the maps, deconvolution approaches can
+offer a more straightforward interpretability of the activation events and
+resulting functional connectivity patterns. Here, CAPs were computed as the
+average of spatial maps corresponding to the events of a single dataset. Beyond
+simple averaging, clustering algorithms (e.g., K-means and consensus clustering)
+can be employed to discern multiple CAPs or iCAPs at the whole-brain level for a
+large number of subjects. Previous findings based on iCAPs have for instance
+revealed organizational principles of brain function during rest
+\citep{Karahanoglu2015Transientbrainactivity} and sleep \citep{tarun2101} in
+healthy controls, next to alterations in 22q11ds \citep{zoller1902} and multiple
+sclerosis \citep{bommarito2101p}. Next to CAPs-inspired approaches, dynamic
+functional connectivity has recently been investigated with the use of
+co-fluctuations and edge-centric techniques
 \citep{Faskowitz2020,Esfahlani2020Highamplitudecofluctuations,Jo2021,Sporns2021,Oort2018}.
 The activation time series shown in Figure 5 aim to provide equivalent
 information to the root of sum of squares timecourses used in edge-centric
@@ -115,8 +116,8 @@ initially addressed in the literature. One relevant focus is to account for the
 variability in HRF that can be observed in different regions of the brain. The
 impact of HRF variability could be reduced using structured regularization terms
 along with multiple basis functions
-\citep{Gaudes2012Structuredsparsedeconvolution} or procedures that estimate
-the HRF shape in an adaptive fashion in both analysis
+\citep{Gaudes2012Structuredsparsedeconvolution} or procedures that estimate the
+HRF shape in an adaptive fashion in both analysis
 \citep{Farouj2019BoldSignalDeconvolution} and synthesis formulations
 \citep{cherkaoui:hal-03005584}. Another avenue of research consists in
 leveraging spatial information by adopting multivariate deconvolution approaches
