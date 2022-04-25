@@ -1,21 +1,28 @@
 % !TEX root = ../main.tex
 
-\section{Discussion and conclusion}
+\section{Discussion}
 
 Hemodynamic deconvolution can be formulated using a synthesis- and
 analysis-based approach as proposed by PFM and TA, respectively. This work
-demonstrates that the theoretical equivalence of PFM and TA is confirmed in
-practice given virtually identical results when the same HRF model and
-equivalent regularization parameters are employed. Hence, we argue that
-previously observed differences in performance can be explained by specific
-settings, such as the HRF model and selection of the regularization parameter,
-convergence thresholds, as well as the addition of a spatial regularization term
-in the spatiotemporal TA formulation \citep{Karahanoglu2013TotalactivationfMRI}.
-\textcolor{blue}{For instance, the use of PFM with the spike model in
-\citep{Tan_2017} was seen not to be ideal due to the prolonged trials in the
-paradigm, which better fit the block model.} However, given the equivalence of
-the temporal deconvolution, incorporating extra spatial or temporal
-regularization terms in the optimization problem should not modify this
+demonstrates that the theoretical equivalence of \textcolor{blue}{both
+approaches} is confirmed in practice given virtually identical results when the
+same HRF model and equivalent regularization parameters are employed. Hence, we
+argue that previously observed differences in performance can be explained by
+specific settings, such as the HRF model and selection of the regularization
+parameter, convergence thresholds, as well as the addition of a spatial
+regularization term in the spatiotemporal TA formulation
+\citep{Karahanoglu2013TotalactivationfMRI}. \textcolor{blue}{For instance, the
+use of PFM with the spike model in \citep{Tan_2017} was seen not to be ideal due
+to the prolonged trials in the paradigm, which better fit the block model as
+described here \eqref{eq:pfm_block}. Similarly, all the works using the iCAPs
+approach, and thus the TA implementation for deconvolution
+\citep{Kinany2020DynamicFunctionalConnectivity,Zoeller2019Largescalebrain,
+Pirondini2022Poststrokereorganization},
+could alternatively use the PFM approach with the block model and adding a
+spatial regularization term, which would yield identical results providing the
+same criterion is used to select the regularization parameters.} However, given
+the equivalence of the temporal deconvolution, incorporating extra spatial or
+temporal regularization terms in the optimization problem should not modify this
 equivalence providing convex operators are employed. For a convex optimization
 problem, with a unique global solution, iterative shrinkage thresholding
 procedures alternating between the different regularization terms guarantee
@@ -23,13 +30,17 @@ convergence; e.g., the generalized forward-backward splitting
 \citep{Raguet2013GeneralizedForwardBackward} algorithm originally employed for
 TA. Our findings are also in line with the equivalence of analysis and synthesis
 methods in under-determined cases (\(N \leq V\)) demonstrated in
-\citep{Elad2007Analysisversussynthesis} and \citep{ortelli2019synthesis}. Still,
-we have shown that a slight difference in the selection of the regularization
-parameter can lead to small differences in the estimated signals when employing
-the block model with the MAD selection of $\lambda$. However, since their
-regularization paths are equivalent, the algorithms can easily be forced to
-converge to the same selection of $\lambda$, thus resulting in identical
-estimated signals.
+\citep{Elad2007Analysisversussynthesis} and \citep{ortelli2019synthesis}.
+\textcolor{blue}{Using a lower regularization parameter (i.e., penalty on the
+amplitude of the estimates) makes the estimates more similar to the
+least-squares solution, which results in higher sensitivity in detecting events.
+Conversely, employing a higher $\lambda$ leads to higher specificity at the cost
+of a decrease in sensitivity.} Still, we have shown that a slight difference in
+the selection of the regularization parameter can lead to small differences in
+the estimated signals when employing the block model with the MAD selection of
+$\lambda$. However, since theiri regularization paths are equivalent, the
+algorithms can easily be forced to converge to the same selection of $\lambda$,
+thus resulting in identical estimated signals.
 
 Nevertheless, the different formulations of analysis and synthesis deconvolution
 models bring along different kinds of flexibility. One notable advantage of PFM
@@ -113,24 +124,37 @@ representations of the BOLD signals in terms of innovation and activity-inducing
 signals, their current implementations have certain limitations, calling for
 further developments or more elaborate models, where some of them have been
 initially addressed in the literature. One relevant focus is to account for the
-variability in HRF that can be observed in different regions of the brain. The
-impact of HRF variability could be reduced using structured regularization terms
-along with multiple basis functions
-\citep{Gaudes2012Structuredsparsedeconvolution} or procedures that estimate the
-HRF shape in an adaptive fashion in both analysis
+variability in HRF that can be observed in different regions of the brain.
+\textcolor{blue}{First, variability in the temporal characteristics of the HRF
+can arise from differences in stimulus intensity and patterns, as well as with
+short inter-event intervals like in fast cognitive processes or experimental
+designs
+\citep{Yesilyurt2008DynamicsnonlinearitiesBOLD,Chen2021Investigatingmechanismsfast,
+Sadaghiani2009Neuralactivityinduced,Polimeni2021Imagingfasterneural}.
+Similarly, the HRF shape at rest might differ from the canonical HRF commonly
+used for task-based fMRI data analysis. A wide variety of HRF patterns could be
+elicited across the whole brain and possible detected with sufficiently large
+signal-to-noise ratio, e.g., \citep{GonzalezCastillo2012Wholebraintime} showed
+two gamma-shaped responses at the onset and the end of the evoked trial,
+respectively. This unique HRF shape would be deconvolved as two separate events
+with the conventional deconvolution techniques.} The impact of HRF variability
+could be reduced using structured regularization terms along with multiple basis
+functions \citep{Gaudes2012Structuredsparsedeconvolution} or procedures that
+estimate the HRF shape in an adaptive fashion in both analysis
 \citep{Farouj2019BoldSignalDeconvolution} and synthesis formulations
-\citep{cherkaoui:hal-03005584}. Another avenue of research consists in
-leveraging spatial information by adopting multivariate deconvolution approaches
-that operate at the whole-brain level, instead of working voxelwise and beyond
-regional regularization terms (e.g. as proposed in
-\citealt{Karahanoglu2013TotalactivationfMRI}).  Operating at the whole-brain
-level would open the way for methods that consider shared neuronal activity
-using mixed norm regularization terms \citep{urunuela-tremino_2019} or can
-capture long-range neuronal cofluctuations using low rank decompositions
-\citep{cherkaoui:hal-03005584}. For example, multivariate deconvolution
-approaches could yield better localized activity patterns while reducing the
-effect of global fluctuations such as respiratory artifacts, which cannot be
-modelled at the voxel level \citealt{Urunuela_2021}. 
+\citep{cherkaoui:hal-03005584}.
+
+Another avenue of research consists in leveraging spatial information by
+adopting multivariate deconvolution approaches that operate at the whole-brain
+level, instead of working voxelwise and beyond regional regularization terms
+(e.g. as proposed in \citealt{Karahanoglu2013TotalactivationfMRI}).  Operating
+at the whole-brain level would open the way for methods that consider shared
+neuronal activity using mixed norm regularization terms
+\citep{urunuela-tremino_2019} or can capture long-range neuronal cofluctuations
+using low rank decompositions \citep{cherkaoui:hal-03005584}. For example,
+multivariate deconvolution approaches could yield better localized activity
+patterns while reducing the effect of global fluctuations such as respiratory
+artifacts, which cannot be modelled at the voxel level \citealt{Urunuela_2021}. 
 
 Similar to solving other inverse problems by means of regularized estimators,
 the selection of the regularization parameter is critical to correctly estimate
