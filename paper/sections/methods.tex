@@ -57,8 +57,8 @@ Board-approved protocol. T2*-weighted multi-echo fMRI data was acquired with a
 simultaneous-multislice multi-echo gradient echo-planar imaging sequence, kindly
 provided by the Center of Magnetic Resonance Research (University of Minnesota,
 USA) \citep{Feinberg_2010,Moeller_2010,Setsompop_2011}, with the following
-parameters: 340 \textcolor{blue}{temporal frames}, 52 slices, Partial-Fourier = 6/8, voxel size =
-$2.4\times2.4\times3$ mm\textsuperscript{3}, TR = 1.5 s, TEs =
+parameters: 340 \textcolor{blue}{temporal frames}, 52 slices, Partial-Fourier =
+6/8, voxel size = $2.4\times2.4\times3$ mm\textsuperscript{3}, TR = 1.5 s, TEs =
 10.6/28.69/46.78/64.87/82.96 ms, flip angle = 70\(^o\), multiband factor = 4,
 GRAPPA = 2.
 
@@ -196,16 +196,17 @@ about the timings of neuronal-related BOLD activity cannot be predicted. Apart
 from being able to explore individual maps of deconvolved activity (i.e.,
 innovation signals, activity-inducing signals, or hemodynamic signals) at the
 temporal resolution of the acquisition (or deconvolution), here we calculate the
-\textcolor{blue}{average} co-activation patterns
+\textcolor{blue}{average extreme points of the activity-inducing and innovation
+maps (considering enough points were not available to perform a clustering step)} 
+and illustrate how popular approaches like co-activation patterns
 (CAPs)\citep{Tagliazucchi2012,Liu2018Coactivationpatterns} and innovation-driven
-co-activation patterns (iCAPs) \citep{Karahanoglu2015Transientbrainactivity}
-from the obtained activity-inducing and innovation signals, respectively, and
-illustrate how these popular approaches can be applied on the deconvolved
-signals to reveal patterns of coordinated brain activity. To achieve this, we
-calculate the average time-series in a seed of 9 voxels located in the
-precuneus, supramarginal gyrus, and occipital gyri independently, and solve the
-deconvolution problem to find the activity-inducing and innovation signals in
-the seeds. We then apply a 95\textsuperscript{th} percentile threshold and
-average the maps of the time-frames that survive the threshold. Finally, we
-apply the same procedure to the original--- i.e., non-deconvolved--- signal in
-the seed and compare the results with the widely-used seed correlation approach.
+co-activation patterns (iCAPs) \citep{Karahanoglu2015Transientbrainactivity} can
+be applied on the deconvolved signals to reveal patterns of coordinated brain
+activity. To achieve this, we calculate the average time-series in a seed of 9
+voxels located in the precuneus, supramarginal gyrus, and occipital gyri
+independently, and solve the deconvolution problem to find the activity-inducing
+and innovation signals in the seeds. We then apply a 95\textsuperscript{th}
+percentile threshold and average the maps of the time-frames that survive the
+threshold. Finally, we apply the same procedure to the original--- i.e.,
+non-deconvolved--- signal in the seed and compare the results with the
+widely-used seed correlation approach.
