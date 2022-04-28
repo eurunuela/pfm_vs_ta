@@ -17,7 +17,13 @@ naturalistic stimuli, resting-state, or clinically-relevant assessments.
 
 Deconvolution and methods alike are aiming to estimate neuronal activity by
 undoing the blurring effect of the hemodynamic response, characterized as a
-hemodynamic response function (HRF). Given the inherently ill-posed nature of
+hemodynamic response function (HRF)\footnote{\textcolor{blue}{Note that the term
+deconvolution is also alternatively employed to refer to the estimation of the
+hemodynamic response shape assuming a known activity-inducing signal or neuronal
+activity
+\citep{Goutte2000Modelinghaemodynamicresponse,Marrelec2002Bayesianestimationhemodynamic,
+Ciuciu2003Unsupervisedrobustnonparametric,Casanova2008impacttemporalregularization}.
+}}. Given the inherently ill-posed nature of
 hemodynamic deconvolution, due to the strong temporal low-pass characteristics
 of the HRF, the key is to introduce additional constraints in the estimation
 problem that are typically expressed as regularizers. For instance, the
@@ -31,7 +37,7 @@ Freitas2020Timeresolvedeffective}.
 Complementarily, the interest in deconvolution has increased to explore
 time-varying activity in resting-state fMRI data
 \citep{Preti2017dynamicfunctionalconnectome,Keilholz2017TimeResolvedResting,
-Lurie2020Questionscontroversiesstudy,Bolton2020TappingMultiFaceted}.
+Lurie2020Questionscontroversiesstudy,Bolton2020TappingMultiF1aceted}.
 In that case, the aim is to gain better insights of the neural signals that
 drive functional connectivity at short time scales, as well as learning about
 the spatio-temporal structure of functional components that dynamically
@@ -85,9 +91,9 @@ nonparametric homomorphic filtering
 \citep{Sreenivasan2015NonparametricHemodynamicDeconvolution}. Alternatively,
 several methods have also been proposed to invert non-linear models of the
 neuronal and hemodynamic coupling
-\citep{Riera2004statespacemodel,Friston2008DEMvariationaltreatment,
+\citep{Riera2004statespacemodel,Penny2005Bilineardynamicalsystems,Friston2008DEMvariationaltreatment,
 Havlicek2011Dynamicmodelingneuronal,Aslan2016Jointstateparameter,
-Madi2017HybridCubatureKalman,ruizeuler2018nonlinear}.
+Madi2017HybridCubatureKalman,RuizEuler2018NonlinearDeconvolutionSampling}.
 
 Among the variety of approaches, those based on regularized least squares
 estimators have been employed more often due to their appropriate performance at
@@ -102,15 +108,21 @@ represented as a linear combination of predefined patterns or dictionary atoms
 analysis-based approach considers that the true signal is analyzed by some
 relevant operator and the resulting signal is small (i.e., sparse).
 
-As members of the groups that developed Paradigm Free Mapping (synthesis-based)
-and Total Activation (analysis-based) deconvolution methods for fMRI data
-analysis, we are often contacted by researchers who want to know about the
-similarities and differences between the two methods and which one is better.
-\emph{It depends}---and to clarify this point, this note revisits synthesis- and
-analysis-based deconvolution methods for fMRI data and comprises four sections.
-First, we present the theory behind these two deconvolution approaches based on
-regularized least squares estimators that promote sparsity: Paradigm Free
-Mapping (PFM) \citep{Gaudes2013Paradigmfreemapping} --- available in AFNI as
+As members of the groups that developed Paradigm Free Mapping (synthesis-based
+\textcolor{blue}{solved with regularized least-squares estimators such as
+ridge-regression \citealt{Gaudes2010Detectioncharacterizationsingle} or LASSO
+\citealt{Gaudes2013Paradigmfreemapping}}) and Total Activation (analysis-based
+\textcolor{blue}{also solved with a regularized least-squares estimator using
+generalized total variation
+\citealt{Karahanoglu2011SignalProcessingApproach,Karahanoglu2013TotalactivationfMRI}
+}) deconvolution methods for fMRI data analysis, we are often contacted by
+researchers who want to know about the similarities and differences between the
+two methods and which one is better. \emph{It depends}---and to clarify this
+point, this note revisits synthesis- and analysis-based deconvolution methods
+for fMRI data and comprises four sections. First, we present the theory behind
+these two deconvolution approaches based on regularized least squares estimators
+that promote sparsity: Paradigm Free Mapping (PFM)
+\citep{Gaudes2013Paradigmfreemapping} --- available in AFNI as
 \textit{3dPFM}\footnote{\url{https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dPFM.html}}
 and
 \textit{3dMEPFM}\footnote{\url{https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dMEPFM.html}}

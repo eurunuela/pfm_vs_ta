@@ -18,7 +18,7 @@ described here \eqref{eq:pfm_block}. Similarly, all the works using the iCAPs
 approach, and thus the TA implementation for deconvolution
 \citep{Kinany2020DynamicFunctionalConnectivity,Zoeller2019Largescalebrain,
 Pirondini2022Poststrokereorganization},
-could alternatively use the PFM approach with the block model and adding a
+could alternatively use the PFM approach with the block model adding a
 spatial regularization term, which would yield identical results providing the
 same criterion is used to select the regularization parameters.} However, given
 the equivalence of the temporal deconvolution, incorporating extra spatial or
@@ -147,14 +147,14 @@ estimate the HRF shape in an adaptive fashion in both analysis
 Another avenue of research consists in leveraging spatial information by
 adopting multivariate deconvolution approaches that operate at the whole-brain
 level, instead of working voxelwise and beyond regional regularization terms
-(e.g. as proposed in \citealt{Karahanoglu2013TotalactivationfMRI}).  Operating
+(e.g. as proposed in \citealt{Karahanoglu2013TotalactivationfMRI}). Operating
 at the whole-brain level would open the way for methods that consider shared
 neuronal activity using mixed norm regularization terms
 \citep{urunuela-tremino_2019} or can capture long-range neuronal cofluctuations
 using low rank decompositions \citep{cherkaoui:hal-03005584}. For example,
 multivariate deconvolution approaches could yield better localized activity
 patterns while reducing the effect of global fluctuations such as respiratory
-artifacts, which cannot be modelled at the voxel level \citealt{Urunuela_2021}. 
+artifacts, which cannot be modelled at the voxel level \citep{Urunuela_2021}.
 
 Similar to solving other inverse problems by means of regularized estimators,
 the selection of the regularization parameter is critical to correctly estimate
