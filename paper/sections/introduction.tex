@@ -17,13 +17,13 @@ naturalistic stimuli, resting-state, or clinically-relevant assessments.
 
 Deconvolution and methods alike are aiming to estimate neuronal activity by
 undoing the blurring effect of the hemodynamic response, characterized as a
-hemodynamic response function (HRF)\footnote{\textcolor{blue}{Note that the term
+hemodynamic response function (HRF)\footnote{Note that the term
 deconvolution is also alternatively employed to refer to the estimation of the
 hemodynamic response shape assuming a known activity-inducing signal or neuronal
 activity
 \citep{Goutte2000Modelinghaemodynamicresponse,Marrelec2002Bayesianestimationhemodynamic,
 Ciuciu2003Unsupervisedrobustnonparametric,Casanova2008impacttemporalregularization}.
-}}. Given the inherently ill-posed nature of
+}. Given the inherently ill-posed nature of
 hemodynamic deconvolution, due to the strong temporal low-pass characteristics
 of the HRF, the key is to introduce additional constraints in the estimation
 problem that are typically expressed as regularizers. For instance, the
@@ -37,7 +37,7 @@ Freitas2020Timeresolvedeffective}.
 Complementarily, the interest in deconvolution has increased to explore
 time-varying activity in resting-state fMRI data
 \citep{Preti2017dynamicfunctionalconnectome,Keilholz2017TimeResolvedResting,
-Lurie2020Questionscontroversiesstudy,Bolton2020TappingMultiF1aceted}.
+Lurie2020Questionscontroversiesstudy,Bolton2020TappingMultiFaceted}.
 In that case, the aim is to gain better insights of the neural signals that
 drive functional connectivity at short time scales, as well as learning about
 the spatio-temporal structure of functional components that dynamically
@@ -109,13 +109,13 @@ analysis-based approach considers that the true signal is analyzed by some
 relevant operator and the resulting signal is small (i.e., sparse).
 
 As members of the groups that developed Paradigm Free Mapping (synthesis-based
-\textcolor{blue}{solved with regularized least-squares estimators such as
+solved with regularized least-squares estimators such as
 ridge-regression \citealt{Gaudes2010Detectioncharacterizationsingle} or LASSO
-\citealt{Gaudes2013Paradigmfreemapping}}) and Total Activation (analysis-based
-\textcolor{blue}{also solved with a regularized least-squares estimator using
+\citealt{Gaudes2013Paradigmfreemapping}) and Total Activation (analysis-based
+also solved with a regularized least-squares estimator using
 generalized total variation
 \citealt{Karahanoglu2011SignalProcessingApproach,Karahanoglu2013TotalactivationfMRI}
-}) deconvolution methods for fMRI data analysis, we are often contacted by
+) deconvolution methods for fMRI data analysis, we are often contacted by
 researchers who want to know about the similarities and differences between the
 two methods and which one is better. \emph{It depends}---and to clarify this
 point, this note revisits synthesis- and analysis-based deconvolution methods
