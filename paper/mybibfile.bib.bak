@@ -1339,16 +1339,6 @@ CAPS
   publisher = {Cold Spring Harbor Laboratory}
 }
 
-@article{Costantini2021ParadigmFreeRegularization,
-  author    = {Isa Costantini and Rachid Deriche and Samuel Deslauriers-Gauthier},
-  journal   = {bioRxiv},
-  title     = {A Paradigm Free Regularization Approach to Recover Brain Activation from Functional {MRI} Data},
-  year      = {2021},
-  month     = {apr},
-  doi       = {10.1101/2021.04.14.438942},
-  publisher = {Cold Spring Harbor Laboratory}
-}
-
 @inproceedings{Karahanoglu2013Spatialmappinginterictal,
   author       = {F. Isik Karahanoglu and Frederic Grouiller and Cesar C. Gaudes and Margitta Seeck and Serge Vulliemoz and Dimitri Van De Ville},
   booktitle    = {2013 {IEEE} 10th International Symposium on Biomedical Imaging},
@@ -1596,13 +1586,13 @@ CAPS
   revised         = {2007-11-15},
 }
 
-@misc{ruizeuler2018nonlinear,
+@Misc{RuizEuler2018NonlinearDeconvolutionSampling,
   author        = {Hans-Christian Ruiz-Euler and Jose R. Ferreira Marques and Hilbert J. Kappen},
   title         = {Nonlinear Deconvolution by Sampling Biophysically Plausible Hemodynamic Models},
   year          = {2018},
   archiveprefix = {arXiv},
   eprint        = {1803.08797},
-  primaryclass  = {q-bio.NC}
+  primaryclass  = {q-bio.NC},
 }
 
 @misc{cifre2020revisiting,
@@ -2321,10 +2311,6 @@ CAPS
   publisher = {Elsevier {BV}},
 }
 
-@Article{,
-  doi = {10.1109/42.897811},
-}
-
 @Article{Goutte2000Modelinghaemodynamicresponse,
   author          = {Goutte, C. and Nielsen, F. A. and Hansen, L. K.},
   journal         = {IEEE transactions on medical imaging},
@@ -2373,6 +2359,9 @@ CAPS
   pubmodel        = {Print},
   pubstate        = {ppublish},
   revised         = {2019-12-10},
+}
+
+@Article{,
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
