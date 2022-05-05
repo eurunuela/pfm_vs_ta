@@ -94,12 +94,27 @@ range shown in each image, we observe that the similarity between both
 approaches is more evident for the spike model (with both selection criteria)
 and the block model with the BIC selection. However, given the different
 approaches used for the selection of the regularization parameter $\lambda$
-based on the MAD estimate of the noise, higher RSSD values can be observed with
-the largest differences occurring in gray matter voxels. These areas also
-correspond to low values of $\lambda$ (see Figure~\ref{fig:lambdas}) and MAD
-estimates of the noise (see Figure~\ref{fig:mad_estimate}), while the highest
-values are visible in regions with signal droupouts, ventricles, and white
-matter.
+based on the MAD estimate of the noise\textcolor{blue}{(i.e., converging so that
+the residuals of FISTA are equal to the MAD estimate of the noise for TA vs.
+finding the LARS residual that is closest to the MAD estimate of the noise)},
+higher RSSD values can be observed with the largest differences occurring in
+gray matter voxels. These areas also correspond to low values of $\lambda$ (see
+Figure~\ref{fig:lambdas}) and MAD estimates of the noise (see
+Figure~\ref{fig:mad_estimate}), while the highest values are visible in regions
+with signal droupouts, ventricles, and white matter. \textcolor{blue}{These
+differences that arise from the differing methods to find the optimal
+regularization parameter based on the MAD estimate of the noise can be clearly
+seen in the root sum of squares (RSS) of the estimates of the two methods
+(Figure~\ref{fig:rss_comparison}). These differences are also observable in the
+ATS calculated from estimates obtained with the MAD selection as shown in
+Figure~\ref{fig:task_mad}. However, the identical regularization paths shown in
+Figure~\ref{fig:motor_regpaths} demonstrate that both methods perform
+equivalently on experimental data (see estimates of innovation signal obtained
+with an identical selection of $\lambda$ in Figure~\ref{fig:mad_inno_ts}).
+Hence, the higher RSSD values originate from the different methods to find the
+optimal regularization parameter based on the MAD estimate of the noise that
+yield differnt solutions as shown by the dashed vertical lines in
+Figure~\ref{fig:motor_regpaths}.}
 
 \begin{figure}[t!]
     \begin{center}

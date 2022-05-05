@@ -9,38 +9,39 @@ approaches} is confirmed in practice given virtually identical results when the
 same HRF model and equivalent regularization parameters are employed. Hence, we
 argue that previously observed differences in performance can be explained by
 specific settings, such as the HRF model and selection of the regularization
-parameter, convergence thresholds, as well as the addition of a spatial
-regularization term in the spatiotemporal TA formulation
-\citep{Karahanoglu2013TotalactivationfMRI}. \textcolor{blue}{For instance, the
-use of PFM with the spike model in \citep{Tan_2017} was seen not to be ideal due
-to the prolonged trials in the paradigm, which better fit the block model as
-described here \eqref{eq:pfm_block}. Similarly, all the works using the iCAPs
-approach, and thus the TA implementation for deconvolution
+parameter \textcolor{blue}{(as shown in
+Figures~\ref{fig:rss},\ref{fig:rss_comparison} and \ref{fig:motor_regpaths})},
+convergence thresholds, as well as the addition of a spatial regularization term
+in the spatiotemporal TA formulation \citep{Karahanoglu2013TotalactivationfMRI}.
+\textcolor{blue}{For instance, the use of PFM with the spike model in
+\citep{Tan_2017} was seen not to be ideal due to the prolonged trials in the
+paradigm, which better fit the block model as described here
+\eqref{eq:pfm_block}. Similarly, all the works using the iCAPs approach, and
+thus the TA implementation for deconvolution
 \citep{Kinany2020DynamicFunctionalConnectivity,Zoeller2019Largescalebrain,
-Pirondini2022Poststrokereorganization},
-could alternatively use the PFM approach with the block model adding a
-spatial regularization term, which would yield identical results providing the
-same criterion is used to select the regularization parameters.} However, given
-the equivalence of the temporal deconvolution, incorporating extra spatial or
-temporal regularization terms in the optimization problem should not modify this
-equivalence providing convex operators are employed. For a convex optimization
-problem, with a unique global solution, iterative shrinkage thresholding
-procedures alternating between the different regularization terms guarantee
-convergence; e.g., the generalized forward-backward splitting
-\citep{Raguet2013GeneralizedForwardBackward} algorithm originally employed for
-TA. Our findings are also in line with the equivalence of analysis and synthesis
-methods in under-determined cases (\(N \leq V\)) demonstrated in
-\citep{Elad2007Analysisversussynthesis} and \citep{ortelli2019synthesis}.
-\textcolor{blue}{Using a lower regularization parameter (i.e., penalty on the
-amplitude of the estimates) makes the estimates more similar to the
-least-squares solution, which results in higher sensitivity in detecting events.
-Conversely, employing a higher $\lambda$ leads to higher specificity at the cost
-of a decrease in sensitivity.} Still, we have shown that a slight difference in
-the selection of the regularization parameter can lead to small differences in
-the estimated signals when employing the block model with the MAD selection of
-$\lambda$. However, since theiri regularization paths are equivalent, the
-algorithms can easily be forced to converge to the same selection of $\lambda$,
-thus resulting in identical estimated signals.
+Pirondini2022Poststrokereorganization}, could alternatively use the PFM approach
+with the block model adding a spatial regularization term, which would yield
+identical results providing the same criterion is used to select the
+regularization parameters.} However, given the equivalence of the temporal
+deconvolution, incorporating extra spatial or temporal regularization terms in
+the optimization problem should not modify this equivalence providing convex
+operators are employed. For a convex optimization problem, with a unique global
+solution, iterative shrinkage thresholding procedures alternating between the
+different regularization terms guarantee convergence; e.g., the generalized
+forward-backward splitting \citep{Raguet2013GeneralizedForwardBackward}
+algorithm originally employed for TA. Our findings are also in line with the
+equivalence of analysis and synthesis methods in under-determined cases (\(N
+\leq V\)) demonstrated in \citep{Elad2007Analysisversussynthesis} and
+\citep{ortelli2019synthesis}. \textcolor{blue}{Using a lower regularization
+parameter (i.e., penalty on the amplitude of the estimates) makes the estimates
+more similar to the least-squares solution, which results in higher sensitivity
+in detecting events. Conversely, employing a higher $\lambda$ leads to higher
+specificity at the cost of a decrease in sensitivity.} Still, we have shown that
+a slight difference in the selection of the regularization parameter can lead to
+small differences in the estimated signals when employing the block model with
+the MAD selection of $\lambda$. However, since theiri regularization paths are
+equivalent, the algorithms can easily be forced to converge to the same
+selection of $\lambda$, thus resulting in identical estimated signals.
 
 Nevertheless, the different formulations of analysis and synthesis deconvolution
 models bring along different kinds of flexibility. One notable advantage of PFM
