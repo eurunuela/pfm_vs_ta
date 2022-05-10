@@ -133,10 +133,10 @@ which provides fast convergence to a global solution. Imposing sparsity on the
 activity-inducing signal implies that it is assumed to be well represented by a
 reduced subset of few non-zero coefficients at the fMRI timescale, which in turn
 trigger event-related BOLD responses. Hereinafter, we refer to this assumption
-as the \textit{spike model}. \textcolor{blue}{However, even if PFM was developed
+as the \textit{spike model}. However, even if PFM was developed
 as a spike model, its formulation in Eq.\eqref{eq:pfm_spike} can be extended to
 estimate the innovation signal, i.e., the derivative of the activity-inducing
-signal, as described in section~\ref{sec:unifying_both_perspectives}.}
+signal, as described in section~\ref{sec:unifying_both_perspectives}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Total Activation
@@ -180,13 +180,13 @@ Therefore, the solution of the Total Activation (TA) problem
 \end{equation}
 will yield the activity-related signal $\mathbf{x}$ for which the
 activity-inducing signal $\mathbf{s}=\mathbf{D_H x}$ and the so-called
-innovation signal $\mathbf{u}=\mathbf{Ds}$\textcolor{blue}{, i.e., the derivate
-of the activity-inducing signal,} will also be available, as they are required
+innovation signal $\mathbf{u}=\mathbf{Ds}$, i.e., the derivate
+of the activity-inducing signal, will also be available, as they are required
 for the regularization. We refer to modeling the activity-inducing signal based
 on the innovation signal as the \textit{block model}.
-\textcolor{blue}{Nevertheless, even if TA was originally developed as a block
+Nevertheless, even if TA was originally developed as a block
 model, its formulation in Eq.\eqref{eq:TA} can be made equivalent to the spike
-model as shown in section~\ref{sec:unifying_both_perspectives}.}
+model as shown in section~\ref{sec:unifying_both_perspectives}.
 
 \subsection{Unifying both perspectives}
 \label{sec:unifying_both_perspectives}
@@ -210,8 +210,8 @@ assume a spike model, since $\mathbf{H}$ and $\mathbf{D_H}$ will cancel out each
 other \citep{Karahanoglu2011SignalProcessingApproach}\footnote{Again, this holds
 up to elements of the null space.}.
 
-Conversely, \textcolor{blue}{the} PFM spike model can also accommodate the
-\textcolor{blue}{\sout{TA}} block model by modifying Eq. (\ref{eq:pfm_spike})
+Conversely, the PFM spike model can also accommodate the
+\sout{TA} block model by modifying Eq. (\ref{eq:pfm_spike})
 with the forward model $\mathbf{y} = \mathbf{H L u} + \mathbf{e}$. Here, the
 activity-inducing signal $\mathbf{s}$ is rewritten in terms of the innovation
 signal $\mathbf{u}$ as $\mathbf{s}=\mathbf{Lu}$ where the matrix $\mathbf{L}$ is
@@ -239,21 +239,21 @@ spike and block models.
     \end{center}
     \caption{Flowchart detailing the different steps of the fMRI signal and the
     deconvolution methods described. The orange arrows indicate the flow to
-    estimate the innovation signals\textcolor{blue}{, i.e., the derivative of
-    the activity-inducing signal}. The blue box depicts the iterative
+    estimate the innovation signals, i.e., the derivative of
+    the activity-inducing signal. The blue box depicts the iterative
     \textit{modus operandi} of the two algorithms used in this paper to solve
-    the \textcolor{blue}{paradigm free mapping (PFM) and total activation (TA)}
+    the paradigm free mapping (PFM) and total activation (TA)
     deconvolution problems. The plot on the left shows the regularization path
-    obtained with the \textcolor{blue}{least angle regression (LARS) algorithm},
+    obtained with the least angle regression (LARS) algorithm,
     where the x-axis illustrates the different iterations of the algorithm, the
     y-axis represents points in time, and the color describes the amplitude of
     the estimated signal. The middle plot depicts the decreasing values of
     $\lambda$ for each iteration of LARS as the regularization path is computed.
     The green and r ed dashed lines in both plots illustrate the
-    \textcolor{blue}{Bayesian information criterion (BIC)} and
-    \textcolor{blue}{median absolute deviation (MAD)} solutions, respectively.
+    Bayesian information criterion (BIC) and
+    median absolute deviation (MAD) solutions, respectively.
     Comparatively, the changes in $\lambda$ when the
-    \textcolor{blue}{fast iterative shrinkage-thresholding algorithm (FISTA)}
+    fast iterative shrinkage-thresholding algorithm (FISTA)
     method is made to converge to the MAD estimate of the noise are shown on the
     right. Likewise, the $\lambda$ corresponding to the BIC and MAD solutions
     are shown with dashed lines.}
