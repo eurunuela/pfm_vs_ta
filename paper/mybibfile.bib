@@ -1,4 +1,3 @@
-% Encoding: UTF-8
 ﻿###########################################################################
 Papers that talk about deconvolution:
 ###########################################################################
@@ -69,7 +68,7 @@ Papers that talk about deconvolution:
   publisher = {Elsevier {BV}}
 }
 
-@article{Karahanoglu2013TotalactivationfMRI,
+@Article{Karahanoglu2013TotalactivationfMRI,
   author    = {Fikret I{\c{s}}{\i}k Karahano{\u{g}}lu and C{\'{e}}sar Caballero-Gaudes and Fran{\c{c}}ois Lazeyras and Dimitri Van De Ville},
   journal   = {{NeuroImage}},
   title     = {Total activation: {fMRI} deconvolution through spatio-temporal regularization},
@@ -81,8 +80,8 @@ Papers that talk about deconvolution:
   abstract  = {Confirmatory approaches to {{fMRI}} data analysis look for evidence for the presence of pre-defined regressors modeling contributions to the voxel time series, including the BOLD response following neuronal activation. As more complicated questions arise about brain function, such as spontaneous and resting-state activity, new methodologies are required. We propose total activation (TA) as a novel {{fMRI}} data analysis method to explore the underlying activity-inducing signal of the BOLD signal without any timing information that is based on sparse spatio-temporal priors and characterization of the hemodynamic system. Within a variational framework, we formulate a convex cost function-including spatial and temporal regularization terms-that is solved by fast iterative shrinkage algorithms. The temporal regularization expresses that the activity-inducing signal is block-type without restrictions on the timing nor duration. The spatial regularization favors coherent activation patterns in anatomically-defined brain regions. TA is evaluated using a software phantom and an event-related {{fMRI}} experiment with prolonged resting state periods disturbed by visual stimuli. The results illustrate that both block-type and spike-type activities can be recovered successfully without prior knowledge of the experimental paradigm. Further processing using hierarchical clustering shows that the activity-inducing signals revealed by TA contain information about meaningful task-related and resting-state networks, demonstrating good abilities for the study of non-stationary dynamics of brain activity. \textcopyright{} 2013 Elsevier Inc.},
   doi       = {10.1016/j.neuroimage.2013.01.067},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Karahanoǧlu et al/Karahanoǧlu et al. - 2013 - Total activation {{fMRI}} deconvolution through spati.pdf:},
-  keywords  = {BOLD,Deconvolution,{{fMRI}},Paradigm-free mapping,Resting state,Sparsity,Spatio-temporal regularization,Total variation},
-  publisher = {Elsevier {BV}}
+  keywords  = {BOLD, Deconvolution, {{fMRI}}, Paradigm-free mapping, Resting state, Sparsity, Spatio-temporal regularization, Total variation},
+  publisher = {Elsevier {BV}},
 }
 
 @article{HernandezGarcia2011Neuronaleventdetection,
@@ -98,7 +97,7 @@ Papers that talk about deconvolution:
   publisher = {Elsevier {BV}}
 }
 
-@article{Gaudes2010Detectioncharacterizationsingle,
+@Article{Gaudes2010Detectioncharacterizationsingle,
   author    = {C{\'{e}}sar Caballero Gaudes and Natalia Petridou and Ian L. Dryden and Li Bai and Susan T. Francis and Penny A. Gowland},
   journal   = {Human Brain Mapping},
   title     = {Detection and characterization of single-trial {fMRI} bold responses: Paradigm free mapping},
@@ -111,11 +110,11 @@ Papers that talk about deconvolution:
   abstract  = {This work presents a novel method of mapping the brain's response to single stimuli in space and time without prior knowledge of the paradigm timing: paradigm free mapping (PFM). This method is based on deconvolution of the hemodynamic response from the voxel time series assuming a linear response and using a ridge-regression algorithm. Statistical inference is performed by defining a spatio-temporal t-statistic and by controlling for multiple comparisons using the false discovery rate procedure. The methodology was validated on five subjects who performed self-paced and visually cued finger tapping at 7 Tesla, with moderate (TR = 2 s) and high (TR = 0.4 s) temporal resolution. The results demonstrate that detection of single-trial BOLD events is feasible without a priori information on the stimulus paradigm. The proposed method opens up the possibility of designing temporally unconstrained paradigms to study the cortical response to unpredictable mental events. Hum Brain Mapp, 2010. \textcopyright{} 2010 Wiley-Liss, Inc.},
   doi       = {10.1002/hbm.21116},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Gaudes et al/Gaudes et al. - 2011 - Detection and characterization of single-trial fMR.pdf:},
-  keywords  = {Brain mapping,Deconvolution,Event-related,Motor cortex,MRI,Single-trial analysis},
-  publisher = {Wiley}
+  keywords  = {Brain mapping, Deconvolution, Event-related, Motor cortex, MRI, Single-trial analysis},
+  publisher = {Wiley},
 }
 
-@article{Gaudes2013Paradigmfreemapping,
+@Article{Gaudes2013Paradigmfreemapping,
   author    = {C{\'{e}}sar Caballero Gaudes and Natalia Petridou and Susan T. Francis and Ian L. Dryden and Penny A. Gowland},
   journal   = {Human Brain Mapping},
   title     = {Paradigm free mapping with sparse regression automatically detects single-trial functional magnetic resonance imaging blood oxygenation level dependent responses},
@@ -125,11 +124,11 @@ Papers that talk about deconvolution:
   abstract  = {The ability to detect single trial responses in functional magnetic resonance imaging ({{fMRI}}) studies is essential, particularly if investigating learning or adaptation processes or unpredictable events. We recently introduced paradigm free mapping (PFM), an analysis method that detects single trial blood oxygenation level dependent (BOLD) responses without specifying prior information on the timing of the events. PFM is based on the deconvolution of the {{fMRI}} signal using a linear hemodynamic convolution model. Our previous PFM method (Caballero-Gaudes et al., 2011: Hum Brain Mapp) used the ridge regression estimator for signal deconvolution and required a baseline signal period for statistical inference. In this work, we investigate the application of sparse regression techniques in PFM. In particular, a novel PFM approach is developed using the Dantzig selector estimator, solved via an efficient homotopy procedure, along with statistical model selection criteria. Simulation results demonstrated that, using the Bayesian information criterion to select the regularization parameter, this method obtains high detection rates of the BOLD responses, comparable with a model-based analysis, but requiring no information on the timing of the events and being robust against hemodynamic response function variability. The practical operation of this sparse PFM method was assessed with single-trial {{fMRI}} data acquired at 7T, where it automatically detected all task-related events, and was an improvement on our previous PFM method, as it does not require the definition of a baseline state and amplitude thresholding and does not compromise on specificity and sensitivity.},
   doi       = {10.1002/hbm.21452},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Caballero Gaudes et al/Caballero Gaudes et al. - 2013 - Paradigm free mapping with sparse regression autom.pdf:},
-  keywords  = {Brain mapping,{{fMRI}},Paradigm free mapping,Single-trial analysis,Sparse regression},
-  publisher = {Wiley}
+  keywords  = {Brain mapping, {{fMRI}}, Paradigm free mapping, Single-trial analysis, Sparse regression},
+  publisher = {Wiley},
 }
 
-@inproceedings{Cherkaoui2019SparsitybasedBlind,
+@InProceedings{Cherkaoui2019SparsitybasedBlind,
   author    = {Hamza Cherkaoui and Thomas Moreau and Abderrahim Halimi and Philippe Ciuciu},
   booktitle = {{ICASSP} 2019 - 2019 {IEEE} International Conference on Acoustics, Speech and Signal Processing ({ICASSP})},
   title     = {Sparsity-based Blind Deconvolution of Neural Activation Signal in {FMRI}},
@@ -142,10 +141,10 @@ Papers that talk about deconvolution:
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Cherkaoui et al/Cherkaoui et al. - 2019 - Sparsity-based Blind Deconvolution of Neural Activ.pdf:;:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Cherkaoui et al/Cherkaoui et al. - 2019 - Sparsity-based Blind Deconvolution of Neural Activ2.pdf:;:/Users/enekourunuela/Zotero/storage/ISRV5L5S/8683358.html:},
   ids       = {cherkaouiSparsitybasedBlindDeconvolution2019},
   issn      = {2379-190X},
-  keywords  = {biomedical MRI,BOLD signal,brain,cognition,cognitive responses,deconvolution,EP information,{{fMRI}},functional magnetic resonance imaging,haemodynamics,hemodynamic response function,Hemodynamic response function (HRF),HRF estimation technique,joint estimation,medical image processing,neural activation signal,neurophysiology,non-convex optimization,resting-state data,semiblind deconvolution problem,sparsity-based blind deconvolution,time-resolved neural activity}
+  keywords  = {biomedical MRI, BOLD signal, brain, cognition, cognitive responses, deconvolution, EP information, {{fMRI}}, functional magnetic resonance imaging, haemodynamics, hemodynamic response function, Hemodynamic response function (HRF), HRF estimation technique, joint estimation, medical image processing, neural activation signal, neurophysiology, non-convex optimization, resting-state data, semiblind deconvolution problem, sparsity-based blind deconvolution, time-resolved neural activity},
 }
 
-@article{Urunuela2020StabilityBasedSparse,
+@Article{Urunuela2020StabilityBasedSparse,
   author    = {Eneko Uruñuela and Stephen Jones and Anna Crawford and Wanyong Shin and Sehong Oh and Mark Lowe and Cesar Caballero-Gaudes},
   journal   = {Proceedings of the Annual International Conference of the IEEE Engineering in Medicine and Biology Society, EMBS},
   title     = {Stability-Based Sparse Paradigm Free Mapping Algorithm for Deconvolution of Functional {MRI} Data},
@@ -159,8 +158,8 @@ Papers that talk about deconvolution:
   copyright = {All rights reserved},
   doi       = {10.1109/embc44109.2020.9176137},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/9781728119908203100_2020_ieee1092.pdf:},
-  keywords  = {deconvolution,functional MRI,paradigm free mapping,stability selection},
-  publisher = {{IEEE}}
+  keywords  = {deconvolution, functional MRI, paradigm free mapping, stability selection},
+  publisher = {{IEEE}},
 }
 
 @article{CaballeroGaudes2019deconvolutionalgorithmmulti,
@@ -197,7 +196,7 @@ Papers that talk about deconvolution:
   organization = {International Society for Optics and Photonics}
 }
 
-@article{Karahanoglu2011SignalProcessingApproach,
+@Article{Karahanoglu2011SignalProcessingApproach,
   author    = {Fikret I{\c{s}}{\i}k Karahanoglu and {\.{I}}lker Bayram and Dimitri Van De Ville},
   journal   = {{IEEE} Transactions on Signal Processing},
   title     = {A Signal Processing Approach to Generalized 1-D Total Variation},
@@ -210,8 +209,8 @@ Papers that talk about deconvolution:
   abstract  = {Total variation (TV) is a powerful method that brings great benefit for edge-preserving regularization. Despite being widely employed in image processing, it has restricted applicability for 1-D signal processing since piecewise-constant signals form a rather limited model for many applications. Here we generalize conventional TV in 1-D by extending the derivative operator, which is within the regularization term, to any linear differential operator. This provides flexibility for tailoring the approach to the presence of nontrivial linear systems and for different types of driving signals such as spike-like, piecewise-constant, and so on. Conventional TV remains a special case of this general framework. We illustrate the feasibility of the method by considering a nontrivial linear system and different types of driving signals.},
   doi       = {10.1109/tsp.2011.2164399},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Karahanoglu et al/Karahanoglu et al. - 2011 - A Signal Processing Approach to Generalized 1-D To.pdf:},
-  keywords  = {1D signal processing,derivative operator,Dictionaries,Differential operators,edge-preserving regularization,generalized 1D total variation,Image edge detection,image processing,linear differential operator,linear systems,Linear systems,Noise reduction,nontrivial linear system,piecewise-constant signal,regularization,signal processing,Signal processing,Signal processing algorithms,sparsity,spike-like signal,total variation,TV},
-  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})}
+  keywords  = {1D signal processing, derivative operator, Dictionaries, Differential operators, edge-preserving regularization, generalized 1D total variation, Image edge detection, image processing, linear differential operator, linear systems, Linear systems, Noise reduction, nontrivial linear system, piecewise-constant signal, regularization, signal processing, Signal processing, Signal processing algorithms, sparsity, spike-like signal, total variation, TV},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
 }
 
 @inproceedings{Farouj2019BoldSignalDeconvolution,
@@ -256,7 +255,7 @@ Papers that talk about deconvolution:
   timestamp       = {2021.04.19}
 }
 
-@article{Gerchen2014Analyzingtaskdependent,
+@Article{Gerchen2014Analyzingtaskdependent,
   author          = {Martin Fungisai Gerchen and David Bernal-Casas and Peter Kirsch},
   journal         = {Human Brain Mapping},
   title           = {Analyzing task-dependent brain network changes by whole-brain psychophysiological interactions: A comparison to conventional analysis},
@@ -274,7 +273,7 @@ Papers that talk about deconvolution:
   doi             = {10.1002/hbm.22532},
   issn-linking    = {1065-9471},
   issue           = {10},
-  keywords        = {Adult; Brain, blood supply, physiology; Brain Mapping; Cluster Analysis; Female; Functional Laterality; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging; Male; Mental Recall, physiology; Middle Aged; Models, Neurological; Neural Pathways, blood supply, physiology; Oxygen, blood; Psychophysiology; Young Adult; connectivity; connectome; episodic memory; functional magnetic resonance imaging; recall},
+  keywords        = {Adult; Brain, blood supply, physiology; Brain Mapping; Cluster Analysis; Female; Functional Laterality; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging; Male; Mental Recall, physiology; Middle Aged; Models, Neurological; Neural Pathways, physiology; Oxygen, blood; Psychophysiology; Young Adult; connectivity; connectome; episodic memory; functional magnetic resonance imaging; recall},
   nlm-id          = {9419065},
   owner           = {NLM},
   pmc             = {PMC6869077},
@@ -283,7 +282,7 @@ Papers that talk about deconvolution:
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
   revised         = {2020-06-13},
-  timestamp       = {2021.04.19}
+  timestamp       = {2021.04.19},
 }
 
 ###########################################################################
@@ -467,7 +466,7 @@ Papers that talk about the post processing step:
 
 # Naturalistic
 
-@article{Finn2020Idiosynchronysharedresponses,
+@Article{Finn2020Idiosynchronysharedresponses,
   author    = {Emily S. Finn and Enrico Glerean and Arman Y. Khojandi and Dylan Nielson and Peter J. Molfese and Daniel A. Handwerker and Peter A. Bandettini},
   journal   = {{NeuroImage}},
   title     = {Idiosynchrony: From shared responses to individual differences during naturalistic neuroimaging},
@@ -479,15 +478,15 @@ Papers that talk about the post processing step:
   abstract  = {Two ongoing movements in human cognitive neuroscience have researchers shifting focus from group-level inferences to characterizing single subjects, and complementing tightly controlled tasks with rich, dynamic paradigms such as movies and stories. Yet relatively little work combines these two, perhaps because traditional analysis approaches for naturalistic imaging data are geared toward detecting shared responses rather than between-subject variability. Here, we review recent work using naturalistic stimuli to study individual differences, and advance a framework for detecting structure in idiosyncratic patterns of brain activity, or ``idiosynchrony''. Specifically, we outline the emerging technique of inter-subject representational similarity analysis (IS-RSA), including its theoretical motivation and an empirical demonstration of how it recovers brain-behavior relationships during movie watching using data from the Human Connectome Project. We also consider how stimulus choice may affect the individual signal and discuss areas for future research. We argue that naturalistic neuroimaging paradigms have the potential to reveal meaningful individual differences above and beyond those observed during traditional tasks or at rest.},
   doi       = {10.1016/j.neuroimage.2020.116828},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Finn et al/Finn et al. - 2020 - Idiosynchrony From shared responses to individual.pdf:},
-  keywords  = {Behavior,{{fMRI}},Individual differences,Inter-subject correlation,Naturalistic,Representational similarity analysis},
-  publisher = {Elsevier {BV}}
+  keywords  = {Behavior, {{fMRI}}, Individual differences, Inter-subject correlation, Naturalistic, Representational similarity analysis},
+  publisher = {Elsevier {BV}},
 }
 
 ###########################################################################
 iCAPs
 ###########################################################################
 
-@article{Kinany2020DynamicFunctionalConnectivity,
+@Article{Kinany2020DynamicFunctionalConnectivity,
   author    = {Nawal Kinany and Elvira Pirondini and Silvestro Micera and Dimitri Van De Ville},
   journal   = {Neuron},
   title     = {Dynamic Functional Connectivity of Resting-State Spinal Cord {fMRI} Reveals Fine-Grained Intrinsic Architecture},
@@ -500,9 +499,9 @@ iCAPs
   abstract  = {The neuroimaging community has shown tremendous interest in exploring the brain's spontaneous activity using functional magnetic resonance imaging ({{fMRI}}). On the contrary, the spinal cord has been largely overlooked despite its pivotal role in processing sensorimotor signals. Only a handful of studies have probed the organization of spinal resting-state fluctuations, always using static measures of connectivity. Many innovative approaches have emerged for analyzing dynamics of brain {{fMRI}}, but they have not yet been applied to the spinal cord, although they could help disentangle its functional architecture. Here, we leverage a dynamic connectivity method based on the clustering of hemodynamic-informed transients to unravel the rich dynamic organization of spinal resting-state signals. We test this approach in 19 healthy subjects, uncovering fine-grained spinal components and highlighting their neuroanatomical and physiological nature. We provide a versatile tool, the spinal innovation-driven co-activation patterns (SpiCiCAP) framework, to characterize spinal circuits during rest and task, as well as their disruption in neurological disorders.},
   doi       = {10.1016/j.neuron.2020.07.024},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Kinany et al/Kinany et al. - 2020 - Dynamic Functional Connectivity of Resting-State S.pdf:;:/Users/enekourunuela/Zotero/storage/BJRZG3ZG/S0896627320305687.html:},
-  keywords  = {dynamic functional connectivity,{{fMRI}},networks,resting-state,spinal cord},
+  keywords  = {dynamic functional connectivity, {{fMRI}}, networks, resting-state, spinal cord},
   language  = {en},
-  publisher = {Elsevier {BV}}
+  publisher = {Elsevier {BV}},
 }
 
 @article{Karahanoglu2015Transientbrainactivity,
@@ -523,7 +522,7 @@ iCAPs
   publisher = {Springer Science and Business Media {LLC}}
 }
 
-@article{Karahanoglu2017Dynamicslargescale,
+@Article{Karahanoglu2017Dynamicslargescale,
   author     = {Fikret I{\c{s}}{\i}k Karahano{\u{g}}lu and Dimitri Van De Ville},
   journal    = {Current Opinion in Biomedical Engineering},
   title      = {Dynamics of large-scale {fMRI} networks: Deconstruct brain activity to build better models of brain function},
@@ -535,11 +534,11 @@ iCAPs
   abstract   = {Ongoing fluctuations of brain activity measured by functional magnetic resonance imaging ({{fMRI}}) provide a novel window onto the organizational principles of brain function. Advances in data analysis have focussed on extracting the constituting elements of temporal dynamics in terms of activity or connectivity patterns. Subsequently, brain states can be defined and then be analyzed using temporal features and computational models as to capture subtle interactions between functional networks. These new methodological advances allow to deconstruct the rich spatiotemporal structure of functional components that dynamically assemble into resting-state networks long been observed using conventional measures of functional connectivity. Applications of these emerging methods demonstrate that changes in functional connectivity are indeed driven by complex reorganization of network interactions, and thus provide valuable observations to build better models of brain function and dysfunction. Here, we give an overview of the recent developments in this exciting field, together with main findings and perspectives on future research.},
   doi        = {10.1016/j.cobme.2017.09.008},
   file       = {:/Users/enekourunuela/Zotero/storage/IC9RPRPV/Karahanoğlu and Van De Ville - 2017 - Dynamics of large-scale {{fMRI}} networks Deconstruct.pdf:},
-  keywords   = {Biomarkers,Brain function,Dynamic systems,Network science,Neuroimaging,Temporal models},
+  keywords   = {Biomarkers, Brain function, Dynamic systems, Network science, Neuroimaging, Temporal models},
   language   = {en},
   publisher  = {Elsevier {BV}},
   series     = {New {{Developments}} in {{Biomedical Imaging}}},
-  shorttitle = {Dynamics of Large-Scale {{{{fMRI}}}} Networks}
+  shorttitle = {Dynamics of Large-Scale {{{{fMRI}}}} Networks},
 }
 
 ###########################################################################
@@ -577,7 +576,7 @@ Other methods
   publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})}
 }
 
-@article{Tibshirani1996RegressionShrinkageSelection,
+@Article{Tibshirani1996RegressionShrinkageSelection,
   author    = {Robert Tibshirani},
   journal   = {Journal of the Royal Statistical Society: Series B (Methodological)},
   title     = {Regression Shrinkage and Selection Via the Lasso},
@@ -591,9 +590,9 @@ Other methods
   annote    = {\_eprint: https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.2517-6161.1996.tb02080.x},
   copyright = {\textcopyright{} 1996 Royal Statistical Society},
   doi       = {10.1111/j.2517-6161.1996.tb02080.x},
-  keywords  = {quadratic programming,regression,shrinkage,subset selection},
+  keywords  = {quadratic programming, regression, shrinkage, subset selection},
   language  = {en},
-  publisher = {Wiley}
+  publisher = {Wiley},
 }
 
 @article{Badillo2013Grouplevelimpacts,
@@ -609,7 +608,7 @@ Other methods
   publisher = {Elsevier {BV}}
 }
 
-@article{Petridou2012PeriodsrestfMRI,
+@Article{Petridou2012PeriodsrestfMRI,
   author    = {Natalia Petridou and C{\'{e}}sar Caballero Gaudes and Ian L. Dryden and Susan T. Francis and Penny A. Gowland},
   journal   = {Human Brain Mapping},
   title     = {Periods of rest in {fMRI} contain individual spontaneous events which are related to slowly fluctuating spontaneous activity},
@@ -624,12 +623,12 @@ Other methods
   copyright = {Copyright \textcopyright{} 2011 Wiley Periodicals, Inc.},
   doi       = {10.1002/hbm.21513},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Petridou et al/Petridou et al. - 2013 - Periods of rest in {{fMRI}} contain individual spontan.pdf:;:/Users/enekourunuela/Zotero/storage/3LJNEU5A/hbm.html:},
-  keywords  = {BOLD,brain mapping,fluctuations,nonstationary spontaneous activity,resting-state},
+  keywords  = {BOLD, brain mapping, fluctuations, nonstationary spontaneous activity, resting-state},
   language  = {en},
-  publisher = {Wiley}
+  publisher = {Wiley},
 }
 
-@article{Schwarz1978EstimatingDimensionModel,
+@Article{Schwarz1978EstimatingDimensionModel,
   author    = {Gideon Schwarz},
   journal   = {The Annals of Statistics},
   title     = {Estimating the Dimension of a Model},
@@ -642,14 +641,14 @@ Other methods
   abstract  = {The problem of selecting one of a number of models of different dimensions is treated by finding its Bayes solution, and evaluating the leading terms of its asymptotic expansion. These terms are a valid large-sample criterion beyond the Bayesian context, since they do not depend on the a priori distribution.},
   doi       = {10.1214/aos/1176344136},
   file      = {:/Users/enekourunuela/Zotero/storage/7DL6SMJF/Schwarz - 1978 - Estimating the Dimension of a Model.pdf:},
-  keywords  = {Akaike information criterion,asymptotics,Dimension},
+  keywords  = {Akaike information criterion, asymptotics, Dimension},
   language  = {EN},
   mrnumber  = {MR468014},
   publisher = {Institute of Mathematical Statistics},
-  zmnumber  = {0379.62005}
+  zmnumber  = {0379.62005},
 }
 
-@incollection{Akaike1998InformationTheoryExtension,
+@InCollection{Akaike1998InformationTheoryExtension,
   author    = {Hirotogu Akaike},
   booktitle = {Springer Series in Statistics},
   publisher = {Springer New York},
@@ -662,11 +661,11 @@ Other methods
   series    = {Springer {{Series}} in {{Statistics}}},
   abstract  = {In this paper it is shown that the classical maximum likelihood principle can be considered to be a method of asymptotic realization of an optimum estimate with respect to a very general information theoretic criterion. This observation shows an extension of the principle to provide answers to many practical problems of statistical model fitting.},
   doi       = {10.1007/978-1-4612-1694-0_15},
-  keywords  = {Autoregressive Model,Final Prediction Error,Maximum Likelihood Principle,Statistical Decision Function,Statistical Model Identification},
-  language  = {en}
+  keywords  = {Autoregressive Model, Final Prediction Error, Maximum Likelihood Principle, Statistical Decision Function, Statistical Model Identification},
+  language  = {en},
 }
 
-@article{Efron2004Leastangleregression,
+@Article{Efron2004Leastangleregression,
   author    = {Bradley Efron and Trevor Hastie and Iain Johnstone and Robert Tibshirani},
   journal   = {The Annals of Statistics},
   title     = {Least angle regression},
@@ -679,11 +678,11 @@ Other methods
   doi       = {10.1214/009053604000000067},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Efron et al/Efron et al. - 2004 - Least Angle Regression.pdf:;:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Efron et al/Efron et al. - 2004 - Least Angle Regression2.pdf:},
   ids       = {efronLeastAngle20022003},
-  keywords  = {and phrases,boosting,coefficient paths,lasso,linear regression,variable selection},
-  publisher = {Institute of Mathematical Statistics}
+  keywords  = {and phrases, boosting, coefficient paths, lasso, linear regression, variable selection},
+  publisher = {Institute of Mathematical Statistics},
 }
 
-@article{Beck2009FastIterativeShrinkage,
+@Article{Beck2009FastIterativeShrinkage,
   author    = {Amir Beck and Marc Teboulle},
   journal   = {{SIAM} Journal on Imaging Sciences},
   title     = {A Fast Iterative Shrinkage-Thresholding Algorithm for Linear Inverse Problems},
@@ -696,11 +695,11 @@ Other methods
   abstract  = {We consider the class of iterative shrinkage-thresholding algorithms (ISTA) for solving linear inverse problems arising in signal/image processing. This class of methods, which can be viewed as an ex- tension of the classical gradient algorithm, is attractive due to its simplicity and thus is adequate for solving large-scale problems even with dense matrix data. However, such methods are also known to converge quite slowly. In this paper we present a new fast iterative shrinkage-thresholding algorithm (FISTA) which preserves the computational simplicity of ISTA but with a global rate of convergence which is proven to be significantly better, both theoretically and practically. Initial promising nu- merical results for wavelet-based image deblurring demonstrate the capabilities of FISTA which is shown to be faster than ISTA by several orders of magnitude. Key},
   doi       = {10.1137/080716542},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Beck_Teboulle/Beck and Teboulle - 2009 - A Fast Iterative Shrinkage-Thresholding Algorithm.pdf:},
-  keywords  = {algorithms,ams subject classifications,deconvolution,global rate of convergence,image deblurring,iterative shrinkage-thresholding algorithm,l 1 regularization problems,least squares and,linear inverse problem,optimal gradient method,two-step iterative},
-  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})}
+  keywords  = {algorithms, ams subject classifications, deconvolution, global rate of convergence, image deblurring, iterative shrinkage-thresholding algorithm, l 1 regularization problems, least squares and, linear inverse problem, optimal gradient method, two-step iterative},
+  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
 }
 
-@article{Raguet2013GeneralizedForwardBackward,
+@Article{Raguet2013GeneralizedForwardBackward,
   author    = {Hugo Raguet and Jalal Fadili and Gabriel Peyr{\'{e}}},
   journal   = {{SIAM} Journal on Imaging Sciences},
   title     = {A Generalized Forward-Backward Splitting},
@@ -713,11 +712,11 @@ Other methods
   doi       = {10.1137/120872802},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Raguet et al/Raguet et al. - 2013 - A Generalized Forward-Backward Splitting.pdf:},
   ids       = {raguet2013GeneralizedForwardBackwardSplitting},
-  keywords  = {10,1137,120872802,47n10,90c25,94a08,ams subject classifications,doi,forward-backward algorithm,image processing,imal splitting,monotone operator splitting,nonsmooth convex optimization,prox-,sparsity},
-  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})}
+  keywords  = {10, 1137, 120872802, 47n10, 90c25, 94a08, ams subject classifications, doi, forward-backward algorithm, image processing, imal splitting, monotone operator splitting, nonsmooth convex optimization, prox-, sparsity},
+  publisher = {Society for Industrial {\&} Applied Mathematics ({SIAM})},
 }
 
-@article{Pang2018Biophysicallybasedmethod,
+@Article{Pang2018Biophysicallybasedmethod,
   author    = {J.C. Pang and K.M. Aquino and P.A. Robinson and T.C. Lacy and M.M. Schira},
   journal   = {Journal of Neuroscience Methods},
   title     = {Biophysically based method to deconvolve spatiotemporal neurovascular signals from {fMRI} data},
@@ -729,9 +728,9 @@ Other methods
   abstract  = {Background Functional magnetic resonance imaging ({{fMRI}}) is commonly used to infer hemodynamic changes in the brain after increased neural activity, measuring the blood oxygen level-dependent (BOLD) signal. An important challenge in the analyses of {{fMRI}} data is to develop methods that can accurately deconvolve the BOLD signal to extract the driving neural activity and the underlying cerebrovascular effects. New method A biophysically based method is developed, which combines an extensively verified physiological hemodynamic model with a Wiener filter, to deconvolve the BOLD signal. Results The method is able to simultaneously obtain spatiotemporal images of underlying neurovascular signals, including neural activity, cerebral blood flow, cerebral blood volume, and deoxygenated hemoglobin concentration. The method is tested on simulated data and applied to various experimental data to demonstrate its stability, accuracy, and utility. Comparison with existing methods The resulting profiles of the deconvolved signals are consistent with measurements reported in the literature, obtained via multiple neuroimaging modalities. Conclusions The method provides new testable predictions of the spatiotemporal relations of the deconvolved signals for future studies. This demonstrates the ability of the method to quantify and analyze the neurovascular mechanisms that underlie {{fMRI}}, thereby expanding its potential uses.},
   doi       = {10.1016/j.jneumeth.2018.07.009},
   file      = {:/Users/enekourunuela/Library/Mobile Documents/com~apple~CloudDocs/Papers/Pang et al/Pang et al. - 2018 - Biophysically based method to deconvolve spatiotem.pdf:},
-  keywords  = {BOLD,Deconvolution,{{fMRI}},Modeling,Neurovascular,Spatiotemporal},
+  keywords  = {BOLD, Deconvolution, {{fMRI}}, Modeling, Neurovascular, Spatiotemporal},
   language  = {en},
-  publisher = {Elsevier {BV}}
+  publisher = {Elsevier {BV}},
 }
 
 @article{Elad2007Analysisversussynthesis,
@@ -1074,7 +1073,7 @@ CAPS
   revised         = {2020-10-30}
 }
 
-@article{Preti2017dynamicfunctionalconnectome,
+@Article{Preti2017dynamicfunctionalconnectome,
   author          = {Maria Giulia Preti and Thomas AW Bolton and Dimitri Van De Ville},
   journal         = {{NeuroImage}},
   title           = {The dynamic functional connectome: State-of-the-art and perspectives},
@@ -1089,7 +1088,7 @@ CAPS
   country         = {United States},
   doi             = {10.1016/j.neuroimage.2016.12.061},
   issn-linking    = {1053-8119},
-  keywords        = {Brain, anatomy & histology, physiology; Connectome, methods; Image Processing, Computer-Assisted, methods; Magnetic Resonance Imaging, methods; Neural Pathways, anatomy & histology, physiology; Dynamic functional connectivity; Dynamic graph analysis; Frame-wise description; Sliding window analysis; State characterization; Temporal modeling; Time/frequency analysis},
+  keywords        = {Brain, anatomy & histology, physiology; Connectome, methods; Image Processing, Computer-Assisted, methods; Magnetic Resonance Imaging, methods; Neural Pathways, physiology; Dynamic functional connectivity; Dynamic graph analysis; Frame-wise description; Sliding window analysis; State characterization; Temporal modeling; Time/frequency analysis},
   nlm-id          = {9215515},
   owner           = {NLM},
   pii             = {S1053-8119(16)30788-1},
@@ -1097,7 +1096,7 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2018-09-07}
+  revised         = {2018-09-07},
 }
 
 @article{Keilholz2017TimeResolvedResting,
@@ -1340,16 +1339,6 @@ CAPS
   publisher = {Cold Spring Harbor Laboratory}
 }
 
-@article{Costantini2021ParadigmFreeRegularization,
-  author    = {Isa Costantini and Rachid Deriche and Samuel Deslauriers-Gauthier},
-  journal   = {bioRxiv},
-  title     = {A Paradigm Free Regularization Approach to Recover Brain Activation from Functional {MRI} Data},
-  year      = {2021},
-  month     = {apr},
-  doi       = {10.1101/2021.04.14.438942},
-  publisher = {Cold Spring Harbor Laboratory}
-}
-
 @inproceedings{Karahanoglu2013Spatialmappinginterictal,
   author       = {F. Isik Karahanoglu and Frederic Grouiller and Cesar C. Gaudes and Margitta Seeck and Serge Vulliemoz and Dimitri Van De Ville},
   booktitle    = {2013 {IEEE} 10th International Symposium on Biomedical Imaging},
@@ -1569,7 +1558,7 @@ CAPS
   revised         = {2019-10-08}
 }
 
-@article{Riera2004statespacemodel,
+@Article{Riera2004statespacemodel,
   author          = {Jorge J. Riera and Jobu Watanabe and Iwata Kazuki and Miura Naoki and Eduardo Aubert and Tohru Ozaki and Ryuta Kawashima},
   journal         = {{NeuroImage}},
   title           = {A state-space model of the hemodynamic approach: nonlinear filtering of {BOLD} signals},
@@ -1586,7 +1575,7 @@ CAPS
   doi             = {10.1016/j.neuroimage.2003.09.052},
   issn-linking    = {1053-8119},
   issue           = {2},
-  keywords        = {Adult; Blood Flow Velocity, physiology; Blood Volume, physiology; Brain, blood supply, physiology; Cerebellum, blood supply, physiology; Female; Hemodynamics, physiology; Humans; Image Enhancement, methods; Image Processing, Computer-Assisted, methods; Imaging, Three-Dimensional, methods; Magnetic Resonance Imaging, methods, statistics & numerical data; Male; Mathematical Computing; Motor Activity, physiology; Motor Cortex, blood supply, physiology; Neurons, physiology; Nonlinear Dynamics; Oxygen Consumption, physiology; Regional Blood Flow, physiology; Somatosensory Cortex, blood supply, physiology; Synaptic Transmission, physiology},
+  keywords        = {Adult; Blood Flow Velocity, physiology; Blood Volume, physiology; Brain, blood supply, physiology; Cerebellum, physiology; Female; Hemodynamics, physiology; Humans; Image Enhancement, methods; Image Processing, Computer-Assisted, methods; Imaging, Three-Dimensional, methods; Magnetic Resonance Imaging, methods, statistics & numerical data; Male; Mathematical Computing; Motor Activity, physiology; Motor Cortex, physiology; Neurons, physiology; Nonlinear Dynamics; Oxygen Consumption, physiology; Regional Blood Flow, physiology; Somatosensory Cortex, physiology; Synaptic Transmission, physiology},
   nlm-id          = {9215515},
   owner           = {NLM},
   pii             = {S1053811903006025},
@@ -1594,16 +1583,16 @@ CAPS
   publisher       = {Elsevier {BV}},
   pubmodel        = {Print},
   pubstate        = {ppublish},
-  revised         = {2007-11-15}
+  revised         = {2007-11-15},
 }
 
-@misc{ruizeuler2018nonlinear,
+@Misc{RuizEuler2018NonlinearDeconvolutionSampling,
   author        = {Hans-Christian Ruiz-Euler and Jose R. Ferreira Marques and Hilbert J. Kappen},
   title         = {Nonlinear Deconvolution by Sampling Biophysically Plausible Hemodynamic Models},
   year          = {2018},
   archiveprefix = {arXiv},
   eprint        = {1803.08797},
-  primaryclass  = {q-bio.NC}
+  primaryclass  = {q-bio.NC},
 }
 
 @misc{cifre2020revisiting,
@@ -1689,7 +1678,7 @@ CAPS
   revised         = {2018-11-13}
 }
 
-@article{Faskowitz2020,
+@Article{Faskowitz2020,
   author          = {Faskowitz, Joshua and Esfahlani, Farnaz Zamani and Jo, Youngheun and Sporns, Olaf and Betzel, Richard F.},
   journal         = {Nature neuroscience},
   title           = {Edge-centric functional network representations of human cerebral cortex reveal overlapping system-level architecture.},
@@ -1705,14 +1694,14 @@ CAPS
   doi             = {10.1038/s41593-020-00719-y},
   issn-linking    = {1097-6256},
   issue           = {12},
-  keywords        = {Adult; Algorithms; Behavior, physiology; Brain Mapping; Cerebral Cortex, diagnostic imaging, physiology; Cluster Analysis; Connectome; Databases, Factual; Female; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging; Male; Models, Neurological; Nerve Net, diagnostic imaging, physiology; Neural Pathways, physiology; Sensation, physiology; Young Adult},
+  keywords        = {Adult; Algorithms; Behavior, physiology; Brain Mapping; Cerebral Cortex, diagnostic imaging, physiology; Cluster Analysis; Connectome; Databases, Factual; Female; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging; Male; Models, Neurological; Nerve Net, physiology; Neural Pathways, physiology; Sensation, physiology; Young Adult},
   nlm-id          = {9809671},
   owner           = {NLM},
   pii             = {10.1038/s41593-020-00719-y},
   pmid            = {33077948},
   pubmodel        = {Print-Electronic},
   pubstate        = {ppublish},
-  revised         = {2021-02-10}
+  revised         = {2021-02-10},
 }
 
 @article{Jo2021,
@@ -2137,6 +2126,250 @@ CAPS
   volume    = {39},
   doi       = {10.1109/tmi.2019.2942765},
   publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+}
+
+@Article{Polimeni2021Imagingfasterneural,
+  author          = {Polimeni, Jonathan R. and Lewis, Laura D.},
+  journal         = {Progress in neurobiology},
+  title           = {Imaging faster neural dynamics with fast fMRI: A need for updated models of the hemodynamic response.},
+  year            = {2021},
+  issn            = {1873-5118},
+  month           = dec,
+  pages           = {102174},
+  volume          = {207},
+  abstract        = {Fast fMRI enables the detection of neural dynamics over timescales of hundreds of milliseconds, suggesting it may provide a new avenue for studying subsecond neural processes in the human brain. The magnitudes of these fast fMRI dynamics are far greater than predicted by canonical models of the hemodynamic response. Several studies have established nonlinear properties of the hemodynamic response that have significant implications for fast fMRI. We first review nonlinear properties of the hemodynamic response function that may underlie fast fMRI signals. We then illustrate the breakdown of canonical hemodynamic response models in the context of fast neural dynamics. We will then argue that the canonical hemodynamic response function is not likely to reflect the BOLD response to neuronal activity driven by sparse or naturalistic stimuli or perhaps to spontaneous neuronal fluctuations in the resting state. These properties suggest that fast fMRI is capable of tracking surprisingly fast neuronal dynamics, and we discuss the neuroscientific questions that could be addressed using this approach.},
+  citation-subset = {IM},
+  completed       = {2022-03-21},
+  country         = {England},
+  doi             = {10.1016/j.pneurobio.2021.102174},
+  issn-linking    = {0301-0082},
+  keywords        = {Brain, diagnostic imaging, physiology; Brain Mapping, methods; Hemodynamics, physiology; Humans; Magnetic Resonance Imaging, methods; Neurons, physiology; Biophysical modeling; Blood-oxygenation-level-dependent contrast; Brain hemodynamics; Fast fMRI; Hemodynamic response function; High-resolution fMRI; Human neuroimaging},
+  mid             = {NIHMS1749479},
+  nlm-id          = {0370121},
+  owner           = {NLM},
+  pii             = {S0301-0082(21)00188-X},
+  pmc             = {PMC8688322},
+  pmid            = {34525404},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2022-04-11},
+}
+
+@Article{Pirondini2022Poststrokereorganization,
+  author    = {Elvira Pirondini and Nawal Kinany and C{\'{e}}cile Le Sueur and Joseph C. Griffis and Gordon L. Shulman and Maurizio Corbetta and Dimitri Van De Ville},
+  journal   = {{NeuroImage}},
+  title     = {Post-stroke reorganization of transient brain activity characterizes deficits and recovery of cognitive functions},
+  year      = {2022},
+  month     = {jul},
+  pages     = {119201},
+  volume    = {255},
+  doi       = {10.1016/j.neuroimage.2022.119201},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{Yesilyurt2008DynamicsnonlinearitiesBOLD,
+  author          = {Yeşilyurt, Bariş and Uğurbil, Kâmil and Uludağ, Kâmil},
+  journal         = {Magnetic resonance imaging},
+  title           = {Dynamics and nonlinearities of the BOLD response at very short stimulus durations.},
+  year            = {2008},
+  issn            = {0730-725X},
+  month           = sep,
+  pages           = {853--862},
+  volume          = {26},
+  abstract        = {In designing a functional imaging experiment or analyzing data, it is typically assumed that task duration and hemodynamic response are linearly related to each other. However, numerous human and animal studies have previously reported a deviation from linearity for short stimulus durations (<4 s). Here, we investigated nonlinearities of blood-oxygenation-level-dependent (BOLD) signals following visual stimulation of 5 to 1000 ms duration at two different luminance levels in human subjects. It was found that (a) a BOLD response to stimulus durations as short as 5 ms can be reliably detected; this stimulus duration is shorter than employed in any previous study investigating BOLD signal time courses; (b) the responses are more nonlinear than in any other previous study: the BOLD response to 1000 ms stimulation is only twice as large as the BOLD response to 5 ms stimulation although 200 times more photons were projected onto the retina; (c) the degree of nonlinearity depends on stimulus intensity; that is, nonlinearities have to be characterized not only by stimulus duration but also by stimulus features like luminance. These findings are especially of most practical importance in rapid event-related functional magnetic resonance imaging (fMRI) experimental designs. In addition, an 'initial dip' response--thought to be generated by a rapid increase in cerebral metabolic rate of oxygen metabolism (CMRO2) relative to cerebral blood flow--was observed and shown to colocalize well with the positive BOLD response. Highly intense stimulation, better tolerated by human subjects for short stimulus durations, causes early CMRO2 increase, and thus, the experimental design utilized in this study is better for detecting the initial dip than standard fMRI designs. These results and those from other groups suggest that short stimulation combined with appropriate experimental designs allows neuronal events and interactions to be examined by BOLD signal analysis, despite its slow evolution.},
+  chemicals       = {Oxygen},
+  citation-subset = {IM},
+  completed       = {2009-01-14},
+  country         = {Netherlands},
+  doi             = {10.1016/j.mri.2008.01.008},
+  issn-linking    = {0730-725X},
+  issue           = {7},
+  keywords        = {Adult; Brain Mapping, methods; Cerebrovascular Circulation, physiology; Female; Hemodynamics, physiology; Humans; Image Processing, Computer-Assisted; Magnetic Resonance Imaging, instrumentation, methods; Male; Oxygen, blood; Photic Stimulation, methods; Visual Cortex, anatomy & histology, blood supply, physiology},
+  nlm-id          = {8214883},
+  owner           = {NLM},
+  pii             = {S0730-725X(08)00091-X},
+  pmid            = {18479876},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2013-11-21},
+}
+
+@Article{Sadaghiani2009Neuralactivityinduced,
+  author          = {Sadaghiani, Sepideh and Uğurbil, Kâmil and Uludağ, Kâmil},
+  journal         = {Magnetic resonance imaging},
+  title           = {Neural activity-induced modulation of BOLD poststimulus undershoot independent of the positive signal.},
+  year            = {2009},
+  issn            = {1873-5894},
+  month           = oct,
+  pages           = {1030--1038},
+  volume          = {27},
+  abstract        = {Despite intense research on the blood oxygenation level-dependent (BOLD) signal underlying functional magnetic resonance imaging, our understanding of its physiological basis is far from complete. In this study, it was investigated whether the so-called poststimulus BOLD signal undershoot is solely a passive vascular effect or actively induced by neural responses. Prolonged static and flickering black-white checkerboard stimulation with isoluminant grey screen as baseline condition were employed on eight human subjects. Within the same region of interest, the positive BOLD time courses for static and flickering stimuli were identical over the entire stimulus duration. In contrast, the static stimuli exhibited no poststimulus BOLD signal undershoot, whereas the flickering stimuli caused a strong BOLD poststimulus undershoot. To ease the interpretation, we performed an additional study measuring both BOLD signal and cerebral blood flow (CBF) using arterial spin labeling. Also for CBF, a difference in the poststimulus period was found for the two stimuli. Thus, a passive blood volume effect as the only contributor to the poststimulus undershoot comes short in explaining the BOLD poststimulus undershoot phenomenon for this particular experiment. Rather, an additional active neuronal activation or deactivation can strongly modulate the BOLD poststimulus behavior. In summary, the poststimulus time course of BOLD signal could potentially be used to differentiate neuronal activity patterns that are otherwise indistinguishable using the positive evoked response.},
+  citation-subset = {IM},
+  completed       = {2010-01-05},
+  country         = {Netherlands},
+  doi             = {10.1016/j.mri.2009.04.003},
+  issn-linking    = {0730-725X},
+  issue           = {8},
+  keywords        = {Adult; Artifacts; Brain Mapping, methods; Evoked Potentials, Visual, physiology; Female; Humans; Image Interpretation, Computer-Assisted, methods; Magnetic Resonance Imaging, methods; Male; Oxygen Consumption, physiology; Reproducibility of Results; Sensitivity and Specificity; Visual Cortex, physiology; Visual Perception, physiology},
+  nlm-id          = {8214883},
+  owner           = {NLM},
+  pii             = {S0730-725X(09)00084-8},
+  pmid            = {19761930},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2009-09-18},
+}
+
+@Article{Chen2021Investigatingmechanismsfast,
+  author    = {Jingyuan E. Chen and Gary H. Glover and Nina E. Fultz and Bruce R. Rosen and Jonathan R. Polimeni and Laura D. Lewis},
+  journal   = {{NeuroImage}},
+  title     = {Investigating mechanisms of fast {BOLD} responses: The effects of stimulus intensity and of spatial heterogeneity of hemodynamics},
+  year      = {2021},
+  month     = {dec},
+  pages     = {118658},
+  volume    = {245},
+  doi       = {10.1016/j.neuroimage.2021.118658},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{GonzalezCastillo2012Wholebraintime,
+  author          = {Gonzalez-Castillo, Javier and Saad, Ziad S. and Handwerker, Daniel A. and Inati, Souheil J. and Brenowitz, Noah and Bandettini, Peter A.},
+  journal         = {Proceedings of the National Academy of Sciences of the United States of America},
+  title           = {Whole-brain, time-locked activation with simple tasks revealed using massive averaging and model-free analysis.},
+  year            = {2012},
+  issn            = {1091-6490},
+  month           = apr,
+  pages           = {5487--5492},
+  volume          = {109},
+  abstract        = {The brain is the body's largest energy consumer, even in the absence of demanding tasks. Electrophysiologists report on-going neuronal firing during stimulation or task in regions beyond those of primary relationship to the perturbation. Although the biological origin of consciousness remains elusive, it is argued that it emerges from complex, continuous whole-brain neuronal collaboration. Despite converging evidence suggesting the whole brain is continuously working and adapting to anticipate and actuate in response to the environment, over the last 20 y, task-based functional MRI (fMRI) have emphasized a localizationist view of brain function, with fMRI showing only a handful of activated regions in response to task/stimulation. Here, we challenge that view with evidence that under optimal noise conditions, fMRI activations extend well beyond areas of primary relationship to the task; and blood-oxygen level-dependent signal changes correlated with task-timing appear in over 95% of the brain for a simple visual stimulation plus attention control task. Moreover, we show that response shape varies substantially across regions, and that whole-brain parcellations based on those differences produce distributed clusters that are anatomically and functionally meaningful, symmetrical across hemispheres, and reproducible across subjects. These findings highlight the exquisite detail lying in fMRI signals beyond what is normally examined, and emphasize both the pervasiveness of false negatives, and how the sparseness of fMRI maps is not a result of localized brain function, but a consequence of high noise and overly strict predictive response models.},
+  citation-subset = {IM},
+  completed       = {2012-05-21},
+  country         = {United States},
+  doi             = {10.1073/pnas.1121049109},
+  issn-linking    = {0027-8424},
+  issue           = {14},
+  keywords        = {Brain, physiology; Humans; Magnetic Resonance Imaging; Models, Theoretical; Task Performance and Analysis},
+  nlm-id          = {7505876},
+  owner           = {NLM},
+  pii             = {1121049109},
+  pmc             = {PMC3325687},
+  pmid            = {22431587},
+  pubmodel        = {Print-Electronic},
+  pubstate        = {ppublish},
+  revised         = {2021-10-21},
+}
+
+@Article{Marrelec2002Bayesianestimationhemodynamic,
+  author  = {Marrelec,G. and Benali,H. and Ciuciu,P. and Poline,J.-B.},
+  journal = {AIP Conference Proceedings},
+  title   = {Bayesian estimation of the hemodynamic response function in functional MRI},
+  year    = {2002},
+  number  = {1},
+  pages   = {229-247},
+  volume  = {617},
+  doi     = {10.1063/1.1477050},
+  eprint  = {https://aip.scitation.org/doi/pdf/10.1063/1.1477050},
+  url     = {https://aip.scitation.org/doi/abs/10.1063/1.1477050},
+}
+
+@Article{Penny2005Bilineardynamicalsystems,
+  author    = {W Penny and Z Ghahramani and K Friston},
+  journal   = {Philosophical Transactions of the Royal Society B: Biological Sciences},
+  title     = {Bilinear dynamical systems},
+  year      = {2005},
+  month     = {may},
+  number    = {1457},
+  pages     = {983--993},
+  volume    = {360},
+  doi       = {10.1098/rstb.2005.1642},
+  publisher = {The Royal Society},
+}
+
+@Article{Casanova2008impacttemporalregularization,
+  author    = {Ramon Casanova and Srikanth Ryali and John Serences and Lucie Yang and Robert Kraft and Paul J. Laurienti and Joseph A. Maldjian},
+  journal   = {{NeuroImage}},
+  title     = {The impact of temporal regularization on estimates of the {BOLD} hemodynamic response function: A comparative analysis},
+  year      = {2008},
+  month     = {may},
+  number    = {4},
+  pages     = {1606--1618},
+  volume    = {40},
+  doi       = {10.1016/j.neuroimage.2008.01.011},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{Ryali2011Multivariatedynamicalsystems,
+  author    = {Srikanth Ryali and Kaustubh Supekar and Tianwen Chen and Vinod Menon},
+  journal   = {{NeuroImage}},
+  title     = {Multivariate dynamical systems models for estimating causal interactions in {fMRI}},
+  year      = {2011},
+  month     = {jan},
+  number    = {2},
+  pages     = {807--823},
+  volume    = {54},
+  doi       = {10.1016/j.neuroimage.2010.09.052},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{Goutte2000Modelinghaemodynamicresponse,
+  author          = {Goutte, C. and Nielsen, F. A. and Hansen, L. K.},
+  journal         = {IEEE transactions on medical imaging},
+  title           = {Modeling the haemodynamic response in fMRI using smooth FIR filters.},
+  year            = {2000},
+  issn            = {0278-0062},
+  month           = dec,
+  pages           = {1188--1201},
+  volume          = {19},
+  abstract        = {Modeling the haemodynamic response in functional magnetic resonance (fMRI) experiments is an important aspect of the analysis of functional neuroimages. This has been done in the past using parametric response function, from a limited family. In this contribution, we adopt a semi-parametric approach based on finite impulse response (FIR) filters. In order to cope with the increase in the number of degrees of freedom, we introduce a Gaussian process prior on the filter parameters. We show how to carry on the analysis by incorporating prior knowledge on the filters, optimizing hyper-parameters using the evidence framework, or sampling using a Markov Chain Monte Carlo (MCMC) approach. We present a comparison of our model with standard haemodynamic response kernels on simulated data, and perform a full analysis of data acquired during an experiment involving visual stimulation.},
+  citation-subset = {IM},
+  completed       = {2001-05-03},
+  country         = {United States},
+  doi             = {10.1109/42.897811},
+  issn-linking    = {0278-0062},
+  issue           = {12},
+  keywords        = {Hemodynamics, physiology; Humans; Magnetic Resonance Imaging; Markov Chains; Monte Carlo Method; Normal Distribution; Photic Stimulation},
+  nlm-id          = {8310780},
+  owner           = {NLM},
+  pmid            = {11212367},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2007-11-15},
+}
+
+@Article{Ciuciu2003Unsupervisedrobustnonparametric,
+  author          = {Ciuciu, Philippe and Poline, Jean-Baptiste and Marrelec, Guillaume and Idier, Jérôme and Pallier, Christophe and Benali, Habib},
+  journal         = {IEEE transactions on medical imaging},
+  title           = {Unsupervised robust nonparametric estimation of the hemodynamic response function for any fMRI experiment.},
+  year            = {2003},
+  issn            = {0278-0062},
+  month           = oct,
+  pages           = {1235--1251},
+  volume          = {22},
+  abstract        = {This paper deals with the estimation of the blood oxygen level-dependent response to a stimulus, as measured in functional magnetic resonance imaging (fMRI) data. A precise estimation is essential for a better understanding of cerebral activations. The most recent works have used a nonparametric framework for this estimation, considering each brain region as a system characterized by its impulse response, the so-called hemodynamic response function (HRF). However, the use of these techniques has remained limited since they are not well-adapted to real fMRI data. Here, we develop a threefold extension to previous works. We consider asynchronous event-related paradigms, account for different trial types and integrate several fMRI sessions into the estimation. These generalizations are simultaneously addressed through a badly conditioned observation model. Bayesian formalism is used to model temporal prior information of the underlying physiological process of the brain hemodynamic response. By this way, the HRF estimate results from a tradeoff between information brought by the data and by our prior knowledge. This tradeoff is modeled with hyperparameters that are set to the maximum-likelihood estimate using an expectation conditional maximization algorithm. The proposed unsupervised approach is validated on both synthetic and real fMRI data, the latter originating from a speech perception experiment.},
+  citation-subset = {IM},
+  completed       = {2004-03-11},
+  country         = {United States},
+  doi             = {10.1109/TMI.2003.817759},
+  issn-linking    = {0278-0062},
+  issue           = {10},
+  keywords        = {Algorithms; Brain, blood supply, physiology; Brain Mapping, methods; Cerebrovascular Circulation, physiology; Computer Simulation; Hemodynamics, physiology; Humans; Image Interpretation, Computer-Assisted, methods; Imaging, Three-Dimensional, methods; Likelihood Functions; Magnetic Resonance Imaging, methods; Models, Cardiovascular; Models, Statistical; Reproducibility of Results; Sensitivity and Specificity; Speech Perception, physiology},
+  nlm-id          = {8310780},
+  owner           = {NLM},
+  pmid            = {14552578},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2019-12-10},
+}
+
+@Article{Costantini2022Anisotropic4DFiltering,
+  author    = {Isa Costantini and Rachid Deriche and Samuel Deslauriers-Gauthier},
+  journal   = {Frontiers in Neuroimaging},
+  title     = {An Anisotropic 4D Filtering Approach to Recover Brain Activation From Paradigm-Free Functional {MRI} Data},
+  year      = {2022},
+  month     = {apr},
+  volume    = {1},
+  doi       = {10.3389/fnimg.2022.815423},
+  publisher = {Frontiers Media {SA}},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
