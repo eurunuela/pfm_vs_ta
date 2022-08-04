@@ -1,6 +1,6 @@
 % !TEX root = ../main.tex
 
-\section{Discussion}
+\section{Discussion and conclusion}
 
 Hemodynamic deconvolution can be formulated using a synthesis- and
 analysis-based approach as proposed by PFM and TA, respectively. This work
@@ -16,13 +16,7 @@ in the spatiotemporal TA formulation \citep{Karahanoglu2013TotalactivationfMRI}.
 \textcolor{blue}{For instance, the use of PFM with the spike model in
 \citep{Tan_2017} was seen not to be ideal due to the prolonged trials in the
 paradigm, which better fit the block model as described here
-\eqref{eq:pfm_block}. Similarly, all the works using the iCAPs approach, and
-thus the TA implementation for deconvolution
-\citep{Kinany2020DynamicFunctionalConnectivity,Zoeller2019Largescalebrain,
-Pirondini2022Poststrokereorganization}, could alternatively use the PFM approach
-with the block model adding a spatial regularization term, which would yield
-identical results providing the same criterion is used to select the
-regularization parameters.} However, given the equivalence of the temporal
+\eqref{eq:pfm_block}.} However, given the equivalence of the temporal
 deconvolution, incorporating extra spatial or temporal regularization terms in
 the optimization problem should not modify this equivalence providing convex
 operators are employed. For a convex optimization problem, with a unique global
@@ -32,14 +26,10 @@ forward-backward splitting \citep{Raguet2013GeneralizedForwardBackward}
 algorithm originally employed for TA. Our findings are also in line with the
 equivalence of analysis and synthesis methods in under-determined cases (\(N
 \leq V\)) demonstrated in \citep{Elad2007Analysisversussynthesis} and
-\citep{ortelli2019synthesis}. \textcolor{blue}{Using a lower regularization
-parameter (i.e., penalty on the amplitude of the estimates) makes the estimates
-more similar to the least-squares solution, which results in higher sensitivity
-in detecting events. Conversely, employing a higher $\lambda$ leads to higher
-specificity at the cost of a decrease in sensitivity.} Still, we have shown that
+\citep{ortelli2019synthesis}. Still, we have shown that
 a slight difference in the selection of the regularization parameter can lead to
 small differences in the estimated signals when employing the block model with
-the MAD selection of $\lambda$. However, since theiri regularization paths are
+the MAD selection of $\lambda$. However, since their regularization paths are
 equivalent, the algorithms can easily be forced to converge to the same
 selection of $\lambda$, thus resulting in identical estimated signals.
 
