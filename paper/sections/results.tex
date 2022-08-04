@@ -94,17 +94,17 @@ range shown in each image, we observe that the similarity between both
 approaches is more evident for the spike model (with both selection criteria)
 and the block model with the BIC selection. However, given the different
 approaches used for the selection of the regularization parameter $\lambda$
-based on the MAD estimate of the noise (i.e., converging so that
-the residuals of FISTA are equal to the MAD estimate of the noise for TA vs.
-finding the LARS residual that is closest to the MAD estimate of the noise),
-higher RSSD values can be observed with the largest differences occurring in
-gray matter voxels. These areas also correspond to low values of $\lambda$ (see
+based on the MAD estimate of the noise (i.e., converging so that the residuals
+of FISTA are equal to the MAD estimate of the noise for TA vs. finding the LARS
+residual that is closest to the MAD estimate of the noise), higher RSSD values
+can be observed with the largest differences occurring in gray matter voxels.
+These areas also correspond to low values of $\lambda$ (see
 Figure~\ref{fig:lambdas}) and MAD estimates of the noise (see
 Figure~\ref{fig:mad_estimate}), while the highest values are visible in regions
-with signal droupouts, ventricles, and white matter. These
-differences that arise from the differing methods to find the optimal
-regularization parameter based on the MAD estimate of the noise can be clearly
-seen in the root sum of squares (RSS) of the estimates of the two methods
+with signal droupouts, ventricles, and white matter. These differences that
+arise from the differing methods to find the optimal regularization parameter
+based on the MAD estimate of the noise can be clearly seen in the root sum of
+squares (RSS) of the estimates of the two methods
 (Figure~\ref{fig:rss_comparison}). These differences are also observable in the
 ATS calculated from estimates obtained with the MAD selection as shown in
 Figure~\ref{fig:task_mad}. However, the identical regularization paths shown in
@@ -144,11 +144,11 @@ activity-related, activity-inducing and innovation signals clearly reveal the
 activity patterns of each condition in the task, as they exhibit a BOLD response
 locked to the onset and duration of the conditions. Overall, activity maps of
 the innovation signal obtained with PFM and TA highly resemble those obtained
-with a GLM for individual events, with small differences
-arising from the distinct specificity of the GLM and deconvolution analyses.
-Notice that the differences observed with the different approaches to select
-$\lambda$ based on the MAD estimate shown in Figure~\ref{fig:rss} are reflected
-on the ATS shown in Figure~\ref{fig:task_mad} as well.
+with a GLM for individual events, with small differences arising from the
+distinct specificity of the GLM and deconvolution analyses. Notice that the
+differences observed with the different approaches to select $\lambda$ based on
+the MAD estimate shown in Figure~\ref{fig:rss} are reflected on the ATS shown in
+Figure~\ref{fig:task_mad} as well.
 
 \begin{figure}[t!]
     \begin{center}
@@ -159,45 +159,42 @@ on the ATS shown in Figure~\ref{fig:task_mad} as well.
 \end{figure}
 
 As an illustration of the insights that deconvolution methods can provide in the
-analysis of resting-state data, Figure~\ref{fig:caps} depicts the
-average activity-inducing and innovation maps
-of common resting-state networks obtained from thresholding
-and averaging the activity-inducing and innovation signals, respectively,
-estimated from the resting-state multiband data using PFM with a selection of
-$\lambda$ based on the BIC. The average activity-inducing maps
+analysis of resting-state data, Figure~\ref{fig:caps} depicts the average
+activity-inducing and innovation maps of common resting-state networks obtained
+from thresholding and averaging the activity-inducing and innovation signals,
+respectively, estimated from the resting-state multiband data using PFM with a
+selection of $\lambda$ based on the BIC. The average activity-inducing maps
 obtained via deconvolution show spatial patterns of the default mode network
 (DMN), dorsal attention network (DAN), and visual network (VIS) that highly
 resemble the maps obtained with conventional seed correlation analysis using
-Pearson's correlation, and the average maps of extreme points
-of the signal (i.e., with no deconvolution). With deconvolution, the
-average activity-inducing maps seem to depict more accurate
-spatial delineation (i.e., less smoothness) than those obtained from the
-original data, while maintaining the structure of the networks. The
-BIC-informed selection of $\lambda$ yields spatial patterns of
-average activity-inducing and innovation maps that are more
-sparse than those obtained with a selection of $\lambda$ based on the MAD
-estimate (see Figure~\ref{fig:caps_mad}). Furthermore, the spatial patterns of
-the average innovation maps based on the innovation signals
-using the block model yield complementary information to those obtained with the
-activity-inducing signal since iCAPs allow to reveal regions with synchronous
-innovations, i.e., with the same upregulating and downregulating events. For
-instance, it is interesting to observe that the structure of the visual network
-nearly disappears in its corresponding average innovation
-maps, suggesting the existence of different temporal neuronal patterns across
-voxels in the primary and secondary visual cortices.
+Pearson's correlation, and the average maps of extreme points of the signal
+(i.e., with no deconvolution). With deconvolution, the average activity-inducing
+maps seem to depict more accurate spatial delineation (i.e., less smoothness)
+than those obtained from the original data, while maintaining the structure of
+the networks. The BIC-informed selection of $\lambda$ yields spatial patterns of
+average activity-inducing and innovation maps that are more sparse than those
+obtained with a selection of $\lambda$ based on the MAD estimate (see
+Figure~\ref{fig:caps_mad}). Furthermore, the spatial patterns of the average
+innovation maps based on the innovation signals using the block model yield
+complementary information to those obtained with the activity-inducing signal
+since iCAPs allow to reveal regions with synchronous innovations, i.e., with the
+same upregulating and downregulating events. For instance, it is interesting to
+observe that the structure of the visual network nearly disappears in its
+corresponding average innovation maps, suggesting the existence of different
+temporal neuronal patterns across voxels in the primary and secondary visual
+cortices.
 
 \begin{figure}[t!]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/caps.png}
     \end{center}
-    \caption{Average activity-inducing
-    (left) and
-    innovation (right) maps obtained from PFM-estimated activity-inducing and
-    innovation signals, respectively, using a BIC-based selection of $\lambda$.
-    Time-points selected with a 95\textsuperscript{th} percentile threshold
-    (horizontal lines) are shown over the average time-series (blue) in the seed
-    region (white cross) and the deconvolved signals, i.e., activity inducing
-    (left) and innovation (right) signals (orange). Average
-    maps of extreme points and seed correlation maps are illustrated in the center.}
+    \caption{Average activity-inducing (left) and innovation (right) maps
+    obtained from PFM-estimated activity-inducing and innovation signals,
+    respectively, using a BIC-based selection of $\lambda$. Time-points selected
+    with a 95\textsuperscript{th} percentile threshold (horizontal lines) are
+    shown over the average time-series (blue) in the seed region (white cross)
+    and the deconvolved signals, i.e., activity inducing (left) and innovation
+    (right) signals (orange). Average maps of extreme points and seed
+    correlation maps are illustrated in the center.}
 \label{fig:caps}
 \end{figure}
