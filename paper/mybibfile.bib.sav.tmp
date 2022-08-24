@@ -305,8 +305,6 @@ Papers that talk about the post processing step:
   pages   = {229-247},
   volume  = {617},
   doi     = {10.1063/1.1477050},
-  eprint  = {https://aip.scitation.org/doi/pdf/10.1063/1.1477050},
-  url     = {https://aip.scitation.org/doi/abs/10.1063/1.1477050},
 }
 
 # Naturalistic
@@ -409,7 +407,6 @@ Papers that talk about the post processing step:
   isbn      = {978-0-12-372560-8},
   pages     = {178-192},
   doi       = {https://doi.org/10.1016/B978-012372560-8/50014-0},
-  url       = {https://www.sciencedirect.com/science/article/pii/B9780123725608500140},
 }
 
 # Clinical
@@ -609,8 +606,9 @@ Other methods
   month   = may
 }
 
-@article{Farouj2020DeconvolutionSustainedNeural,
+@Article{Farouj2020DeconvolutionSustainedNeural,
   author    = {Younes Farouj and Fikret Isik Karahanoglu and Dimitri Van De Ville},
+  journal   = {{IEEE} Transactions on Medical Imaging},
   title     = {Deconvolution of Sustained Neural Activity From Large-Scale Calcium Imaging Data},
   year      = {2020},
   month     = {apr},
@@ -618,7 +616,7 @@ Other methods
   pages     = {1094--1103},
   volume    = {39},
   doi       = {10.1109/tmi.2019.2942765},
-  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})}
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
 }
 
 @article{Ongie2020,
@@ -1308,7 +1306,6 @@ CAPS
   booktitle = {Advances in Neural Information Processing Systems},
   editor    = {H. Larochelle and M. Ranzato and R. Hadsell and M. F. Balcan and H. Lin},
   publisher = {Curran Associates, Inc.},
-  url       = {https://proceedings.neurips.cc/paper/2020/file/84fec9a8e45846340fdf5c7c9f7ed66c-Paper.pdf},
 }
 
 @article{Efron2004Leastangleregression,
@@ -1494,17 +1491,18 @@ CAPS
   publisher = {Elsevier {BV}}
 }
 
-@Unpublished{cherkaoui:hal-03005584,
-  author      = {Cherkaoui, Hamza and Moreau, Thomas and Halimi, Abderrahim and Leroy, Claire and Ciuciu, Philippe},
-  note        = {working paper or preprint},
-  title       = {{Multivariate semi-blind deconvolution of fMRI time series}},
-  month       = Nov,
-  year        = {2020},
-  hal_id      = {hal-03005584},
+@Article{Cherkaoui2021Multivariatesemiblind,
+  author      = {Hamza Cherkaoui and Thomas Moreau and Abderrahim Halimi and Claire Leroy and Philippe Ciuciu},
+  journal     = {{NeuroImage}},
+  title       = {Multivariate semi-blind deconvolution of {fMRI} time series},
+  year        = {2021},
+  month       = {nov},
+  pages       = {118418},
+  volume      = {241},
+  doi         = {10.1016/j.neuroimage.2021.118418},
   hal_version = {v1},
   keywords    = {BOLD signal ; HRF ; sparsity ; low-rank decomposition ; multivariate modeling ; dictionary learning ; UK Biobank},
-  pdf         = {https://hal.archives-ouvertes.fr/hal-03005584/file/paper.pdf},
-  url         = {https://hal.archives-ouvertes.fr/hal-03005584},
+  publisher   = {Elsevier {BV}},
 }
 
 @InProceedings{Huetel2018NeuralActivationEstimation,
@@ -2296,4 +2294,11 @@ CAPS
   completed       = {2012-05-21},
   country         = {United States},
   doi             = {10.1073/pnas.1121049109},
-  issn-
+  issn-linking    = {0027-8424},
+  issue           = {14},
+  keywords        = {Brain, physiology; Humans; Magnetic Resonance Imaging; Models, Theoretical; Task Performance and Analysis},
+  nlm-id          = {7505876},
+  owner           = {NLM},
+  pii             = {1121049109},
+  pmc             = {PMC3325687},
+  pmid          
